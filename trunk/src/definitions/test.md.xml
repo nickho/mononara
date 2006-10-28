@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition>
+   <knowledge id="1">
+      <name>?</name>
+      <contextLink id="1" rang="1"/>
+      <contextLink id="2" rang="1"/>
+      <contextLink id="3" rang="2"/>
+   </knowledge>
+   <context id="1">
+      <name>?</name>
+      <yomi>??</yomi>
+      <explanation>Un</explanation>
+   </context>
+   <context id="2">
+      <name>??</name>
+      <hint>Un jour</hint>
+      <yomi>?? ??</yomi>
+      <explanation>Un jour</explanation>
+   </context>
+   <context id="3">
+      <name>??</name>
+      <hint>Le premier jour du mois</hint>
+      <yomi>?? ??</yomi>
+      <explanation>Le premier jour du mois</explanation>
+   </context>
+</definition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Mononara" default="dist">
+
+	<target name="clean" description="clean the project">
+	</target>
+	
+	<target name="build" description="compile the project">
+	</target>
+	
+	<target name="jar" description="mononara.jar">
+		<mkdir dir="target" />
+		<jar destfile="target/mononara.jar" manifest="src/conf/MANIFEST.MF">
+			<zipfileset dir="target/classes" includes="**/*.class" />
+		</jar>
+	</target>
+	
+	<target name="dist" description="Build the distrib" depends="jar">
+		<mkdir dir="target" />
+		<zip destfile="target/mononara.zip">
+			<zipfileset dir=".">
+				<include name="Mononara.exe" />
+				<include name="Mononara.lap" />
+			</zipfileset>
+			<zipfileset dir="lib" prefix="lib">
+				<include name="**/.jar" />
+				<include name="**/.dll" />
+			</zipfileset>
+			<zipfileset dir="target">
+				<include name="mononara.jar" />
+			</zipfileset>
+			<zipfileset dir="src/definitions" prefix="definitions" includes="*.md.xml" />
+		</zip>
+	</target>
+</project>
