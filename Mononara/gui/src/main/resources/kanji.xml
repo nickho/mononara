@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kanjis>
+  <kanji id="82">
+    <name>名</name>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="30">
+    <name>水</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="3">
+    <name>円</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="68">
+    <name>三</name>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="82">
+    <name>名</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="59">
+    <name>年</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="87">
+    <name>開</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_3</tag>
+    </tags>
+  </kanji>
+  <kanji id="64">
+    <name>六</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="19">
+    <name>口</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="76">
+    <name>先</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="68">
+    <name>三</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="10">
+    <name>雨</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="3">
+    <name>円</name>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="85">
+    <name>何</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+</kanjis>

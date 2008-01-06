@@ -1,0 +1,37 @@
+<assembly>
+  <id>distrib</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <moduleSets>
+    <moduleSet>
+      <includes>
+        <include>com.miragedev.mononara:*</include>
+      </includes>
+      <binaries>
+        <outputDirectory>lib/${artifactId}</outputDirectory>
+        <unpack>false</unpack>
+      </binaries>
+    </moduleSet>
+  </moduleSets>
+  <files>
+    <file>
+      <source>src/info/README.txt</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+    <file>
+      <source>src/info/LICENSE.txt</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+    <file>
+      <source>src/launcher/Mononara.exe</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+    <file>
+      <source>src/launcher/Mononara.lap</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+
+  </files>
+</assembly>
