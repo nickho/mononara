@@ -26,6 +26,9 @@ public class Knowledge {
     @OneToOne(cascade = CascadeType.ALL)
     private Kanji kanji;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Tag tag;
+
 
     public long getId() {
         return id;
@@ -57,5 +60,13 @@ public class Knowledge {
 
     public void setKanji(Kanji kanji) {
         this.kanji = kanji;
+    }
+
+    public Tag getTag() {
+        return tag;
+    }
+
+    public void setTag(Tag tag) {
+        this.tag = tag;
     }
 }
