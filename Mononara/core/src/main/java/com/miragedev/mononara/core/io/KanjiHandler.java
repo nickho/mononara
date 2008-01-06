@@ -63,9 +63,6 @@ public class KanjiHandler extends DefaultHandler {
                 kanji = new Kanji();
                 kanji.setId(parentId);
                 kanjiDao.save(kanji);
-                Knowledge knowledge = new Knowledge();
-                knowledge.setKanji(kanji);
-                knowledgeDao.save(knowledge);
             }
         } else if (qName.equalsIgnoreCase("name")) {
             inName = true;
@@ -115,6 +112,10 @@ public class KanjiHandler extends DefaultHandler {
                 log.info("tag (" + tagDao.findByCode(String.valueOf(ch, start, length)).getCode() + ") imported from kanji " + parentId);
             }
             kanji.addTag(tag);
+            Knowledge knowledge = new Knowledge();
+            knowledge.setKanji(kanji);
+            knowledge.setTag(tag);
+            knowledgeDao.save(knowledge);
             kanjiDao.update(kanji);
         }
     }

@@ -20,7 +20,7 @@ public class JpaKnowledgeDao extends JpaDaoSupport implements KnowledgeDao {
     }
 
     public List<Knowledge> findByTag(String tag) {
-        return getJpaTemplate().find("SELECT kn FROM Knowledge kn,  IN(kn.kanji.tags) t WHERE t.code = ?1", tag);
+        return getJpaTemplate().find("SELECT kn FROM Knowledge kn WHERE kn.tag.code = ?1", tag);
     }
 
     public void save(Knowledge knowledge) {
