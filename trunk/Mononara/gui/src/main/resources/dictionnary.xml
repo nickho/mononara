@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionnary>
+  <entry id="10">
+    <kanji>火曜日</kanji>
+    <kana>か.よう.び</kana>
+    <romaji>ka.yoo.bi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="37">
+    <kanji>映画館</kanji>
+    <kana>えい.が.かん</kana>
+    <romaji>ei.ga.kan</romaji>
+    <tags>
+      <tag>jlpt_3</tag>
+    </tags>
+  </entry>
+  <entry id="40">
+    <kanji>電車</kanji>
+    <kana>でん.しゃ</kana>
+    <romaji>den.sha</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="43">
+    <kanji>開ける</kanji>
+    <kana>あ.け.る</kana>
+    <romaji>a.ke.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="44">
+    <kanji>開く</kanji>
+    <kana>あ.く</kana>
+    <romaji>a.ku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="45">
+    <kanji>雨</kanji>
+    <kana>あめ</kana>
+    <romaji>ame</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="37">
+    <kanji>映画館</kanji>
+    <kana>えい.が.かん</kana>
+    <romaji>ei.ga.kan</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="38">
+    <kanji>女の子</kanji>
+    <kana>おんな.の.こ</kana>
+    <romaji>onna.no.ko</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+</dictionnary>
