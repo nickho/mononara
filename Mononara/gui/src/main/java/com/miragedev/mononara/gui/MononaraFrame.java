@@ -7,9 +7,8 @@ import com.miragedev.mononara.core.service.KanjiService;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.swing.*;
 import java.awt.*;
@@ -202,7 +201,22 @@ public class MononaraFrame {
     private void nextTestButton_ActionPerformed() {
         commentTestTextPane.setText("");
         userSpellingTestTextField.setText("");
-        contextTestLabel.setText(test.getContextTest().getDictionnaryEntry().getSpellingInKanji());
+        ExamContext examContext = test.getContextTest();
+        int pos = examContext.getKnowledgePos();
+        StringBuffer contextText = new StringBuffer();
+        contextText.append("<html>");
+        contextText.append("<font size=26>");
+        contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(0, pos));
+        contextText.append("</font>");
+        contextText.append("<font size=26 color=red>");
+        contextText.append(examContext.getKnowledge().getKanji().getCharacter());
+        contextText.append("</font>");
+        contextText.append("<font size=26>");
+        contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(pos + 1));
+        contextText.append("</font>");
+        contextText.append("</html>");
+        contextTestLabel.setText(contextText.toString());
+
         goTestButton.setVisible(true);
         nextTestButton.setVisible(false);
     }
@@ -325,7 +339,7 @@ public class MononaraFrame {
         gbc.fill = GridBagConstraints.BOTH;
         panel4.add(commentTestTextPane, gbc);
         contextTestLabel = new JLabel();
-        contextTestLabel.setFont(new Font(contextTestLabel.getFont().getName(), contextTestLabel.getFont().getStyle(), 26));
+        contextTestLabel.setFont(new Font(contextTestLabel.getFont().getName(), contextTestLabel.getFont().getStyle(), contextTestLabel.getFont().getSize()));
         contextTestLabel.setText("No test started");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
