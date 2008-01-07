@@ -15,23 +15,10 @@
       </binaries>
     </moduleSet>
   </moduleSets>
-  <files>
-    <file>
-      <source>src/info/README.txt</source>
-      <outputDirectory>/</outputDirectory>
-    </file>
-    <file>
-      <source>src/info/LICENSE.txt</source>
-      <outputDirectory>/</outputDirectory>
-    </file>
-    <file>
-      <source>src/launcher/Mononara.exe</source>
-      <outputDirectory>/</outputDirectory>
-    </file>
-    <file>
-      <source>src/launcher/Mononara.lap</source>
-      <outputDirectory>/</outputDirectory>
-    </file>
-
-  </files>
+<fileSets>
+    <fileSet>
+      <directory>src/launcher</directory>
+      <outputDirectory></outputDirectory>
+    </fileSet>
+  </fileSets>
 </assembly>
