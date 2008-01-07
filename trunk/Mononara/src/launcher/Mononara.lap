@@ -1,26 +1,2 @@
-# This is a .lap file comment
--Djava.class.path=target\mononara.jar
-#-DJAVA_HOME=${FOUND_JAVA_HOME}
-janel.main.class=com.miragedev.mononara.gui.MononaraWindow
-#janel.java.bundle=SDK
-#janel.bin.jvm.dir=client
-#janel.jvm.path=${env.JAVA_HOME}\jre\bin\server\jvm.dll
-#janel.java.home.path=d:\Programs\j2sdk14
-#janel.min.java.version=1.4
-#janel.max.java.version=1.5
-#-verbose:class
-#-Xincgc
-#janel.trap.console.ctrl=yes
-#-Dself.home.test=${SELF_HOME}
-#-Dfound.exe.folder.test=${FOUND_EXE_FOLDER}
-#janel.classpath.jars.dir=..\..\Test\TestLaunch\dist
-#janel.debug.file=DebugFile.txt
-#janel.library.path.dir=src\NativeTest\dist
-#janel.main.argument=arg0
-#janel.main.argument=test arg1
-#janel.sysprop.process.id=true
-#janel.memory.max.available.percent=70
-#janel.memory.init.available.percent=35
-#janel.memory.max.total.percent=50
-#janel.memory.init.total.percent=25
-
+janel.main.class=com.miragedev.mononara.gui.MononaraFrame
+-Djava.class.path=lib\antlr\antlr-2.7.6.jar;lib\asm\asm-1.5.3.jar;lib\asm-attrs\asm-attrs-1.5.3.jar;lib\cglib\cglib-2.1_3.jar;lib\commons-collections\commons-collections-2.1.1.jar;lib\commons-logging\commons-logging-1.1.jar;lib\core\core-2.0.0-SNAPSHOT.jar;lib\dom4j\dom4j-1.6.1.jar;lib\ehcache\ehcache-1.2.3.jar;lib\gui\gui-2.0.0-SNAPSHOT.jar;lib\hibernate\hibernate-3.2.1.ga.jar;lib\hibernate-annotations\hibernate-annotations-3.2.1.ga.jar;lib\hibernate-entitymanager\hibernate-entitymanager-3.2.1.ga.jar;lib\hsqldb\hsqldb-1.8.0.7.jar;lib\javassist\javassist-3.3.ga.jar;lib\jboss-archive-browsing\jboss-archive-browsing-5.0.0alpha-200607201-119.jar;lib\jta\jta-1.0.1B.jar;lib\persistence-api\persistence-api-1.0.jar;lib\spring\spring-2.5.jar

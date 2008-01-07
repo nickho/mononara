@@ -34,7 +34,7 @@ public class MononaraFrame {
     private JComboBox tagsComboBox;
     private JTextField userSpellingTestTextField;
     private JButton nextTestButton;
-    private JTextPane commentTestTextPane;
+    private JEditorPane commentTestTextPane;
     private JLabel contextTestLabel;
     private JButton refreshButton;
     private JList basketList;
@@ -80,6 +80,9 @@ public class MononaraFrame {
         frame.setJMenuBar(mononaraMenuFactory.createMenuBar());
 
         //some wires
+        //ImageIcon imageScroll = new ImageIcon("images/scroll.jpg");
+        //imageLeft.add(new JLabel(imageScroll));
+        //imageRight.add(new JLabel(imageScroll));
         basket = new Basket(40);
         basket.addContentChangeListener(new ContentChangeListener() {
             public void contentChange(ContentChangeEvent e) {
@@ -121,6 +124,7 @@ public class MononaraFrame {
         });
 
         //Showing time
+        refreshTagList();
         frame.setSize(640, 480);
         frame.setLocation(540, 280);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -130,6 +134,10 @@ public class MononaraFrame {
     }
 
     private void tagsComboBox_ActionPerformed() {
+        refreshStudyList();
+    }
+
+    private void refreshStudyList() {
         List<Knowledge> listKnowledge = kanjiService.findKnowledgesByTag((String) tagsComboBox.getSelectedItem());
         log.info("Loading study list with " + listKnowledge.size() + " kanjis");
         studyListPane.removeAll();
@@ -168,6 +176,10 @@ public class MononaraFrame {
     }
 
     private void refreshButton_ActionPerformed() {
+        refreshTagList();
+    }
+
+    private void refreshTagList() {
         List<Tag> listTag = kanjiService.findAllTags();
         log.info("Found " + listTag.size() + " tags in the database.");
         tagsComboBox.removeAllItems();
@@ -178,21 +190,23 @@ public class MononaraFrame {
 
     private void goTestButton_ActionPerformed() {
         if (test.test(userSpellingTestTextField.getText())) {
-            commentTestTextPane.setText("OK!!!");
+            commentTestTextPane.setText("<html><p align=center>OK!!!</p></html>");
         } else {
             int knowledgePos = test.getContextTest().getKnowledgePos();
             String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
-            commentTestTextPane.setText("Faux!!!\n" + spellings.split("\\.")[knowledgePos]);
+            commentTestTextPane.setText("<html><p align=center>Faux!!!</p><br/><br><br><p align=center><b><font size=26>" + spellings.split("\\.")[knowledgePos] + "</font></b></p></html>");
         }
         if (test.next()) {
             goTestButton.setVisible(false);
             nextTestButton.setVisible(true);
         } else {
-            //@todo sauver les testes
             mononaraService.saveExamResults(test.getResults());
-            commentTestTextPane.setText(commentTestTextPane.getText() + "\nExam fini et sauver (ou pas)!!!");
+            commentTestTextPane.setText(commentTestTextPane.getText());
             goTestButton.setVisible(false);
             nextTestButton.setVisible(false);
+            basket.empty();
+            refreshStudyList();
+            panelMain.setSelectedIndex(0);
         }
 
 
@@ -204,7 +218,7 @@ public class MononaraFrame {
         ExamContext examContext = test.getContextTest();
         int pos = examContext.getKnowledgePos();
         StringBuffer contextText = new StringBuffer();
-        contextText.append("<html>");
+        contextText.append("<html><p align=center>");
         contextText.append("<font size=26>");
         contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(0, pos));
         contextText.append("</font>");
@@ -213,7 +227,7 @@ public class MononaraFrame {
         contextText.append("</font>");
         contextText.append("<font size=26>");
         contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(pos + 1));
-        contextText.append("</font>");
+        contextText.append("</font></p>");
         contextText.append("</html>");
         contextTestLabel.setText(contextText.toString());
 
@@ -329,8 +343,10 @@ public class MononaraFrame {
         gbc.gridy = 1;
         gbc.gridwidth = 5;
         panel4.add(userSpellingTestTextField, gbc);
-        commentTestTextPane = new JTextPane();
-        commentTestTextPane.setFont(new Font(commentTestTextPane.getFont().getName(), commentTestTextPane.getFont().getStyle(), 20));
+        commentTestTextPane = new JEditorPane();
+        commentTestTextPane.setContentType("text/html");
+        commentTestTextPane.setEditable(false);
+        commentTestTextPane.setFont(new Font(commentTestTextPane.getFont().getName(), commentTestTextPane.getFont().getStyle(), commentTestTextPane.getFont().getSize()));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 3;
