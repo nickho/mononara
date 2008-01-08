@@ -23,28 +23,46 @@ public class CardLearningMethod implements LearningMethod {
         this.forgetTimeOffset = forgetTimeOffset;
     }
 
+    /**
+     * Return 0 => n
+     * i => i+1 = maximum contigus time when the test was successful
+     *
+     * @param knowledge
+     * @return
+     */
     public float computeFadingLvl(Knowledge knowledge) {
-     if (knowledge.getLastTest() == null && knowledge.getFirstTimeSuccess() == null) {
-            return 0f;
-        } else if (knowledge.getFirstTimeSuccess() != null && knowledge.getLastTest() == null) {
-            return -1f;
+        if (knowledge.getLastTimeSuccess() != null && knowledge.getFirstTimeSuccess() != null) {
+            return (System.currentTimeMillis() - knowledge.getLastTimeSuccess().getTimeInMillis()) / (knowledge.getLastTimeSuccess().getTimeInMillis() - knowledge.getFirstTimeSuccess().getTimeInMillis() + forgetTimeOffset);
         } else {
-            return 1f + (System.currentTimeMillis() - knowledge.getLastTest().getTimeInMillis()) / (knowledge.getLastTest().getTimeInMillis() - knowledge.getFirstTimeSuccess().getTimeInMillis() + forgetTimeOffset);
+            return 0;
         }
     }
 
-    public Knowledge updateLearningResult(Knowledge knowledge, int maxResultCorrect , int resultCorrect) {
-       if (maxResultCorrect != resultCorrect) {
-            if (knowledge.getFirstTimeSuccess() == null) {
-                knowledge.setFirstTimeSuccess(Calendar.getInstance());
-                knowledge.getFirstTimeSuccess().setTimeInMillis(System.currentTimeMillis());
-            }
-            knowledge.setLastTest(null);
-        } else {
-            if (knowledge.getLastTest() == null) {
-                knowledge.setLastTest(Calendar.getInstance());
-            }
-            knowledge.getLastTest().setTimeInMillis(System.currentTimeMillis());
+    /**
+     * Always update the LastTimeSuccess to Now
+     * If it's a success :
+     * - If FirstTimeSuccess is NULL set it to now
+     *
+     * @param knowledge
+     * @param maxResultCorrect
+     * @param resultCorrect
+     * @return
+     */
+    public Knowledge updateLearningResult(Knowledge knowledge, int maxResultCorrect, int resultCorrect) {
+        knowledge.setLastTestSuccess(resultCorrect * 1f / maxResultCorrect);
+        //if (maxResultCorrect != resultCorrect) {
+        //     if (knowledge.getFirstTimeSuccess() == null) {
+        //         knowledge.setFirstTimeSuccess(Calendar.getInstance());
+        //         knowledge.getFirstTimeSuccess().setTimeInMillis(System.currentTimeMillis());
+        //     }
+        //     knowledge.setLastTimeSuccess(null);
+        // } else {
+        if (knowledge.getLastTimeSuccess() == null) {
+            knowledge.setLastTimeSuccess(Calendar.getInstance());
+        }
+        knowledge.getLastTimeSuccess().setTimeInMillis(System.currentTimeMillis());
+
+        if (maxResultCorrect == resultCorrect) {
             if (knowledge.getFirstTimeSuccess() == null) {
                 knowledge.setFirstTimeSuccess(Calendar.getInstance());
                 knowledge.getFirstTimeSuccess().setTimeInMillis(System.currentTimeMillis());
