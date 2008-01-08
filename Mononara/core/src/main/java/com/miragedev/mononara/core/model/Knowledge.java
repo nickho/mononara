@@ -21,7 +21,9 @@ public class Knowledge {
     private Calendar firstTimeSuccess;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar lastTest;
+    private Calendar lastTimeSuccess;
+
+    private float lastTestSuccess;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Kanji kanji;
@@ -46,12 +48,20 @@ public class Knowledge {
         this.firstTimeSuccess = firstTimeSuccess;
     }
 
-    public Calendar getLastTest() {
-        return lastTest;
+    public Calendar getLastTimeSuccess() {
+        return lastTimeSuccess;
     }
 
-    public void setLastTest(Calendar lastTest) {
-        this.lastTest = lastTest;
+    public void setLastTimeSuccess(Calendar lastTimeSuccess) {
+        this.lastTimeSuccess = lastTimeSuccess;
+    }
+
+    public float getLastTestSuccess() {
+        return lastTestSuccess;
+    }
+
+    public void setLastTestSuccess(float lastTestSuccess) {
+        this.lastTestSuccess = lastTestSuccess;
     }
 
     public Kanji getKanji() {
