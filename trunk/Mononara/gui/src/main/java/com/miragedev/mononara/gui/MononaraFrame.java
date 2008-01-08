@@ -39,6 +39,7 @@ public class MononaraFrame {
     private JButton refreshButton;
     private JList basketList;
     private JButton goTestButton;
+    private JLabel pageLabel;
     private JFrame frame;
 
     private Basket basket;
@@ -145,20 +146,32 @@ public class MononaraFrame {
             JToggleButton toggleButton = new JToggleButton(knowledge.getKanji().getCharacter());
             toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), 26));
             int fadingLvl = (int) learningMethod.computeFadingLvl(knowledge);
-            if (fadingLvl < 0) {
-                toggleButton.setBackground(Color.red);
-            } else if (fadingLvl == 1) {
-                toggleButton.setBackground(new Color(0, 50, 0));
-                toggleButton.setForeground(Color.white);
-            } else if (fadingLvl == 2) {
-                toggleButton.setBackground(new Color(50, 100, 50));
-            } else if (fadingLvl == 3) {
-                toggleButton.setBackground(new Color(100, 150, 100));
-            } else if (fadingLvl == 4) {
-                toggleButton.setBackground(new Color(150, 200, 150));
-            } else if (fadingLvl == 5) {
-                toggleButton.setBackground(new Color(200, 255, 200));
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+            if (knowledge.getLastTestSuccess() > 0.9999) {
+                green = 100;
+            } else if (knowledge.getLastTimeSuccess() == null) {
+                //ohhh first time huh!?
+            } else {
+                red = 200 - (int) (100 * knowledge.getLastTestSuccess());
+                blue = 50 + (int) (150 * knowledge.getLastTestSuccess());
+                green = 100;
             }
+            if (fadingLvl > 1) {
+                log.info("knowledge " + knowledge.getKanji() + " : (" + red + "," + green + "," + blue + ")");
+                green = Math.min(255, green * fadingLvl);
+                red = Math.min(255, (red + 50) * fadingLvl);
+                blue = Math.min(255, (blue + 50) * fadingLvl);
+            }
+
+            //int transparency = 255 * Math.round(backgroundColor.getAlpha() / 255);
+            //Color foregroundColor = new Color(transparency, transparency, transparency);
+            if (learningMethod.isTested(knowledge)) {
+                toggleButton.setBackground(new Color(red, green, blue));
+            }
+            //toggleButton.setForeground(foregroundColor);
+
 
             toggleButton.addItemListener(new ItemListener() {
                 public void itemStateChanged(ItemEvent event) {
@@ -230,6 +243,7 @@ public class MononaraFrame {
         contextText.append("</font></p>");
         contextText.append("</html>");
         contextTestLabel.setText(contextText.toString());
+        pageLabel.setText("<html><p align=right><font size=+1>" + (test.getPosition() + 1) + "/" + test.size() + "</font></p></html>");
 
         goTestButton.setVisible(true);
         nextTestButton.setVisible(false);
@@ -376,5 +390,13 @@ public class MononaraFrame {
         gbc.gridx = 4;
         gbc.gridy = 2;
         panel4.add(goTestButton, gbc);
+        pageLabel = new JLabel();
+        pageLabel.setFont(new Font(pageLabel.getFont().getName(), pageLabel.getFont().getStyle(), pageLabel.getFont().getSize()));
+        pageLabel.setText("?/?");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 4;
+        gbc.gridy = 4;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel4.add(pageLabel, gbc);
     }
 }

@@ -19,12 +19,35 @@ public class CardLearningMethodTest extends TestCase {
 
     public void setUp() {
         cardLearningMethod = new CardLearningMethod();
-        cardLearningMethod.setForgetTimeOffset(3500000f);
+        cardLearningMethod.setForgetTimeOffset(3500000);
     }
 
-    /**
-     * Simple test for the fading  of Knowledge
-     */
+    public void testFading() {
+        Knowledge knowledge = new Knowledge();
+        cardLearningMethod.setForgetTimeOffset(9000);
+
+        Calendar timeOfSuccess = Calendar.getInstance();
+        timeOfSuccess.setTimeInMillis(System.currentTimeMillis() - 10000);
+        knowledge.setLastTestSuccess(1.0f);
+        knowledge.setLastTimeSuccess(timeOfSuccess);
+        knowledge.setFirstTimeSuccess(timeOfSuccess);
+        Assert.assertTrue(cardLearningMethod.computeFadingLvl(knowledge) > 1);
+
+        timeOfSuccess = Calendar.getInstance();
+        timeOfSuccess.setTimeInMillis(System.currentTimeMillis() - 20000);
+        knowledge.setLastTestSuccess(1.0f);
+        knowledge.setLastTimeSuccess(timeOfSuccess);
+        knowledge.setFirstTimeSuccess(timeOfSuccess);
+        Assert.assertTrue(cardLearningMethod.computeFadingLvl(knowledge) > 2);
+
+        timeOfSuccess = Calendar.getInstance();
+        timeOfSuccess.setTimeInMillis(System.currentTimeMillis() - 30000);
+        knowledge.setLastTestSuccess(1.0f);
+        knowledge.setLastTimeSuccess(timeOfSuccess);
+        knowledge.setFirstTimeSuccess(timeOfSuccess);
+        Assert.assertTrue(cardLearningMethod.computeFadingLvl(knowledge) > 3);
+    }
+
     public void testFadingAfterBadResult() {
         Knowledge knowledge = new Knowledge();
         Assert.assertTrue(Math.abs(cardLearningMethod.computeFadingLvl(knowledge)) < 0.001);

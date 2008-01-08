@@ -11,5 +11,8 @@ import com.miragedev.mononara.core.model.Knowledge;
  */
 public interface LearningMethod {
     public float computeFadingLvl(Knowledge knowledge);
-    public Knowledge updateLearningResult(Knowledge knowledge, int maxResultCorrect , int resultCorrect);
+
+    public Knowledge updateLearningResult(Knowledge knowledge, int maxResultCorrect, int resultCorrect);
+
+    public boolean isTested(Knowledge knowledge);
 }
