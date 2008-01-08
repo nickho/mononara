@@ -48,7 +48,7 @@
 
     <bean id="learningMethod" class="com.miragedev.mononara.core.business.CardLearningMethod">
         <!--<property name="forgetTimeOffset" value="21600000"/>-->
-        <property name="forgetTimeOffset" value="60000"/>
+        <property name="forgetTimeOffset" value="10000"/>
     </bean>
 
     <!-- The XML parser -->

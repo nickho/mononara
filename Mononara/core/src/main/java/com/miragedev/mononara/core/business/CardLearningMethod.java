@@ -13,13 +13,13 @@ import java.util.Calendar;
  */
 public class CardLearningMethod implements LearningMethod {
 
-    public float forgetTimeOffset;
+    public long forgetTimeOffset;
 
-    public float getForgetTimeOffset() {
+    public long getForgetTimeOffset() {
         return forgetTimeOffset;
     }
 
-    public void setForgetTimeOffset(float forgetTimeOffset) {
+    public void setForgetTimeOffset(long forgetTimeOffset) {
         this.forgetTimeOffset = forgetTimeOffset;
     }
 
@@ -32,7 +32,14 @@ public class CardLearningMethod implements LearningMethod {
      */
     public float computeFadingLvl(Knowledge knowledge) {
         if (knowledge.getLastTimeSuccess() != null && knowledge.getFirstTimeSuccess() != null) {
-            return (System.currentTimeMillis() - knowledge.getLastTimeSuccess().getTimeInMillis()) / (knowledge.getLastTimeSuccess().getTimeInMillis() - knowledge.getFirstTimeSuccess().getTimeInMillis() + forgetTimeOffset);
+            long a = System.currentTimeMillis();
+            long b = knowledge.getLastTimeSuccess().getTimeInMillis();
+            long c = knowledge.getLastTimeSuccess().getTimeInMillis();
+            long d = knowledge.getFirstTimeSuccess().getTimeInMillis();
+            double num = (a - b);
+            double denom = (c - d + forgetTimeOffset);
+            double e = num / denom;
+            return (float) e;
         } else {
             return 0;
         }
@@ -69,5 +76,9 @@ public class CardLearningMethod implements LearningMethod {
             }
         }
         return knowledge;
+    }
+
+    public boolean isTested(Knowledge knowledge) {
+        return knowledge.getFirstTimeSuccess() != null || knowledge.getLastTimeSuccess() != null;
     }
 }
