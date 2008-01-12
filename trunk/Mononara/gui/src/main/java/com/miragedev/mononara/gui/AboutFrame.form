@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.miragedev.mononara.gui.AboutFrame">
   <grid id="cbd77" binding="contentPane" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="48" y="54" width="436" height="297"/>
+      <xy x="48" y="54" width="646" height="297"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -50,10 +50,12 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font size="28"/>
+        </properties>
         <border type="none"/>
         <children>
-          <component id="2bef7" class="javax.swing.JTextArea" binding="LGPLMadeByNickhoTextArea" default-binding="true">
+          <component id="1cb48" class="javax.swing.JLabel" binding="mononaraLabel" default-binding="true">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
@@ -61,8 +63,30 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
+              <enabled value="true"/>
               <font size="28"/>
-              <text value="LGPL, Made by Nickho"/>
+              <horizontalAlignment value="0"/>
+              <text value="Mononara"/>
+            </properties>
+          </component>
+          <component id="91c2c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Author: Nickho"/>
+            </properties>
+          </component>
+          <component id="53058" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <font size="28"/>
+              <horizontalAlignment value="0"/>
+              <text value="The free Kanji learning platform"/>
             </properties>
           </component>
         </children>

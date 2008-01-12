@@ -1,8 +1,12 @@
 package com.miragedev.mononara.gui;
 
-import com.miragedev.mononara.core.business.*;
+import com.miragedev.mononara.core.business.Basket;
+import com.miragedev.mononara.core.business.Exam;
+import com.miragedev.mononara.core.business.ExamContext;
+import com.miragedev.mononara.core.business.LearningMethod;
 import com.miragedev.mononara.core.model.Knowledge;
 import com.miragedev.mononara.core.model.Tag;
+import com.miragedev.mononara.core.service.DictionnaryService;
 import com.miragedev.mononara.core.service.KanjiService;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.Log;
@@ -11,12 +15,15 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.swing.*;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
+import java.util.Vector;
+import java.util.regex.PatternSyntaxException;
 
 
 /**
@@ -40,6 +47,8 @@ public class MononaraFrame {
     private JList basketList;
     private JButton goTestButton;
     private JLabel pageLabel;
+    private JTable tableDictionnary;
+    private JComboBox comboBoxTagsDictionnary;
     private JFrame frame;
 
     private Basket basket;
@@ -47,6 +56,7 @@ public class MononaraFrame {
     private LearningMethod learningMethod;
 
     private KanjiService kanjiService;
+    private DictionnaryService dictionnaryService;
     private MononaraService mononaraService;
 
     private MononaraMenuFactory mononaraMenuFactory;
@@ -72,6 +82,10 @@ public class MononaraFrame {
         this.mononaraMenuFactory = mononaraMenuFactory;
     }
 
+    public void setDictionnaryService(DictionnaryService dictionnaryService) {
+        this.dictionnaryService = dictionnaryService;
+    }
+
     public void startMononara() {
         // Create the window
         frame = new JFrame();
@@ -80,11 +94,45 @@ public class MononaraFrame {
         //create the menu
         frame.setJMenuBar(mononaraMenuFactory.createMenuBar());
 
+        //The DictionnaryList
+        DictionnaryTableModel tableModel = new DictionnaryTableModel(dictionnaryService);
+        tableDictionnary.setModel(tableModel);
+        TableRowSorter<DictionnaryTableModel> sorter = new TableRowSorter<DictionnaryTableModel>(tableModel);
+        RowFilter<DictionnaryTableModel, Object> rf = null;
+        //If current expression doesn't parse, don't update.
+        try {
+            rf = RowFilter.regexFilter("NULL", 0);
+            rf = RowFilter.notFilter(rf);
+        } catch (PatternSyntaxException e) {
+            return;
+        }
+        sorter.setRowFilter(rf);
+        tableDictionnary.setRowSorter(sorter);
+        comboBoxTagsDictionnary.setModel(new TagsListModel(kanjiService));
+        comboBoxTagsDictionnary.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JComboBox combo = (JComboBox) e.getSource();
+                System.out.println(combo.getSelectedItem());
+                TableRowSorter<DictionnaryTableModel> sorter = (TableRowSorter<DictionnaryTableModel>) tableDictionnary.getRowSorter();
+
+                Vector<RowFilter<DictionnaryTableModel, Object>> filters = new Vector<RowFilter<DictionnaryTableModel, Object>>();
+                RowFilter<DictionnaryTableModel, Object> rfNotNull = RowFilter.regexFilter("NULL");
+                rfNotNull = RowFilter.notFilter(rfNotNull);
+                filters.add(rfNotNull);
+                RowFilter<DictionnaryTableModel, Object> rfCombo = RowFilter.regexFilter("^.*" + combo.getSelectedItem() + ".*$");
+                filters.add(rfCombo);
+                RowFilter<DictionnaryTableModel, Object> rfTotal = RowFilter.andFilter(filters);
+                sorter.setRowFilter(rfTotal);
+            }
+        });
+
         //some wires
         //ImageIcon imageScroll = new ImageIcon("images/scroll.jpg");
         //imageLeft.add(new JLabel(imageScroll));
         //imageRight.add(new JLabel(imageScroll));
         basket = new Basket(40);
+        basketList.setModel(new BasketListModel(basket));
+        /*
         basket.addContentChangeListener(new ContentChangeListener() {
             public void contentChange(ContentChangeEvent e) {
                 if (e.getType() == ContentChangeEvent.Type.ADD) {
@@ -96,6 +144,7 @@ public class MononaraFrame {
                 }
             }
         });
+        */
 
 
         tagsComboBox.addActionListener(new ActionListener() {
@@ -127,9 +176,13 @@ public class MononaraFrame {
         //Showing time
         refreshTagList();
         frame.setSize(640, 480);
-        frame.setLocation(540, 280);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().getBounds();
+        frame.setLocation((int) ((bounds.getWidth() - frame.getWidth()) / 2), (int) ((bounds.getHeight() - frame.getHeight()) / 2));
+        frame.setTitle("Mononara");
+        ImageIcon icon = new ImageIcon("images/ai-icon.jpg");
+        frame.setIconImage(icon.getImage());
 
 
     }
@@ -398,5 +451,28 @@ public class MononaraFrame {
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.EAST;
         panel4.add(pageLabel, gbc);
+        final JPanel panel5 = new JPanel();
+        panel5.setLayout(new GridBagLayout());
+        panelMain.addTab("Dictionnary", panel5);
+        comboBoxTagsDictionnary = new JComboBox();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel5.add(comboBoxTagsDictionnary, gbc);
+        final JScrollPane scrollPane1 = new JScrollPane();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        panel5.add(scrollPane1, gbc);
+        tableDictionnary = new JTable();
+        tableDictionnary.setAutoCreateRowSorter(false);
+        tableDictionnary.setFillsViewportHeight(true);
+        scrollPane1.setViewportView(tableDictionnary);
     }
 }

@@ -165,6 +165,39 @@
               </component>
             </children>
           </grid>
+          <grid id="4edb3" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Dictionnary"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ad5f9" class="javax.swing.JComboBox" binding="comboBoxTagsDictionnary">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties/>
+              </component>
+              <scrollpane id="a9aa">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="e7ede" class="javax.swing.JTable" binding="tableDictionnary">
+                    <constraints/>
+                    <properties>
+                      <autoCreateRowSorter value="false"/>
+                      <fillsViewportHeight value="true"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
         </children>
       </tabbedpane>
     </children>

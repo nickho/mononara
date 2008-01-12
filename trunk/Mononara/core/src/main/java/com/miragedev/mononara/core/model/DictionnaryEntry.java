@@ -1,6 +1,7 @@
 package com.miragedev.mononara.core.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
@@ -27,7 +28,7 @@ public class DictionnaryEntry {
 
     private String description;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Tag> tags;
 
     public long getId() {

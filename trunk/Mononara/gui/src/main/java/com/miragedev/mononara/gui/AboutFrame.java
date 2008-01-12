@@ -8,12 +8,15 @@ public class AboutFrame extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextArea LGPLMadeByNickhoTextArea;
+    private JLabel mononaraLabel;
 
     public AboutFrame() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        setLocationRelativeTo(this.getParent());
+        setTitle("Mononara - About");
+        setIconImage(new ImageIcon("images/ai-jpg.jpg").getImage());
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -114,6 +117,7 @@ public class AboutFrame extends JDialog {
         panel2.add(buttonCancel, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new GridBagLayout());
+        panel3.setFont(new Font(panel3.getFont().getName(), panel3.getFont().getStyle(), 28));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -121,16 +125,36 @@ public class AboutFrame extends JDialog {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         contentPane.add(panel3, gbc);
-        LGPLMadeByNickhoTextArea = new JTextArea();
-        LGPLMadeByNickhoTextArea.setFont(new Font(LGPLMadeByNickhoTextArea.getFont().getName(), LGPLMadeByNickhoTextArea.getFont().getStyle(), 28));
-        LGPLMadeByNickhoTextArea.setText("LGPL, Made by Nickho");
+        mononaraLabel = new JLabel();
+        mononaraLabel.setEnabled(true);
+        mononaraLabel.setFont(new Font(mononaraLabel.getFont().getName(), mononaraLabel.getFont().getStyle(), 28));
+        mononaraLabel.setHorizontalAlignment(0);
+        mononaraLabel.setText("Mononara");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        panel3.add(LGPLMadeByNickhoTextArea, gbc);
+        panel3.add(mononaraLabel, gbc);
+        final JLabel label1 = new JLabel();
+        label1.setText("Author: Nickho");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel3.add(label1, gbc);
+        final JLabel label2 = new JLabel();
+        label2.setFont(new Font(label2.getFont().getName(), label2.getFont().getStyle(), 28));
+        label2.setHorizontalAlignment(0);
+        label2.setText("The free Kanji learning platform");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel3.add(label2, gbc);
     }
 
     /**
