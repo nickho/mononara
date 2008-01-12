@@ -12,6 +12,7 @@
 
     <bean id="mononaraFrame" class="com.miragedev.mononara.gui.MononaraFrame">
         <property name="kanjiService" ref="kanjiService"/>
+        <property name="dictionnaryService" ref="dictionnaryService"/>
         <property name="mononaraService" ref="mononaraService"/>
         <property name="mononaraMenuFactory" ref="mononaraMenuFactory"/>
         <property name="learningMethod" ref="learningMethod"/>
@@ -89,7 +90,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="showSql" value="true"/>
+                <property name="showSql" value="false"/>
                 <property name="generateDdl" value="true"/>
                 <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
             </bean>

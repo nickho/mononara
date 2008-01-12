@@ -21,4 +21,8 @@ public interface DictionnaryEntryDao {
     public DictionnaryEntry update(DictionnaryEntry dictionnaryEntry);
 
     public void delete(DictionnaryEntry dictionnaryEntry);
+
+    public int size();
+
+    public DictionnaryEntry findByNumber(int number);
 }

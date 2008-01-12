@@ -53,15 +53,22 @@ public class DictionnaryServiceImpl implements DictionnaryService {
 
         for (DictionnaryEntry entry : list) {
             int index = -1;//fake one
-            do  {
-                index = entry.indexOf(knowledge.getKanji().getCharacter(),index + 1);
+            do {
+                index = entry.indexOf(knowledge.getKanji().getCharacter(), index + 1);
                 if (index >= 0) {
                     res.add(new ExamContext(knowledge, entry, index));
                 }
-            } while(index >= 0);
+            } while (index >= 0);
         }
         log.debug(knowledge.getKanji().getCharacter() + " => " + res.size() + " compounds");
         return res;
     }
 
+    public int getDictionnarySize() {
+        return dictionnaryEntryDao.size();
+    }
+
+    public DictionnaryEntry getEntryByNumber(long number) {
+        return dictionnaryEntryDao.findById(number);
+    }
 }

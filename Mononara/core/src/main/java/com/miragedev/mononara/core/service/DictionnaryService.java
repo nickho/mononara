@@ -1,6 +1,7 @@
 package com.miragedev.mononara.core.service;
 
 import com.miragedev.mononara.core.business.ExamContext;
+import com.miragedev.mononara.core.model.DictionnaryEntry;
 import com.miragedev.mononara.core.model.Knowledge;
 
 import java.util.Collection;
@@ -15,4 +16,8 @@ import java.util.Collection;
 public interface DictionnaryService {
 
     Collection<ExamContext> getContexts(Knowledge knowledge);
+
+    int getDictionnarySize();
+
+    DictionnaryEntry getEntryByNumber(long number);
 }

@@ -79,7 +79,6 @@ public class MononaraMenuFactory {
             public void actionPerformed(ActionEvent e) {
                 AboutFrame aboutFrame = new AboutFrame();
                 aboutFrame.pack();
-                aboutFrame.setLocation(aboutFrame.getParent().getLocation());
                 aboutFrame.setVisible(true);
             }
         });

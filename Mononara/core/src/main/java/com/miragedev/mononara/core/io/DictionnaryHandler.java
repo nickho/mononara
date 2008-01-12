@@ -19,6 +19,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.List;
+
 /**
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
@@ -26,13 +28,14 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class DictionnaryHandler extends DefaultHandler {
 
-    private Log log = LogFactory.getLog(KanjiHandler.class);
+    private Log log = LogFactory.getLog(DictionnaryHandler.class);
 
     private int parentId;
     boolean inKanji;
     boolean inKana;
     boolean inRomaji;
     boolean inTag;
+    boolean isNew;
     DictionnaryEntryDao dictionnaryEntryDao;
     TagDao tagDao;
 
@@ -54,10 +57,12 @@ public class DictionnaryHandler extends DefaultHandler {
         if (qName.equalsIgnoreCase("entry")) {
             parentId = Integer.parseInt(attributes.getValue("id"));
             DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            isNew = false;
             if (dictionnaryEntry == null) {
                 dictionnaryEntry = new DictionnaryEntry();
                 dictionnaryEntry.setId(parentId);
                 dictionnaryEntryDao.save(dictionnaryEntry);
+                isNew = true;
             }
         } else if (qName.equalsIgnoreCase("kanji")) {
             inKanji = true;
@@ -112,8 +117,15 @@ public class DictionnaryHandler extends DefaultHandler {
                 tagDao.save(tag);
                 log.info("tag (" + tagDao.findByCode(String.valueOf(ch, start, length)).getCode() + ") imported from dictionnary " + parentId);
             }
-            dictionnaryEntry.addTag(tag);
-            dictionnaryEntryDao.update(dictionnaryEntry);
+            if (isNew) {
+                List<Tag> tagsDictionnaryEntry = dictionnaryEntry.getTags();
+                if (tagsDictionnaryEntry == null || !tagsDictionnaryEntry.contains(tag)) {
+                    dictionnaryEntry.addTag(tag);
+                    dictionnaryEntryDao.update(dictionnaryEntry);
+                }
+            }
+
+
         }
     }
 }

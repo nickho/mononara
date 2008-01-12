@@ -21,6 +21,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.List;
+
 /**
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
@@ -32,6 +34,7 @@ public class KanjiHandler extends DefaultHandler {
     private int parentId;
     boolean inName;
     boolean inTag;
+    boolean isNew;
     KanjiDao kanjiDao;
     KnowledgeDao knowledgeDao;
     TagDao tagDao;
@@ -59,10 +62,12 @@ public class KanjiHandler extends DefaultHandler {
         if (qName.equalsIgnoreCase("kanji")) {
             parentId = Integer.parseInt(attributes.getValue("id"));
             Kanji kanji = kanjiDao.findById(parentId);
+            isNew = false;
             if (kanji == null) {
                 kanji = new Kanji();
                 kanji.setId(parentId);
                 kanjiDao.save(kanji);
+                isNew = true;
             }
         } else if (qName.equalsIgnoreCase("name")) {
             inName = true;
@@ -71,25 +76,6 @@ public class KanjiHandler extends DefaultHandler {
             inTag = true;
             inName = false;
         }
-    }
-
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        super.endElement(uri, localName, qName);    //To change body of overridden methods use File | Settings | File Templates.
-        //System.out.println("End of parsing: uri("+uri+") localName("+localName+") qName("+qName+")");
-        /*
-        if (qName.equalsIgnoreCase("kanji")) {
-            log.info("Add Kanji (" + parentId + ") ");
-            if (isNewKanji) {
-                kanjiDao.save(currentKanji);
-                Knowledge knowledge = new Knowledge();
-                knowledge.setCharacter(currentKanji);
-                knowledgeDao.save(knowledge);
-            } else {
-                kanjiDao.update(currentKanji);
-            }
-
-        }
-        */
     }
 
     public void characters(char ch[], int start, int length) throws SAXException {
@@ -111,12 +97,18 @@ public class KanjiHandler extends DefaultHandler {
                 tagDao.save(tag);
                 log.info("tag (" + tagDao.findByCode(String.valueOf(ch, start, length)).getCode() + ") imported from kanji " + parentId);
             }
-            kanji.addTag(tag);
-            Knowledge knowledge = new Knowledge();
-            knowledge.setKanji(kanji);
-            knowledge.setTag(tag);
-            knowledgeDao.save(knowledge);
-            kanjiDao.update(kanji);
+
+            if (isNew) {
+                List<Tag> tagsKanji = kanji.getTags();
+                if (tagsKanji == null || !tagsKanji.contains(tag)) {
+                    Knowledge knowledge = new Knowledge();
+                    knowledge.setKanji(kanji);
+                    knowledge.setTag(tag);
+                    knowledgeDao.save(knowledge);
+                    kanji.addTag(tag);
+                    kanjiDao.update(kanji);
+                }
+            }
         }
     }
 }
