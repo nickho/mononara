@@ -76,4 +76,12 @@ public class Kanji {
         }
         this.tags.add(tag);
     }
+
+    public boolean removeTag(Tag tag) {
+        if (tags == null) {
+            return false;
+        }
+        return this.tags.remove(tag);
+    }
+
 }

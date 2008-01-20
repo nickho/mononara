@@ -1,6 +1,6 @@
 /*****************************************
  *                                       *
- *  JBoss Portal: The OpenSource Portal  *
+ *  Mononara : The Kanji card reviewer   *
  *                                       *
  *   Distributable under LGPL license.   *
  *   See terms of license at gnu.org.    *
@@ -21,9 +21,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /**
+ * KanjiHandler
+ *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
  */
@@ -32,6 +36,7 @@ public class KanjiHandler extends DefaultHandler {
     private Log log = LogFactory.getLog(KanjiHandler.class);
 
     private int parentId;
+    private Vector<String> currentTagList;
     boolean inName;
     boolean inTag;
     boolean isNew;
@@ -63,6 +68,7 @@ public class KanjiHandler extends DefaultHandler {
             parentId = Integer.parseInt(attributes.getValue("id"));
             Kanji kanji = kanjiDao.findById(parentId);
             isNew = false;
+            currentTagList = new Vector<String>();
             if (kanji == null) {
                 kanji = new Kanji();
                 kanji.setId(parentId);
@@ -78,6 +84,33 @@ public class KanjiHandler extends DefaultHandler {
         }
     }
 
+    /**
+     * Need to empty the tags that are no longer used
+     *
+     * @param uri
+     * @param localName
+     * @param qName
+     * @throws SAXException
+     */
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        super.endElement(uri, localName, qName);    //To change body of overridden methods use File | Settings | File Templates.
+        if (qName.equalsIgnoreCase("kanji")) {
+            Kanji kanji = kanjiDao.findById(parentId);
+            List<Tag> tags = kanji.getTags();
+            List<Tag> tagsAfter = new ArrayList<Tag>();
+            for (Tag tag : tags) {
+                if (!currentTagList.contains(tag.getCode())) {
+                    knowledgeDao.delete(knowledgeDao.findByTagAndKanji(tag.getCode(), kanji));
+                    log.info("Deleted tag and Knowledge for (tag : " + tag.getCode() + ", kanji : " + kanji.getId() + ")");
+                } else {
+                    tagsAfter.add(tag);
+                }
+            }
+            kanji.setTags(tagsAfter);
+            kanjiDao.update(kanji);
+        }
+    }
+
     public void characters(char ch[], int start, int length) throws SAXException {
         super.characters(ch, start, length);    //To change body of overridden methods use File | Settings | File Templates.
         //System.out.println("Processing Chars ("+String.valueOf(ch, start, length)+")");
@@ -88,27 +121,30 @@ public class KanjiHandler extends DefaultHandler {
             kanjiDao.update(kanji);
         } else if (inTag) {
             inTag = false;
+            currentTagList.add(String.valueOf(ch, start, length));
             Tag tag = tagDao.findByCode(String.valueOf(ch, start, length));
             Kanji kanji = kanjiDao.findById(parentId);
             if (tag == null) {
-                log.info("tag (" + String.valueOf(ch, start, length) + ") importing from kanji " + parentId);
+                log.info("tag (" + String.valueOf(ch, start, length) + ") importing for kanji " + parentId);
                 tag = new Tag();
                 tag.setCode(String.valueOf(ch, start, length));
                 tagDao.save(tag);
-                log.info("tag (" + tagDao.findByCode(String.valueOf(ch, start, length)).getCode() + ") imported from kanji " + parentId);
+                log.info("tag (" + tagDao.findByCode(String.valueOf(ch, start, length)).getCode() + ") imported for kanji " + parentId);
             }
 
-            if (isNew) {
-                List<Tag> tagsKanji = kanji.getTags();
-                if (tagsKanji == null || !tagsKanji.contains(tag)) {
-                    Knowledge knowledge = new Knowledge();
-                    knowledge.setKanji(kanji);
-                    knowledge.setTag(tag);
-                    knowledgeDao.save(knowledge);
-                    kanji.addTag(tag);
-                    kanjiDao.update(kanji);
-                }
+            //if (isNew) {
+            List<Tag> tagsKanji = kanji.getTags();
+            if (tagsKanji == null || !tagsKanji.contains(tag)) {
+                log.info("Adding a new Knowledge,Tag to kanji (" + kanji.getId() + "," + tag.getCode() + ")");
+                Knowledge knowledge = new Knowledge();
+                knowledge.setKanji(kanji);
+                knowledge.setTag(tag);
+                knowledgeDao.save(knowledge);
+                kanji.addTag(tag);
+                kanjiDao.update(kanji);
             }
+            //}
+
         }
     }
 }

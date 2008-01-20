@@ -25,10 +25,10 @@ public class Knowledge {
 
     private float lastTestSuccess;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Kanji kanji;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Tag tag;
 
 

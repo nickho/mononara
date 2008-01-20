@@ -25,4 +25,19 @@ public class Tag {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tag tag = (Tag) o;
+
+        if (!code.equals(tag.code)) return false;
+
+        return true;
+    }
+
+    public int hashCode() {
+        return code.hashCode();
+    }
 }

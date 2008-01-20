@@ -5,7 +5,6 @@ import com.miragedev.mononara.core.business.Exam;
 import com.miragedev.mononara.core.business.ExamContext;
 import com.miragedev.mononara.core.business.LearningMethod;
 import com.miragedev.mononara.core.model.Knowledge;
-import com.miragedev.mononara.core.model.Tag;
 import com.miragedev.mononara.core.service.DictionnaryService;
 import com.miragedev.mononara.core.service.KanjiService;
 import com.miragedev.mononara.core.service.MononaraService;
@@ -87,6 +86,7 @@ public class MononaraFrame {
     }
 
     public void startMononara() {
+        log.info("Mononara starting");
         // Create the window
         frame = new JFrame();
         frame.getContentPane().add(panelMain);
@@ -178,7 +178,7 @@ public class MononaraFrame {
         //Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().getBounds();
         GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Rectangle bounds = env.getMaximumWindowBounds();
-        frame.setSize((int)bounds.getWidth(), (int) bounds.getHeight());
+        frame.setSize((int) bounds.getWidth(), (int) bounds.getHeight());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
@@ -186,8 +186,8 @@ public class MononaraFrame {
         frame.setTitle("Mononara");
         ImageIcon icon = new ImageIcon("images/ai-icon.jpg");
         frame.setIconImage(icon.getImage());
-
-
+        refreshStudyList();
+        log.info("Mononara started");
     }
 
     private void tagsComboBox_ActionPerformed() {
@@ -207,12 +207,13 @@ public class MononaraFrame {
             //nbv*nbh = listKnowledge.size();
             //int nbv = (int) (listKnowledge.size() / nbh) + 1;
             //x2*listKnowledge.size()  + sizePanel.width * x - sizePanel.height * sizePanel.width = 0;
-            int delta = sizePanel.width * sizePanel.width + 4 * listKnowledge.size() * sizePanel.height * sizePanel.width;
-            log.debug("delta : "+delta + ", racine delta : "+Math.sqrt(delta));
-            int buttonSize = (int)(- sizePanel.width  + Math.sqrt(delta)) / (2 * listKnowledge.size());
-            toggleButton.setPreferredSize(new Dimension(buttonSize-6, buttonSize-6));
-            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), buttonSize / 2));
-            log.debug("size : "+buttonSize);
+            long delta = (long) sizePanel.width * (long) sizePanel.width + (long) 4 * (long) listKnowledge.size() * (long) sizePanel.height * (long) sizePanel.width;
+            //log.debug("delta : " + delta + ", racine delta : " + Math.sqrt(delta));
+            int buttonSize = (int) (-sizePanel.width + Math.sqrt(delta)) / (2 * listKnowledge.size());
+            toggleButton.setPreferredSize(new Dimension(buttonSize - 6, buttonSize - 6));
+            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), (buttonSize - 6) / 2));
+            //toggleButton.setMargin(new Insets(1, 1, 1, 1));
+            //log.debug("size : " + buttonSize);
             int fadingLvl = (int) learningMethod.computeFadingLvl(knowledge);
             int red = 0;
             int green = 0;
@@ -241,8 +242,6 @@ public class MononaraFrame {
             //toggleButton.setForeground(foregroundColor);
 
 
-
-
             toggleButton.addItemListener(new ItemListener() {
                 public void itemStateChanged(ItemEvent event) {
                     if (event.getStateChange() == ItemEvent.SELECTED) {
@@ -263,12 +262,13 @@ public class MononaraFrame {
     }
 
     private void refreshTagList() {
-        List<Tag> listTag = kanjiService.findAllTags();
-        log.info("Found " + listTag.size() + " tags in the database.");
-        tagsComboBox.removeAllItems();
-        for (Tag tag : listTag) {
-            tagsComboBox.addItem(tag.getCode());
-        }
+        //List<Tag> listTag = kanjiService.findAllTags();
+        //log.info("Found " + listTag.size() + " tags in the database.");
+        //tagsComboBox.removeAllItems();
+        //for (Tag tag : listTag) {
+        //    tagsComboBox.addItem(tag.getCode());
+        //}
+        tagsComboBox.setSelectedIndex(0);
     }
 
     private void goTestButton_ActionPerformed() {
@@ -375,6 +375,12 @@ public class MononaraFrame {
         panel2.add(studyListPane, gbc);
         studyListPane.setBorder(BorderFactory.createTitledBorder("Choix des kaniji a tester"));
         tagsComboBox = new JComboBox();
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        defaultComboBoxModel1.addElement("jlpt_4");
+        defaultComboBoxModel1.addElement("jlpt_3");
+        defaultComboBoxModel1.addElement("jlpt_2");
+        defaultComboBoxModel1.addElement("jlpt_1");
+        tagsComboBox.setModel(defaultComboBoxModel1);
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 0;
