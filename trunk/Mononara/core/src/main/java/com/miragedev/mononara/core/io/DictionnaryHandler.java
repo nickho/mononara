@@ -1,6 +1,6 @@
 /*****************************************
  *                                       *
- *  JBoss Portal: The OpenSource Portal  *
+ *  Mononara : The Kanji card reviewer   *
  *                                       *
  *   Distributable under LGPL license.   *
  *   See terms of license at gnu.org.    *
@@ -22,9 +22,10 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.List;
 
 /**
+ * DictionnaryHandle
+ *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement the parsing for kanjis
  */
 public class DictionnaryHandler extends DefaultHandler {
 
@@ -57,13 +58,17 @@ public class DictionnaryHandler extends DefaultHandler {
         if (qName.equalsIgnoreCase("entry")) {
             parentId = Integer.parseInt(attributes.getValue("id"));
             DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
-            isNew = false;
-            if (dictionnaryEntry == null) {
-                dictionnaryEntry = new DictionnaryEntry();
-                dictionnaryEntry.setId(parentId);
-                dictionnaryEntryDao.save(dictionnaryEntry);
-                isNew = true;
+            if (dictionnaryEntry != null) {
+                dictionnaryEntryDao.delete(dictionnaryEntry);
             }
+            //isNew = false;
+            //if (dictionnaryEntry == null) {
+            dictionnaryEntry = new DictionnaryEntry();
+            dictionnaryEntry.setId(parentId);
+            dictionnaryEntryDao.save(dictionnaryEntry);
+            isNew = true;
+            //}
+
         } else if (qName.equalsIgnoreCase("kanji")) {
             inKanji = true;
             inKana = false;
@@ -91,11 +96,11 @@ public class DictionnaryHandler extends DefaultHandler {
         super.characters(ch, start, length);
         if (inKanji) {
             inKanji = false;
-            log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") importing from dictionnary " + parentId);
+            //log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") importing from dictionnary " + parentId);
             DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
             dictionnaryEntry.setSpellingInKanji(String.valueOf(ch, start, length));
             dictionnaryEntryDao.update(dictionnaryEntry);
-            log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") imported from dictionnary " + parentId);
+            //log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") imported from dictionnary " + parentId);
         } else if (inKana) {
             inKana = false;
             DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
@@ -124,8 +129,6 @@ public class DictionnaryHandler extends DefaultHandler {
                     dictionnaryEntryDao.update(dictionnaryEntry);
                 }
             }
-
-
         }
     }
 }
