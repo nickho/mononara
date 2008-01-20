@@ -19,10 +19,10 @@
     </bean>
 
     <bean id="mononaraMenuFactory" class="com.miragedev.mononara.gui.MononaraMenuFactory">
-        <property name="kanjiUri" value="http://kanji.radde.org/services/kanji.php"/>
-        <!--<property name="kanjiUri" value="file:///E:/Dev/Mononara/gui/target/classes/kanji.xml"/>-->
-        <property name="dictionnaryUri" value="http://kanji.radde.org/services/dictionnary.php"/>
-        <!--<property name="dictionnaryUri" value="file:///E:/Dev/Mononara/gui/target/classes/dictionnary.xml"/>-->
+        <!--<property name="kanjiUri" value="http://kanji.radde.org/services/kanji.php"/>-->
+        <property name="kanjiUri" value="file:///C:/Dev/Mononara/gui/target/classes/kanji.xml"/>
+        <!--<property name="dictionnaryUri" value="http://kanji.radde.org/services/dictionnary.php"/> -->
+        <property name="dictionnaryUri" value="file:///C:/Dev/Mononara/gui/target/classes/dictionnary.xml"/>
         <property name="mononaraService" ref="mononaraService"/>
     </bean>
 

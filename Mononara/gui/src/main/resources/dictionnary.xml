@@ -69,4 +69,711 @@
       <tag>grade_1</tag>
     </tags>
   </entry>
+  <entry id="27">
+    <kanji>日曜日</kanji>
+    <kana>にち.よう.び</kana>
+    <romaji>nichi.yoo.bi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="13">
+    <kanji>音楽</kanji>
+    <kana>おん.がく</kana>
+    <romaji>on.gaku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="3">
+    <kanji>朝</kanji>
+    <kana>あさ</kana>
+    <romaji>asa</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="4">
+    <kanji>夜</kanji>
+    <kana>よる</kana>
+    <romaji>yoru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="6">
+    <kanji>小さい</kanji>
+    <kana>ちい.さ.い</kana>
+    <romaji>chii.sa.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="7">
+    <kanji>書く</kanji>
+    <kana>か.く</kana>
+    <romaji>kaku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="14">
+    <kanji>電気</kanji>
+    <kana>でん.き</kana>
+    <romaji>den.ki</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="15">
+    <kanji>天気</kanji>
+    <kana>てん.き</kana>
+    <romaji>ten.ki</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="16">
+    <kanji>学校</kanji>
+    <kana>がっ.こう</kana>
+    <romaji>gak.kou</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="17">
+    <kanji>体</kanji>
+    <kana>からだ</kana>
+    <romaji>karada</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="18">
+    <kanji>目</kanji>
+    <kana>め</kana>
+    <romaji>me</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="20">
+    <kanji>聞く</kanji>
+    <kana>き.く</kana>
+    <romaji>ki.ku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="21">
+    <kanji>見る</kanji>
+    <kana>み.る</kana>
+    <romaji>mi.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="22">
+    <kanji>食べる</kanji>
+    <kana>た.べ.る</kana>
+    <romaji>ta.be.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="23">
+    <kanji>来る</kanji>
+    <kana>く.る</kana>
+    <romaji>ku.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="24">
+    <kanji>帰る</kanji>
+    <kana>かえ.る</kana>
+    <romaji>kae.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="26">
+    <kanji>会う</kanji>
+    <kana>あ.う</kana>
+    <romaji>au</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="28">
+    <kanji>下手</kanji>
+    <kana>へ.た</kana>
+    <romaji>he.ta</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="29">
+    <kanji>上手</kanji>
+    <kana>じょう.ず</kana>
+    <romaji>joo.zu</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="33">
+    <kanji>出口</kanji>
+    <kana>で.ぐち</kana>
+    <romaji>de.guchi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="32">
+    <kanji>本</kanji>
+    <kana>ほん</kana>
+    <romaji>hon</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="34">
+    <kanji>有名</kanji>
+    <kana>ゆう.めい</kana>
+    <romaji>yuu.mei</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="35">
+    <kanji>名前</kanji>
+    <kana>な.まえ</kana>
+    <romaji>na.mae</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="41">
+    <kanji>水曜日</kanji>
+    <kana>すい.よう.び</kana>
+    <romaji>sui.yo.bi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="42">
+    <kanji>大人</kanji>
+    <kana>お.とな</kana>
+    <romaji>o.tona</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="46">
+    <kanji>青</kanji>
+    <kana>あ.お</kana>
+    <romaji>a.o</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="47">
+    <kanji>青い</kanji>
+    <kana>あお.い</kana>
+    <romaji>ao.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="48">
+    <kanji>赤</kanji>
+    <kana>あか</kana>
+    <romaji>aka</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="49">
+    <kanji>赤い</kanji>
+    <kana>あか.い</kana>
+    <romaji>aka.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="50">
+    <kanji>明るい</kanji>
+    <kana>あか.る.い</kana>
+    <romaji>aka.ru.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="51">
+    <kanji>秋</kanji>
+    <kana>あき</kana>
+    <romaji>aki</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="52">
+    <kanji>上げる</kanji>
+    <kana>あ.げ.る</kana>
+    <romaji>a.ge.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="53">
+    <kanji>朝御飯</kanji>
+    <kana>あさ.ご.はん</kana>
+    <romaji>asa.go.han</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="54">
+    <kanji>あさって</kanji>
+    <kana>あ.さ.っ.て</kana>
+    <romaji>a.sa.t.te</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="55">
+    <kanji>足</kanji>
+    <kana>あし</kana>
+    <romaji>ashi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="56">
+    <kanji>遊ぶ</kanji>
+    <kana>あそ.ぶ</kana>
+    <romaji>aso.bu</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="57">
+    <kanji>暖かい</kanji>
+    <kana>あたた.か.い</kana>
+    <romaji>atata.ka.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="58">
+    <kanji>頭</kanji>
+    <kana>あたま</kana>
+    <romaji>atama</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="59">
+    <kanji>新しい</kanji>
+    <kana>あたら.し.い</kana>
+    <romaji>atara.shi.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="60">
+    <kanji>暑い</kanji>
+    <kana>あつ.い</kana>
+    <romaji>atsu.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="61">
+    <kanji>熱い</kanji>
+    <kana>あつい</kana>
+    <romaji>atsu.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="62">
+    <kanji>厚い</kanji>
+    <kana>あつ.い</kana>
+    <romaji>atsu.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="63">
+    <kanji>後</kanji>
+    <kana>あと</kana>
+    <romaji>ato</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="64">
+    <kanji>あなた</kanji>
+    <kana>あ.な.た</kana>
+    <romaji>a.na.ta</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="65">
+    <kanji>兄</kanji>
+    <kana>あに</kana>
+    <romaji>ani</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="66">
+    <kanji>姉</kanji>
+    <kana>あね</kana>
+    <romaji>ane</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="67">
+    <kanji>アパート</kanji>
+    <kana>ア.パ.ー.ト</kana>
+    <romaji>a.po.t.to</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="68">
+    <kanji>あびる</kanji>
+    <kana>あ.び.る</kana>
+    <romaji>a.bi.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="69">
+    <kanji>危ない</kanji>
+    <kana>あぶ.な.い</kana>
+    <romaji>abu.na.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="70">
+    <kanji>甘い</kanji>
+    <kana>あま.い</kana>
+    <romaji>ama.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="71">
+    <kanji>あまり</kanji>
+    <kana>あ.ま.り</kana>
+    <romaji>a.ma.ri</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="72">
+    <kanji>飴</kanji>
+    <kana>あめ</kana>
+    <romaji>ame</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="73">
+    <kanji>洗う</kanji>
+    <kana>あら.う</kana>
+    <romaji>aru.u</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="74">
+    <kanji>歩く</kanji>
+    <kana>ある.く</kana>
+    <romaji>aru.ku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="75">
+    <kanji>言う</kanji>
+    <kana>い.う</kana>
+    <romaji>i.u</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="76">
+    <kanji>家</kanji>
+    <kana>いえ</kana>
+    <romaji>ie</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="77">
+    <kanji>行く</kanji>
+    <kana>い.く</kana>
+    <romaji>i.ku</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="78">
+    <kanji>池</kanji>
+    <kana>いけ</kana>
+    <romaji>ike</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="79">
+    <kanji>医者</kanji>
+    <kana>い.しゃ</kana>
+    <romaji>i.sha</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="80">
+    <kanji>忙しい</kanji>
+    <kana>いそが.し.い</kana>
+    <romaji>isoga.shi.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="81">
+    <kanji>痛い</kanji>
+    <kana>いた.い</kana>
+    <romaji>ita.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="82">
+    <kanji>一</kanji>
+    <kana>いち</kana>
+    <romaji>ichi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="83">
+    <kanji>一日</kanji>
+    <kana>いち.にち</kana>
+    <romaji>ichi.nichi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="84">
+    <kanji>五日</kanji>
+    <kana>いつ.か</kana>
+    <romaji>istu.ka</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="85">
+    <kanji>一緒</kanji>
+    <kana>いっ.しょ</kana>
+    <romaji>is.sho</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="86">
+    <kanji>五つ</kanji>
+    <kana>いつ.つ</kana>
+    <romaji>itsu.tsu</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="87">
+    <kanji>犬</kanji>
+    <kana>いぬ</kana>
+    <romaji>inu</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="88">
+    <kanji>今</kanji>
+    <kana>いま</kana>
+    <romaji>ima</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="89">
+    <kanji>意味</kanji>
+    <kana>い.み</kana>
+    <romaji>i.mi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="90">
+    <kanji>妹</kanji>
+    <kana>いもうと</kana>
+    <romaji>imouto</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="91">
+    <kanji>嫌</kanji>
+    <kana>いや</kana>
+    <romaji>iya</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="92">
+    <kanji>入口</kanji>
+    <kana>いり.ぐち</kana>
+    <romaji>iri.guchi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="93">
+    <kanji>居る</kanji>
+    <kana>い.る</kana>
+    <romaji>i.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="94">
+    <kanji>要.る</kanji>
+    <kana>い.る</kana>
+    <romaji>i.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="95">
+    <kanji>入.れる</kanji>
+    <kana>い.れ.る</kana>
+    <romaji>i.re.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="96">
+    <kanji>色</kanji>
+    <kana>いろ</kana>
+    <romaji>iru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="97">
+    <kanji>上</kanji>
+    <kana>うえ</kana>
+    <romaji>ue</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="98">
+    <kanji>後ろ</kanji>
+    <kana>うし.ろ</kana>
+    <romaji>ushi.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="99">
+    <kanji>薄い</kanji>
+    <kana>うす.い</kana>
+    <romaji>usu.i</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="100">
+    <kanji>歌</kanji>
+    <kana>うた</kana>
+    <romaji>uta</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="101">
+    <kanji>歌う</kanji>
+    <kana>うた.う</kana>
+    <romaji>uta.u</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="102">
+    <kanji>生まれる</kanji>
+    <kana>う.ま.れ.る</kana>
+    <romaji>u.ma.re.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </entry>
+  <entry id="103">
+    <kanji>海</kanji>
+    <kana>うみ</kana>
+    <romaji>umi</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="104">
+    <kanji>売る</kanji>
+    <kana>う.る</kana>
+    <romaji>u.ru</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
+  <entry id="105">
+    <kanji>上着</kanji>
+    <kana>う.わぎ</kana>
+    <romaji>u.waki</romaji>
+    <tags>
+      <tag>jlpt_4</tag>
+    </tags>
+  </entry>
 </dictionnary>
