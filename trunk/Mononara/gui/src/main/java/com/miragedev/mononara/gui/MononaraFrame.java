@@ -98,7 +98,7 @@ public class MononaraFrame {
         DictionnaryTableModel tableModel = new DictionnaryTableModel(dictionnaryService);
         tableDictionnary.setModel(tableModel);
         TableRowSorter<DictionnaryTableModel> sorter = new TableRowSorter<DictionnaryTableModel>(tableModel);
-        RowFilter<DictionnaryTableModel, Object> rf = null;
+        RowFilter<DictionnaryTableModel, Object> rf;
         //If current expression doesn't parse, don't update.
         try {
             rf = RowFilter.regexFilter("NULL", 0);
@@ -175,11 +175,14 @@ public class MononaraFrame {
 
         //Showing time
         refreshTagList();
-        frame.setSize(640, 480);
+        //Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().getBounds();
+        GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        Rectangle bounds = env.getMaximumWindowBounds();
+        frame.setSize((int)bounds.getWidth(), (int) bounds.getHeight());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().getBounds();
-        frame.setLocation((int) ((bounds.getWidth() - frame.getWidth()) / 2), (int) ((bounds.getHeight() - frame.getHeight()) / 2));
+
+        //frame.setLocation((int) ((bounds.getWidth() - frame.getWidth()) / 2), (int) ((bounds.getHeight() - frame.getHeight()) / 2));
         frame.setTitle("Mononara");
         ImageIcon icon = new ImageIcon("images/ai-icon.jpg");
         frame.setIconImage(icon.getImage());
@@ -197,7 +200,19 @@ public class MononaraFrame {
         studyListPane.removeAll();
         for (final Knowledge knowledge : listKnowledge) {
             JToggleButton toggleButton = new JToggleButton(knowledge.getKanji().getCharacter());
-            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), 26));
+            //toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), 26));
+            Dimension sizePanel = studyListPane.getSize();
+            //(x*nbh)= sizePanel.width;
+            //(x*nbv)= sizePanel.height;
+            //nbv*nbh = listKnowledge.size();
+            //int nbv = (int) (listKnowledge.size() / nbh) + 1;
+            //x2*listKnowledge.size()  + sizePanel.width * x - sizePanel.height * sizePanel.width = 0;
+            int delta = sizePanel.width * sizePanel.width + 4 * listKnowledge.size() * sizePanel.height * sizePanel.width;
+            log.debug("delta : "+delta + ", racine delta : "+Math.sqrt(delta));
+            int buttonSize = (int)(- sizePanel.width  + Math.sqrt(delta)) / (2 * listKnowledge.size());
+            toggleButton.setPreferredSize(new Dimension(buttonSize-6, buttonSize-6));
+            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), buttonSize / 2));
+            log.debug("size : "+buttonSize);
             int fadingLvl = (int) learningMethod.computeFadingLvl(knowledge);
             int red = 0;
             int green = 0;
@@ -224,6 +239,8 @@ public class MononaraFrame {
                 toggleButton.setBackground(new Color(red, green, blue));
             }
             //toggleButton.setForeground(foregroundColor);
+
+
 
 
             toggleButton.addItemListener(new ItemListener() {
