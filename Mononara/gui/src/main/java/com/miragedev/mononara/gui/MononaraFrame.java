@@ -39,15 +39,15 @@ public class MononaraFrame {
     private JPanel studyListPane;
     private JComboBox tagsComboBox;
     private JTextField userSpellingTestTextField;
-    private JButton nextTestButton;
+    private JButton testButton;
     private JEditorPane commentTestTextPane;
     private JLabel contextTestLabel;
     private JButton refreshButton;
     private JList basketList;
-    private JButton goTestButton;
     private JLabel pageLabel;
     private JTable tableDictionnary;
     private JComboBox comboBoxTagsDictionnary;
+    private JPanel testPane;
     private JFrame frame;
 
     private Basket basket;
@@ -146,6 +146,9 @@ public class MononaraFrame {
         });
         */
 
+        //set the default button for the tests
+        frame.getRootPane().setDefaultButton(testButton);
+
 
         tagsComboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -162,14 +165,9 @@ public class MononaraFrame {
                 refreshButton_ActionPerformed();
             }
         });
-        nextTestButton.addActionListener(new ActionListener() {
+        testButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                nextTestButton_ActionPerformed();
-            }
-        });
-        goTestButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                goTestButton_ActionPerformed();
+                testButton_ActionPerformed();
             }
         });
 
@@ -271,59 +269,55 @@ public class MononaraFrame {
         tagsComboBox.setSelectedIndex(0);
     }
 
-    private void goTestButton_ActionPerformed() {
-        if (test.test(userSpellingTestTextField.getText())) {
-            commentTestTextPane.setText("<html><p align=center>OK!!!</p></html>");
+    private void testButton_ActionPerformed() {
+        if (testButton.getText().equals("Next")) {
+            commentTestTextPane.setText("");
+            userSpellingTestTextField.setText("");
+            ExamContext examContext = test.getContextTest();
+            int pos = examContext.getKnowledgePos();
+            StringBuffer contextText = new StringBuffer();
+            contextText.append("<html><p align=center>");
+            contextText.append("<font size=26>");
+            contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(0, pos));
+            contextText.append("</font>");
+            contextText.append("<font size=26 color=red>");
+            contextText.append(examContext.getKnowledge().getKanji().getCharacter());
+            contextText.append("</font>");
+            contextText.append("<font size=26>");
+            contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(pos + 1));
+            contextText.append("</font></p>");
+            contextText.append("</html>");
+            contextTestLabel.setText(contextText.toString());
+            pageLabel.setText("<html><p align=right><font size=+1>" + (test.getPosition() + 1) + "/" + test.size() + "</font></p></html>");
+            testButton.setText("Go");
+            testButton.setVisible(true);
         } else {
-            int knowledgePos = test.getContextTest().getKnowledgePos();
-            String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
-            commentTestTextPane.setText("<html><p align=center>Faux!!!</p><br/><br><br><p align=center><b><font size=26>" + spellings.split("\\.")[knowledgePos] + "</font></b></p></html>");
+            if (test.test(userSpellingTestTextField.getText())) {
+                commentTestTextPane.setText("<html><p align=center>OK!!!</p></html>");
+            } else {
+                int knowledgePos = test.getContextTest().getKnowledgePos();
+                String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
+                commentTestTextPane.setText("<html><p align=center>Faux!!!</p><br/><br><br><p align=center><b><font size=26>" + spellings.split("\\.")[knowledgePos] + "</font></b></p></html>");
+            }
+            if (test.next()) {
+                //testButton.setText("Next");
+            } else {
+                mononaraService.saveExamResults(test.getResults());
+                commentTestTextPane.setText(commentTestTextPane.getText());
+                testButton.setVisible(false);
+                basket.empty();
+                refreshStudyList();
+                //panelMain.setSelectedIndex(0);
+            }
+            testButton.setText("Next");
         }
-        if (test.next()) {
-            goTestButton.setVisible(false);
-            nextTestButton.setVisible(true);
-        } else {
-            mononaraService.saveExamResults(test.getResults());
-            commentTestTextPane.setText(commentTestTextPane.getText());
-            goTestButton.setVisible(false);
-            nextTestButton.setVisible(false);
-            basket.empty();
-            refreshStudyList();
-            panelMain.setSelectedIndex(0);
-        }
-
-
-    }
-
-    private void nextTestButton_ActionPerformed() {
-        commentTestTextPane.setText("");
-        userSpellingTestTextField.setText("");
-        ExamContext examContext = test.getContextTest();
-        int pos = examContext.getKnowledgePos();
-        StringBuffer contextText = new StringBuffer();
-        contextText.append("<html><p align=center>");
-        contextText.append("<font size=26>");
-        contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(0, pos));
-        contextText.append("</font>");
-        contextText.append("<font size=26 color=red>");
-        contextText.append(examContext.getKnowledge().getKanji().getCharacter());
-        contextText.append("</font>");
-        contextText.append("<font size=26>");
-        contextText.append(examContext.getDictionnaryEntry().getSpellingInKanji().substring(pos + 1));
-        contextText.append("</font></p>");
-        contextText.append("</html>");
-        contextTestLabel.setText(contextText.toString());
-        pageLabel.setText("<html><p align=right><font size=+1>" + (test.getPosition() + 1) + "/" + test.size() + "</font></p></html>");
-
-        goTestButton.setVisible(true);
-        nextTestButton.setVisible(false);
     }
 
     private void startButton_ActionPerformed() {
         test = mononaraService.startExam(basket);
         if (test.size() != 0) {
             panelMain.setSelectedIndex(2);
-            nextTestButton_ActionPerformed();
+            testButton_ActionPerformed();
         }
     }
 
@@ -415,6 +409,8 @@ public class MononaraFrame {
         basketList.setLayoutOrientation(2);
         final DefaultListModel defaultListModel1 = new DefaultListModel();
         basketList.setModel(defaultListModel1);
+        basketList.setValueIsAdjusting(true);
+        basketList.setVisibleRowCount(1);
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -422,9 +418,9 @@ public class MononaraFrame {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         panel3.add(basketList, gbc);
-        final JPanel panel4 = new JPanel();
-        panel4.setLayout(new GridBagLayout());
-        panelMain.addTab("Test", panel4);
+        testPane = new JPanel();
+        testPane.setLayout(new GridBagLayout());
+        panelMain.addTab("Test", testPane);
         userSpellingTestTextField = new JTextField();
         userSpellingTestTextField.setColumns(10);
         userSpellingTestTextField.setFont(new Font(userSpellingTestTextField.getFont().getName(), userSpellingTestTextField.getFont().getStyle(), 18));
@@ -432,7 +428,7 @@ public class MononaraFrame {
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 5;
-        panel4.add(userSpellingTestTextField, gbc);
+        testPane.add(userSpellingTestTextField, gbc);
         commentTestTextPane = new JEditorPane();
         commentTestTextPane.setContentType("text/html");
         commentTestTextPane.setEditable(false);
@@ -443,7 +439,7 @@ public class MononaraFrame {
         gbc.gridwidth = 5;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        panel4.add(commentTestTextPane, gbc);
+        testPane.add(commentTestTextPane, gbc);
         contextTestLabel = new JLabel();
         contextTestLabel.setFont(new Font(contextTestLabel.getFont().getName(), contextTestLabel.getFont().getStyle(), contextTestLabel.getFont().getSize()));
         contextTestLabel.setText("No test started");
@@ -451,21 +447,16 @@ public class MononaraFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 5;
-        panel4.add(contextTestLabel, gbc);
-        nextTestButton = new JButton();
-        nextTestButton.setText("Next");
-        nextTestButton.setVisible(false);
+        testPane.add(contextTestLabel, gbc);
+        testButton = new JButton();
+        testButton.setDefaultCapable(true);
+        testButton.setText("Next");
+        testButton.setVisible(false);
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
         gbc.gridy = 2;
-        panel4.add(nextTestButton, gbc);
-        goTestButton = new JButton();
-        goTestButton.setText("Go");
-        goTestButton.setVisible(false);
-        gbc = new GridBagConstraints();
-        gbc.gridx = 4;
-        gbc.gridy = 2;
-        panel4.add(goTestButton, gbc);
+        gbc.gridwidth = 2;
+        testPane.add(testButton, gbc);
         pageLabel = new JLabel();
         pageLabel.setFont(new Font(pageLabel.getFont().getName(), pageLabel.getFont().getStyle(), pageLabel.getFont().getSize()));
         pageLabel.setText("?/?");
@@ -473,17 +464,17 @@ public class MononaraFrame {
         gbc.gridx = 4;
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.EAST;
-        panel4.add(pageLabel, gbc);
-        final JPanel panel5 = new JPanel();
-        panel5.setLayout(new GridBagLayout());
-        panelMain.addTab("Dictionnary", panel5);
+        testPane.add(pageLabel, gbc);
+        final JPanel panel4 = new JPanel();
+        panel4.setLayout(new GridBagLayout());
+        panelMain.addTab("Dictionnary", panel4);
         comboBoxTagsDictionnary = new JComboBox();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel5.add(comboBoxTagsDictionnary, gbc);
+        panel4.add(comboBoxTagsDictionnary, gbc);
         final JScrollPane scrollPane1 = new JScrollPane();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -492,7 +483,7 @@ public class MononaraFrame {
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        panel5.add(scrollPane1, gbc);
+        panel4.add(scrollPane1, gbc);
         tableDictionnary = new JTable();
         tableDictionnary.setAutoCreateRowSorter(false);
         tableDictionnary.setFillsViewportHeight(true);
