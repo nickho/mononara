@@ -182,7 +182,7 @@ public class MononaraFrame {
 
         //frame.setLocation((int) ((bounds.getWidth() - frame.getWidth()) / 2), (int) ((bounds.getHeight() - frame.getHeight()) / 2));
         frame.setTitle("Mononara");
-        ImageIcon icon = new ImageIcon("images/ai-icon.jpg");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/ai-icon.jpg"));
         frame.setIconImage(icon.getImage());
         refreshStudyList();
         log.info("Mononara started");
@@ -225,8 +225,8 @@ public class MononaraFrame {
                 blue = 50 + (int) (150 * knowledge.getLastTestSuccess());
                 green = 100;
             }
-            if (fadingLvl > 1) {
-                log.info("knowledge " + knowledge.getKanji() + " : (" + red + "," + green + "," + blue + ")");
+            if (fadingLvl >= 1) {
+                //log.info("knowledge " + knowledge.getKanji().getId() + " : (" + red + "," + green + "," + blue + ") " + fadingLvl);
                 green = Math.min(255, green * fadingLvl);
                 red = Math.min(255, (red + 50) * fadingLvl);
                 blue = Math.min(255, (blue + 50) * fadingLvl);
@@ -271,6 +271,7 @@ public class MononaraFrame {
 
     private void testButton_ActionPerformed() {
         if (testButton.getText().equals("Next")) {
+
             commentTestTextPane.setText("");
             userSpellingTestTextField.setText("");
             ExamContext examContext = test.getContextTest();
@@ -289,6 +290,7 @@ public class MononaraFrame {
             contextText.append("</html>");
             contextTestLabel.setText(contextText.toString());
             pageLabel.setText("<html><p align=right><font size=+1>" + (test.getPosition() + 1) + "/" + test.size() + "</font></p></html>");
+            testButton.setEnabled(true);
             testButton.setText("Go");
             testButton.setVisible(true);
         } else {
@@ -305,6 +307,7 @@ public class MononaraFrame {
                 mononaraService.saveExamResults(test.getResults());
                 commentTestTextPane.setText(commentTestTextPane.getText());
                 testButton.setVisible(false);
+                testButton.setEnabled(false);
                 basket.empty();
                 refreshStudyList();
                 //panelMain.setSelectedIndex(0);
