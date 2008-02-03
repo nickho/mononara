@@ -35,6 +35,7 @@ public class DictionnaryHandler extends DefaultHandler {
     boolean inKanji;
     boolean inKana;
     boolean inRomaji;
+    boolean inDescription;
     boolean inTag;
     boolean isNew;
     DictionnaryEntryDao dictionnaryEntryDao;
@@ -73,21 +74,31 @@ public class DictionnaryHandler extends DefaultHandler {
             inKanji = true;
             inKana = false;
             inRomaji = false;
+            inDescription = false;
             inTag = false;
         } else if (qName.equalsIgnoreCase("kana")) {
             inKanji = false;
             inKana = true;
             inRomaji = false;
+            inDescription = false;
             inTag = false;
         } else if (qName.equalsIgnoreCase("romaji")) {
             inKanji = false;
             inKana = false;
             inRomaji = true;
+            inDescription = false;
+            inTag = false;
+        } else if (qName.equalsIgnoreCase("description")) {
+            inKanji = false;
+            inKana = false;
+            inRomaji = false;
+            inDescription = true;
             inTag = false;
         } else if (qName.equalsIgnoreCase("tag")) {
             inKanji = false;
             inKana = false;
             inRomaji = false;
+            inDescription = false;
             inTag = true;
         }
     }
@@ -110,6 +121,11 @@ public class DictionnaryHandler extends DefaultHandler {
             inRomaji = false;
             DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
             dictionnaryEntry.setSpellingInRomaji(String.valueOf(ch, start, length));
+            dictionnaryEntryDao.update(dictionnaryEntry);
+        } else if (inDescription) {
+            inDescription = false;
+            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            dictionnaryEntry.setDescription(String.valueOf(ch, start, length));
             dictionnaryEntryDao.update(dictionnaryEntry);
         } else if (inTag) {
             inTag = false;

@@ -1,779 +1,6417 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dictionnary>
-  <entry id="10">
-    <kanji>火曜日</kanji>
-    <kana>か.よう.び</kana>
-    <romaji>ka.yoo.bi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="37">
-    <kanji>映画館</kanji>
-    <kana>えい.が.かん</kana>
-    <romaji>ei.ga.kan</romaji>
-    <tags>
-      <tag>jlpt_3</tag>
-    </tags>
-  </entry>
-  <entry id="40">
-    <kanji>電車</kanji>
-    <kana>でん.しゃ</kana>
-    <romaji>den.sha</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="43">
-    <kanji>開ける</kanji>
-    <kana>あ.け.る</kana>
-    <romaji>a.ke.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="44">
-    <kanji>開く</kanji>
-    <kana>あ.く</kana>
-    <romaji>a.ku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="45">
-    <kanji>雨</kanji>
-    <kana>あめ</kana>
-    <romaji>ame</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="37">
-    <kanji>映画館</kanji>
-    <kana>えい.が.かん</kana>
-    <romaji>ei.ga.kan</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="38">
-    <kanji>女の子</kanji>
-    <kana>おんな.の.こ</kana>
-    <romaji>onna.no.ko</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="27">
-    <kanji>日曜日</kanji>
-    <kana>にち.よう.び</kana>
-    <romaji>nichi.yoo.bi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="13">
-    <kanji>音楽</kanji>
-    <kana>おん.がく</kana>
-    <romaji>on.gaku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="3">
-    <kanji>朝</kanji>
-    <kana>あさ</kana>
-    <romaji>asa</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="4">
-    <kanji>夜</kanji>
-    <kana>よる</kana>
-    <romaji>yoru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="6">
-    <kanji>小さい</kanji>
-    <kana>ちい.さ.い</kana>
-    <romaji>chii.sa.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="7">
-    <kanji>書く</kanji>
-    <kana>か.く</kana>
-    <romaji>kaku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="14">
-    <kanji>電気</kanji>
-    <kana>でん.き</kana>
-    <romaji>den.ki</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="15">
-    <kanji>天気</kanji>
-    <kana>てん.き</kana>
-    <romaji>ten.ki</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="16">
-    <kanji>学校</kanji>
-    <kana>がっ.こう</kana>
-    <romaji>gak.kou</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="17">
-    <kanji>体</kanji>
-    <kana>からだ</kana>
-    <romaji>karada</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="18">
-    <kanji>目</kanji>
-    <kana>め</kana>
-    <romaji>me</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="20">
-    <kanji>聞く</kanji>
-    <kana>き.く</kana>
-    <romaji>ki.ku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="21">
-    <kanji>見る</kanji>
-    <kana>み.る</kana>
-    <romaji>mi.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="22">
-    <kanji>食べる</kanji>
-    <kana>た.べ.る</kana>
-    <romaji>ta.be.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="23">
-    <kanji>来る</kanji>
-    <kana>く.る</kana>
-    <romaji>ku.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="24">
-    <kanji>帰る</kanji>
-    <kana>かえ.る</kana>
-    <romaji>kae.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="26">
-    <kanji>会う</kanji>
-    <kana>あ.う</kana>
-    <romaji>au</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="28">
-    <kanji>下手</kanji>
-    <kana>へ.た</kana>
-    <romaji>he.ta</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="29">
-    <kanji>上手</kanji>
-    <kana>じょう.ず</kana>
-    <romaji>joo.zu</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="33">
-    <kanji>出口</kanji>
-    <kana>で.ぐち</kana>
-    <romaji>de.guchi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="32">
-    <kanji>本</kanji>
-    <kana>ほん</kana>
-    <romaji>hon</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="34">
-    <kanji>有名</kanji>
-    <kana>ゆう.めい</kana>
-    <romaji>yuu.mei</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="35">
-    <kanji>名前</kanji>
-    <kana>な.まえ</kana>
-    <romaji>na.mae</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="41">
-    <kanji>水曜日</kanji>
-    <kana>すい.よう.び</kana>
-    <romaji>sui.yo.bi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="42">
-    <kanji>大人</kanji>
-    <kana>お.とな</kana>
-    <romaji>o.tona</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="46">
-    <kanji>青</kanji>
-    <kana>あ.お</kana>
-    <romaji>a.o</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="47">
-    <kanji>青い</kanji>
-    <kana>あお.い</kana>
-    <romaji>ao.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="48">
-    <kanji>赤</kanji>
-    <kana>あか</kana>
-    <romaji>aka</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="49">
-    <kanji>赤い</kanji>
-    <kana>あか.い</kana>
-    <romaji>aka.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="50">
-    <kanji>明るい</kanji>
-    <kana>あか.る.い</kana>
-    <romaji>aka.ru.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="51">
-    <kanji>秋</kanji>
-    <kana>あき</kana>
-    <romaji>aki</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="52">
-    <kanji>上げる</kanji>
-    <kana>あ.げ.る</kana>
-    <romaji>a.ge.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="53">
-    <kanji>朝御飯</kanji>
-    <kana>あさ.ご.はん</kana>
-    <romaji>asa.go.han</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="54">
-    <kanji>あさって</kanji>
-    <kana>あ.さ.っ.て</kana>
-    <romaji>a.sa.t.te</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="55">
-    <kanji>足</kanji>
-    <kana>あし</kana>
-    <romaji>ashi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="56">
-    <kanji>遊ぶ</kanji>
-    <kana>あそ.ぶ</kana>
-    <romaji>aso.bu</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="57">
-    <kanji>暖かい</kanji>
-    <kana>あたた.か.い</kana>
-    <romaji>atata.ka.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="58">
-    <kanji>頭</kanji>
-    <kana>あたま</kana>
-    <romaji>atama</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="59">
-    <kanji>新しい</kanji>
-    <kana>あたら.し.い</kana>
-    <romaji>atara.shi.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="60">
-    <kanji>暑い</kanji>
-    <kana>あつ.い</kana>
-    <romaji>atsu.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="61">
-    <kanji>熱い</kanji>
-    <kana>あつい</kana>
-    <romaji>atsu.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="62">
-    <kanji>厚い</kanji>
-    <kana>あつ.い</kana>
-    <romaji>atsu.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="63">
-    <kanji>後</kanji>
-    <kana>あと</kana>
-    <romaji>ato</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="64">
-    <kanji>あなた</kanji>
-    <kana>あ.な.た</kana>
-    <romaji>a.na.ta</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="65">
-    <kanji>兄</kanji>
-    <kana>あに</kana>
-    <romaji>ani</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="66">
-    <kanji>姉</kanji>
-    <kana>あね</kana>
-    <romaji>ane</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="67">
-    <kanji>アパート</kanji>
-    <kana>ア.パ.ー.ト</kana>
-    <romaji>a.po.t.to</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="68">
-    <kanji>あびる</kanji>
-    <kana>あ.び.る</kana>
-    <romaji>a.bi.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="69">
-    <kanji>危ない</kanji>
-    <kana>あぶ.な.い</kana>
-    <romaji>abu.na.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="70">
-    <kanji>甘い</kanji>
-    <kana>あま.い</kana>
-    <romaji>ama.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="71">
-    <kanji>あまり</kanji>
-    <kana>あ.ま.り</kana>
-    <romaji>a.ma.ri</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="72">
-    <kanji>飴</kanji>
-    <kana>あめ</kana>
-    <romaji>ame</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="73">
-    <kanji>洗う</kanji>
-    <kana>あら.う</kana>
-    <romaji>aru.u</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="74">
-    <kanji>歩く</kanji>
-    <kana>ある.く</kana>
-    <romaji>aru.ku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="75">
-    <kanji>言う</kanji>
-    <kana>い.う</kana>
-    <romaji>i.u</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="76">
-    <kanji>家</kanji>
-    <kana>いえ</kana>
-    <romaji>ie</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="77">
-    <kanji>行く</kanji>
-    <kana>い.く</kana>
-    <romaji>i.ku</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="78">
-    <kanji>池</kanji>
-    <kana>いけ</kana>
-    <romaji>ike</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="79">
-    <kanji>医者</kanji>
-    <kana>い.しゃ</kana>
-    <romaji>i.sha</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="80">
-    <kanji>忙しい</kanji>
-    <kana>いそが.し.い</kana>
-    <romaji>isoga.shi.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="81">
-    <kanji>痛い</kanji>
-    <kana>いた.い</kana>
-    <romaji>ita.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="82">
-    <kanji>一</kanji>
-    <kana>いち</kana>
-    <romaji>ichi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="83">
-    <kanji>一日</kanji>
-    <kana>いち.にち</kana>
-    <romaji>ichi.nichi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="84">
-    <kanji>五日</kanji>
-    <kana>いつ.か</kana>
-    <romaji>istu.ka</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="85">
-    <kanji>一緒</kanji>
-    <kana>いっ.しょ</kana>
-    <romaji>is.sho</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="86">
-    <kanji>五つ</kanji>
-    <kana>いつ.つ</kana>
-    <romaji>itsu.tsu</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="87">
-    <kanji>犬</kanji>
-    <kana>いぬ</kana>
-    <romaji>inu</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="88">
-    <kanji>今</kanji>
-    <kana>いま</kana>
-    <romaji>ima</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="89">
-    <kanji>意味</kanji>
-    <kana>い.み</kana>
-    <romaji>i.mi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="90">
-    <kanji>妹</kanji>
-    <kana>いもうと</kana>
-    <romaji>imouto</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="91">
-    <kanji>嫌</kanji>
-    <kana>いや</kana>
-    <romaji>iya</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="92">
-    <kanji>入口</kanji>
-    <kana>いり.ぐち</kana>
-    <romaji>iri.guchi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="93">
-    <kanji>居る</kanji>
-    <kana>い.る</kana>
-    <romaji>i.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="94">
-    <kanji>要.る</kanji>
-    <kana>い.る</kana>
-    <romaji>i.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="95">
-    <kanji>入.れる</kanji>
-    <kana>い.れ.る</kana>
-    <romaji>i.re.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="96">
-    <kanji>色</kanji>
-    <kana>いろ</kana>
-    <romaji>iru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="97">
-    <kanji>上</kanji>
-    <kana>うえ</kana>
-    <romaji>ue</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="98">
-    <kanji>後ろ</kanji>
-    <kana>うし.ろ</kana>
-    <romaji>ushi.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="99">
-    <kanji>薄い</kanji>
-    <kana>うす.い</kana>
-    <romaji>usu.i</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="100">
-    <kanji>歌</kanji>
-    <kana>うた</kana>
-    <romaji>uta</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="101">
-    <kanji>歌う</kanji>
-    <kana>うた.う</kana>
-    <romaji>uta.u</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="102">
-    <kanji>生まれる</kanji>
-    <kana>う.ま.れ.る</kana>
-    <romaji>u.ma.re.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-      <tag>grade_1</tag>
-    </tags>
-  </entry>
-  <entry id="103">
-    <kanji>海</kanji>
-    <kana>うみ</kana>
-    <romaji>umi</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="104">
-    <kanji>売る</kanji>
-    <kana>う.る</kana>
-    <romaji>u.ru</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
-  <entry id="105">
-    <kanji>上着</kanji>
-    <kana>う.わぎ</kana>
-    <romaji>u.waki</romaji>
-    <tags>
-      <tag>jlpt_4</tag>
-    </tags>
-  </entry>
+    <entry id="10">
+        <kanji>火曜日</kanji>
+        <kana>か.よう.び</kana>
+        <romaji>ka.yoo.bi</romaji>
+        <description>mardi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="37">
+        <kanji>映画館</kanji>
+        <kana>えい.が.かん</kana>
+        <romaji>ei.ga.kan</romaji>
+        <description>un cinema</description>
+        <tags>
+            <tag>jlpt_3</tag>
+        </tags>
+    </entry>
+    <entry id="40">
+        <kanji>電車</kanji>
+        <kana>でん.しゃ</kana>
+        <romaji>den.sha</romaji>
+        <description>un train</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="43">
+        <kanji>開ける</kanji>
+        <kana>あ.け.る</kana>
+        <romaji>a.ke.ru</romaji>
+        <description>ouvrir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="44">
+        <kanji>開く</kanji>
+        <kana>あ.く</kana>
+        <romaji>a.ku</romaji>
+        <description>ouvrir, devenir ouvert</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="45">
+        <kanji>雨</kanji>
+        <kana>あめ</kana>
+        <romaji>ame</romaji>
+        <description>la pluie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="37">
+        <kanji>映画館</kanji>
+        <kana>えい.が.かん</kana>
+        <romaji>ei.ga.kan</romaji>
+        <description>un cinema</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="38">
+        <kanji>女の子</kanji>
+        <kana>おんな.の.こ</kana>
+        <romaji>onna.no.ko</romaji>
+        <description>une fille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="27">
+        <kanji>日曜日</kanji>
+        <kana>にち.よう.び</kana>
+        <romaji>nichi.yoo.bi</romaji>
+        <description>dimanche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="13">
+        <kanji>音楽</kanji>
+        <kana>おん.がく</kana>
+        <romaji>on.gaku</romaji>
+        <description>la music</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="3">
+        <kanji>朝</kanji>
+        <kana>あさ</kana>
+        <romaji>asa</romaji>
+        <description>matin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="4">
+        <kanji>夜</kanji>
+        <kana>よる</kana>
+        <romaji>yoru</romaji>
+        <description>soir, nuit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="6">
+        <kanji>小さい</kanji>
+        <kana>ちい.さ.い</kana>
+        <romaji>chii.sa.i</romaji>
+        <description>petit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="7">
+        <kanji>書く</kanji>
+        <kana>か.く</kana>
+        <romaji>kaku</romaji>
+        <description>écrire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="14">
+        <kanji>電気</kanji>
+        <kana>でん.き</kana>
+        <romaji>den.ki</romaji>
+        <description>l'�lectricit�</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="15">
+        <kanji>天気</kanji>
+        <kana>てん.き</kana>
+        <romaji>ten.ki</romaji>
+        <description>le temps</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="16">
+        <kanji>学校</kanji>
+        <kana>がっ.こう</kana>
+        <romaji>gak.kou</romaji>
+        <description>l'école</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="17">
+        <kanji>体</kanji>
+        <kana>からだ</kana>
+        <romaji>karada</romaji>
+        <description>le corps</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="18">
+        <kanji>目</kanji>
+        <kana>め</kana>
+        <romaji>me</romaji>
+        <description>un oeuil</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="20">
+        <kanji>聞く</kanji>
+        <kana>き.く</kana>
+        <romaji>ki.ku</romaji>
+        <description>écouter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="21">
+        <kanji>見る</kanji>
+        <kana>み.る</kana>
+        <romaji>mi.ru</romaji>
+        <description>regarder</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="22">
+        <kanji>食べる</kanji>
+        <kana>た.べ.る</kana>
+        <romaji>ta.be.ru</romaji>
+        <description>manger</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="23">
+        <kanji>来る</kanji>
+        <kana>く.る</kana>
+        <romaji>ku.ru</romaji>
+        <description>venir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="24">
+        <kanji>帰る</kanji>
+        <kana>かえ.る</kana>
+        <romaji>kae.ru</romaji>
+        <description>revenir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="26">
+        <kanji>会う</kanji>
+        <kana>あ.う</kana>
+        <romaji>au</romaji>
+        <description>rencontrer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="28">
+        <kanji>下手</kanji>
+        <kana>へ.た</kana>
+        <romaji>he.ta</romaji>
+        <description>maladroit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="29">
+        <kanji>上手</kanji>
+        <kana>じょう.ず</kana>
+        <romaji>joo.zu</romaji>
+        <description>adroit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="33">
+        <kanji>出口</kanji>
+        <kana>で.ぐち</kana>
+        <romaji>de.guchi</romaji>
+        <description>la sortie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="32">
+        <kanji>本</kanji>
+        <kana>ほん</kana>
+        <romaji>hon</romaji>
+        <description>un livre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="34">
+        <kanji>有名</kanji>
+        <kana>ゆう.めい</kana>
+        <romaji>yuu.mei</romaji>
+        <description>célèbre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="35">
+        <kanji>名前</kanji>
+        <kana>な.まえ</kana>
+        <romaji>na.mae</romaji>
+        <description>un nom</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="41">
+        <kanji>水曜日</kanji>
+        <kana>すい.よう.び</kana>
+        <romaji>sui.yo.bi</romaji>
+        <description>mercredi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="42">
+        <kanji>大人</kanji>
+        <kana>お.とな</kana>
+        <romaji>o.tona</romaji>
+        <description>un adulte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="46">
+        <kanji>青</kanji>
+        <kana>あ.お</kana>
+        <romaji>a.o</romaji>
+        <description>bleu</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="47">
+        <kanji>青い</kanji>
+        <kana>あお.い</kana>
+        <romaji>ao.i</romaji>
+        <description>bleu</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="48">
+        <kanji>赤</kanji>
+        <kana>あか</kana>
+        <romaji>aka</romaji>
+        <description>le rouge</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="49">
+        <kanji>赤い</kanji>
+        <kana>あか.い</kana>
+        <romaji>aka.i</romaji>
+        <description>rouge</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="50">
+        <kanji>明るい</kanji>
+        <kana>あか.る.い</kana>
+        <romaji>aka.ru.i</romaji>
+        <description>claire, éclairé, joyeux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="51">
+        <kanji>秋</kanji>
+        <kana>あき</kana>
+        <romaji>aki</romaji>
+        <description>l'automne</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="52">
+        <kanji>上げる</kanji>
+        <kana>あ.げ.る</kana>
+        <romaji>a.ge.ru</romaji>
+        <description>donner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="53">
+        <kanji>朝御飯</kanji>
+        <kana>あさ.ご.はん</kana>
+        <romaji>asa.go.han</romaji>
+        <description>le petit-déjeuner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="54">
+        <kanji>あさって</kanji>
+        <kana>あ.さ.っ.て</kana>
+        <romaji>a.sa.t.te</romaji>
+        <description>après-demain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="55">
+        <kanji>足</kanji>
+        <kana>あし</kana>
+        <romaji>ashi</romaji>
+        <description>un pied</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="56">
+        <kanji>遊ぶ</kanji>
+        <kana>あそ.ぶ</kana>
+        <romaji>aso.bu</romaji>
+        <description>jouer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="57">
+        <kanji>暖かい</kanji>
+        <kana>あたた.か.い</kana>
+        <romaji>atata.ka.i</romaji>
+        <description>tiède</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="58">
+        <kanji>頭</kanji>
+        <kana>あたま</kana>
+        <romaji>atama</romaji>
+        <description>la tête</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="59">
+        <kanji>新しい</kanji>
+        <kana>あたら.し.い</kana>
+        <romaji>atara.shi.i</romaji>
+        <description>nouveau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="60">
+        <kanji>暑い</kanji>
+        <kana>あつ.い</kana>
+        <romaji>atsu.i</romaji>
+        <description>chaud</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="61">
+        <kanji>熱い</kanji>
+        <kana>あつい</kana>
+        <romaji>atsu.i</romaji>
+        <description>chaud (quelque-chose)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="62">
+        <kanji>厚い</kanji>
+        <kana>あつ.い</kana>
+        <romaji>atsu.i</romaji>
+        <description>gentil</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="63">
+        <kanji>後</kanji>
+        <kana>あと</kana>
+        <romaji>ato</romaji>
+        <description>après</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="64">
+        <kanji>あなた</kanji>
+        <kana>あ.な.た</kana>
+        <romaji>a.na.ta</romaji>
+        <description>toi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="65">
+        <kanji>兄</kanji>
+        <kana>あに</kana>
+        <romaji>ani</romaji>
+        <description>frère ainée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="66">
+        <kanji>姉</kanji>
+        <kana>あね</kana>
+        <romaji>ane</romaji>
+        <description>soeur ainée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="67">
+        <kanji>アパート</kanji>
+        <kana>ア.パ.ー.ト</kana>
+        <romaji>a.po.t.to</romaji>
+        <description>un appartement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="68">
+        <kanji>あびる</kanji>
+        <kana>あ.び.る</kana>
+        <romaji>a.bi.ru</romaji>
+        <description>prendre un bain, une douche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="69">
+        <kanji>危ない</kanji>
+        <kana>あぶ.な.い</kana>
+        <romaji>abu.na.i</romaji>
+        <description>dangereux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="70">
+        <kanji>甘い</kanji>
+        <kana>あま.い</kana>
+        <romaji>ama.i</romaji>
+        <description>généreux, gentille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="71">
+        <kanji>あまり</kanji>
+        <kana>あ.ま.り</kana>
+        <romaji>a.ma.ri</romaji>
+        <description>pas beaucoup, pas trop</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="72">
+        <kanji>飴</kanji>
+        <kana>あめ</kana>
+        <romaji>ame</romaji>
+        <description>bonbon, sucre d'orge</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="73">
+        <kanji>洗う</kanji>
+        <kana>あら.う</kana>
+        <romaji>aru.u</romaji>
+        <description>laver</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="74">
+        <kanji>歩く</kanji>
+        <kana>ある.く</kana>
+        <romaji>aru.ku</romaji>
+        <description>marcher</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="75">
+        <kanji>言う</kanji>
+        <kana>い.う</kana>
+        <romaji>i.u</romaji>
+        <description>dire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="76">
+        <kanji>家</kanji>
+        <kana>いえ</kana>
+        <romaji>ie</romaji>
+        <description>la maison, la famille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="77">
+        <kanji>行く</kanji>
+        <kana>い.く</kana>
+        <romaji>i.ku</romaji>
+        <description>aller</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="78">
+        <kanji>池</kanji>
+        <kana>いけ</kana>
+        <romaji>ike</romaji>
+        <description>un étang, une mare</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="79">
+        <kanji>医者</kanji>
+        <kana>い.しゃ</kana>
+        <romaji>i.sha</romaji>
+        <description>un docteur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="80">
+        <kanji>忙しい</kanji>
+        <kana>いそが.し.い</kana>
+        <romaji>isoga.shi.i</romaji>
+        <description>occupé, irrité</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="81">
+        <kanji>痛い</kanji>
+        <kana>いた.い</kana>
+        <romaji>ita.i</romaji>
+        <description>douloureux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="82">
+        <kanji>一</kanji>
+        <kana>いち</kana>
+        <romaji>ichi</romaji>
+        <description>un</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="83">
+        <kanji>一日</kanji>
+        <kana>いち.にち</kana>
+        <romaji>ichi.nichi</romaji>
+        <description>un jour</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="84">
+        <kanji>五日</kanji>
+        <kana>いつ.か</kana>
+        <romaji>istu.ka</romaji>
+        <description>cinq jours</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="85">
+        <kanji>一緒</kanji>
+        <kana>いっ.しょ</kana>
+        <romaji>is.sho</romaji>
+        <description>ensemble</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="86">
+        <kanji>五つ</kanji>
+        <kana>いつ.つ</kana>
+        <romaji>itsu.tsu</romaji>
+        <description>cinq</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="87">
+        <kanji>犬</kanji>
+        <kana>いぬ</kana>
+        <romaji>inu</romaji>
+        <description>un chien</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="88">
+        <kanji>今</kanji>
+        <kana>いま</kana>
+        <romaji>ima</romaji>
+        <description>maintenant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="89">
+        <kanji>意味</kanji>
+        <kana>い.み</kana>
+        <romaji>i.mi</romaji>
+        <description>un sens, une signification</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="90">
+        <kanji>妹</kanji>
+        <kana>いもうと</kana>
+        <romaji>imouto</romaji>
+        <description>une petite soeur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="91">
+        <kanji>嫌</kanji>
+        <kana>いや</kana>
+        <romaji>iya</romaji>
+        <description>désagréable, détestable</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="92">
+        <kanji>入口</kanji>
+        <kana>いり.ぐち</kana>
+        <romaji>iri.guchi</romaji>
+        <description>une entrée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="93">
+        <kanji>居る</kanji>
+        <kana>い.る</kana>
+        <romaji>i.ru</romaji>
+        <description>être, exister</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="94">
+        <kanji>要.る</kanji>
+        <kana>い.る</kana>
+        <romaji>i.ru</romaji>
+        <description>avoir besoin de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="95">
+        <kanji>入.れる</kanji>
+        <kana>い.れ.る</kana>
+        <romaji>i.re.ru</romaji>
+        <description>inserer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="96">
+        <kanji>色</kanji>
+        <kana>いろ</kana>
+        <romaji>iru</romaji>
+        <description>une couleur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="97">
+        <kanji>上</kanji>
+        <kana>うえ</kana>
+        <romaji>ue</romaji>
+        <description>dessus, au-dessus, haut</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="98">
+        <kanji>後ろ</kanji>
+        <kana>うし.ろ</kana>
+        <romaji>ushi.ru</romaji>
+        <description>derrière</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="99">
+        <kanji>薄い</kanji>
+        <kana>うす.い</kana>
+        <romaji>usu.i</romaji>
+        <description>fin, faible</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="100">
+        <kanji>歌</kanji>
+        <kana>うた</kana>
+        <romaji>uta</romaji>
+        <description>une chanson</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="101">
+        <kanji>歌う</kanji>
+        <kana>うた.う</kana>
+        <romaji>uta.u</romaji>
+        <description>chanter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="102">
+        <kanji>生まれる</kanji>
+        <kana>う.ま.れ.る</kana>
+        <romaji>u.ma.re.ru</romaji>
+        <description>être née</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="103">
+        <kanji>海</kanji>
+        <kana>うみ</kana>
+        <romaji>umi</romaji>
+        <description>la mer, la plage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="104">
+        <kanji>売る</kanji>
+        <kana>う.る</kana>
+        <romaji>u.ru</romaji>
+        <description>vendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="105">
+        <kanji>上着</kanji>
+        <kana>う.わぎ</kana>
+        <romaji>u.waki</romaji>
+        <description>un manteau, un blouson</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="106">
+        <kanji>絵</kanji>
+        <kana>え</kana>
+        <romaji>e</romaji>
+        <description>une peinture, un dessin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+            <tag>grade_1</tag>
+        </tags>
+    </entry>
+    <entry id="107">
+        <kanji>映画</kanji>
+        <kana>えい.が</kana>
+        <romaji>ei.ga</romaji>
+        <description>un film</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="108">
+        <kanji>英語</kanji>
+        <kana>えい.ご</kana>
+        <romaji>ei.go</romaji>
+        <description>la langue anglaise</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="109">
+        <kanji/>
+        <kana>ええ</kana>
+        <romaji>ee</romaji>
+        <description>oui</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="110">
+        <kanji>駅</kanji>
+        <kana>えき</kana>
+        <romaji>eki</romaji>
+        <description>une gare</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="111">
+        <kanji>～円</kanji>
+        <kana>～.えん</kana>
+        <romaji>~.en</romaji>
+        <description>le Yen, la monaie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="112">
+        <kanji>鉛筆</kanji>
+        <kana>えん.ぴつ</kana>
+        <romaji>en.potsu</romaji>
+        <description>un stylo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="113">
+        <kanji/>
+        <kana>お.い.し.い</kana>
+        <romaji>o.i.shi.i</romaji>
+        <description>delicieux, bon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="114">
+        <kanji>多い</kanji>
+        <kana>おお.い</kana>
+        <romaji>oo.i</romaji>
+        <description>beaucoup, plein</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="115">
+        <kanji>大きい</kanji>
+        <kana>お.お.き.い</kana>
+        <romaji>o.o.ki.i</romaji>
+        <description>gros</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="116">
+        <kanji>大きな</kanji>
+        <kana>おお.き..な</kana>
+        <romaji>oo.ki.na</romaji>
+        <description>gros</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="117">
+        <kanji>大勢</kanji>
+        <kana>おお.ぜい</kana>
+        <romaji>oo.zei</romaji>
+        <description>un grand nombre de personnes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="119">
+        <kanji>お母さん</kanji>
+        <kana>お.かあ.さ.ん</kana>
+        <romaji>o.kaa.sa.n</romaji>
+        <description>une mère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="120">
+        <kanji>お菓子</kanji>
+        <kana>お.か.し</kana>
+        <romaji>o.ka.shi</romaji>
+        <description>un bonbon, une friandise</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="121">
+        <kanji>お金</kanji>
+        <kana>お.かね</kana>
+        <romaji>o.kane</romaji>
+        <description>l'argent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="122">
+        <kanji>起きる</kanji>
+        <kana>お.き.る</kana>
+        <romaji>o.ki.ru</romaji>
+        <description>se lever, s'élever</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="123">
+        <kanji>置く</kanji>
+        <kana>お.く</kana>
+        <romaji>o.ku</romaji>
+        <description>mettre, placer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="124">
+        <kanji>奥さん</kanji>
+        <kana>おく.さ.ん</kana>
+        <romaji>oku.sa.n</romaji>
+        <description>une epouse</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="125">
+        <kanji>お酒</kanji>
+        <kana>お.さけ</kana>
+        <romaji>o.sake</romaji>
+        <description>un alcool, du sake</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="126">
+        <kanji>お皿</kanji>
+        <kana>お.さら</kana>
+        <romaji>o.sara</romaji>
+        <description>une assiette, un plat</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="127">
+        <kanji>伯父さん</kanji>
+        <kana>お.じ.さ.ん</kana>
+        <romaji>o.ji.sa.n</romaji>
+        <description>oncle, homme d'un age moyen</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="128">
+        <kanji/>
+        <kana>お.じ.い.さ.ん</kana>
+        <romaji>o.ji.i.sa.n</romaji>
+        <description>grand-père, homme d'un certain age</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="129">
+        <kanji>教える</kanji>
+        <kana>おし.え.る</kana>
+        <romaji>oshi.e.ru</romaji>
+        <description>enseigner, informer, instruire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="130">
+        <kanji>押す</kanji>
+        <kana>お.す</kana>
+        <romaji>o.su</romaji>
+        <description>appuyer, presser, oblitérer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="131">
+        <kanji>遅い</kanji>
+        <kana>おそ.い</kana>
+        <romaji>oso.i</romaji>
+        <description>lent, en retard</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="132">
+        <kanji>お茶</kanji>
+        <kana>お.ちゃ</kana>
+        <romaji>o.cha</romaji>
+        <description>thé (vert)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="133">
+        <kanji>お手洗い</kanji>
+        <kana>お.て.あら.い</kana>
+        <romaji>o.te.ara.i</romaji>
+        <description>toilette, salle de bain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="134">
+        <kanji>お父さん</kanji>
+        <kana>お.とう.さ.ん</kana>
+        <romaji>o.tou.sa.n</romaji>
+        <description>père</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="135">
+        <kanji>弟</kanji>
+        <kana>おとうと</kana>
+        <romaji>otouto</romaji>
+        <description>petit frère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="136">
+        <kanji>男</kanji>
+        <kana>おとこ</kana>
+        <romaji>otoko</romaji>
+        <description>homme</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="137">
+        <kanji>男の子</kanji>
+        <kana>おとこ.の.こ</kana>
+        <romaji>otoko.no.ko</romaji>
+        <description>garçon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="138">
+        <kanji/>
+        <kana>お.と.と.い</kana>
+        <romaji>o.to.to.i</romaji>
+        <description>avant-hier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="139">
+        <kanji/>
+        <kana>お.と.と.し</kana>
+        <romaji>o.to.to.shi</romaji>
+        <description>2 ans avant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="140">
+        <kanji>大人</kanji>
+        <kana>お.とな</kana>
+        <romaji>o.tona</romaji>
+        <description>adulte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="141">
+        <kanji/>
+        <kana>お.な.か</kana>
+        <romaji>o.na.ka</romaji>
+        <description>estomac</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="142">
+        <kanji>同じ</kanji>
+        <kana>おな.じ</kana>
+        <romaji>ona.ji</romaji>
+        <description>pareil, identique, similaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="143">
+        <kanji>お兄さん</kanji>
+        <kana>お.にい.さ.ん</kana>
+        <romaji>o.nii.sa.n</romaji>
+        <description>grand frère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="144">
+        <kanji>お姉さん</kanji>
+        <kana>お.ねえ.さ.ん</kana>
+        <romaji>o.nee.sa.n</romaji>
+        <description>grande sœur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="145">
+        <kanji>伯母さん</kanji>
+        <kana>お.ば.さ.ん</kana>
+        <romaji>o.ba.sa.n</romaji>
+        <description>tante</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="146">
+        <kanji/>
+        <kana>お.ば.あ.さ.ん</kana>
+        <romaji>o.ba.a.sa.n</romaji>
+        <description>grand-mère, femme d'un certain age</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="147">
+        <kanji>お風呂</kanji>
+        <kana>お.ふ.ろ</kana>
+        <romaji>o.fu.ro</romaji>
+        <description>bain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="148">
+        <kanji>お弁当</kanji>
+        <kana>お.べん.とう</kana>
+        <romaji>o.ben.tou</romaji>
+        <description>panier repas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="149">
+        <kanji>覚える</kanji>
+        <kana>おぼ.え.る</kana>
+        <romaji>obo.e.ru</romaji>
+        <description>se souvenir, mémoriser</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="150">
+        <kanji/>
+        <kana>お.ま.わ.り.さ.ん</kana>
+        <romaji>o.ma.wa.ri.sa.n</romaji>
+        <description>policier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="151">
+        <kanji>重い</kanji>
+        <kana>おも.い</kana>
+        <romaji>omo.i</romaji>
+        <description>lourd, serieux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="152">
+        <kanji/>
+        <kana>お.も.し.ろ.い</kana>
+        <romaji>o.mo.shi.ro.i</romaji>
+        <description>interessant, amusant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="153">
+        <kanji>泳ぐ</kanji>
+        <kana>およ.ぐ</kana>
+        <romaji>oyo.gu</romaji>
+        <description>nager</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="154">
+        <kanji>降りる</kanji>
+        <kana>お.り.る</kana>
+        <romaji>o.ri.ru</romaji>
+        <description>descendre de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="155">
+        <kanji>終る</kanji>
+        <kana>おわ.る</kana>
+        <romaji>owa.ru</romaji>
+        <description>finir, fermer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="156">
+        <kanji>音楽</kanji>
+        <kana>おん.がく</kana>
+        <romaji>on.gaku</romaji>
+        <description>musique, mouvement musical</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="157">
+        <kanji>女</kanji>
+        <kana>おんな</kana>
+        <romaji>onna</romaji>
+        <description>femme, fille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="158">
+        <kanji>女の子</kanji>
+        <kana>おんな.の.こ</kana>
+        <romaji>onna.no.ko</romaji>
+        <description>fille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="159">
+        <kanji>～回</kanji>
+        <kana>～.かい</kana>
+        <romaji>~.kai</romaji>
+        <description>compteur d'occurrence</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="160">
+        <kanji>～階</kanji>
+        <kana>～.かい</kana>
+        <romaji>~.kai</romaji>
+        <description>compteur d'étage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="161">
+        <kanji>外国</kanji>
+        <kana>がい.こく</kana>
+        <romaji>gai.koku</romaji>
+        <description>pays étranger</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="162">
+        <kanji>外国人</kanji>
+        <kana>がい.こく.じん</kana>
+        <romaji>gai.koku.jin</romaji>
+        <description>étranger</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="163">
+        <kanji>会社</kanji>
+        <kana>かい.しゃ</kana>
+        <romaji>kai.sho</romaji>
+        <description>entreprise, companie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="164">
+        <kanji>階段</kanji>
+        <kana>かい.だん</kana>
+        <romaji>kai.dan</romaji>
+        <description>éscalier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="165">
+        <kanji>買い物</kanji>
+        <kana>か.い.もの</kana>
+        <romaji>ka.i.mono</romaji>
+        <description>shopping</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="166">
+        <kanji>買う</kanji>
+        <kana>か.う</kana>
+        <romaji>ka.u</romaji>
+        <description>acheter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="167">
+        <kanji>返す</kanji>
+        <kana>かえ.す</kana>
+        <romaji>kae.su</romaji>
+        <description>rendre qqch</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="168">
+        <kanji>帰る</kanji>
+        <kana>かえ.る</kana>
+        <romaji>kae.ru</romaji>
+        <description>rentrer, retourner, rentrer à la maison</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="169">
+        <kanji>顔</kanji>
+        <kana>かお</kana>
+        <romaji>kao</romaji>
+        <description>visage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="170">
+        <kanji/>
+        <kana>か.か.る</kana>
+        <romaji>ka.ka.ru</romaji>
+        <description>prendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="171">
+        <kanji/>
+        <kana>か.ぎ</kana>
+        <romaji>ka.gi</romaji>
+        <description>clée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="172">
+        <kanji>書.く</kanji>
+        <kana>か.く</kana>
+        <romaji>ka.ku</romaji>
+        <description>écrire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="173">
+        <kanji>学生</kanji>
+        <kana>がく.せい</kana>
+        <romaji>gaku.sei</romaji>
+        <description>étudiant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="174">
+        <kanji>～か月</kanji>
+        <kana>～.か.げつ</kana>
+        <romaji>~.ka.getsu</romaji>
+        <description>compteur de nombres de mois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="175">
+        <kanji/>
+        <kana>か.け.る</kana>
+        <romaji>ka.ke.ru</romaji>
+        <description>mettre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="176">
+        <kanji/>
+        <kana>か.け.る</kana>
+        <romaji>ka.ke.ru</romaji>
+        <description>appeller, composer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="177">
+        <kanji>傘</kanji>
+        <kana>かさ</kana>
+        <romaji>kasa</romaji>
+        <description>parapluie, parasol</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="178">
+        <kanji>貸す</kanji>
+        <kana>か.す</kana>
+        <romaji>ka.su</romaji>
+        <description>préter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="179">
+        <kanji>風</kanji>
+        <kana>かぜ</kana>
+        <romaji>kaze</romaji>
+        <description>vent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="180">
+        <kanji>風邪</kanji>
+        <kana>か.ぜ</kana>
+        <romaji>ka.ze</romaji>
+        <description>froid, rhume</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="181">
+        <kanji>方</kanji>
+        <kana>かた</kana>
+        <romaji>kata</romaji>
+        <description>personne</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="182">
+        <kanji>家族</kanji>
+        <kana>か.ぞく</kana>
+        <romaji>ka.soku</romaji>
+        <description>famille, membre de la famille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="183">
+        <kanji>片仮名</kanji>
+        <kana>か.た.かな</kana>
+        <romaji>ka.ta.kana</romaji>
+        <description>katakana</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="184">
+        <kanji>～月</kanji>
+        <kana>～.がつ</kana>
+        <romaji>~.gatsu</romaji>
+        <description>mois de l'année</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="185">
+        <kanji>学校</kanji>
+        <kana>がっ.こう</kana>
+        <romaji>gak.kou</romaji>
+        <description>école</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="186">
+        <kanji>家庭</kanji>
+        <kana>か.てい</kana>
+        <romaji>ka.tei</romaji>
+        <description>maison, foyer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="187">
+        <kanji>角</kanji>
+        <kana>かど</kana>
+        <romaji>kado</romaji>
+        <description>coin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="188">
+        <kanji/>
+        <kana>か.ば.ん</kana>
+        <romaji>ka.ba.n</romaji>
+        <description>sac, panier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="189">
+        <kanji>花瓶</kanji>
+        <kana>か.びん</kana>
+        <romaji>ka.bin</romaji>
+        <description>vase</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="190">
+        <kanji/>
+        <kana>か.ぶ.る</kana>
+        <romaji>ka.bu.ru</romaji>
+        <description>porter (un vêtement)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="191">
+        <kanji>紙</kanji>
+        <kana>かみ</kana>
+        <romaji>kami</romaji>
+        <description>papier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="192">
+        <kanji/>
+        <kana>カ.メ.ラ</kana>
+        <romaji>KA.ME.RA</romaji>
+        <description>appareil photo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="193">
+        <kanji>火曜日</kanji>
+        <kana>か.よう.び</kana>
+        <romaji>ka.you.bi</romaji>
+        <description>Mardi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="194">
+        <kanji>辛い</kanji>
+        <kana>から.い</kana>
+        <romaji>kara.i</romaji>
+        <description>épicé, salé</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="195">
+        <kanji>体</kanji>
+        <kana>からだ</kana>
+        <romaji>karada</romaji>
+        <description>corps</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="196">
+        <kanji>借りる</kanji>
+        <kana>か.り.る</kana>
+        <romaji>ka.ri.ru</romaji>
+        <description>emprunter, faire un emprun, embaucher</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="197">
+        <kanji/>
+        <kana>～.が.る</kana>
+        <romaji>~.ga.ru</romaji>
+        <description>sentir, ressentir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="198">
+        <kanji>軽い</kanji>
+        <kana>かる.い</kana>
+        <romaji>karu.i</romaji>
+        <description>léger, pas serieux, mineur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="174">
+        <kanji>～か月</kanji>
+        <kana>～.か.げつ</kana>
+        <romaji>~.ka.getsu</romaji>
+        <description>compteur de nombres de mois</description>
+        <tags>
+            <tag>compteur</tag>
+        </tags>
+    </entry>
+    <entry id="111">
+        <kanji>～円</kanji>
+        <kana>～.えん</kana>
+        <romaji>~.en</romaji>
+        <description>le Yen, la monaie</description>
+        <tags>
+            <tag>compteur</tag>
+        </tags>
+    </entry>
+    <entry id="200">
+        <kanji>川/河</kanji>
+        <kana>か.わ</kana>
+        <romaji>ka.wa</romaji>
+        <description>rivière</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="201">
+        <kanji>～側</kanji>
+        <kana>～.がわ</kana>
+        <romaji>~.kawa</romaji>
+        <description>coté ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="202">
+        <kanji/>
+        <kana>か.わ.い.い</kana>
+        <romaji>ka.wa.i.i</romaji>
+        <description>mignon, charmant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="203">
+        <kanji>漢字</kanji>
+        <kana>かん.じ</kana>
+        <romaji>kan.ji</romaji>
+        <description>charactères Chinois, Kanji</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="204">
+        <kanji>木</kanji>
+        <kana>き</kana>
+        <romaji>ki</romaji>
+        <description>arbre, bois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="205">
+        <kanji>黄色</kanji>
+        <kana>き.いろ</kana>
+        <romaji>ki.iro</romaji>
+        <description>jaune</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="206">
+        <kanji>黄色い</kanji>
+        <kana>き.いろ.い</kana>
+        <romaji>ki.iro.i</romaji>
+        <description>jaune</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="207">
+        <kanji>消える</kanji>
+        <kana>き.え.る</kana>
+        <romaji>ki.e.ru</romaji>
+        <description>sortir, disparaitre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="208">
+        <kanji>聞く</kanji>
+        <kana>き.く</kana>
+        <romaji>ki.ku</romaji>
+        <description>entendre, écouter, demander</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="209">
+        <kanji>北</kanji>
+        <kana>きた</kana>
+        <romaji>kita</romaji>
+        <description>nord</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="210">
+        <kanji/>
+        <kana>ギ.ター</kana>
+        <romaji>GI.TAA</romaji>
+        <description>guitare</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="211">
+        <kanji>汚い</kanji>
+        <kana>きたな.い</kana>
+        <romaji>kitana.i</romaji>
+        <description>sale, dégoutant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="212">
+        <kanji>喫茶店</kanji>
+        <kana>きっ.さ.てん</kana>
+        <romaji>kis.sa.ten</romaji>
+        <description>cafée (magazin)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="213">
+        <kanji>切手</kanji>
+        <kana>きっ.て</kana>
+        <romaji>kit.te</romaji>
+        <description>timbre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="214">
+        <kanji>切符</kanji>
+        <kana>きっ.ぷ</kana>
+        <romaji>kip.po</romaji>
+        <description>ticket</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="215">
+        <kanji>昨日</kanji>
+        <kana>きの.う</kana>
+        <romaji>kino.u</romaji>
+        <description>hier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="216">
+        <kanji>九</kanji>
+        <kana>きゅう</kana>
+        <romaji>kyuu</romaji>
+        <description>neuf (9)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="217">
+        <kanji>牛肉</kanji>
+        <kana>ぎゅう.にく</kana>
+        <romaji>gyuu.niku</romaji>
+        <description>bœuf</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="218">
+        <kanji>牛乳</kanji>
+        <kana>ぎゅう.にゅう</kana>
+        <romaji>gyuu.nyuu</romaji>
+        <description>lait</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="219">
+        <kanji>今日</kanji>
+        <kana>きょ.う</kana>
+        <romaji>kyo.u</romaji>
+        <description>aujourd'hui</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="220">
+        <kanji>教室</kanji>
+        <kana>きょう.しつ</kana>
+        <romaji>kyou.shitsu</romaji>
+        <description>salle de classe</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="221">
+        <kanji>兄弟</kanji>
+        <kana>きょう.だい</kana>
+        <romaji>kyou.dai</romaji>
+        <description>frères et sœurs</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="222">
+        <kanji>去年</kanji>
+        <kana>きょ.ねん</kana>
+        <romaji>kyo.nen</romaji>
+        <description>l'année dernière</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="223">
+        <kanji>嫌い</kanji>
+        <kana>きら.い</kana>
+        <romaji>kira.i</romaji>
+        <description>aime pas, hais</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="224">
+        <kanji>切る</kanji>
+        <kana>き.る</kana>
+        <romaji>ki.ru</romaji>
+        <description>couper, emincer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="225">
+        <kanji>着る</kanji>
+        <kana>き.る</kana>
+        <romaji>ki.ru</romaji>
+        <description>porter, mettre (de haut en bas)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="226">
+        <kanji/>
+        <kana>き.れ.い</kana>
+        <romaji>ki.re.i</romaji>
+        <description>joli, comfortable, propre, bien</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="227">
+        <kanji/>
+        <kana>カ.レー</kana>
+        <romaji>KA.RII</romaji>
+        <description>curry</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="228">
+        <kanji>銀行</kanji>
+        <kana>ぎん.こう</kana>
+        <romaji>gin.kou</romaji>
+        <description>banque</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="229">
+        <kanji>金曜日</kanji>
+        <kana>きん.よう.び</kana>
+        <romaji>kin.you.bi</romaji>
+        <description>Vendredi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="230">
+        <kanji>九</kanji>
+        <kana>く</kana>
+        <romaji>ku</romaji>
+        <description>neuf (9)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="231">
+        <kanji>薬</kanji>
+        <kana>くすり</kana>
+        <romaji>kusuri</romaji>
+        <description>medicament</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="232">
+        <kanji>果物</kanji>
+        <kana>くだ.もの</kana>
+        <romaji>kuda.mono</romaji>
+        <description>fruit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="233">
+        <kanji>口</kanji>
+        <kana>くち</kana>
+        <romaji>kuchi</romaji>
+        <description>bouche, orifice, ouverture</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="234">
+        <kanji>靴</kanji>
+        <kana>くつ</kana>
+        <romaji>kutsu</romaji>
+        <description>chaussure</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="235">
+        <kanji>靴下</kanji>
+        <kana>くつ.した</kana>
+        <romaji>kutsu.shita</romaji>
+        <description>chaussette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="236">
+        <kanji>国</kanji>
+        <kana>くに</kana>
+        <romaji>kuni</romaji>
+        <description>pays</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="237">
+        <kanji>曇り</kanji>
+        <kana>くも.り</kana>
+        <romaji>kumo.ri</romaji>
+        <description>nuageux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="238">
+        <kanji>曇る</kanji>
+        <kana>くも.る</kana>
+        <romaji>kumo.ru</romaji>
+        <description>devenir nuageux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="239">
+        <kanji>暗い</kanji>
+        <kana>くら.い</kana>
+        <romaji>kura.i</romaji>
+        <description>noir, sombre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="240">
+        <kanji>来る</kanji>
+        <kana>く.る</kana>
+        <romaji>ku.ru</romaji>
+        <description>venir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="241">
+        <kanji>車</kanji>
+        <kana>くるま</kana>
+        <romaji>kuruma</romaji>
+        <description>voiture, vehicule</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="242">
+        <kanji>黒</kanji>
+        <kana>くろ</kana>
+        <romaji>kuro</romaji>
+        <description>noir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="243">
+        <kanji>黒い</kanji>
+        <kana>くろ.い</kana>
+        <romaji>kuro.i</romaji>
+        <description>noir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="244">
+        <kanji>警官</kanji>
+        <kana>けい.かん</kana>
+        <romaji>kei.kan</romaji>
+        <description>policier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="245">
+        <kanji>今朝</kanji>
+        <kana>け.さ</kana>
+        <romaji>ke.sa</romaji>
+        <description>ce matin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="246">
+        <kanji>消す</kanji>
+        <kana>け.す</kana>
+        <romaji>ke.su</romaji>
+        <description>effacer, éteindre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="247">
+        <kanji>結構</kanji>
+        <kana>けっ.こう</kana>
+        <romaji>kek.kou</romaji>
+        <description>bien, splendide ; assez, tolérable</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="248">
+        <kanji>結婚</kanji>
+        <kana>けっ.こん</kana>
+        <romaji>kek.kon</romaji>
+        <description>marriage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="249">
+        <kanji>月曜日</kanji>
+        <kana>げつ.よう.び</kana>
+        <romaji>getsu.you.bi</romaji>
+        <description>Lundi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="250">
+        <kanji>玄関</kanji>
+        <kana>げん.かん</kana>
+        <romaji>gen.kan</romaji>
+        <description>entrée, haul d'entrée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="251">
+        <kanji>元気</kanji>
+        <kana>げん.き</kana>
+        <romaji>gen.ki</romaji>
+        <description>santée, vigueur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="252">
+        <kanji>～個</kanji>
+        <kana>～.こ</kana>
+        <romaji>~.ko</romaji>
+        <description>compteur pour les petits objets</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="253">
+        <kanji>五</kanji>
+        <kana>ご</kana>
+        <romaji>go</romaji>
+        <description>cinq (5)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="254">
+        <kanji>～語</kanji>
+        <kana>～.ご</kana>
+        <romaji>~.go</romaji>
+        <description>mot, language</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="255">
+        <kanji>公園</kanji>
+        <kana>こう.えん</kana>
+        <romaji>kou.en</romaji>
+        <description>parc publique</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="256">
+        <kanji>交差点</kanji>
+        <kana>こう.さ.てん</kana>
+        <romaji>kou.chi.ten</romaji>
+        <description>intersection</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="257">
+        <kanji>紅茶</kanji>
+        <kana>こう.ちゃ</kana>
+        <romaji>kou.cha</romaji>
+        <description>thé (noir)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="258">
+        <kanji>交番</kanji>
+        <kana>こう.ばん</kana>
+        <romaji>kou.ban</romaji>
+        <description>antenne de police, kiosque de police</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="259">
+        <kanji>声</kanji>
+        <kana>こえ</kana>
+        <romaji>koe</romaji>
+        <description>voix</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="260">
+        <kanji/>
+        <kana>こ.こ</kana>
+        <romaji>ko.ko</romaji>
+        <description>ici</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="261">
+        <kanji>午後</kanji>
+        <kana>ご.ご</kana>
+        <romaji>go.go</romaji>
+        <description>après-midi, P.M.</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="262">
+        <kanji>九日</kanji>
+        <kana>ここの.か</kana>
+        <romaji>kokono.ka</romaji>
+        <description>neuf jours, le neuvième jour du mois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="263">
+        <kanji>九つ</kanji>
+        <kana>ここの.つ</kana>
+        <romaji>kokono.tsu</romaji>
+        <description>neuf (9)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="264">
+        <kanji>午前</kanji>
+        <kana>ご.ぜん</kana>
+        <romaji>go.zen</romaji>
+        <description>matin, A.M.</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="265">
+        <kanji>答える</kanji>
+        <kana>こた.え.る</kana>
+        <romaji>kota.e.ru</romaji>
+        <description>repondre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="266">
+        <kanji>今年</kanji>
+        <kana>こ.とし</kana>
+        <romaji>ko.toshi</romaji>
+        <description>cette année</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="267">
+        <kanji>言葉</kanji>
+        <kana>こと.ば</kana>
+        <romaji>koto.ba</romaji>
+        <description>mots, language, discourt</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="268">
+        <kanji>子供</kanji>
+        <kana>こ.ども</kana>
+        <romaji>ko.domo</romaji>
+        <description>enfant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="269">
+        <kanji/>
+        <kana>こ.の</kana>
+        <romaji>ko.no</romaji>
+        <description>ceci</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="270">
+        <kanji>御飯</kanji>
+        <kana>ご.はん</kana>
+        <romaji>go.ban</romaji>
+        <description>riz (cuit), repas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="271">
+        <kanji>困る</kanji>
+        <kana>こま.る</kana>
+        <romaji>koma.ru</romaji>
+        <description>être inquiet, être embété</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="272">
+        <kanji/>
+        <kana>こ.れ</kana>
+        <romaji>ko.re</romaji>
+        <description>ceci</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="273">
+        <kanji/>
+        <kana>～ころ/～ごろ</kana>
+        <romaji/>
+        <description>about,toward,approximately (time)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="274">
+        <kanji>今月</kanji>
+        <kana>こん.げつ</kana>
+        <romaji>kon.getsu</romaji>
+        <description>ce mois-ci</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="275">
+        <kanji>今週</kanji>
+        <kana>こん.しゅう</kana>
+        <romaji>kon.shou</romaji>
+        <description>cette semaine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="276">
+        <kanji/>
+        <kana>こ.ん.な</kana>
+        <romaji>ko.n.na</romaji>
+        <description>comme</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="277">
+        <kanji>今晩</kanji>
+        <kana>こん.ばん</kana>
+        <romaji>kon.ban</romaji>
+        <description>ce soir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="278">
+        <kanji>～歳</kanji>
+        <kana>～.さい</kana>
+        <romaji>~.chii</romaji>
+        <description>～ans (age)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="279">
+        <kanji>財布</kanji>
+        <kana>さい.ふ</kana>
+        <romaji>sai.bu</romaji>
+        <description>portefeuille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="280">
+        <kanji>魚</kanji>
+        <kana>さかな</kana>
+        <romaji>sakana</romaji>
+        <description>poisson</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="281">
+        <kanji>先</kanji>
+        <kana>さき</kana>
+        <romaji>saki</romaji>
+        <description>future, origine, précédent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="282">
+        <kanji>咲く</kanji>
+        <kana>さ.く</kana>
+        <romaji>sa.ku</romaji>
+        <description>fleurir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="283">
+        <kanji>作文</kanji>
+        <kana>さく.ぶん</kana>
+        <romaji>saku.bun</romaji>
+        <description>éssai, écriture</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="284">
+        <kanji>差す</kanji>
+        <kana>さ.す</kana>
+        <romaji>sa.su</romaji>
+        <description>ouvrir son visage, ouvrir un parapluie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="285">
+        <kanji>～冊</kanji>
+        <kana>～.さつ</kana>
+        <romaji>~.satsu</romaji>
+        <description>compteur pour les livres</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="286">
+        <kanji>雑誌</kanji>
+        <kana>ざっ.し</kana>
+        <romaji>zas.shi</romaji>
+        <description>magazine, journal</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="287">
+        <kanji>砂糖</kanji>
+        <kana>さ.とう</kana>
+        <romaji>sa.tou</romaji>
+        <description>sucre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="288">
+        <kanji>寒い</kanji>
+        <kana>さむ.い</kana>
+        <romaji>samu.i</romaji>
+        <description>froid</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="289">
+        <kanji>さ来年</kanji>
+        <kana>さ.らい.ねん</kana>
+        <romaji>sa.rai.nen</romaji>
+        <description>dans deux ans</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="290">
+        <kanji/>
+        <kana>～.さ.ん</kana>
+        <romaji>~.sa.n</romaji>
+        <description>Mr ou Mme</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="291">
+        <kanji>三</kanji>
+        <kana>さん</kana>
+        <romaji>san</romaji>
+        <description>trois (3)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="292">
+        <kanji>散歩</kanji>
+        <kana>さん.ぽ</kana>
+        <romaji>san.po</romaji>
+        <description>marche, tour</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="293">
+        <kanji>四</kanji>
+        <kana>し</kana>
+        <romaji>shi</romaji>
+        <description>quatre (4)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="294">
+        <kanji>～時</kanji>
+        <kana>～.じ</kana>
+        <romaji>~.ji</romaji>
+        <description>heure (il est ~heure)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="295">
+        <kanji>塩</kanji>
+        <kana>しお</kana>
+        <romaji>shio</romaji>
+        <description>sel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="296">
+        <kanji/>
+        <kana>し.か.し</kana>
+        <romaji>shi.ka.shi</romaji>
+        <description>mais</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="297">
+        <kanji>時間</kanji>
+        <kana>じ.かん</kana>
+        <romaji>ji.kan</romaji>
+        <description>heure</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="298">
+        <kanji>～時間</kanji>
+        <kana>～.じ.かん</kana>
+        <romaji>~.ji.kan</romaji>
+        <description>compteur pour les heures</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="299">
+        <kanji>仕事</kanji>
+        <kana>し.ごと</kana>
+        <romaji>shi.goto</romaji>
+        <description>travaille, emploie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="300">
+        <kanji>辞書</kanji>
+        <kana>じ.しょ</kana>
+        <romaji>ji.sho</romaji>
+        <description>dictionnaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="301">
+        <kanji>静か</kanji>
+        <kana>しず.か</kana>
+        <romaji>shizu.ka</romaji>
+        <description>calme, tranquille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="302">
+        <kanji>下</kanji>
+        <kana>した</kana>
+        <romaji>shita</romaji>
+        <description>dessous, en-dessous, plus bas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="303">
+        <kanji>七</kanji>
+        <kana>しち</kana>
+        <romaji>shichi</romaji>
+        <description>sept (7)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="304">
+        <kanji>質問</kanji>
+        <kana>しつ.もん</kana>
+        <romaji>shitsu.mon</romaji>
+        <description>question, interogation</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="305">
+        <kanji>自転車</kanji>
+        <kana>じ.てん.しゃ</kana>
+        <romaji>ji.ten.sha</romaji>
+        <description>vélo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="306">
+        <kanji>自動車</kanji>
+        <kana>じ.どう.しゃ</kana>
+        <romaji>ji.dou.sha</romaji>
+        <description>voiture</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="307">
+        <kanji>死ぬ</kanji>
+        <kana>し.ぬ</kana>
+        <romaji>shi.nu</romaji>
+        <description>mourir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="308">
+        <kanji>字引</kanji>
+        <kana>じ.びき</kana>
+        <romaji>ji.biki</romaji>
+        <description>dictionnaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="309">
+        <kanji>自分</kanji>
+        <kana>じ.ぶん</kana>
+        <romaji>ji.bun</romaji>
+        <description>moi-même, soi-même</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="310">
+        <kanji>閉まる</kanji>
+        <kana>し.ま.る</kana>
+        <romaji>shi.ma.ru</romaji>
+        <description>fermer, être fermé</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="311">
+        <kanji>閉める</kanji>
+        <kana>し.め.る</kana>
+        <romaji>shi.ne.ru</romaji>
+        <description>fermer, clore</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="312">
+        <kanji>締める</kanji>
+        <kana>し.め.る</kana>
+        <romaji>shi.ne.ru</romaji>
+        <description>nouer, ficeller, mettre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="313">
+        <kanji/>
+        <kana>じゃ/じゃあ</kana>
+        <romaji/>
+        <description>well,well then</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="314">
+        <kanji>写真</kanji>
+        <kana>しゃ.しん</kana>
+        <romaji>sha.shin</romaji>
+        <description>photographie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="315">
+        <kanji>十</kanji>
+        <kana>じゅう</kana>
+        <romaji>juu</romaji>
+        <description>dix (10)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="316">
+        <kanji>～中</kanji>
+        <kana>～.じゅう</kana>
+        <romaji>~.juu</romaji>
+        <description>pendant, durant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="317">
+        <kanji>～週間</kanji>
+        <kana>～.しゅう.かん</kana>
+        <romaji>~.shuu.kan</romaji>
+        <description>～semaines</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="318">
+        <kanji>授業</kanji>
+        <kana>じゅ.ぎょう</kana>
+        <romaji>ju.gyou</romaji>
+        <description>lesson, cours</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="319">
+        <kanji>宿題</kanji>
+        <kana>しゅく.だい</kana>
+        <romaji>shuku.dai</romaji>
+        <description>devoir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="320">
+        <kanji>上手</kanji>
+        <kana>じょう.ず</kana>
+        <romaji>jou.zu</romaji>
+        <description>adroit, dexterité</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="321">
+        <kanji>丈夫</kanji>
+        <kana>じょう.ぶ</kana>
+        <romaji>jou.bu</romaji>
+        <description>fort, solide, durable</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="322">
+        <kanji/>
+        <kana>しょう.ゆ</kana>
+        <romaji>shou.yu</romaji>
+        <description>sauce de soja</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="323">
+        <kanji>食堂</kanji>
+        <kana>しょく.どう</kana>
+        <romaji>shoku.dou</romaji>
+        <description>cafeteria, salle de dinner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="324">
+        <kanji>知る</kanji>
+        <kana>し.る</kana>
+        <romaji>shi.ru</romaji>
+        <description>savoir, comprendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="325">
+        <kanji>白</kanji>
+        <kana>しろ</kana>
+        <romaji>shiro</romaji>
+        <description>blanc</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="326">
+        <kanji>白い</kanji>
+        <kana>しろ.い</kana>
+        <romaji>shiro.i</romaji>
+        <description>blanc</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="327">
+        <kanji>～人</kanji>
+        <kana>～.じん</kana>
+        <romaji>~.jin</romaji>
+        <description>compteur de personnes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="328">
+        <kanji>新聞</kanji>
+        <kana>しん.ぶん</kana>
+        <romaji>shin.bun</romaji>
+        <description>journal</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="329">
+        <kanji>水曜日</kanji>
+        <kana>すい.よう.び</kana>
+        <romaji>sui.you.bi</romaji>
+        <description>Mercredi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="330">
+        <kanji>吸う</kanji>
+        <kana>す.う</kana>
+        <romaji>su.u</romaji>
+        <description>fumer, respîrer, aspirer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="331">
+        <kanji>好き</kanji>
+        <kana>す.き</kana>
+        <romaji>su.ki</romaji>
+        <description>préférer, aimer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="332">
+        <kanji/>
+        <kana>～.すぎ</kana>
+        <romaji>~.sugi</romaji>
+        <description>～ trop</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="333">
+        <kanji>少ない</kanji>
+        <kana>すく.な.い</kana>
+        <romaji>suku.na.i</romaji>
+        <description>quelques un, infime</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="334">
+        <kanji/>
+        <kana>すぐ・に</kana>
+        <romaji>sugu ni</romaji>
+        <description>instantanément</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="335">
+        <kanji>少し</kanji>
+        <kana>すこ.し</kana>
+        <romaji>suko.shi</romaji>
+        <description>petit, un petit peu</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="336">
+        <kanji>涼しい</kanji>
+        <kana>すず.し.い</kana>
+        <romaji>sugu.shi.i</romaji>
+        <description>froid, rafraichissant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="337">
+        <kanji/>
+        <kana>～.ずつ</kana>
+        <romaji>~.zutsu</romaji>
+        <description>une fois, progressivement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="338">
+        <kanji>住む</kanji>
+        <kana>す.む</kana>
+        <romaji>su.mu</romaji>
+        <description>resider, habiter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="339">
+        <kanji/>
+        <kana>スリッパ</kana>
+        <romaji/>
+        <description>slippers</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="340">
+        <kanji/>
+        <kana>する</kana>
+        <romaji>suru</romaji>
+        <description>faire, essayer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="341">
+        <kanji>座る</kanji>
+        <kana>すわ.る</kana>
+        <romaji>suwa.ru</romaji>
+        <description>s'assoire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="342">
+        <kanji>背</kanji>
+        <kana>せい</kana>
+        <romaji>sei</romaji>
+        <description>taille, stature</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="343">
+        <kanji>生徒</kanji>
+        <kana>せい.と</kana>
+        <romaji>sei.to</romaji>
+        <description>orphelin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="344">
+        <kanji/>
+        <kana>セー.ター</kana>
+        <romaji>SEE.TAA</romaji>
+        <description>pullover</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="345">
+        <kanji>石鹸</kanji>
+        <kana>せっ.けん</kana>
+        <romaji>sek.ken</romaji>
+        <description>savon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="346">
+        <kanji>背広</kanji>
+        <kana>せ.びろ</kana>
+        <romaji>se.biru</romaji>
+        <description>veste</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="347">
+        <kanji>狭い</kanji>
+        <kana>せま.い</kana>
+        <romaji>sema.i</romaji>
+        <description>étroit, confiné, petit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="348">
+        <kanji/>
+        <kana>ゼロ</kana>
+        <romaji>ZERO</romaji>
+        <description>zéro</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="349">
+        <kanji>千</kanji>
+        <kana>せん</kana>
+        <romaji>sen</romaji>
+        <description>mille, plein</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="350">
+        <kanji>先月</kanji>
+        <kana>せん.げつ</kana>
+        <romaji>sen.getsu</romaji>
+        <description>mois dernier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="351">
+        <kanji>先週</kanji>
+        <kana>せん.しゅう</kana>
+        <romaji>sen.shuu</romaji>
+        <description>semaine dernière</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="352">
+        <kanji>先生</kanji>
+        <kana>せん.せい</kana>
+        <romaji>sen.sei</romaji>
+        <description>professeur, docteur, enseignant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="353">
+        <kanji>洗濯</kanji>
+        <kana>せん.たく</kana>
+        <romaji>sen.taku</romaji>
+        <description>lessive, linge</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="354">
+        <kanji>全部</kanji>
+        <kana>ぜん.ぶ</kana>
+        <romaji>zen.bu</romaji>
+        <description>tout, entier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="355">
+        <kanji/>
+        <kana>そう./.そうです</kana>
+        <romaji>sou./.soudesu</romaji>
+        <description>sembler</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="356">
+        <kanji>掃除</kanji>
+        <kana>そう.じ</kana>
+        <romaji>sou.ji</romaji>
+        <description>nettoyer, balayer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="357">
+        <kanji/>
+        <kana>そうして./.そして</kana>
+        <romaji>soushite./.soshite</romaji>
+        <description>et puis</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="358">
+        <kanji/>
+        <kana>そこ</kana>
+        <romaji>soko</romaji>
+        <description>cette place</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="359">
+        <kanji/>
+        <kana>そちら</kana>
+        <romaji>sochira</romaji>
+        <description>la-bas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="360">
+        <kanji/>
+        <kana>そっち</kana>
+        <romaji>socchi</romaji>
+        <description>la-bas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="361">
+        <kanji>外</kanji>
+        <kana>そと</kana>
+        <romaji>soto</romaji>
+        <description>dehors</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="362">
+        <kanji/>
+        <kana>その</kana>
+        <romaji>sono</romaji>
+        <description>cela</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="363">
+        <kanji/>
+        <kana>そば</kana>
+        <romaji>soba</romaji>
+        <description>à coté, prêt de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="364">
+        <kanji>空</kanji>
+        <kana>そら</kana>
+        <romaji>sora</romaji>
+        <description>ciel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="365">
+        <kanji/>
+        <kana>それ</kana>
+        <romaji>sore</romaji>
+        <description>cela</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="366">
+        <kanji/>
+        <kana>それから</kana>
+        <romaji>sorekara</romaji>
+        <description>et puis, après ça</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="367">
+        <kanji/>
+        <kana>それでは</kana>
+        <romaji>soredewa</romaji>
+        <description>dans ce cas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="368">
+        <kanji>～台</kanji>
+        <kana>～.だい</kana>
+        <romaji>~.dai</romaji>
+        <description>compteur pour les vehicules/machines</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="369">
+        <kanji>大学</kanji>
+        <kana>だい.がく</kana>
+        <romaji>dai.kaku</romaji>
+        <description>université</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="370">
+        <kanji>大使館</kanji>
+        <kana>たい.し.かん</kana>
+        <romaji>tai.shi.kan</romaji>
+        <description>ambassade</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="371">
+        <kanji>大丈夫</kanji>
+        <kana>だい.じょう.ぶ</kana>
+        <romaji>dai.jou.bu</romaji>
+        <description>bien,O.K.</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="372">
+        <kanji>大好き</kanji>
+        <kana>だい.す.き</kana>
+        <romaji>dai.su.ki</romaji>
+        <description>aimer beaucoup</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="373">
+        <kanji>大切</kanji>
+        <kana>たい.せつ</kana>
+        <romaji>tai.setsu</romaji>
+        <description>important</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="374">
+        <kanji>台所</kanji>
+        <kana>だい.どころ</kana>
+        <romaji>dai.dokoro</romaji>
+        <description>cuisine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="375">
+        <kanji/>
+        <kana>たいへん</kana>
+        <romaji>taien</romaji>
+        <description>très</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="376">
+        <kanji/>
+        <kana>たいへん</kana>
+        <romaji>taien</romaji>
+        <description>situation difficile</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="377">
+        <kanji>高い</kanji>
+        <kana>たか.い</kana>
+        <romaji>taka.i</romaji>
+        <description>grand, haut</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="378">
+        <kanji>高い</kanji>
+        <kana>たか.い</kana>
+        <romaji>taka.i</romaji>
+        <description>chère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="379">
+        <kanji/>
+        <kana>～.だけ</kana>
+        <romaji>~.dake</romaji>
+        <description>seulement ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="380">
+        <kanji/>
+        <kana>たくさん</kana>
+        <romaji>takusan</romaji>
+        <description>beaucoup</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="381">
+        <kanji/>
+        <kana>タクシー</kana>
+        <romaji>TAKUSHII</romaji>
+        <description>taxi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="382">
+        <kanji>出す</kanji>
+        <kana>だ.す</kana>
+        <romaji>da.su</romaji>
+        <description>sortir, envoyer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="383">
+        <kanji/>
+        <kana>～.たち</kana>
+        <romaji>~.tachi</romaji>
+        <description>suffix de plurièle</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="384">
+        <kanji>立つ</kanji>
+        <kana>た.つ</kana>
+        <romaji>ta.tsu</romaji>
+        <description>ce lever</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="385">
+        <kanji/>
+        <kana>たて</kana>
+        <romaji>tate</romaji>
+        <description>longueur, hauteur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="386">
+        <kanji>建物</kanji>
+        <kana>たて.もの</kana>
+        <romaji>tade.mono</romaji>
+        <description>immeuble</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="387">
+        <kanji>楽しい</kanji>
+        <kana>たの.し.い</kana>
+        <romaji>tano.shi.i</romaji>
+        <description>amusant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="388">
+        <kanji>頼む</kanji>
+        <kana>たの.む</kana>
+        <romaji>tano.mu</romaji>
+        <description>demander</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="389">
+        <kanji/>
+        <kana>たばこ</kana>
+        <romaji>tabako</romaji>
+        <description>cigarettes, tabas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="390">
+        <kanji/>
+        <kana>たぶん</kana>
+        <romaji>tabun</romaji>
+        <description>peut-être, probablement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="391">
+        <kanji>食べ物</kanji>
+        <kana>た.べ.もの</kana>
+        <romaji>ta.be.mono</romaji>
+        <description>nourriture</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="392">
+        <kanji>食べる</kanji>
+        <kana>た.べ.る</kana>
+        <romaji>ta.be.ru</romaji>
+        <description>manger</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="393">
+        <kanji>卵</kanji>
+        <kana>たまご</kana>
+        <romaji>tamago</romaji>
+        <description>œuf</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="394">
+        <kanji>誰</kanji>
+        <kana>だれ</kana>
+        <romaji>dare</romaji>
+        <description>qui</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="395">
+        <kanji>誰か</kanji>
+        <kana>だれ.か</kana>
+        <romaji>dare.ka</romaji>
+        <description>quelqu'un</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="396">
+        <kanji>誕生日</kanji>
+        <kana>たん.じょう.び</kana>
+        <romaji>tan.jou.bi</romaji>
+        <description>anniversaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="397">
+        <kanji/>
+        <kana>だんだん</kana>
+        <romaji>dandan</romaji>
+        <description>graduèlement, par étape</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="398">
+        <kanji>小さい</kanji>
+        <kana>ちい.さ.い</kana>
+        <romaji>chi.sa.i</romaji>
+        <description>petit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="399">
+        <kanji>小さな</kanji>
+        <kana>ちい.さ.な</kana>
+        <romaji>chi.sa.na</romaji>
+        <description>petit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="400">
+        <kanji>近い</kanji>
+        <kana>ちか.い</kana>
+        <romaji>chika.i</romaji>
+        <description>prèt, court</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="401">
+        <kanji>違う</kanji>
+        <kana>ちが.う</kana>
+        <romaji>chiga.u</romaji>
+        <description>différer de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="402">
+        <kanji>近く</kanji>
+        <kana>ちか.く</kana>
+        <romaji>chiga.ku</romaji>
+        <description>prèt</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="403">
+        <kanji>地下鉄</kanji>
+        <kana>ち.かて.つ</kana>
+        <romaji>chi.kate.tsu</romaji>
+        <description>métro</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="404">
+        <kanji>地図</kanji>
+        <kana>ち.ず</kana>
+        <romaji>chi.zu</romaji>
+        <description>carte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="405">
+        <kanji>父</kanji>
+        <kana>ちち</kana>
+        <romaji>chichi</romaji>
+        <description>père</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="406">
+        <kanji>茶色</kanji>
+        <kana>ちゃ.いろ</kana>
+        <romaji>cha.iro</romaji>
+        <description>brun</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="407">
+        <kanji/>
+        <kana>ちゃわん</kana>
+        <romaji>chawan</romaji>
+        <description>bol de riz</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="408">
+        <kanji>～中</kanji>
+        <kana>～.ちゅう</kana>
+        <romaji>~.chuu</romaji>
+        <description>pendant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="409">
+        <kanji/>
+        <kana>ちょうど</kana>
+        <romaji>choudo</romaji>
+        <description>juste, exacte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="410">
+        <kanji/>
+        <kana>ちょっと</kana>
+        <romaji>chotto</romaji>
+        <description>un petit peu</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="411">
+        <kanji>一日</kanji>
+        <kana>つい.たち</kana>
+        <romaji>tsui.tachi</romaji>
+        <description>pour un jour, premier jour du mois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="412">
+        <kanji>使う</kanji>
+        <kana>つか.う</kana>
+        <romaji>tsuka.u</romaji>
+        <description>utiliser</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="413">
+        <kanji>疲れる</kanji>
+        <kana>つか.れ.る</kana>
+        <romaji>tsuka.re.ru</romaji>
+        <description>fatiguer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="414">
+        <kanji>次</kanji>
+        <kana>つぎ</kana>
+        <romaji>tsugi</romaji>
+        <description>suivant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="415">
+        <kanji>着く</kanji>
+        <kana>つ.く</kana>
+        <romaji>tsuku</romaji>
+        <description>arriver à</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="416">
+        <kanji>机</kanji>
+        <kana>つくえ</kana>
+        <romaji>tsukue</romaji>
+        <description>bureau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="417">
+        <kanji>作る</kanji>
+        <kana>つく.る</kana>
+        <romaji>tsuku.ru</romaji>
+        <description>faire, fabriquer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="418">
+        <kanji/>
+        <kana>つける</kana>
+        <romaji>tsukeru</romaji>
+        <description>allumer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="419">
+        <kanji>勤める</kanji>
+        <kana>つとめる</kana>
+        <romaji>tsutoneru</romaji>
+        <description>servir, travailler pour</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="420">
+        <kanji/>
+        <kana>つまらない</kana>
+        <romaji>tsumaranai</romaji>
+        <description>insignifiant, embêtant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="421">
+        <kanji>冷たい</kanji>
+        <kana>つめ.た.い</kana>
+        <romaji>tsume.ta.i</romaji>
+        <description>froid, frais, dur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="422">
+        <kanji>強い</kanji>
+        <kana>つよ.い</kana>
+        <romaji>tsuyo.i</romaji>
+        <description>fort, puissant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="423">
+        <kanji>手</kanji>
+        <kana>て</kana>
+        <romaji>te</romaji>
+        <description>main</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="424">
+        <kanji/>
+        <kana>テープ</kana>
+        <romaji>TEEPO</romaji>
+        <description>cassette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="425">
+        <kanji/>
+        <kana>テープレコーダー</kana>
+        <romaji>TEEPORECOODAA</romaji>
+        <description>lecteur de cassette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="426">
+        <kanji/>
+        <kana>テーブル</kana>
+        <romaji>TEEBULU</romaji>
+        <description>table</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="427">
+        <kanji>出かける</kanji>
+        <kana>で.か.け.る</kana>
+        <romaji>de.ka.ke.ru</romaji>
+        <description>partir, sortir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="428">
+        <kanji>手紙</kanji>
+        <kana>て.がみ</kana>
+        <romaji>te.gami</romaji>
+        <description>lettre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="429">
+        <kanji/>
+        <kana>できる</kana>
+        <romaji>dekiru</romaji>
+        <description>être capable de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="430">
+        <kanji>出口</kanji>
+        <kana>で.ぐち</kana>
+        <romaji>de.guchi</romaji>
+        <description>sortit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="431">
+        <kanji/>
+        <kana>テスト</kana>
+        <romaji>TESUTO</romaji>
+        <description>examen</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="432">
+        <kanji/>
+        <kana>では</kana>
+        <romaji>dewa</romaji>
+        <description>avec ça…</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="433">
+        <kanji/>
+        <kana>デパート</kana>
+        <romaji>DEPOOTO</romaji>
+        <description>centre commercial</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="434">
+        <kanji/>
+        <kana>でも</kana>
+        <romaji>demo</romaji>
+        <description>mais, cependant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="435">
+        <kanji>出る</kanji>
+        <kana>で.る</kana>
+        <romaji>de.ru</romaji>
+        <description>apparaitre, quitter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="436">
+        <kanji/>
+        <kana>テレビ</kana>
+        <romaji>TEREBI</romaji>
+        <description>television,TV</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="437">
+        <kanji>天気</kanji>
+        <kana>てん.き</kana>
+        <romaji>ten.ki</romaji>
+        <description>temps, météo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="438">
+        <kanji>電気</kanji>
+        <kana>でん.き</kana>
+        <romaji>den.ki</romaji>
+        <description>éléctricité</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="439">
+        <kanji>電車</kanji>
+        <kana>でん.しゃ</kana>
+        <romaji>den.sha</romaji>
+        <description>train éléctique</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="440">
+        <kanji>電話</kanji>
+        <kana>でん.わ</kana>
+        <romaji>den.wa</romaji>
+        <description>téléphone</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="441">
+        <kanji>戸</kanji>
+        <kana>と</kana>
+        <romaji>to</romaji>
+        <description>porte (Japonnaise)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="442">
+        <kanji>～度</kanji>
+        <kana>～.ど</kana>
+        <romaji>~.do</romaji>
+        <description>compteur d'occurrence</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="443">
+        <kanji/>
+        <kana>ドア</kana>
+        <romaji>DOA</romaji>
+        <description>porte (Occidentale)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="444">
+        <kanji/>
+        <kana>トイレ</kana>
+        <romaji>TOIRE</romaji>
+        <description>toilette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="445">
+        <kanji/>
+        <kana>どう</kana>
+        <romaji>dou</romaji>
+        <description>comment, de quelle façon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="446">
+        <kanji/>
+        <kana>どうして</kana>
+        <romaji>doushite</romaji>
+        <description>pourquoi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="447">
+        <kanji/>
+        <kana>どうぞ</kana>
+        <romaji>douzo</romaji>
+        <description>s'il vous plait</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="448">
+        <kanji>動物</kanji>
+        <kana>どう.ぶつ</kana>
+        <romaji>dou.butsu</romaji>
+        <description>animale</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="449">
+        <kanji/>
+        <kana>どうも</kana>
+        <romaji>doumo</romaji>
+        <description>merci</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="450">
+        <kanji>十</kanji>
+        <kana>とお</kana>
+        <romaji>too</romaji>
+        <description>dix (10)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="451">
+        <kanji>遠い</kanji>
+        <kana>とお.い</kana>
+        <romaji>too.i</romaji>
+        <description>loin, éloigné</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="452">
+        <kanji>十日</kanji>
+        <kana>とお.か</kana>
+        <romaji>too.ka</romaji>
+        <description>dix jours, le dix</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="453">
+        <kanji>～時</kanji>
+        <kana>～.とき</kana>
+        <romaji>~.toki</romaji>
+        <description>pendant ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="454">
+        <kanji>時々</kanji>
+        <kana>とき.どき</kana>
+        <romaji>toki.doki</romaji>
+        <description>dés fois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="455">
+        <kanji>時計</kanji>
+        <kana>と.けい</kana>
+        <romaji>to.kei</romaji>
+        <description>montre, horloge</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="456">
+        <kanji/>
+        <kana>どこ</kana>
+        <romaji>doko</romaji>
+        <description>où</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="457">
+        <kanji>所</kanji>
+        <kana>ところ</kana>
+        <romaji>tokoro</romaji>
+        <description>place</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="458">
+        <kanji>年</kanji>
+        <kana>とし</kana>
+        <romaji>toshi</romaji>
+        <description>ans, année</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="459">
+        <kanji>図書館</kanji>
+        <kana>と.しょ.かん</kana>
+        <romaji>to.sho.kan</romaji>
+        <description>librairie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="460">
+        <kanji/>
+        <kana>どちら</kana>
+        <romaji>dochira</romaji>
+        <description>quelle, quel chemin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="461">
+        <kanji/>
+        <kana>どっち</kana>
+        <romaji>docchi</romaji>
+        <description>laquelle, quel chemin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="462">
+        <kanji/>
+        <kana>とても</kana>
+        <romaji>totemo</romaji>
+        <description>très, beaucoup, trop</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="463">
+        <kanji/>
+        <kana>どなた</kana>
+        <romaji>donata</romaji>
+        <description>qui</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="464">
+        <kanji>隣</kanji>
+        <kana>となり</kana>
+        <romaji>tonari</romaji>
+        <description>à coté de, voisin de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="465">
+        <kanji/>
+        <kana>どの</kana>
+        <romaji>dono</romaji>
+        <description>quel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="466">
+        <kanji>飛ぶ</kanji>
+        <kana>と.ぶ</kana>
+        <romaji>to.bu</romaji>
+        <description>voler, aller</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="467">
+        <kanji>止まる</kanji>
+        <kana>と.ま.る</kana>
+        <romaji>to.ma.ru</romaji>
+        <description>s'arréter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="468">
+        <kanji>友達</kanji>
+        <kana>とも.だち</kana>
+        <romaji>tomo.dachi</romaji>
+        <description>amis</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="469">
+        <kanji>土曜日</kanji>
+        <kana>ど.よう.び</kana>
+        <romaji>do.you.bi</romaji>
+        <description>Samedi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="470">
+        <kanji>鳥</kanji>
+        <kana>とり</kana>
+        <romaji>tori</romaji>
+        <description>oiseau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="471">
+        <kanji>とり肉</kanji>
+        <kana>と.り.にく</kana>
+        <romaji>to.ri.niku</romaji>
+        <description>viande de poulet</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="472">
+        <kanji>取る</kanji>
+        <kana>と.る</kana>
+        <romaji>to.ru</romaji>
+        <description>prendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="473">
+        <kanji>撮る</kanji>
+        <kana>と.る</kana>
+        <romaji>to.ru</romaji>
+        <description>photographier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="474">
+        <kanji/>
+        <kana>どれ</kana>
+        <romaji>dore</romaji>
+        <description>lequel (3+)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="475">
+        <kanji/>
+        <kana>どんな</kana>
+        <romaji>donna</romaji>
+        <description>quel, quel sorte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="476">
+        <kanji/>
+        <kana>ない</kana>
+        <romaji>nai</romaji>
+        <description>pas, pas de</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="477">
+        <kanji/>
+        <kana>ナイフ</kana>
+        <romaji>NAIFU</romaji>
+        <description>couteau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="478">
+        <kanji>中</kanji>
+        <kana>なか</kana>
+        <romaji>naka</romaji>
+        <description>interieur, parmis, milieu</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="479">
+        <kanji>長い</kanji>
+        <kana>なが.い</kana>
+        <romaji>naga.i</romaji>
+        <description>long</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="480">
+        <kanji>鳴く</kanji>
+        <kana>な.く</kana>
+        <romaji>na.ku</romaji>
+        <description>faire du bruit (animale)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="481">
+        <kanji>無くす</kanji>
+        <kana>な.く.す</kana>
+        <romaji>na.ku.su</romaji>
+        <description>perdre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="482">
+        <kanji/>
+        <kana>なぜ</kana>
+        <romaji>naze</romaji>
+        <description>pouquoi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="483">
+        <kanji>夏</kanji>
+        <kana>なつ</kana>
+        <romaji>natsu</romaji>
+        <description>été</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="484">
+        <kanji>夏休み</kanji>
+        <kana>なつ.やす.み</kana>
+        <romaji>natsu.yasu.mi</romaji>
+        <description>vacances d'été</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="485">
+        <kanji/>
+        <kana>～.など</kana>
+        <romaji>~.nado</romaji>
+        <description>et cetera</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="486">
+        <kanji>七つ</kanji>
+        <kana>なな.つ</kana>
+        <romaji>nana.tsu</romaji>
+        <description>sept (7)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="487">
+        <kanji>何</kanji>
+        <kana>なに</kana>
+        <romaji>nani</romaji>
+        <description>quoi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="488">
+        <kanji>七日</kanji>
+        <kana>なの.か</kana>
+        <romaji>nano.ka</romaji>
+        <description>sept jours, le sept</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="489">
+        <kanji>名前</kanji>
+        <kana>な.まえ</kana>
+        <romaji>na.mae</romaji>
+        <description>nom</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="490">
+        <kanji>習う</kanji>
+        <kana>なら.う</kana>
+        <romaji>nara.u</romaji>
+        <description>apprendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="491">
+        <kanji>並ぶ</kanji>
+        <kana>なら.ぶ</kana>
+        <romaji>nara.bu</romaji>
+        <description>s'aligner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="492">
+        <kanji>並べる</kanji>
+        <kana>なら.べ.る</kana>
+        <romaji>nara.be.ru</romaji>
+        <description>aligner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="493">
+        <kanji/>
+        <kana>なる</kana>
+        <romaji>naru</romaji>
+        <description>devenir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="494">
+        <kanji>何～</kanji>
+        <kana>なん.～</kana>
+        <romaji>nan.~</romaji>
+        <description>genre de ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="495">
+        <kanji>二</kanji>
+        <kana>に</kana>
+        <romaji>ni</romaji>
+        <description>deux (2)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="496">
+        <kanji/>
+        <kana>にぎやか</kana>
+        <romaji>nigiyaka</romaji>
+        <description>affairé, occupé</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="497">
+        <kanji>肉</kanji>
+        <kana>にく</kana>
+        <romaji>niku</romaji>
+        <description>viande</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="498">
+        <kanji>西</kanji>
+        <kana>にし</kana>
+        <romaji>nishi</romaji>
+        <description>ouest</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="499">
+        <kanji>～日</kanji>
+        <kana>～.にち</kana>
+        <romaji>~.nichi</romaji>
+        <description>～ jour du mois, pendant ～ jours</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="500">
+        <kanji>日曜日</kanji>
+        <kana>にち.よう.び</kana>
+        <romaji>nichi.you.bi</romaji>
+        <description>Dimanche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="501">
+        <kanji>荷物</kanji>
+        <kana>に.もつ</kana>
+        <romaji>ni.motsu</romaji>
+        <description>bagagges</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="502">
+        <kanji/>
+        <kana>ニュース</kana>
+        <romaji>NYUUSU</romaji>
+        <description>informations</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="503">
+        <kanji>庭</kanji>
+        <kana>にわ</kana>
+        <romaji>niwa</romaji>
+        <description>jardin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="504">
+        <kanji>～人</kanji>
+        <kana>～.にん</kana>
+        <romaji>~.nin</romaji>
+        <description>compteurs de personnes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="505">
+        <kanji>脱ぐ</kanji>
+        <kana>ぬ.ぐ</kana>
+        <romaji>nu.gu</romaji>
+        <description>se deshabiller</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="506">
+        <kanji>温い</kanji>
+        <kana>ぬる.い</kana>
+        <romaji>nuru.i</romaji>
+        <description>tiède</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="507">
+        <kanji/>
+        <kana>ネクタイ</kana>
+        <romaji>NEKUTAI</romaji>
+        <description>cravatte, noeud papillon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="508">
+        <kanji>猫</kanji>
+        <kana>ねこ</kana>
+        <romaji>neko</romaji>
+        <description>chat</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="509">
+        <kanji>寝る</kanji>
+        <kana>ね.る</kana>
+        <romaji>ne.ru</romaji>
+        <description>se coucher, dormir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="510">
+        <kanji>～年</kanji>
+        <kana>～.ねん</kana>
+        <romaji>~.nen</romaji>
+        <description>～ ans</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="511">
+        <kanji/>
+        <kana>ノート</kana>
+        <romaji>NOOTO</romaji>
+        <description>note, cahier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="512">
+        <kanji>登る</kanji>
+        <kana>のぼ.る</kana>
+        <romaji>noba.ru</romaji>
+        <description>grimper</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="513">
+        <kanji>飲み物</kanji>
+        <kana>の.み.もの</kana>
+        <romaji>no.mi.mono</romaji>
+        <description>boisson</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="514">
+        <kanji>飲む</kanji>
+        <kana>の.む</kana>
+        <romaji>no.mu</romaji>
+        <description>boire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="515">
+        <kanji>乗る</kanji>
+        <kana>の.る</kana>
+        <romaji>no.ru</romaji>
+        <description>monter dans</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="516">
+        <kanji>歯</kanji>
+        <kana>は</kana>
+        <romaji>ha</romaji>
+        <description>dent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="517">
+        <kanji/>
+        <kana>パーティー</kana>
+        <romaji>PAATIII</romaji>
+        <description>fête</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="518">
+        <kanji/>
+        <kana>はい</kana>
+        <romaji>hai</romaji>
+        <description>oui</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="519">
+        <kanji>～杯</kanji>
+        <kana>～.はい</kana>
+        <romaji>~.hai</romaji>
+        <description>compteur de tasse pleine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="520">
+        <kanji>灰皿</kanji>
+        <kana>はい.ざら</kana>
+        <romaji>hai.zara</romaji>
+        <description>cendrier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="521">
+        <kanji>入る</kanji>
+        <kana>はい.る</kana>
+        <romaji>hai.ru</romaji>
+        <description>entrer, contenir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="522">
+        <kanji>葉書</kanji>
+        <kana>は.がき</kana>
+        <romaji>ha.gaki</romaji>
+        <description>carte postale</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="523">
+        <kanji/>
+        <kana>はく</kana>
+        <romaji>haku</romaji>
+        <description>porter (vêtement)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="524">
+        <kanji>箱</kanji>
+        <kana>はこ</kana>
+        <romaji>hako</romaji>
+        <description>boite</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="525">
+        <kanji>橋</kanji>
+        <kana>はし</kana>
+        <romaji>hashi</romaji>
+        <description>pond</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="526">
+        <kanji/>
+        <kana>はし</kana>
+        <romaji>hashi</romaji>
+        <description>baguettes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="527">
+        <kanji>始まる</kanji>
+        <kana>はじ.まる</kana>
+        <romaji>haji.maru</romaji>
+        <description>commencer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="528">
+        <kanji>始め</kanji>
+        <kana>はじ.め</kana>
+        <romaji>haji.me</romaji>
+        <description>debut, départ</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="529">
+        <kanji>初めて</kanji>
+        <kana>はじ.め.て</kana>
+        <romaji>haji.me.te</romaji>
+        <description>pour la première fois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="530">
+        <kanji>走る</kanji>
+        <kana>はし.る</kana>
+        <romaji>hashi.ru</romaji>
+        <description>courir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="531">
+        <kanji/>
+        <kana>バス</kana>
+        <romaji>BASU</romaji>
+        <description>bus</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="532">
+        <kanji/>
+        <kana>バター</kana>
+        <romaji>BATAA</romaji>
+        <description>beurre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="533">
+        <kanji>二十歳</kanji>
+        <kana>は.た.ち</kana>
+        <romaji>ha.ta.chi</romaji>
+        <description>20 ans, l'an 20</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="534">
+        <kanji>働く</kanji>
+        <kana>はたら.く</kana>
+        <romaji>hatara.ku</romaji>
+        <description>travailler</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="535">
+        <kanji>八</kanji>
+        <kana>はち</kana>
+        <romaji>hachi</romaji>
+        <description>huigt (8)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="536">
+        <kanji>二十日</kanji>
+        <kana>は.つ.か</kana>
+        <romaji>ha.tsu.ka</romaji>
+        <description>vingt jours, le 20</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="537">
+        <kanji>花</kanji>
+        <kana>はな</kana>
+        <romaji>hana</romaji>
+        <description>fleur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="538">
+        <kanji>鼻</kanji>
+        <kana>はな</kana>
+        <romaji>hana</romaji>
+        <description>nez</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="539">
+        <kanji>話</kanji>
+        <kana>はなし</kana>
+        <romaji>hanashi</romaji>
+        <description>discourt, histoire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="540">
+        <kanji>話す</kanji>
+        <kana>はな.す</kana>
+        <romaji>hanasu</romaji>
+        <description>parler</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="541">
+        <kanji>母</kanji>
+        <kana>はは</kana>
+        <romaji>haha</romaji>
+        <description>mère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="542">
+        <kanji>早い</kanji>
+        <kana>はや.い</kana>
+        <romaji>haya.i</romaji>
+        <description>tôt</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="543">
+        <kanji>速い</kanji>
+        <kana>はや.い</kana>
+        <romaji>haya.i</romaji>
+        <description>court, rapide</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="544">
+        <kanji>春</kanji>
+        <kana>はる</kana>
+        <romaji>haru</romaji>
+        <description>printemps</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="545">
+        <kanji>貼る</kanji>
+        <kana>は.る</kana>
+        <romaji>ha.ru</romaji>
+        <description>coller</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="546">
+        <kanji>晴れ</kanji>
+        <kana>は.れ</kana>
+        <romaji>ha.re</romaji>
+        <description>beau temps</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="547">
+        <kanji>晴れる</kanji>
+        <kana>は.れ.る</kana>
+        <romaji>ha.re.ru</romaji>
+        <description>faire beau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="548">
+        <kanji>半</kanji>
+        <kana>はん</kana>
+        <romaji>han</romaji>
+        <description>moitié</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="549">
+        <kanji>晩</kanji>
+        <kana>ばん</kana>
+        <romaji>ban</romaji>
+        <description>soir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="550">
+        <kanji>～番</kanji>
+        <kana>～.ばん</kana>
+        <romaji>~.ban</romaji>
+        <description>～ème meilleur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="551">
+        <kanji/>
+        <kana>パン</kana>
+        <romaji>PAN</romaji>
+        <description>pain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="552">
+        <kanji/>
+        <kana>ハンカチ</kana>
+        <romaji>HANKACHI</romaji>
+        <description>mouchoire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="553">
+        <kanji>番号</kanji>
+        <kana>ばん.ごう</kana>
+        <romaji>ban.go</romaji>
+        <description>nombre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="554">
+        <kanji>晩御飯</kanji>
+        <kana>ばん.ご.はん</kana>
+        <romaji>ban.go.han</romaji>
+        <description>dinner, repas du soir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="555">
+        <kanji>半分</kanji>
+        <kana>はん.ぶん</kana>
+        <romaji>han.bun</romaji>
+        <description>moitié</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="556">
+        <kanji>東</kanji>
+        <kana>ひがし</kana>
+        <romaji>higashi</romaji>
+        <description>est</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="557">
+        <kanji>～匹</kanji>
+        <kana>～.ひき</kana>
+        <romaji>~.hiki</romaji>
+        <description>compteurs de petits animaux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="558">
+        <kanji>引く</kanji>
+        <kana>ひ.く</kana>
+        <romaji>hi.ku</romaji>
+        <description>tirer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="559">
+        <kanji>弾く</kanji>
+        <kana>ひ.く</kana>
+        <romaji>hi.ku</romaji>
+        <description>jouer (instrument)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="560">
+        <kanji>低い</kanji>
+        <kana>ひく.い</kana>
+        <romaji>hiku.i</romaji>
+        <description>court, bas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="561">
+        <kanji>飛行機</kanji>
+        <kana>ひ.こう.き</kana>
+        <romaji>hi.kou.ki</romaji>
+        <description>planeur, avion</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="562">
+        <kanji>左</kanji>
+        <kana>ひだり</kana>
+        <romaji>hidari</romaji>
+        <description>gauche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="563">
+        <kanji>人</kanji>
+        <kana>ひと</kana>
+        <romaji>hito</romaji>
+        <description>homme, personne</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="564">
+        <kanji>一つ</kanji>
+        <kana>ひと.つ</kana>
+        <romaji>hito.tsu</romaji>
+        <description>un</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="565">
+        <kanji>一月</kanji>
+        <kana>ひと.つき</kana>
+        <romaji>hito.tsuki</romaji>
+        <description>un mois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="566">
+        <kanji>一人</kanji>
+        <kana>ひと.り</kana>
+        <romaji>hito.ri</romaji>
+        <description>une personne</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="567">
+        <kanji>暇</kanji>
+        <kana>ひま</kana>
+        <romaji>hima</romaji>
+        <description>temps libre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="568">
+        <kanji>百</kanji>
+        <kana>ひゃく</kana>
+        <romaji>hyaku</romaji>
+        <description>100, cents</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="569">
+        <kanji>病院</kanji>
+        <kana>びょう.いん</kana>
+        <romaji>byo.in</romaji>
+        <description>hopitale</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="570">
+        <kanji>病気</kanji>
+        <kana>びょう.き</kana>
+        <romaji>byo.ki</romaji>
+        <description>maladie</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="571">
+        <kanji>平仮名</kanji>
+        <kana>ひら.が.な</kana>
+        <romaji>hira.ga.na</romaji>
+        <description>hiragana</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="572">
+        <kanji>昼</kanji>
+        <kana>ひる</kana>
+        <romaji>hiru</romaji>
+        <description>midi, jour</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="573">
+        <kanji>昼御飯</kanji>
+        <kana>ひる.ご.はん</kana>
+        <romaji>hiru.go.han</romaji>
+        <description>déjeuner, repas de midi</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="574">
+        <kanji>広い</kanji>
+        <kana>ひろ.い</kana>
+        <romaji>hiro.i</romaji>
+        <description>spacieux, large</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="575">
+        <kanji/>
+        <kana>フィルム</kana>
+        <romaji>FUILUMU</romaji>
+        <description>film</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="576">
+        <kanji>封筒</kanji>
+        <kana>ふう.とう</kana>
+        <romaji>fuu.tou</romaji>
+        <description>enveloppe</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="577">
+        <kanji/>
+        <kana>プール</kana>
+        <romaji>PUULU</romaji>
+        <description>piscine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="578">
+        <kanji/>
+        <kana>フォーク</kana>
+        <romaji>FUOOKU</romaji>
+        <description>fourchette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="579">
+        <kanji>吹く</kanji>
+        <kana>ふ.く</kana>
+        <romaji>fu.ku</romaji>
+        <description>souffler</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="580">
+        <kanji>服</kanji>
+        <kana>ふく</kana>
+        <romaji>fuku</romaji>
+        <description>habit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="581">
+        <kanji>二つ</kanji>
+        <kana>ふた.つ</kana>
+        <romaji>futa.tsu</romaji>
+        <description>two</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="582">
+        <kanji>豚肉</kanji>
+        <kana>ぶた.にく</kana>
+        <romaji>buta.niku</romaji>
+        <description>porc</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="583">
+        <kanji>二人</kanji>
+        <kana>ふた.り</kana>
+        <romaji>futa.ri</romaji>
+        <description>deux personnes, couple, paire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="584">
+        <kanji>二日</kanji>
+        <kana>ふつ.か</kana>
+        <romaji>futsu.ka</romaji>
+        <description>deuxième jour du mois, deux jours</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="585">
+        <kanji>太い</kanji>
+        <kana>ふと.い</kana>
+        <romaji>futo.i</romaji>
+        <description>gras, épais</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="586">
+        <kanji>冬</kanji>
+        <kana>ふゆ</kana>
+        <romaji>fuyu</romaji>
+        <description>hivers</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="587">
+        <kanji>降る</kanji>
+        <kana>ふ.る</kana>
+        <romaji>fu.ru</romaji>
+        <description>précipiter, tomber</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="588">
+        <kanji>古い</kanji>
+        <kana>ふる.い</kana>
+        <romaji>furu.i</romaji>
+        <description>vieux, ancien, user</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="589">
+        <kanji/>
+        <kana>ふろ</kana>
+        <romaji>furo</romaji>
+        <description>bain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="590">
+        <kanji>～分</kanji>
+        <kana>～.ふん</kana>
+        <romaji>~.fun</romaji>
+        <description>～minutes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="591">
+        <kanji>文章</kanji>
+        <kana>ぶん.しょう</kana>
+        <romaji>bun.shou</romaji>
+        <description>phrase, texte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="592">
+        <kanji/>
+        <kana>ページ</kana>
+        <romaji>PEEJI</romaji>
+        <description>page</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="593">
+        <kanji>下手</kanji>
+        <kana>へ.た</kana>
+        <romaji>he.ta</romaji>
+        <description>maladroit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="594">
+        <kanji/>
+        <kana>ベッド</kana>
+        <romaji>BEDDO</romaji>
+        <description>lit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="595">
+        <kanji/>
+        <kana>ペット</kana>
+        <romaji>PETTO</romaji>
+        <description>animal domestique</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="596">
+        <kanji>部屋</kanji>
+        <kana>へ.や</kana>
+        <romaji>he.ya</romaji>
+        <description>pièce</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="597">
+        <kanji>辺</kanji>
+        <kana>へん</kana>
+        <romaji>hen</romaji>
+        <description>aire, voisinage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="598">
+        <kanji/>
+        <kana>ペン</kana>
+        <romaji>PEN</romaji>
+        <description>stylo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="599">
+        <kanji>勉強</kanji>
+        <kana>べん.きょう</kana>
+        <romaji>ben.kyou</romaji>
+        <description>étude</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="600">
+        <kanji>便利</kanji>
+        <kana>べん.り</kana>
+        <romaji>ben.ri</romaji>
+        <description>conveniant, pratique</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="601">
+        <kanji/>
+        <kana>ほう</kana>
+        <romaji>hou</romaji>
+        <description>route</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="602">
+        <kanji>帽子</kanji>
+        <kana>ぼう.し</kana>
+        <romaji>hou.shi</romaji>
+        <description>chapeau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="603">
+        <kanji/>
+        <kana>ボールペン</kana>
+        <romaji>BOOLUPEN</romaji>
+        <description>stylo à bille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="604">
+        <kanji>外</kanji>
+        <kana>ほか</kana>
+        <romaji>hoka</romaji>
+        <description>ailleurs</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="605">
+        <kanji/>
+        <kana>ポケット</kana>
+        <romaji>POKETTO</romaji>
+        <description>poche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="606">
+        <kanji>欲しい</kanji>
+        <kana>ほ.し.い</kana>
+        <romaji>ho.shi.i</romaji>
+        <description>vouloir, besoin de, désirer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="607">
+        <kanji/>
+        <kana>ポスト</kana>
+        <romaji>POSUTO</romaji>
+        <description>poste</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="608">
+        <kanji>細い</kanji>
+        <kana>ほそ.い</kana>
+        <romaji>hoso.i</romaji>
+        <description>fin, étroit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="609">
+        <kanji/>
+        <kana>ボタン</kana>
+        <romaji>BOTAN</romaji>
+        <description>boutton</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="610">
+        <kanji/>
+        <kana>ホテル</kana>
+        <romaji>HOTELU</romaji>
+        <description>hotel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="611">
+        <kanji>本</kanji>
+        <kana>ほん</kana>
+        <romaji>hon</romaji>
+        <description>livre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="612">
+        <kanji>～本</kanji>
+        <kana>～.ほん</kana>
+        <romaji>~.hon</romaji>
+        <description>compteur d'objet long et cylindrique</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="613">
+        <kanji>本棚</kanji>
+        <kana>ほん.だな</kana>
+        <romaji>hon.dana</romaji>
+        <description>bibliothèque, étagère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="614">
+        <kanji/>
+        <kana>ほんとう</kana>
+        <romaji>hontou</romaji>
+        <description>réalité, vérité</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="615">
+        <kanji>～枚</kanji>
+        <kana>～.まい</kana>
+        <romaji>~.mai</romaji>
+        <description>compteur d'objet plat</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="616">
+        <kanji>毎朝</kanji>
+        <kana>まい.あさ</kana>
+        <romaji>mai.asa</romaji>
+        <description>tous les matin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="617">
+        <kanji>毎月</kanji>
+        <kana>まい.げつ</kana>
+        <romaji>mai.getsu</romaji>
+        <description>tous les mois, mensuel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="618">
+        <kanji>毎週</kanji>
+        <kana>まい.しゅう</kana>
+        <romaji>mai.shuu</romaji>
+        <description>toutes les semaines, hebdomadaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="619">
+        <kanji>毎日</kanji>
+        <kana>まい.にち</kana>
+        <romaji>mai.nichi</romaji>
+        <description>tous les jours, journalier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="620">
+        <kanji>毎年</kanji>
+        <kana>まいねん</kana>
+        <romaji>mai.nen</romaji>
+        <description>tous les ans, annuel</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="621">
+        <kanji>毎晩</kanji>
+        <kana>まい.ばん</kana>
+        <romaji>mai.ban</romaji>
+        <description>tous les soirs</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="622">
+        <kanji>前</kanji>
+        <kana>まえ</kana>
+        <romaji>mae</romaji>
+        <description>avant, devant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="623">
+        <kanji>～前</kanji>
+        <kana>～.まえ</kana>
+        <romaji>~.mae</romaji>
+        <description>devant ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="624">
+        <kanji>曲る</kanji>
+        <kana>まが.る</kana>
+        <romaji>maga.ru</romaji>
+        <description>tourner, plier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="625">
+        <kanji/>
+        <kana>まずい</kana>
+        <romaji>mazui</romaji>
+        <description>dégoutant, pas bon</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="626">
+        <kanji/>
+        <kana>また</kana>
+        <romaji>mata</romaji>
+        <description>encore et</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="627">
+        <kanji/>
+        <kana>まだ</kana>
+        <romaji>mada</romaji>
+        <description>en plus, pas encore</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="628">
+        <kanji>町</kanji>
+        <kana>まち</kana>
+        <romaji>machi</romaji>
+        <description>ville</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="629">
+        <kanji>待つ</kanji>
+        <kana>まつ</kana>
+        <romaji>matsu</romaji>
+        <description>attendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="630">
+        <kanji/>
+        <kana>まっすぐ</kana>
+        <romaji>massugu</romaji>
+        <description>droit,direct</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="631">
+        <kanji/>
+        <kana>マッチ</kana>
+        <romaji>MACCHI</romaji>
+        <description>pareil</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="632">
+        <kanji>窓</kanji>
+        <kana>まど</kana>
+        <romaji>mado</romaji>
+        <description>fenêtre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="633">
+        <kanji>円い</kanji>
+        <kana>まる.い</kana>
+        <romaji>maru.i</romaji>
+        <description>rond, circulaire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="634">
+        <kanji>万</kanji>
+        <kana>まん</kana>
+        <romaji>man</romaji>
+        <description>dix milles, tous</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="635">
+        <kanji>万年筆</kanji>
+        <kana>まん.ねん.ひつ</kana>
+        <romaji>man.nen.hitsu</romaji>
+        <description>stylo à plume</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="636">
+        <kanji>磨く</kanji>
+        <kana>みが.く</kana>
+        <romaji>miga.ku</romaji>
+        <description>brosser (dents)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="637">
+        <kanji>右</kanji>
+        <kana>みぎ</kana>
+        <romaji>migi</romaji>
+        <description>coté droit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="638">
+        <kanji>短い</kanji>
+        <kana>みじか.い</kana>
+        <romaji>mijika.i</romaji>
+        <description>court</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="639">
+        <kanji>水</kanji>
+        <kana>みず</kana>
+        <romaji>mizu</romaji>
+        <description>eau</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="640">
+        <kanji>店</kanji>
+        <kana>みせ</kana>
+        <romaji>mise</romaji>
+        <description>magazin, établissement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="641">
+        <kanji>見せる</kanji>
+        <kana>み.せ.る</kana>
+        <romaji>mi.se.ru</romaji>
+        <description>montrer, rendre visible</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="642">
+        <kanji>道</kanji>
+        <kana>みち</kana>
+        <romaji>michi</romaji>
+        <description>rue, route</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="643">
+        <kanji>三日</kanji>
+        <kana>みっ.か</kana>
+        <romaji>mik.ka</romaji>
+        <description>trois jours, le 3</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="644">
+        <kanji>三つ</kanji>
+        <kana>みっ.つ</kana>
+        <romaji>mit.tsu</romaji>
+        <description>trois</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="645">
+        <kanji>緑</kanji>
+        <kana>みどり</kana>
+        <romaji>midori</romaji>
+        <description>vert</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="646">
+        <kanji>皆さん</kanji>
+        <kana>みな.さ.ん</kana>
+        <romaji>mina.sa.n</romaji>
+        <description>tous le monde</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="647">
+        <kanji>南</kanji>
+        <kana>みなみ</kana>
+        <romaji>minami</romaji>
+        <description>Sud</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="648">
+        <kanji>耳</kanji>
+        <kana>みみ</kana>
+        <romaji>mimi</romaji>
+        <description>oreille</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="649">
+        <kanji>見る</kanji>
+        <kana>み.る</kana>
+        <romaji>mi.ru</romaji>
+        <description>voir, regarder</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="650">
+        <kanji/>
+        <kana>みんな</kana>
+        <romaji>minna</romaji>
+        <description>tous</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="651">
+        <kanji>六日</kanji>
+        <kana>むい.か</kana>
+        <romaji>mui.ka</romaji>
+        <description>six jours, le 6</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="652">
+        <kanji>向こう</kanji>
+        <kana>む.こ.う</kana>
+        <romaji>mu.ko.u</romaji>
+        <description>au dela, la bas</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="653">
+        <kanji>難しい</kanji>
+        <kana>むずか.し.い</kana>
+        <romaji>muzuka.shi.i</romaji>
+        <description>difficile</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="654">
+        <kanji>六つ</kanji>
+        <kana>むっ.つ</kana>
+        <romaji>mut.tsu</romaji>
+        <description>six</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="655">
+        <kanji>村</kanji>
+        <kana>むら</kana>
+        <romaji>mura</romaji>
+        <description>village</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="656">
+        <kanji>目</kanji>
+        <kana>め</kana>
+        <romaji>me</romaji>
+        <description>oeuil</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="657">
+        <kanji/>
+        <kana>メートル</kana>
+        <romaji>MEETOLU</romaji>
+        <description>metre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="658">
+        <kanji>眼鏡</kanji>
+        <kana>め.がね</kana>
+        <romaji>me.gane</romaji>
+        <description>lunette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="659">
+        <kanji/>
+        <kana>もう</kana>
+        <romaji>mou</romaji>
+        <description>déjà</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="660">
+        <kanji/>
+        <kana>もう</kana>
+        <romaji>mou</romaji>
+        <description>encore</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="661">
+        <kanji>木曜日</kanji>
+        <kana>もく.よう.び</kana>
+        <romaji>moku.you.bi</romaji>
+        <description>Jeud</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="662">
+        <kanji/>
+        <kana>もしもし</kana>
+        <romaji>moshimoshi</romaji>
+        <description>allo</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="663">
+        <kanji>持つ</kanji>
+        <kana>も.つ</kana>
+        <romaji>mo.tsu</romaji>
+        <description>(1) porter,avoir (2) posseder</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="664">
+        <kanji/>
+        <kana>もっと</kana>
+        <romaji>motto</romaji>
+        <description>plus, encore, plus longtemps, plus loin</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="665">
+        <kanji>物</kanji>
+        <kana>もの</kana>
+        <romaji>mono</romaji>
+        <description>trucs, objet</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="666">
+        <kanji>門</kanji>
+        <kana>もん</kana>
+        <romaji>mon</romaji>
+        <description>porte</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="667">
+        <kanji>問題</kanji>
+        <kana>もん.だい</kana>
+        <romaji>mon.dai</romaji>
+        <description>problème, question</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="668">
+        <kanji>屋</kanji>
+        <kana>～や</kana>
+        <romaji>~ya</romaji>
+        <description>magazin de ～</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="669">
+        <kanji>八百屋</kanji>
+        <kana>や.お.や</kana>
+        <romaji>ya.o.ya</romaji>
+        <description>marché, magazin de fruits et légumes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="670">
+        <kanji>野菜</kanji>
+        <kana>や.さい</kana>
+        <romaji>ya.sai</romaji>
+        <description>fruits et légumes</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="671">
+        <kanji>易しい</kanji>
+        <kana>やさ.し.い</kana>
+        <romaji>yasa.shi.i</romaji>
+        <description>facile, simple</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="672">
+        <kanji>安い</kanji>
+        <kana>やす.い</kana>
+        <romaji>yasu.i</romaji>
+        <description>pas cher</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="673">
+        <kanji>休み</kanji>
+        <kana>やす.み</kana>
+        <romaji>yasu.mi</romaji>
+        <description>repos, vacances</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="674">
+        <kanji>休む</kanji>
+        <kana>やす.む</kana>
+        <romaji>yasu.mu</romaji>
+        <description>se reposer, faire une pause</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="675">
+        <kanji>八つ</kanji>
+        <kana>やっ.つ</kana>
+        <romaji>yat.tsu</romaji>
+        <description>huigt</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="676">
+        <kanji>山</kanji>
+        <kana>やま</kana>
+        <romaji>yama</romaji>
+        <description>montagne</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="677">
+        <kanji/>
+        <kana>やる</kana>
+        <romaji>yaru</romaji>
+        <description>faire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="678">
+        <kanji>夕方</kanji>
+        <kana>ゆう.がた</kana>
+        <romaji>yuu.gata</romaji>
+        <description>soirée</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="679">
+        <kanji>夕飯</kanji>
+        <kana>ゆう.はん</kana>
+        <romaji>yuu.han</romaji>
+        <description>dinner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="680">
+        <kanji>郵便局</kanji>
+        <kana>ゆう.びん.きょく</kana>
+        <romaji>yuu.bin.kyoku</romaji>
+        <description>poste</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="681">
+        <kanji>昨夜</kanji>
+        <kana>ゆう.べ</kana>
+        <romaji>yuu.be</romaji>
+        <description>nuit dernière</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="682">
+        <kanji>有名</kanji>
+        <kana>ゆう.めい</kana>
+        <romaji>yuu.mei</romaji>
+        <description>célèbre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="683">
+        <kanji>雪</kanji>
+        <kana>ゆき</kana>
+        <romaji>yuki</romaji>
+        <description>neige</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="684">
+        <kanji/>
+        <kana>ゆっくり・と</kana>
+        <romaji>yukkuri to</romaji>
+        <description>doucement, tranquillement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="685">
+        <kanji>八日</kanji>
+        <kana>よう.か</kana>
+        <romaji>you.ka</romaji>
+        <description>huigts jours, le 8</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="686">
+        <kanji>洋服</kanji>
+        <kana>よう.ふく</kana>
+        <romaji>you.buku</romaji>
+        <description>habits occidentaux</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="687">
+        <kanji/>
+        <kana>よく</kana>
+        <romaji>yoku</romaji>
+        <description>fréquements, souvent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="688">
+        <kanji/>
+        <kana>よく</kana>
+        <romaji>yoku</romaji>
+        <description>bien, avec talent</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="689">
+        <kanji>横</kanji>
+        <kana>よこ</kana>
+        <romaji>yoko</romaji>
+        <description>à coté, coté, largeur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="690">
+        <kanji>四日</kanji>
+        <kana>よっ.か</kana>
+        <romaji>yok.ka</romaji>
+        <description>quatres jours, le 4</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="691">
+        <kanji>四つ</kanji>
+        <kana>よっ.つ</kana>
+        <romaji>yot.tsu</romaji>
+        <description>quatre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="692">
+        <kanji>呼ぶ</kanji>
+        <kana>よ.ぶ</kana>
+        <romaji>yo.bu</romaji>
+        <description>appeller, inviter</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="693">
+        <kanji>読む</kanji>
+        <kana>よ.む</kana>
+        <romaji>yo.mu</romaji>
+        <description>lire</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="694">
+        <kanji>夜</kanji>
+        <kana>よる</kana>
+        <romaji>yoru</romaji>
+        <description>soir, nuit</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="695">
+        <kanji>弱い</kanji>
+        <kana>よわ.い</kana>
+        <romaji>yowa.i</romaji>
+        <description>faible, frèle</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="696">
+        <kanji>来月</kanji>
+        <kana>らい.げつ</kana>
+        <romaji>rai.getsu</romaji>
+        <description>mois prochain</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="697">
+        <kanji>来週</kanji>
+        <kana>らい.しゅう</kana>
+        <romaji>rai.shuu</romaji>
+        <description>semaine prochaine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="698">
+        <kanji>来年</kanji>
+        <kana>らいねん</kana>
+        <romaji>rai.nen</romaji>
+        <description>année prochaine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="699">
+        <kanji/>
+        <kana>ラジオ</kana>
+        <romaji>RADUO</romaji>
+        <description>radio</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="700">
+        <kanji/>
+        <kana>ラジオカセ</kana>
+        <romaji>RADUOKASE</romaji>
+        <description>radio cassette</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="701">
+        <kanji/>
+        <kana>りっぱ</kana>
+        <romaji>rippo</romaji>
+        <description>splendide, bien</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="702">
+        <kanji>留学生</kanji>
+        <kana>りゅう.がく.せい</kana>
+        <romaji>ryuu.gaku.sei</romaji>
+        <description>étudiant outre mer</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="703">
+        <kanji>両親</kanji>
+        <kana>りょう.しん</kana>
+        <romaji>ryou.shin</romaji>
+        <description>parents, père et mère</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="704">
+        <kanji>料理</kanji>
+        <kana>りょう.り</kana>
+        <romaji>ryou.ri</romaji>
+        <description>cuisine</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="705">
+        <kanji>旅行</kanji>
+        <kana>りょ.こう</kana>
+        <romaji>ryo.kou</romaji>
+        <description>sortit, voyage</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="706">
+        <kanji>零</kanji>
+        <kana>れい</kana>
+        <romaji>rei</romaji>
+        <description>zéro, rond</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="707">
+        <kanji>冷蔵庫</kanji>
+        <kana>れい.ぞう.こ</kana>
+        <romaji>rei.zou.ko</romaji>
+        <description>réfrigérateur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="708">
+        <kanji/>
+        <kana>レコード</kana>
+        <romaji>RECOODO</romaji>
+        <description>disque</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="709">
+        <kanji/>
+        <kana>レストラン</kana>
+        <romaji>RESUTORAN</romaji>
+        <description>restaurant</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="710">
+        <kanji>練習</kanji>
+        <kana>れん.しゅう</kana>
+        <romaji>ren.shuu</romaji>
+        <description>entrainement</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="711">
+        <kanji>廊下</kanji>
+        <kana>ろう.か</kana>
+        <romaji>rou.ka</romaji>
+        <description>couloir</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="712">
+        <kanji>六</kanji>
+        <kana>ろく</kana>
+        <romaji>roku</romaji>
+        <description>six (6)</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="713">
+        <kanji/>
+        <kana>ワイシャツ</kana>
+        <romaji>WAISHATSU</romaji>
+        <description>chemise blanche</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="714">
+        <kanji>若い</kanji>
+        <kana>わか.い</kana>
+        <romaji>waka.i</romaji>
+        <description>jeune</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="715">
+        <kanji>分かる</kanji>
+        <kana>わ.か.る</kana>
+        <romaji>wa.ka.ru</romaji>
+        <description>comprendre</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="716">
+        <kanji>忘れる</kanji>
+        <kana>わす.れ.る</kana>
+        <romaji>wasu.re.u</romaji>
+        <description>oublier</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="717">
+        <kanji>私</kanji>
+        <kana>わたし</kana>
+        <romaji>watashi</romaji>
+        <description>je, moi-même</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="718">
+        <kanji>私</kanji>
+        <kana>わたくし</kana>
+        <romaji>watakushi</romaji>
+        <description>je, moi-même</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="719">
+        <kanji>渡す</kanji>
+        <kana>わた.す</kana>
+        <romaji>wata.su</romaji>
+        <description>donner</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="720">
+        <kanji>渡る</kanji>
+        <kana>わた.る</kana>
+        <romaji>wata.ru</romaji>
+        <description>traverser</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
+    <entry id="721">
+        <kanji>悪い</kanji>
+        <kana>わる.い</kana>
+        <romaji>waru.i</romaji>
+        <description>mal, infèrieur</description>
+        <tags>
+            <tag>jlpt_4</tag>
+        </tags>
+    </entry>
 </dictionnary>

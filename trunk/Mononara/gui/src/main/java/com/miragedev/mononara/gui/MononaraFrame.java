@@ -289,18 +289,40 @@ public class MononaraFrame {
             contextText.append("</font></p>");
             contextText.append("</html>");
             contextTestLabel.setText(contextText.toString());
+            if (examContext.isHintNeeded()) {
+                commentTestTextPane.setText("<html></br></br></br><p align=center><b>" + examContext.getDictionnaryEntry().getDescription() + "</b></p></html>");
+            }
             pageLabel.setText("<html><p align=right><font size=+1>" + (test.getPosition() + 1) + "/" + test.size() + "</font></p></html>");
             testButton.setEnabled(true);
             testButton.setText("Go");
             testButton.setVisible(true);
         } else {
+
+            String testResultText;
             if (test.test(userSpellingTestTextField.getText())) {
-                commentTestTextPane.setText("<html><p align=center>OK!!!</p></html>");
+                testResultText = "OK!!!";
             } else {
-                int knowledgePos = test.getContextTest().getKnowledgePos();
-                String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
-                commentTestTextPane.setText("<html><p align=center>Faux!!!</p><br/><br><br><p align=center><b><font size=26>" + spellings.split("\\.")[knowledgePos] + "</font></b></p></html>");
+                testResultText = "Faux!!!";
             }
+
+            int knowledgePos = test.getContextTest().getKnowledgePos();
+            String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
+            String spelling = spellings.split("\\.")[knowledgePos];
+            String description = test.getContextTest().getDictionnaryEntry().getDescription();
+            userSpellingTestTextField.setText(spelling);
+            StringBuffer comment = new StringBuffer();
+            comment.append("<html><p align=center>");
+            comment.append(testResultText);
+            comment.append("</p><br/><br/><br/>");
+            comment.append("<p align=center><b><font size=26>");
+            comment.append(spellings.replace(".", ""));
+            comment.append("</font></b></p><br/>");
+            comment.append("<p align=center>");
+            comment.append(description);
+            comment.append("</p><br/>");
+            comment.append("</html>");
+            commentTestTextPane.setText(comment.toString());
+
             if (test.next()) {
                 //testButton.setText("Next");
             } else {
