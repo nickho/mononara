@@ -56,25 +56,30 @@ public class CardLearningMethod implements LearningMethod {
      * @return
      */
     public Knowledge updateLearningResult(Knowledge knowledge, int maxResultCorrect, int resultCorrect) {
-        knowledge.setLastTestSuccess(resultCorrect * 1f / maxResultCorrect);
-        //if (maxResultCorrect != resultCorrect) {
-        //     if (knowledge.getFirstTimeSuccess() == null) {
-        //         knowledge.setFirstTimeSuccess(Calendar.getInstance());
-        //         knowledge.getFirstTimeSuccess().setTimeInMillis(System.currentTimeMillis());
-        //     }
-        //     knowledge.setLastTimeSuccess(null);
-        // } else {
+        //For all case set the last test time
         if (knowledge.getLastTimeSuccess() == null) {
             knowledge.setLastTimeSuccess(Calendar.getInstance());
         }
         knowledge.getLastTimeSuccess().setTimeInMillis(System.currentTimeMillis());
 
-        if (maxResultCorrect == resultCorrect) {
-            if (knowledge.getFirstTimeSuccess() == null) {
-                knowledge.setFirstTimeSuccess(Calendar.getInstance());
+        //Case 1 : The result is false
+        if (maxResultCorrect != resultCorrect) {
+            knowledge.setFirstTimeSuccess(null);
+        } else {
+            //Case 2 : The result is ok and it's the first time
+            if (knowledge.getLastTestSuccess() < 0.99999) {
+                if (knowledge.getFirstTimeSuccess() == null) {
+                    knowledge.setFirstTimeSuccess(Calendar.getInstance());
+                }
                 knowledge.getFirstTimeSuccess().setTimeInMillis(System.currentTimeMillis());
+                //Case 3 : The result is ok and it's NOT the first time
+            } else {
+                //nothing to do
             }
         }
+
+        //Set the new result
+        knowledge.setLastTestSuccess(resultCorrect * 1f / maxResultCorrect);
         return knowledge;
     }
 
