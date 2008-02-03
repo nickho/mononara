@@ -21,7 +21,7 @@ public class JpaDictionnaryEntryDao extends JpaDaoSupport implements Dictionnary
     }
 
     public List<DictionnaryEntry> findBySpelling(String spelling) {
-        return getJpaTemplate().find("select d from DictionnaryEntry d where d.spellingInKanji like concat(concat('%',?1),'%')", spelling);
+        return getJpaTemplate().find("select d from DictionnaryEntry d where d.spellingInKanji like concat(concat('%',?1),'%') order by d.spellingInKanji", spelling);
     }
 
     public DictionnaryEntry findByNumber(int number) {

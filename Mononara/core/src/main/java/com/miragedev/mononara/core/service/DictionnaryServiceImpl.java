@@ -51,14 +51,25 @@ public class DictionnaryServiceImpl implements DictionnaryService {
         List<DictionnaryEntry> list = dictionnaryEntryDao.findBySpelling(knowledge.getKanji().getCharacter());
 
 
+        DictionnaryEntry prec = null;
         for (DictionnaryEntry entry : list) {
             int index = -1;//fake one
+            boolean hint = false;
+            if (prec != null) {
+                if (prec.getSpellingInKanji().equals(entry.getSpellingInKanji())) {
+                    res.lastElement().setHintNeeded(true);
+                    hint = true;
+                }
+            }
             do {
                 index = entry.indexOf(knowledge.getKanji().getCharacter(), index + 1);
                 if (index >= 0) {
-                    res.add(new ExamContext(knowledge, entry, index));
+                    ExamContext examContext = new ExamContext(knowledge, entry, index);
+                    examContext.setHintNeeded(hint);
+                    res.add(examContext);
                 }
             } while (index >= 0);
+            prec = entry;
         }
         log.debug(knowledge.getKanji().getCharacter() + " => " + res.size() + " compounds");
         return res;

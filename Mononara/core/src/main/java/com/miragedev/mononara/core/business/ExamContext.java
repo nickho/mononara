@@ -22,6 +22,7 @@ public class ExamContext {
     DictionnaryEntry dictionnaryEntry;
     Knowledge knowledge;
     int knowledgePos;
+    boolean hintNeeded;
 
     public ExamContext(Knowledge knowledge, DictionnaryEntry dictionnaryEntry, int knowledgePos) {
         this.knowledge = knowledge;
@@ -39,5 +40,13 @@ public class ExamContext {
 
     public Knowledge getKnowledge() {
         return knowledge;
+    }
+
+    public boolean isHintNeeded() {
+        return hintNeeded;
+    }
+
+    public void setHintNeeded(boolean hintNeeded) {
+        this.hintNeeded = hintNeeded;
     }
 }
