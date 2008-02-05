@@ -3,6 +3,7 @@ package com.miragedev.mononara.core.service;
 import com.miragedev.mononara.core.business.Basket;
 import com.miragedev.mononara.core.business.Exam;
 import com.miragedev.mononara.core.business.ExamResults;
+import com.miragedev.mononara.core.io.DictionnaryHandler;
 
 import java.net.URI;
 
@@ -17,6 +18,8 @@ public interface MononaraService {
     void saveExamResults(ExamResults results);
 
     boolean onlineSync(URI uriKanji, URI uriDictionnary);
+
+    DictionnaryHandler getHandlerDictionnary();
 
     Exam startExam(Basket basket);
 }

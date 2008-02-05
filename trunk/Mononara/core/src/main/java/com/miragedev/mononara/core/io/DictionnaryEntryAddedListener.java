@@ -8,17 +8,13 @@
  *****************************************/
 package com.miragedev.mononara.core.io;
 
-import org.xml.sax.helpers.DefaultHandler;
-
 /**
- * DictionnaryHandler
+ * DictionnaryEntryAddedListener
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement DictionnaryHandler
+ * @todo Implement DictionnaryEntryAddedListener
  */
-public abstract class DictionnaryHandler extends DefaultHandler {
-
-    public abstract void addDictionnaryEntryAddedListener(DictionnaryEntryAddedListener listener);
-
+public interface DictionnaryEntryAddedListener {
+    public void entryAdded(DictionnaryEntryAddedEvent event);
 }

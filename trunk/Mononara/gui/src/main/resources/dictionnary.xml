@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dictionnary>
+<dictionnary size="742">
     <entry id="10">
         <kanji>火曜日</kanji>
         <kana>か.よう.び</kana>
@@ -763,7 +763,7 @@
         </tags>
     </entry>
     <entry id="95">
-        <kanji>入.れる</kanji>
+        <kanji>入れる</kanji>
         <kana>い.れ.る</kana>
         <romaji>i.re.ru</romaji>
         <description>inserer</description>
@@ -953,8 +953,8 @@
     </entry>
     <entry id="115">
         <kanji>大きい</kanji>
-        <kana>お.お.き.い</kana>
-        <romaji>o.o.ki.i</romaji>
+        <kana>おお.き.い</kana>
+        <romaji>oo.ki.i</romaji>
         <description>gros</description>
         <tags>
             <tag>jlpt_4</tag>
@@ -1717,9 +1717,9 @@
         </tags>
     </entry>
     <entry id="200">
-        <kanji>川/河</kanji>
-        <kana>か.わ</kana>
-        <romaji>ka.wa</romaji>
+        <kanji>川</kanji>
+        <kana>かわ</kana>
+        <romaji>kawa</romaji>
         <description>rivière</description>
         <tags>
             <tag>jlpt_4</tag>
@@ -3240,7 +3240,7 @@
     <entry id="369">
         <kanji>大学</kanji>
         <kana>だい.がく</kana>
-        <romaji>dai.kaku</romaji>
+        <romaji>dai.gaku</romaji>
         <description>université</description>
         <tags>
             <tag>jlpt_4</tag>
@@ -4779,7 +4779,7 @@
     <entry id="540">
         <kanji>話す</kanji>
         <kana>はな.す</kana>
-        <romaji>hanasu</romaji>
+        <romaji>hana.su</romaji>
         <description>parler</description>
         <tags>
             <tag>jlpt_4</tag>
@@ -5498,7 +5498,7 @@
     </entry>
     <entry id="620">
         <kanji>毎年</kanji>
-        <kana>まいねん</kana>
+        <kana>まい.ねん</kana>
         <romaji>mai.nen</romaji>
         <description>tous les ans, annuel</description>
         <tags>
@@ -6200,7 +6200,7 @@
     </entry>
     <entry id="698">
         <kanji>来年</kanji>
-        <kana>らいねん</kana>
+        <kana>らい.ねん</kana>
         <romaji>rai.nen</romaji>
         <description>année prochaine</description>
         <tags>

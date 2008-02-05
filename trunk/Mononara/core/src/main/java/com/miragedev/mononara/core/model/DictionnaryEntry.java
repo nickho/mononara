@@ -1,5 +1,7 @@
 package com.miragedev.mononara.core.model;
 
+import org.apache.commons.logging.LogFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -100,7 +102,15 @@ public class DictionnaryEntry {
 
     public boolean isTheSame(int index, String spelling) {
         boolean res;
-        String[] spellingSplited = spellingInRomaji.split("\\.");
+        String[] spellingRomajiSplited = spellingInRomaji.split("\\.");
+        String[] spellingKanaSplited = spellingInKana.split("\\.");
+        if (spellingKanaSplited.length != spellingRomajiSplited.length) {
+            LogFactory.getLog(DictionnaryEntry.class).error("Number of Kana and Romaji must be equal for entry " + spellingInKanji);
+        }
+        if (index >= spellingRomajiSplited.length || index >= spellingKanaSplited.length) {
+            LogFactory.getLog(DictionnaryEntry.class).error("Entry " + spellingInKanji + " isnt legal");
+            return false;
+        }
         res = spellingInRomaji.split("\\.")[index].equalsIgnoreCase(spelling);
         res = res || spellingInKana.split("\\.")[index].equalsIgnoreCase(spelling);
         return res;

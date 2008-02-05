@@ -60,7 +60,7 @@
         <property name="tagDao" ref="tagDao"/>
     </bean>
 
-    <bean id="dictionnaryHandler" class="com.miragedev.mononara.core.io.DictionnaryHandler">
+    <bean id="dictionnaryHandler" class="com.miragedev.mononara.core.io.DictionnaryHandlerImpl">
         <property name="dictionnaryEntryDao" ref="dictionnaryEntryDao"/>
         <property name="tagDao" ref="tagDao"/>
     </bean>

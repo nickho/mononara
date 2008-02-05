@@ -24,6 +24,7 @@ public class MononaraMenuFactory {
     String kanjiUri;
     String dictionnaryUri;
     MononaraService mononaraService;
+    MononaraFrame mononaraFrame;
 
     public void setKanjiUri(String kanjiUri) {
         this.kanjiUri = kanjiUri;
@@ -35,6 +36,10 @@ public class MononaraMenuFactory {
 
     public void setMononaraService(MononaraService mononaraService) {
         this.mononaraService = mononaraService;
+    }
+
+    public void setMononaraFrame(MononaraFrame mononaraFrame) {
+        this.mononaraFrame = mononaraFrame;
     }
 
     public JMenuBar createMenuBar() {
@@ -55,11 +60,13 @@ public class MononaraMenuFactory {
         menuItemSync.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                URI kanjiURI = null;
                 try {
-                    kanjiURI = new URI(kanjiUri);
-                    URI dicURI = new URI(dictionnaryUri);
-                    mononaraService.onlineSync(kanjiURI, dicURI);
+                    final URI kanjiURI = new URI(kanjiUri);
+                    final URI dicURI = new URI(dictionnaryUri);
+                    final SyncFrame syncFrame = new SyncFrame(mononaraService, kanjiURI, dicURI);
+
+                    syncFrame.pack();
+                    syncFrame.setVisible(true);
 
                 } catch (URISyntaxException e1) {
                     log.error("Uri non valide", e1);
