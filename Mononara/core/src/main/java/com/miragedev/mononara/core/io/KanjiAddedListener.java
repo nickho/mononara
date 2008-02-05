@@ -8,17 +8,13 @@
  *****************************************/
 package com.miragedev.mononara.core.io;
 
-import org.xml.sax.helpers.DefaultHandler;
-
 /**
- * KanjiHandler
+ * KanjiAddedListener
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement KanjiHandler
+ * @todo Implement KanjiAddedListener
  */
-public abstract class KanjiHandler extends DefaultHandler {
-
-    public abstract void addKanjiAddedListener(KanjiAddedListener listener);
-
+public interface KanjiAddedListener {
+    void kanjiAdded(KanjiAddedEvent event);
 }
