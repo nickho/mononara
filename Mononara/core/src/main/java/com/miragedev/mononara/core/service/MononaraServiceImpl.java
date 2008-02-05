@@ -9,8 +9,9 @@
 package com.miragedev.mononara.core.service;
 
 import com.miragedev.mononara.core.business.*;
-import com.miragedev.mononara.core.model.Knowledge;
 import com.miragedev.mononara.core.dao.KnowledgeDao;
+import com.miragedev.mononara.core.io.DictionnaryHandler;
+import com.miragedev.mononara.core.model.Knowledge;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +35,7 @@ public class MononaraServiceImpl implements MononaraService {
 
     private Log log = LogFactory.getLog(MononaraServiceImpl.class);
     private DefaultHandler handlerKanji;
-    private DefaultHandler handlerDictionnary;
+    private DictionnaryHandler handlerDictionnary;
     private DictionnaryService dictionnaryService;
     private LearningMethod learningMethod;
     private KnowledgeDao knowledgeDao;
@@ -43,8 +44,12 @@ public class MononaraServiceImpl implements MononaraService {
         this.handlerKanji = handlerKanji;
     }
 
-    public void setHandlerDictionnary(DefaultHandler handlerDictionnary) {
+    public void setHandlerDictionnary(DictionnaryHandler handlerDictionnary) {
         this.handlerDictionnary = handlerDictionnary;
+    }
+
+    public DictionnaryHandler getHandlerDictionnary() {
+        return handlerDictionnary;
     }
 
     public void setDictionnaryService(DictionnaryService dictionnaryService) {
@@ -92,9 +97,9 @@ public class MononaraServiceImpl implements MononaraService {
      */
     public void saveExamResults(ExamResults results) {
         log.info("Saving exam results (" + results.size() + " knowledges)");
-        for(int i=0 ; i < results.size() ; i++) {
+        for (int i = 0; i < results.size(); i++) {
             Knowledge knowledge = results.getKnowledge(i);
-            knowledge = learningMethod.updateLearningResult(knowledge,  results.getMaxScore(i), results.getScore(i));
+            knowledge = learningMethod.updateLearningResult(knowledge, results.getMaxScore(i), results.getScore(i));
             knowledgeDao.update(knowledge);
         }
     }
@@ -122,7 +127,7 @@ public class MononaraServiceImpl implements MononaraService {
             log.info("Loading kanji file (" + uriKanji.toString() + ")");
             parser.parse(uriKanji.toURL().openStream(), handlerKanji);
             log.info("Loading dictionnary file (" + uriDictionnary.toString() + ")");
-            parser.parse(uriDictionnary.toURL().openStream(), handlerDictionnary);
+            parser.parse(uriDictionnary.toURL().openStream(), (DefaultHandler) handlerDictionnary);
             return true;
         }
         catch (SAXException e) {
