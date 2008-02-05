@@ -2,6 +2,8 @@ package com.miragedev.mononara.gui;
 
 import com.miragedev.mononara.core.io.DictionnaryEntryAddedEvent;
 import com.miragedev.mononara.core.io.DictionnaryEntryAddedListener;
+import com.miragedev.mononara.core.io.KanjiAddedListener;
+import com.miragedev.mononara.core.io.KanjiAddedEvent;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.LogFactory;
 
@@ -27,6 +29,19 @@ public class SyncFrame extends JDialog {
                 progressBarSync.setValue(event.getEntryNumber());
                 progressBarSync.setStringPainted(true);
                 labelEntry.setText(String.format("%1$s : %2$s", event.getEntry().getSpellingInKanji(), event.getEntry().getSpellingInKana()));
+                labelStatus.setText(String.format("%1$d/%2$d", event.getEntryNumber(), event.getNumberOfEntry()));
+                repaint();
+            }
+        });
+
+        service.getHandlerKanji().addKanjiAddedListener(new KanjiAddedListener() {
+            public void kanjiAdded(final KanjiAddedEvent event) {
+                labelTitle.setText("Loading Kanjis");
+                progressBarSync.setMinimum(0);
+                progressBarSync.setMaximum(event.getNumberOfEntry());
+                progressBarSync.setValue(event.getEntryNumber());
+                progressBarSync.setStringPainted(true);
+                labelEntry.setText(String.format("%1$s", event.getKanji().getCharacter()));
                 labelStatus.setText(String.format("%1$d/%2$d", event.getEntryNumber(), event.getNumberOfEntry()));
                 repaint();
             }
@@ -124,6 +139,7 @@ public class SyncFrame extends JDialog {
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(5, 0, 5, 0);
         panel2.add(buttonCancel, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new GridBagLayout());
