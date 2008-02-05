@@ -4,6 +4,7 @@ import com.miragedev.mononara.core.business.Basket;
 import com.miragedev.mononara.core.business.Exam;
 import com.miragedev.mononara.core.business.ExamResults;
 import com.miragedev.mononara.core.io.DictionnaryHandler;
+import com.miragedev.mononara.core.io.KanjiHandler;
 
 import java.net.URI;
 
@@ -20,6 +21,7 @@ public interface MononaraService {
     boolean onlineSync(URI uriKanji, URI uriDictionnary);
 
     DictionnaryHandler getHandlerDictionnary();
+    KanjiHandler getHandlerKanji();
 
     Exam startExam(Basket basket);
 }

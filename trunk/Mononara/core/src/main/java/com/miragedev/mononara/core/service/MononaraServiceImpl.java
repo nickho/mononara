@@ -11,6 +11,7 @@ package com.miragedev.mononara.core.service;
 import com.miragedev.mononara.core.business.*;
 import com.miragedev.mononara.core.dao.KnowledgeDao;
 import com.miragedev.mononara.core.io.DictionnaryHandler;
+import com.miragedev.mononara.core.io.KanjiHandler;
 import com.miragedev.mononara.core.model.Knowledge;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -34,14 +35,18 @@ import java.util.Collection;
 public class MononaraServiceImpl implements MononaraService {
 
     private Log log = LogFactory.getLog(MononaraServiceImpl.class);
-    private DefaultHandler handlerKanji;
+    private KanjiHandler handlerKanji;
     private DictionnaryHandler handlerDictionnary;
     private DictionnaryService dictionnaryService;
     private LearningMethod learningMethod;
     private KnowledgeDao knowledgeDao;
 
-    public void setHandlerKanji(DefaultHandler handlerKanji) {
+    public void setHandlerKanji(KanjiHandler handlerKanji) {
         this.handlerKanji = handlerKanji;
+    }
+
+    public KanjiHandler getHandlerKanji() {
+        return handlerKanji;
     }
 
     public void setHandlerDictionnary(DictionnaryHandler handlerDictionnary) {
