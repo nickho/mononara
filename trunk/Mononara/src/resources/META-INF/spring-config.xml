@@ -54,7 +54,7 @@
 
     <!-- The XML parser -->
 
-    <bean id="kanjiHandler" class="com.miragedev.mononara.core.io.KanjiHandler">
+    <bean id="kanjiHandler" class="com.miragedev.mononara.core.io.KanjiHandlerImpl">
         <property name="kanjiDao" ref="kanjiDao"/>
         <property name="knowledgeDao" ref="knowledgeDao"/>
         <property name="tagDao" ref="tagDao"/>
