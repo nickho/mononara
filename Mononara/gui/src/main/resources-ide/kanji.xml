@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kanjis size="194">
+  <kanji id="1">
+    <name>一</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="2">
+    <name>右</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="3">
+    <name>円</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="4">
+    <name>愛</name>
+    <tags>
+      <tag>jlpt_2</tag>
+      <tag>grade_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="5">
+    <name>火</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="6">
+    <name>始</name>
+    <tags>
+      <tag>grade_3</tag>
+    </tags>
+  </kanji>
+  <kanji id="7">
+    <name>明</name>
+    <tags>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="8">
+    <name>気</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="9">
+    <name>王</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="10">
+    <name>雨</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="11">
+    <name>音</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="12">
+    <name>木</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="13">
+    <name>本</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="14">
+    <name>百</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="15">
+    <name>白</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="16">
+    <name>下</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="17">
+    <name>花</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="18">
+    <name>五</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="19">
+    <name>口</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="20">
+    <name>校</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="21">
+    <name>犬</name>
+    <tags>
+      <tag>jlpt_3</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="22">
+    <name>左</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="23">
+    <name>目</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="24">
+    <name>安</name>
+    <tags>
+      <tag>grade_3</tag>
+    </tags>
+  </kanji>
+  <kanji id="25">
+    <name>話</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="26">
+    <name>北</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="27">
+    <name>手</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="28">
+    <name>女</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="29">
+    <name>車</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="30">
+    <name>水</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="31">
+    <name>青</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="32">
+    <name>夕</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="33">
+    <name>空</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="34">
+    <name>田</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="35">
+    <name>虫</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="36">
+    <name>文</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="37">
+    <name>土</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="38">
+    <name>入</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="39">
+    <name>足</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="40">
+    <name>大</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="41">
+    <name>男</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="42">
+    <name>耳</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="43">
+    <name>小</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="44">
+    <name>月</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="45">
+    <name>見</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="46">
+    <name>学</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="47">
+    <name>金</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="48">
+    <name>休</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="49">
+    <name>九</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="50">
+    <name>山</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="51">
+    <name>字</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="52">
+    <name>子</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="53">
+    <name>糸</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="54">
+    <name>七</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="55">
+    <name>天</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="56">
+    <name>町</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="57">
+    <name>中</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="58">
+    <name>日</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="59">
+    <name>年</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="60">
+    <name>八</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="61">
+    <name>立</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="62">
+    <name>力</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="63">
+    <name>林</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="64">
+    <name>六</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="65">
+    <name>上</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="66">
+    <name>森</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="67">
+    <name>出</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="68">
+    <name>三</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="69">
+    <name>四</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="70">
+    <name>人</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="71">
+    <name>正</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="72">
+    <name>赤</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="73">
+    <name>川</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="75">
+    <name>村</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="76">
+    <name>先</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="77">
+    <name>早</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="78">
+    <name>千</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="79">
+    <name>十</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="80">
+    <name>生</name>
+    <tags>
+      <tag>grade_1</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="81">
+    <name>石</name>
+    <tags>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="82">
+    <name>名</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_1</tag>
+    </tags>
+  </kanji>
+  <kanji id="83">
+    <name>雲</name>
+    <tags>
+      <tag>jlpt_2</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="84">
+    <name>夏</name>
+    <tags>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="85">
+    <name>何</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="87">
+    <name>開</name>
+    <tags>
+      <tag>grade_3</tag>
+    </tags>
+  </kanji>
+  <kanji id="88">
+    <name>国</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="89">
+    <name>時</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="91">
+    <name>東</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="92">
+    <name>行</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="93">
+    <name>間</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="94">
+    <name>分</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="95">
+    <name>半</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="96">
+    <name>高</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="97">
+    <name>外</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="98">
+    <name>食</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="99">
+    <name>南</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="100">
+    <name>友</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="101">
+    <name>引</name>
+    <tags>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="102">
+    <name>前</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="103">
+    <name>後</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="104">
+    <name>午</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="105">
+    <name>来</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="106">
+    <name>万</name>
+    <tags>
+      <tag>grade_3</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="107">
+    <name>今</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="108">
+    <name>毎</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="109">
+    <name>読</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="110">
+    <name>母</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="111">
+    <name>父</name>
+    <tags>
+      <tag>jlpt_4</tag>
+      <tag>grade_2</tag>
+    </tags>
+  </kanji>
+  <kanji id="112">
+    <name>電</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="113">
+    <name>聞</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="114">
+    <name>書</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="115">
+    <name>西</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+  <kanji id="116">
+    <name>語</name>
+    <tags>
+      <tag>grade_2</tag>
+      <tag>jlpt_4</tag>
+    </tags>
+  </kanji>
+</kanjis>
