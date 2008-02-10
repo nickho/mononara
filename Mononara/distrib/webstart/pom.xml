@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.miragedev.mononara</groupId>
+        <artifactId>mononara</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>mononara-webstart</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Mononara - JNLP</name>
+    <description>Application to learn Kanji from flashcards</description>
+
+	<dependencies>
+ 	    <dependency>
+              <groupId>com.miragedev.mononara</groupId>
+              <artifactId>mononara-core</artifactId>
+              <version>2.0.0-SNAPSHOT</version>
+            </dependency>
+	    <dependency>
+              <groupId>com.miragedev.mononara</groupId>
+              <artifactId>mononara-gui</artifactId>
+              <version>2.0.0-SNAPSHOT</version>
+            </dependency>
+ 	  </dependencies>
+
+    <build>
+        <plugins>
+	<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>keytool-maven-plugin</artifactId>
+        <executions>
+           <execution>
+              <goals>
+                 <goal>genkey</goal>
+              </goals>
+           </execution>
+        </executions>
+        <configuration>
+           <keystore>${project.build.directory}/keystore</keystore>
+           <dname>cn=kanji.radde.org, ou=Software, L=Failly, ST=Lorraine, o=MirageDev, c=FR</dname>
+           <keypass>mononara</keypass>
+           <storepass>mononara</storepass>
+	   <alias>mononara</alias>
+        </configuration>
+      </plugin>
+            <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>webstart-maven-plugin</artifactId>
+        <executions>
+           <execution>
+              <goals>
+                 <goal>jnlp</goal>
+              </goals>
+           </execution>
+        </executions>
+        <configuration>
+           <!-- The path where the libraries are stored within the jnlp structure. not required. by default the libraries are within the working directory -->
+           <!--<libPath>lib</libPath>-->
+
+           <!-- [optional] transitive dependencies filter - if omitted, all transitive dependencies are included -->
+           <dependencies>
+             <!-- Note that only groupId and artifactId must be specified here. because of a limitation of the Include/ExcludesArtifactFilter -->
+             <includes>
+             </includes>
+             <!-- excludes>
+                <exclude></exclude>
+             <excludes-->
+           </dependencies>
+
+           <!-- JNLP generation -->
+           <jnlp>
+             <!-- default values -->
+             <!--resources>${project.basedir}/src/main/jnlp/resources</resources-->
+             <!--inputTemplateResourcePath>${project.basedir}</inputTemplateResourcePath-->
+             <!--inputTemplate>src/main/jnlp/template.vm</inputTemplate-->
+             <outputFile>mononara.jnlp</outputFile>
+
+             <!-- used to automatically identify the jar containing the main class. -->
+             <!-- this is perhaps going to change -->
+             <mainClass>com.miragedev.mononara.gui.MononaraFrame</mainClass>
+           </jnlp>
+
+
+           <!-- SIGNING -->
+           <!-- defining this will automatically sign the jar and its dependencies, if necessary -->
+	   <sign>
+ 	      <keystore>${project.build.directory}\keystore</keystore> <!-- path or URI (if empty, the default keystore ".keystore"-file in the user-homedir is used) -->
+ 	      <keypass>mononara</keypass>  <!-- we need to override passwords easily from the command line. ${keypass} -->
+ 	      <storepass>mononara</storepass> <!-- ${storepass} -->
+ 	      <alias>mononara</alias> <!-- alias of the key to  use -->
+ 	      <!-- the following key-settings are only used if the keystore and key has to be generated at build-time -->	
+ 	      <verify>false</verify> <!-- verify the signature after signing -->
+ 	   </sign>
+
+
+           <!-- BUILDING PROCESS -->
+           <!--usejnlpservlet>true</usejnlpservlet--> <!-- not yet supported -->
+
+           <!-- should we have some more configurations here? E.g. compression level (aka packing effort) -->
+           <!-- not yet implemented -->
+           <pack200>true</pack200>
+           <gzip>true</gzip> <!-- default force when pack200 false, true when pack200 selected ?? -->
+           <!-- causes a version attribute to be output in each jar resource element, optional, default is false -->
+           <outputJarVersions>true</outputJarVersions>
+           <verbose>true</verbose>
+
+        </configuration>
+      </plugin>
+        </plugins>
+    </build>
+	
+</project>
