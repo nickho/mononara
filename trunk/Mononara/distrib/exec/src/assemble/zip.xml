@@ -1,0 +1,21 @@
+<assembly>
+    <id>distrib</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <moduleSets>
+      <moduleSet>
+        <binaries>
+          <outputDirectory>lib/${artifactId}</outputDirectory>
+          <unpack>false</unpack>
+        </binaries>
+      </moduleSet>
+    </moduleSets>
+    <fileSets>
+      <fileSet>
+          <directory>src/resources</directory>
+          <outputDirectory></outputDirectory>
+      </fileSet>
+    </fileSets>
+</assembly>
