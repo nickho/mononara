@@ -12,6 +12,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
@@ -347,7 +348,8 @@ public class MononaraFrame {
     }
 
     public static void main(String[] args) {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(args[0]);
+	//AbstractApplicationContext ctx = new FileSystemXmlApplicationContext();
         ctx.registerShutdownHook();
         MononaraFrame mform = (MononaraFrame) ctx.getBean("mononaraFrame");
         mform.startMononara();

@@ -17,5 +17,7 @@
  	     />
  	     $dependencies
     </resources>
-    <application-desc main-class="$mainClass"/>
+    <application-desc main-class="$mainClass">
+      <argument>classpath:spring-config.xml</argument> 
+    </application-desc>
 </jnlp>
