@@ -12,7 +12,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
@@ -217,26 +216,25 @@ public class MononaraFrame {
             int red = 0;
             int green = 0;
             int blue = 0;
+            Color kanjiColor = null;
             if (knowledge.getLastTestSuccess() > 0.9999) {
-                green = 100;
+                log.info("fading lvl correct " + fadingLvl);
+                if (fadingLvl < 1) {
+                    kanjiColor = new Color(67, 173, 67);
+                } else {
+                    kanjiColor = new Color(67, 173, 67, 255 / fadingLvl);
+                }
             } else if (knowledge.getLastTimeSuccess() == null) {
                 //ohhh first time huh!?
             } else {
                 red = 200 - (int) (100 * knowledge.getLastTestSuccess());
                 blue = 50 + (int) (150 * knowledge.getLastTestSuccess());
                 green = 100;
-            }
-            if (fadingLvl >= 1) {
-                //log.info("knowledge " + knowledge.getKanji().getId() + " : (" + red + "," + green + "," + blue + ") " + fadingLvl);
-                green = Math.min(255, green * fadingLvl);
-                red = Math.min(255, (red + 50) * fadingLvl);
-                blue = Math.min(255, (blue + 50) * fadingLvl);
+                kanjiColor = new Color(red, green, blue);
             }
 
-            //int transparency = 255 * Math.round(backgroundColor.getAlpha() / 255);
-            //Color foregroundColor = new Color(transparency, transparency, transparency);
             if (learningMethod.isTested(knowledge)) {
-                toggleButton.setBackground(new Color(red, green, blue));
+                toggleButton.setBackground(kanjiColor);
             }
             //toggleButton.setForeground(foregroundColor);
 
@@ -349,7 +347,7 @@ public class MononaraFrame {
 
     public static void main(String[] args) {
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(args[0]);
-	//AbstractApplicationContext ctx = new FileSystemXmlApplicationContext();
+        //AbstractApplicationContext ctx = new FileSystemXmlApplicationContext();
         ctx.registerShutdownHook();
         MononaraFrame mform = (MononaraFrame) ctx.getBean("mononaraFrame");
         mform.startMononara();
