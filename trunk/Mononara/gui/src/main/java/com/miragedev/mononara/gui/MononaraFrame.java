@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Vector;
 import java.util.regex.PatternSyntaxException;
 
@@ -35,7 +37,6 @@ import java.util.regex.PatternSyntaxException;
 public class MononaraFrame {
     private JTabbedPane panelMain;
     private JButton startButton;
-    private JButton propertiesButton;
     private JPanel studyListPane;
     private JComboBox tagsComboBox;
     private JTextField userSpellingTestTextField;
@@ -346,6 +347,7 @@ public class MononaraFrame {
     }
 
     public static void main(String[] args) {
+        Locale.setDefault(Locale.FRENCH);
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(args[0]);
         //AbstractApplicationContext ctx = new FileSystemXmlApplicationContext();
         ctx.registerShutdownHook();
@@ -381,7 +383,7 @@ public class MononaraFrame {
         panel1.add(panelMain, gbc);
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new GridBagLayout());
-        panelMain.addTab("Study list", panel2);
+        panelMain.addTab(ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.studylist.tab.title"), panel2);
         studyListPane = new JPanel();
         studyListPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         gbc = new GridBagConstraints();
@@ -392,7 +394,7 @@ public class MononaraFrame {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         panel2.add(studyListPane, gbc);
-        studyListPane.setBorder(BorderFactory.createTitledBorder("Choix des kaniji a tester"));
+        studyListPane.setBorder(BorderFactory.createTitledBorder(ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.studylist.panel.title")));
         tagsComboBox = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         defaultComboBoxModel1.addElement("jlpt_4");
@@ -407,20 +409,14 @@ public class MononaraFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel2.add(tagsComboBox, gbc);
         startButton = new JButton();
-        startButton.setText("Start");
+        this.$$$loadButtonText$$$(startButton, ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.studylist.button.start"));
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.EAST;
         panel2.add(startButton, gbc);
-        propertiesButton = new JButton();
-        propertiesButton.setText("Properties");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 3;
-        gbc.gridy = 0;
-        panel2.add(propertiesButton, gbc);
         refreshButton = new JButton();
-        refreshButton.setText("Refresh");
+        this.$$$loadButtonText$$$(refreshButton, ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.studylist.button.refresh"));
         gbc = new GridBagConstraints();
         gbc.gridx = 4;
         gbc.gridy = 0;
@@ -428,7 +424,7 @@ public class MononaraFrame {
         panel2.add(refreshButton, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new GridBagLayout());
-        panelMain.addTab("Basket", panel3);
+        panelMain.addTab(ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.basket.tab.title"), panel3);
         basketList = new JList();
         basketList.setFont(new Font(basketList.getFont().getName(), basketList.getFont().getStyle(), 26));
         basketList.setLayoutOrientation(2);
@@ -445,7 +441,7 @@ public class MononaraFrame {
         panel3.add(basketList, gbc);
         testPane = new JPanel();
         testPane.setLayout(new GridBagLayout());
-        panelMain.addTab("Test", testPane);
+        panelMain.addTab(ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.test.tab.title"), testPane);
         userSpellingTestTextField = new JTextField();
         userSpellingTestTextField.setColumns(10);
         userSpellingTestTextField.setFont(new Font(userSpellingTestTextField.getFont().getName(), userSpellingTestTextField.getFont().getStyle(), 18));
@@ -492,7 +488,7 @@ public class MononaraFrame {
         testPane.add(pageLabel, gbc);
         final JPanel panel4 = new JPanel();
         panel4.setLayout(new GridBagLayout());
-        panelMain.addTab("Dictionnary", panel4);
+        panelMain.addTab(ResourceBundle.getBundle("InterfaceResources").getString("mononaraframe.dictionnary.tab.title"), panel4);
         comboBoxTagsDictionnary = new JComboBox();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -513,5 +509,32 @@ public class MononaraFrame {
         tableDictionnary.setAutoCreateRowSorter(false);
         tableDictionnary.setFillsViewportHeight(true);
         scrollPane1.setViewportView(tableDictionnary);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadButtonText$$$(AbstractButton component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
     }
 }

@@ -29,7 +29,7 @@
                   <gridbag top="5" left="0" bottom="5" right="0" weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
-                  <text value="Cancel"/>
+                  <text resource-bundle="InterfaceResources" key="syncframe.button.cancel"/>
                 </properties>
               </component>
             </children>
@@ -57,7 +57,7 @@
               <gridbag top="0" left="10" bottom="10" right="10" weightx="0.75" weighty="0.0"/>
             </constraints>
             <properties>
-              <text value="Loading..."/>
+              <text resource-bundle="InterfaceResources" key="syncframe.label.entry"/>
             </properties>
           </component>
           <component id="68ca0" class="javax.swing.JLabel" binding="labelTitle">
@@ -69,7 +69,7 @@
               <font size="20"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="10"/>
-              <text value="Loading Dictionnary"/>
+              <text resource-bundle="InterfaceResources" key="syncframe.label.title"/>
             </properties>
           </component>
           <component id="ab6fa" class="javax.swing.JLabel" binding="labelStatus">
@@ -78,7 +78,7 @@
               <gridbag top="0" left="0" bottom="10" right="10" weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text resource-bundle="InterfaceResources" key="syncframe.label.status"/>
             </properties>
           </component>
         </children>

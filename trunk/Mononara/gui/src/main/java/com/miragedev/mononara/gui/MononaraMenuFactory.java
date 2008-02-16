@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ResourceBundle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +21,7 @@ import java.net.URISyntaxException;
 public class MononaraMenuFactory {
 
     private Log log = LogFactory.getLog(MononaraMenuFactory.class);
+    private ResourceBundle res = ResourceBundle.getBundle("InterfaceResources");
 
     String kanjiUri;
     String dictionnaryUri;
@@ -44,16 +46,16 @@ public class MononaraMenuFactory {
 
     public JMenuBar createMenuBar() {
         JMenuBar menubar = new JMenuBar();
-        JMenu menuFile = new JMenu("File");
+        JMenu menuFile = new JMenu(res.getString("mononaraframe.menu.file.title"));
         menubar.add(menuFile);
-        JMenuItem menuItemSync = new JMenuItem("Online sync");
+        JMenuItem menuItemSync = new JMenuItem(res.getString("mononaraframe.menu.file.sync"));
         menuFile.add(menuItemSync);
-        JMenuItem menuItemExit = new JMenuItem("Exit");
+        JMenuItem menuItemExit = new JMenuItem(res.getString("mononaraframe.menu.file.exit"));
         menuFile.add(new JSeparator());
         menuFile.add(menuItemExit);
         JMenu menuAide = new JMenu("?");
         menubar.add(menuAide);
-        JMenuItem menuItemAbout = new JMenuItem("About");
+        JMenuItem menuItemAbout = new JMenuItem(res.getString("mononaraframe.menu.help.about"));
         menuAide.add(menuItemAbout);
 
 

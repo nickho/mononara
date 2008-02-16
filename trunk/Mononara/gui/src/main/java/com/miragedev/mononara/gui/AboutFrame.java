@@ -3,22 +3,22 @@ package com.miragedev.mononara.gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ResourceBundle;
 
 public class AboutFrame extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
+    private JButton buttonClose;
     private JButton buttonCancel;
-    private JLabel mononaraLabel;
 
     public AboutFrame() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(buttonClose);
         setLocationRelativeTo(this.getParent());
         setTitle("Mononara - About");
         setIconImage(new ImageIcon("images/ai-jpg.jpg").getImage());
 
-        buttonOK.addActionListener(new ActionListener() {
+        buttonClose.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
@@ -97,24 +97,15 @@ public class AboutFrame extends JDialog {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         panel1.add(panel2, gbc);
-        buttonOK = new JButton();
-        buttonOK.setText("OK");
+        buttonClose = new JButton();
+        this.$$$loadButtonText$$$(buttonClose, ResourceBundle.getBundle("InterfaceResources").getString("aboutframe.button.close"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel2.add(buttonOK, gbc);
-        buttonCancel = new JButton();
-        buttonCancel.setText("Cancel");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel2.add(buttonCancel, gbc);
+        panel2.add(buttonClose, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new GridBagLayout());
         panel3.setFont(new Font(panel3.getFont().getName(), panel3.getFont().getStyle(), 28));
@@ -125,20 +116,8 @@ public class AboutFrame extends JDialog {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         contentPane.add(panel3, gbc);
-        mononaraLabel = new JLabel();
-        mononaraLabel.setEnabled(true);
-        mononaraLabel.setFont(new Font(mononaraLabel.getFont().getName(), mononaraLabel.getFont().getStyle(), 28));
-        mononaraLabel.setHorizontalAlignment(0);
-        mononaraLabel.setText("Mononara");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-        panel3.add(mononaraLabel, gbc);
         final JLabel label1 = new JLabel();
-        label1.setText("Author: Nickho");
+        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("InterfaceResources").getString("aboutframe.label.author"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -147,7 +126,7 @@ public class AboutFrame extends JDialog {
         final JLabel label2 = new JLabel();
         label2.setFont(new Font(label2.getFont().getName(), label2.getFont().getStyle(), 28));
         label2.setHorizontalAlignment(0);
-        label2.setText("The free Kanji learning platform");
+        this.$$$loadLabelText$$$(label2, ResourceBundle.getBundle("InterfaceResources").getString("aboutframe.label.description"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -155,6 +134,72 @@ public class AboutFrame extends JDialog {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel3.add(label2, gbc);
+        final JLabel label3 = new JLabel();
+        label3.setEnabled(true);
+        label3.setFont(new Font(label3.getFont().getName(), label3.getFont().getStyle(), 28));
+        label3.setHorizontalAlignment(0);
+        this.$$$loadLabelText$$$(label3, ResourceBundle.getBundle("InterfaceResources").getString("aboutframe.label.title"));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        panel3.add(label3, gbc);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadLabelText$$$(JLabel component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setDisplayedMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadButtonText$$$(AbstractButton component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
     }
 
     /**
