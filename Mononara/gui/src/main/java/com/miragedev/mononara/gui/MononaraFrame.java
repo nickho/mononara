@@ -10,6 +10,7 @@ import com.miragedev.mononara.core.service.KanjiService;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,10 +21,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.Vector;
+import java.util.*;
 import java.util.regex.PatternSyntaxException;
 
 
@@ -348,6 +349,13 @@ public class MononaraFrame {
 
     public static void main(String[] args) {
         Locale.setDefault(Locale.FRENCH);
+        Properties logProperties = new Properties();
+        try {
+            logProperties.load(new FileInputStream(args[1]));
+        } catch (IOException e) {
+            //No log, .... No log
+        }
+        PropertyConfigurator.configure(logProperties);
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(args[0]);
         //AbstractApplicationContext ctx = new FileSystemXmlApplicationContext();
         ctx.registerShutdownHook();
