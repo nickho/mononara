@@ -11,6 +11,7 @@ package com.miragedev.mononara.core.business;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.util.Collections;
 import java.util.Vector;
 
 /**
@@ -54,6 +55,7 @@ public class Exam {
 
     public void add(ExamContext examContext) {
         data.add(examContext);
+        Collections.shuffle(data);
     }
 
     /**
