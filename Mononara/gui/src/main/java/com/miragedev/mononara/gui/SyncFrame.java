@@ -2,8 +2,8 @@ package com.miragedev.mononara.gui;
 
 import com.miragedev.mononara.core.io.DictionnaryEntryAddedEvent;
 import com.miragedev.mononara.core.io.DictionnaryEntryAddedListener;
-import com.miragedev.mononara.core.io.KanjiAddedListener;
 import com.miragedev.mononara.core.io.KanjiAddedEvent;
+import com.miragedev.mononara.core.io.KanjiAddedListener;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.LogFactory;
 
@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.net.URI;
+import java.util.ResourceBundle;
 
 public class SyncFrame extends JDialog {
     private JPanel contentPane;
@@ -132,7 +133,7 @@ public class SyncFrame extends JDialog {
         gbc.fill = GridBagConstraints.BOTH;
         panel1.add(panel2, gbc);
         buttonCancel = new JButton();
-        buttonCancel.setText("Cancel");
+        this.$$$loadButtonText$$$(buttonCancel, ResourceBundle.getBundle("InterfaceResources").getString("syncframe.button.cancel"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -159,7 +160,7 @@ public class SyncFrame extends JDialog {
         gbc.insets = new Insets(0, 10, 0, 10);
         panel3.add(progressBarSync, gbc);
         labelEntry = new JLabel();
-        labelEntry.setText("Loading...");
+        this.$$$loadLabelText$$$(labelEntry, ResourceBundle.getBundle("InterfaceResources").getString("syncframe.label.entry"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -171,7 +172,7 @@ public class SyncFrame extends JDialog {
         labelTitle.setFont(new Font(labelTitle.getFont().getName(), labelTitle.getFont().getStyle(), 20));
         labelTitle.setHorizontalAlignment(0);
         labelTitle.setHorizontalTextPosition(10);
-        labelTitle.setText("Loading Dictionnary");
+        this.$$$loadLabelText$$$(labelTitle, ResourceBundle.getBundle("InterfaceResources").getString("syncframe.label.title"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -181,13 +182,67 @@ public class SyncFrame extends JDialog {
         gbc.insets = new Insets(10, 10, 50, 10);
         panel3.add(labelTitle, gbc);
         labelStatus = new JLabel();
-        labelStatus.setText("Label");
+        this.$$$loadLabelText$$$(labelStatus, ResourceBundle.getBundle("InterfaceResources").getString("syncframe.label.status"));
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(0, 0, 10, 10);
         panel3.add(labelStatus, gbc);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadLabelText$$$(JLabel component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setDisplayedMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadButtonText$$$(AbstractButton component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
     }
 
     /**

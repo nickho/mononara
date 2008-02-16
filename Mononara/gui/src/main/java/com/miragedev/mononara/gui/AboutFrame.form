@@ -23,22 +23,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="e7465" class="javax.swing.JButton" binding="buttonOK">
+              <component id="e7465" class="javax.swing.JButton" binding="buttonClose">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                   <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
-                  <text value="OK"/>
-                </properties>
-              </component>
-              <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="1.0" weighty="1.0"/>
-                </constraints>
-                <properties>
-                  <text value="Cancel"/>
+                  <text resource-bundle="InterfaceResources" key="aboutframe.button.close"/>
                 </properties>
               </component>
             </children>
@@ -55,27 +46,13 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="1cb48" class="javax.swing.JLabel" binding="mononaraLabel" default-binding="true">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <enabled value="true"/>
-              <font size="28"/>
-              <horizontalAlignment value="0"/>
-              <text value="Mononara"/>
-            </properties>
-          </component>
           <component id="91c2c" class="javax.swing.JLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <text value="Author: Nickho"/>
+              <text resource-bundle="InterfaceResources" key="aboutframe.label.author"/>
             </properties>
           </component>
           <component id="53058" class="javax.swing.JLabel">
@@ -86,7 +63,21 @@
             <properties>
               <font size="28"/>
               <horizontalAlignment value="0"/>
-              <text value="The free Kanji learning platform"/>
+              <text resource-bundle="InterfaceResources" key="aboutframe.label.description"/>
+            </properties>
+          </component>
+          <component id="1cb48" class="javax.swing.JLabel" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font size="28"/>
+              <horizontalAlignment value="0"/>
+              <text resource-bundle="InterfaceResources" key="aboutframe.label.title"/>
             </properties>
           </component>
         </children>

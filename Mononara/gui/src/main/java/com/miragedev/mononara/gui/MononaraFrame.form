@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.miragedev.mononara.gui.MononaraFrame">
   <grid id="27dc6" default-binding="true" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="606"/>
+      <xy x="20" y="20" width="510" height="606"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -19,7 +19,7 @@
         <children>
           <grid id="e75fe" layout-manager="GridBagLayout">
             <constraints>
-              <tabbedpane title="Study list"/>
+              <tabbedpane title-resource-bundle="InterfaceResources" title-key="mononaraframe.studylist.tab.title"/>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -30,7 +30,7 @@
                   <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties/>
-                <border type="none" title="Choix des kaniji a tester"/>
+                <border type="none" title-resource-bundle="InterfaceResources" title-key="mononaraframe.studylist.panel.title"/>
                 <children/>
               </grid>
               <component id="7296c" class="javax.swing.JComboBox" binding="tagsComboBox">
@@ -53,16 +53,7 @@
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
-                  <text value="Start"/>
-                </properties>
-              </component>
-              <component id="a3c82" class="javax.swing.JButton" binding="propertiesButton" default-binding="true">
-                <constraints>
-                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="0.0" weighty="0.0"/>
-                </constraints>
-                <properties>
-                  <text value="Properties"/>
+                  <text resource-bundle="InterfaceResources" key="mononaraframe.studylist.button.start"/>
                 </properties>
               </component>
               <component id="24d7a" class="javax.swing.JButton" binding="refreshButton" default-binding="true">
@@ -71,14 +62,14 @@
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
-                  <text value="Refresh"/>
+                  <text resource-bundle="InterfaceResources" key="mononaraframe.studylist.button.refresh"/>
                 </properties>
               </component>
             </children>
           </grid>
           <grid id="4b469" layout-manager="GridBagLayout">
             <constraints>
-              <tabbedpane title="Basket"/>
+              <tabbedpane title-resource-bundle="InterfaceResources" title-key="mononaraframe.basket.tab.title"/>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -102,7 +93,7 @@
           </grid>
           <grid id="7e8f8" binding="testPane" layout-manager="GridBagLayout">
             <constraints>
-              <tabbedpane title="Test"/>
+              <tabbedpane title-resource-bundle="InterfaceResources" title-key="mononaraframe.test.tab.title"/>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -167,7 +158,7 @@
           </grid>
           <grid id="4edb3" layout-manager="GridBagLayout">
             <constraints>
-              <tabbedpane title="Dictionnary"/>
+              <tabbedpane title-resource-bundle="InterfaceResources" title-key="mononaraframe.dictionnary.tab.title"/>
             </constraints>
             <properties/>
             <border type="none"/>
