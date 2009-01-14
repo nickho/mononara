@@ -1,0 +1,49 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                template="#{theme.template}">
+
+    <!-- content -->
+    <ui:define name="content">
+
+
+        <div class="section">
+            <h:form id="navigation">
+                <h1>Login</h1>
+            </h:form>
+        </div>
+
+        <h:form id="login">
+            <a:outputPanel id="loginPanel">
+                <div class="section">
+                    <label>Login Name :</label>
+                    <h:inputText id="username" value="#{identity.username}"/>
+                    <div class="errors"><h:message for="username"/></div>
+
+                    <label>Password :</label>
+                    <h:inputSecret id="password" value="#{identity.password}"/>
+
+
+                    <div class="errors"><h:messages globalOnly="true"/></div>
+                    <div class="entry">
+                        <a:commandButton id="login" action="#{identity.login}" value="Account Login"
+                                         reRender="loginPanel"/>
+                        <a:status>
+                            <f:facet name="start">
+                                <h:graphicImage value="#{theme.spinner}"/>
+                            </f:facet>
+                        </a:status>
+                    </div>
+
+                </div>
+            </a:outputPanel>
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>

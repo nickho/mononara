@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:a="http://richfaces.org/a4j"
+        xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Kanji Portal: La librairie de kanji</title>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+    <div id="document">
+        <div id="header">
+            <div id="title"/>
+            <div id="status">
+                <h:form id="themes">
+                    <s:label id="username" rendered="#{identity.loggedIn}">
+                        Welcome #{user.username}
+                    </s:label>
+                    <s:label id="anon" rendered="#{!identity.loggedIn}">
+                        Welcome you
+                    </s:label>
+                    |&nbsp;<s:link id="home" view="/home.xhtml" value="Home" propagation="none"/>
+                    |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}"/>
+                    <s:link id="loginHeader" view="/login.xhtml" value="Login" rendered="#{!identity.loggedIn}"/>
+                </h:form>
+            </div>
+        </div>
+
+        <div id="container">
+            <div id="sidebar">
+                <ui:insert name="sidebar"/>
+                <ui:decorate template="/menu.xhtml"/>
+            </div>
+
+            <div id="content">
+                <ui:insert name="content"/>
+            </div>
+        </div>
+        <div id="footer">Created by Nickho</div>
+        <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
+    </div>
+
+
+    </body>
+    </html>
+</f:view>
