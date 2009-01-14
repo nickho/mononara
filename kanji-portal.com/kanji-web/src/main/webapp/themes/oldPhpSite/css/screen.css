@@ -1,0 +1,339 @@
+/* Setup defaults since variable in browsers
+----------------------------------------------- */
+#document body, #document div, #document span, #document dd, #document dt, #document dl, #document img, #document ul, #document ol, #document li, #document p, #document h1, #document h2, #document h3, #document h4, #document h5, #document form, #document hr, #document fieldset {
+   margin: 0;
+   padding: 0;
+   color:  white;
+   background-color: black;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+/* Element Defaults
+-----------------------------------------------
+div#content-container html {
+   height: 100%;
+}
+
+
+#document .label {
+   font-weight: bold;
+   color: #5E5147;
+}
+
+/* Layout
+----------------------------------------------- */
+#document {
+   /*padding: 0 1px;*/
+   /*background: black url(../img/bg.gif) 0 0 repeat-y;*/
+   float: left;
+   /*border-bottom: 1px solid #C3BBB6;*/
+}
+#document #header {
+   float: left;
+   width: 758px;
+   height: 79px;
+   background: url(../img/header-block.png) 0 0 repeat-x;
+}
+
+#document #header #title{
+   float: left;
+   width: 292px;
+   height: 68px;
+   background: transparent url(../img/header-text.png) no-repeat 10px 10px;
+}
+
+#document #container {
+   float: left;
+   width: 758px;
+   /*background: url(../img/hdr.bar.jpg) 0 0 repeat-x;*/
+}
+#document #sidebar {
+   float: left;
+   width: 145px;
+   padding: 10px 10px 0px 10px;
+   /*background-color: #c0c0c0;*/
+}
+#document #content {
+   float: left;
+   width: 572px;
+   min-height: 400px;
+   padding: 10px 10px 0px 10px;
+   border-left: 1px solid #C0C0C0;
+   /*background: url(../img/cnt.bg.gif) 0 0 repeat-x;*/
+}
+#document #footer {
+   clear: both;
+   /*margin-top: 40px;*/
+   float: left;
+   padding: 10px 20px 10px 0px;
+   /*border-top: 1px solid #C3BBB6;*/
+   width: 738px;
+   text-align: right;
+}
+
+/* General
+-----------------------------------------------
+
+/*#document input[type="submit"], #document input[type="button"] {
+   font-weight: bold;
+   color: #fff;
+   border: 1px solid #5D1414;
+   height: 26px;
+   background: #fff url(../img/btn.bg.gif) 0 0 repeat-x;
+   border-style: none;
+}
+#document .center {
+   text-align: center;
+}
+#document .entry {
+   clear: both;
+   padding-top: 10px;
+}
+#document .entry .label {
+   float: left;
+   padding-right: 5px;
+   font-weight: bold;
+   width: 150px;
+   text-align: right;
+}
+#document .entry .output {
+   float: right;
+   width: 360px;
+   padding-top: 10px;
+   text-align: left;
+}
+#document .entry .input {
+   float: right;
+   width: 360px;
+   text-align: left;
+}
+#document .entry .error {
+   float: right;
+   width: 360px;
+   text-align: left;
+}
+/* Sidebar
+-----------------------------------------------
+#document .notes {
+   text-align: center;
+   font-size: small;
+}
+#document .errors {
+   font-size: small;
+   font-weight: bold;
+   text-align: center;
+   color: #600;
+}
+#document .errors div {
+   text-align: left;
+}
+#document .errors span {
+   text-align: left;
+}
+#document .errors input {
+   border: 1px solid #600;
+}
+#document .errors ul {
+   list-style: none;
+}
+#document .buttonBox {
+   text-align: center;
+   padding: 5px 0;
+   clear: both;
+}
+#document #sidebar p {
+   font-size: small;
+   color: #8B7869;
+   line-height: 150%;
+   padding-bottom: 10px;
+}
+#document #sidebar li {
+   font-size: small;
+   color: #8B7869;
+}
+#document #sidebar h1 {
+   line-height: normal;
+   font-weight: bold;
+   font-size: small;
+}
+/*
+#sidebar p:hover {
+   color: #362F2D;
+}
+*/
+/* Content
+-----------------------------------------------
+#document #content .section {
+   float: left;
+   width: 518px;
+   padding: 15px 15px 0 15px;
+}
+#document #content .section h1 {
+   font-family: "Trebuchet MS", Arial, sans-serif;
+   line-height: normal;
+   font-weight: normal;
+   font-size: large;
+}
+#document #content .section p {
+   line-height: 150%;
+   padding: 10px 0;
+   font-size: small;
+}
+#document #content table {
+   width: 100%;
+   border: 1px solid #D2C9C4;
+   border-collapse: collapse;
+}
+#document #content table caption {
+   padding-bottom: 6px;
+   text-align: left;
+   font-weight: bold;
+}
+#document #content table thead th {
+   border-left: 1px solid #D2C9C4;
+   background: #fff url(../img/th.bg.gif) 0 100% repeat-x;
+   border-bottom: 1px solid #D2C9C4;
+   padding: 6px;
+   text-align: left;
+   font-size: small;
+}
+#document #content table tbody td {
+   border-left: 1px solid #E4DBD5;
+   padding: 4px;
+   border-bottom: 1px solid #D2C9C4;
+   font-size: small;
+}
+#document #content dt {
+   font-weight: bold;
+   float: left;
+   width: 33%;
+}
+#document #content dd {
+   padding-left: 10px;
+   float: left;
+   width: 66%;
+}
+#document #content table.radio {
+   border: 0px;
+}
+#document #content table.radio tbody tr td {
+   border: 0px;
+   border-left: 0px;
+   border-bottom: 0px;
+}
+/* Header
+----------------------------------------------- */
+
+#document #status {
+   float: right;
+   font-weight: bold;
+   font-size: x-small;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   text-align: right;
+   color: black;
+   padding-top: 14px;
+   padding-right: 15px;
+   background-color: transparent;
+}
+#document #status a {
+   color: black;
+   text-decoration: none;
+}
+
+/* Sidebar
+----------------------------------------------- */
+
+#document #sidebar {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#document #sidebar a {
+   color: #C0C0C0;
+   text-decoration: none;
+}
+
+#document #sidebar a:hover {
+   color: #C0C0C0;
+   text-decoration: overline underline;;
+}
+
+/* Content
+----------------------------------------------- */
+
+#document #content a {
+   text-decoration: none;
+   color: #a63437;
+}
+
+#document #content fieldset {
+   padding: 5px 5px 5px 5px;
+}
+
+
+#document #content table {
+   width: 100%;
+   border: 1px solid #D2C9C4;
+   border-collapse: collapse;
+}
+#document #content table caption {
+   padding-bottom: 6px;
+   text-align: left;
+   font-weight: bold;
+}
+#document #content table thead th {
+   border-left: 1px solid #D2C9C4;
+   background: url(../img/th.bg.gif) 0 100% repeat-x;
+   color: black;
+   border-bottom: 1px solid #D2C9C4;
+   padding: 6px;
+   text-align: left;
+   font-size: small;
+}
+#document #content table tbody td {
+   border-left: 1px solid #E4DBD5;
+   padding: 4px;
+   border-bottom: 1px solid #D2C9C4;
+   font-size: small;
+}
+
+/* Kanji View
+---------------------------------------------- */
+
+#kanji {
+   float: left;
+   width: 550px;
+   padding: 10px 10px 10px 10px;
+   /*background-color: #c0c0c0;*/
+}
+#kanji #char {
+   float: left;
+   width: 100px;
+   font-size: 500%;
+   padding: 10px 10px 10px 10px;
+}
+
+#kanji #references {
+   float: left;
+   width: 150px;
+   padding: 10px 10px 10px 10px;
+   /*background-color: #c0c0c0;*/
+}
+
+#kanji #tags {
+   float: left;
+   width: 150px;
+   padding: 10px 10px 10px 10px;
+   /*background-color: #c0c0c0;*/
+}
+
+#document #content #description {
+   float: left;
+   width: 550px;
+   padding: 10px 10px 10px 10px;
+   /*background-color: #c0c0c0;*/
+}
+
+#document #content #prononciations {
+   float: left;
+   width: 550px;
+   padding: 10px 10px 10px 10px;
+   /*background-color: #c0c0c0;*/
+}

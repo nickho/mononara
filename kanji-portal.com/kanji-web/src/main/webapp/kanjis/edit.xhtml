@@ -1,0 +1,171 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                template="#{theme.template}">
+
+    <!-- content -->
+    <ui:define name="content">
+        <div class="section">
+            <h:form id="navigation">
+                <h1>Kanji(
+                    <h:outputLink value="view.seam">
+                        <f:param name="kanjiId" value="#{kanji.id}"/>
+                        Back
+                    </h:outputLink>)
+                </h1>
+            </h:form>
+        </div>
+
+        <fieldset id="KanjiFieldSet">
+            <legend>Definition</legend>
+            <h:form id="kanjis">
+                <a:outputPanel id="kanjiMainInfo">
+                    <label>Kanji:</label>
+                    <h:inputText id="kanjiChar" value="#{kanji.kanji}"/>
+
+                    <label>Meanings:</label>
+                    <h:inputText id="kanjiMeaning" value="#{kanji.meaning}"/>
+
+                    <label>Description:</label>
+                    <h:inputTextarea id="kanjiDescription" value="#{kanji.description}"/>
+                </a:outputPanel>
+
+                <div class="entry">
+                    <a:commandButton id="saveKanjis" value="Save Kanji" action="#{kanjiEdit.saveMainInfos()}"
+                                     reRender="kanjiMainInfo"/>
+                    <a:status>
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </div>
+            </h:form>
+        </fieldset>
+
+        <fieldset id="spellingFieldSet">
+            <legend>Spellings</legend>
+            <h:form id="spellings">
+                <a:outputPanel id="kanjiSpellings">
+                    <div class="section">
+                        <h:outputText value="No Spellings Found"
+                                      rendered="#{spellings != null and spellings.rowCount==0}"/>
+                        <ui:repeat value="#{spellings}" var="spelling">
+                            #{spelling.type.name}
+                            (<a:commandLink id="removeSpelling" value="delete"
+                                            action="#{kanjiEdit.removeSpelling(spelling.id)}"
+                                            reRender="kanjiSpellings" status="statusRemoveSpelling"/>)
+                            <a:status id="statusRemoveSpelling" forceId="true">
+                                <f:facet name="startRemove">
+                                    <h:graphicImage value="#{theme.spinner}"/>
+                                </f:facet>
+                            </a:status>
+                            : #{spelling.kana} [#{spelling.romaji}]
+                            <br/>
+                        </ui:repeat>
+                    </div>
+                </a:outputPanel>
+
+                <div class="entry">
+                    <label>Add Spelling:</label>
+                    <h:selectOneMenu id="spel" value="#{kanjiEdit.spellingTypeId}">
+                        <f:selectItems value="#{kanjiEdit.spellingTypesAvailables}"/>
+                    </h:selectOneMenu>
+                    <h:inputText size="10" id="spellingKana" value="#{kanjiEdit.spellingKana}"/>
+                    <h:inputText size="10" id="spellingRomaji" value="#{kanjiEdit.spellingRomaji}"/>
+                    <h:inputText size="10" id="spellingMeanings" value="#{kanjiEdit.spellingMeanings}"/>
+
+                    <a:commandButton id="addSpelling" value="Add Spelling" action="#{kanjiEdit.addSpelling()}"
+                                     reRender="kanjiSpellings" status="statusAddSpelling"/>
+                    <a:status id="statusAddSpelling" forceId="true">
+                        <f:facet name="startAdd">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </div>
+            </h:form>
+        </fieldset>
+
+        <fieldset id="referencesFiledSet">
+            <legend>References</legend>
+            <h:form id="references">
+                <a:outputPanel id="kanjiReferences">
+                    <div class="section">
+                        <h:outputText value="No References Found"
+                                      rendered="#{references != null and references.rowCount==0}"/>
+                        <ui:repeat value="#{references}" var="ref">
+                            #{ref.key.name} : #{ref.value.value}
+                            (<a:commandLink id="removeReference" value="delete"
+                                            action="#{kanjiEdit.removeReference(ref.key.id)}"
+                                            reRender="kanjiReferences" status="statusRemoveReferences"/>)
+                            <a:status id="statusRemoveReferences" forceId="true">
+                                <f:facet name="startRemove">
+                                    <h:graphicImage value="#{theme.spinner}"/>
+                                </f:facet>
+                            </a:status>
+                            <br/>
+                        </ui:repeat>
+                    </div>
+                </a:outputPanel>
+
+                <div class="entry">
+                    <label>Add Reference:</label>
+                    <h:selectOneMenu id="ref" value="#{kanjiEdit.referenceTypeId}">
+                        <f:selectItems value="#{kanjiEdit.referencesTypesAvailables}"/>
+                    </h:selectOneMenu>
+                    <h:inputText id="refValue" value="#{kanjiEdit.referenceValue}"/>
+
+                    <a:commandButton id="addReference" value="Add Reference" action="#{kanjiEdit.addReference()}"
+                                     reRender="kanjiReferences" status="statusAddReference"/>
+                    <a:status id="statusAddReference" forceId="true">
+                        <f:facet name="startAdd">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </div>
+            </h:form>
+        </fieldset>
+
+        <fieldset id="tagsFieldSet">
+            <legend>Tags</legend>
+            <h:form id="tags">
+                <a:outputPanel id="kanjiTags">
+                    <div class="section">
+                        <h:outputText value="No Tags Found" rendered="#{tags != null and tags.rowCount==0}"/>
+                        <ui:repeat value="#{tags}" var="tag">
+                            #{tag.name}
+                            (<a:commandLink id="removeTag" value="delete" action="#{kanjiEdit.removeTag(tag.id)}"
+                                            reRender="kanjiTags" status="statusRemoveTags"/>)
+                            <a:status id="statusRemoveTags" forceId="true">
+                                <f:facet name="startRemove">
+                                    <h:graphicImage value="#{theme.spinner}"/>
+                                </f:facet>
+                            </a:status>
+                            <br/>
+                        </ui:repeat>
+                    </div>
+                </a:outputPanel>
+
+                <div class="entry">
+                    <label>Add tag:</label>
+                    <h:selectOneMenu id="tag" value="#{kanjiEdit.tagId}">
+                        <f:selectItems value="#{kanjiEdit.tagsAvailables}"/>
+                    </h:selectOneMenu>
+                    <a:commandButton id="addTag" value="Add Tag" action="#{kanjiEdit.addTag()}"
+                                     reRender="kanjiTags" status="statusAddTags"/>
+                    <a:status id="statusAddTags" forceId="true">
+                        <f:facet name="start2">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </div>
+            </h:form>
+        </fieldset>
+
+    </ui:define>
+
+</ui:composition>
