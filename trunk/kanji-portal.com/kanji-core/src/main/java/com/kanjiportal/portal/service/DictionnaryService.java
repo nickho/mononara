@@ -12,10 +12,6 @@ import com.kanjiportal.portal.dictionnary.Dictionnary;
 import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
 
 import javax.ejb.Local;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.PathParam;
 
 /**
  * DictionnaryService
@@ -25,14 +21,14 @@ import javax.ws.rs.PathParam;
  * @todo Implement DictionnaryService
  */
 @Local
-@Path("/dictionnary")
+//@Path("/dictionnary")
 public interface DictionnaryService {
 
-    @GET
+    //@GET
     public Dictionnary getDictionnaryEntries();
 
-    @GET
-    @Path("{id}")
-    public DictionnaryEntry getDictionnaryEntryById(@PathParam("id") long id);
+    //@GET
+    //@Path("{id}")
+    public DictionnaryEntry getDictionnaryEntryById(/*@PathParam("id")*/ long id);
 
 }
