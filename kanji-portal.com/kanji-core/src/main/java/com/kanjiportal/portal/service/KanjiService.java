@@ -8,14 +8,10 @@
  *****************************************/
 package com.kanjiportal.portal.service;
 
-import com.kanjiportal.portal.kanji.KanjiList;
 import com.kanjiportal.portal.kanji.Kanji;
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.kanji.KanjiList;
 
 import javax.ejb.Local;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 
 /**
  * KanjiService
@@ -25,14 +21,14 @@ import javax.ws.rs.PathParam;
  * @todo Implement KanjiService
  */
 @Local
-@Path("/kanjis")
+//@Path("/kanjis")
 public interface KanjiService {
 
-    @GET
+    //@GET
     public KanjiList getKanjis();
 
-    @GET
-    @Path("{id}")
-    public Kanji getKanjiById(@PathParam("id") long id);
+    //@GET
+    //@Path("{id}")
+    public Kanji getKanjiById(/*@PathParam("id")*/ long id);
 
 }

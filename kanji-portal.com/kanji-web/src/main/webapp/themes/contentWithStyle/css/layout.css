@@ -26,129 +26,140 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /* SITE SPECIFIC LAYOUT */
-    body {
-        margin: 0;
-        padding: 0;
-              
-        text-align: center;
-        
-        background: white;
-    }
-    div#page {
-        width: 780px;
-        
-        margin:  0 auto;
-        padding: 0;
-        
-        text-align: center;
-        
-        background: white;
-    }
-    
-    /* HEADER */
-        div#header {
-            margin: 0 0 5em 0;
-            padding: 20px 10px;
-            
-            color: white;
-            background: black;
-            
-            text-align: left;
-        }
-        div#branding {
-            float: left;
-            width: 40%;
-            
-            margin: 0;
-            padding: 10px 0 10px 20px;
-            
-            text-align: left;
-        }
-        div#search {
-            float: right;
-            width: 49%;
-            
-            margin: 0;
-            padding: 16px 20px 0 0;
-            
-            text-align: right;
-        }
-    /* END HEADER */
-    
-    
-    /* CONTENT */
-        div#content {
-            
-        }
-        
-        /* MAIN */
-            div#main {
-                
-            }
-        /* END MAIN */
-        
-        /* SUB */
-            div#sub {
-                
-            }
-        /* END SUB */
-        
-    /* END CONTENT */
-    
-    
-    /* FOOTER */
-        div#footer {
-            color: white;
-            background-color: black;
-        }
-        div#footer p {
-            margin: 0;
-            padding: 15px;
-            
-            font-size: 0.8em;
-        }
-    /* END FOOTER */
+body {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    background: #dcdcdc;
+}
+
+div#page {
+    width: 780px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    text-align: center;
+
+    background: black;
+}
+
+/* HEADER */
+div#header {
+    margin: 0 0 5em 0;
+    padding: 20px 10px;
+
+    color: black;
+    background: #C0C0C0;
+
+    text-align: left;
+}
+
+div#branding {
+    float: left;
+    width: 40%;
+
+    margin: 0;
+    padding: 10px 0 10px 20px;
+
+    text-align: left;
+}
+
+div#search {
+    float: right;
+    width: 49%;
+
+    margin: 0;
+    padding: 16px 20px 0 0;
+
+    text-align: right;
+}
+
+/* END HEADER */
+
+/* CONTENT */
+div#content {
+
+}
+
+/* MAIN */
+div#main {
+
+}
+
+/* END MAIN */
+
+/* SUB */
+div#sub {
+
+}
+
+/* END SUB */
+
+/* END CONTENT */
+
+/* FOOTER */
+div#footer {
+    color: white;
+    background-color: black;
+}
+
+div#footer p {
+    margin: 0;
+    padding: 15px;
+
+    font-size: 0.8em;
+}
+
+/* END FOOTER */
 /* END LAYOUT */
 
-
 /* UL.SUBNAV */
-    ul.subnav {
-        margin: 0;
-        padding: 0;
-        
-        font-size: 0.8em;
-        list-style: none;
-    }
-    ul.subnav li {
-        margin: 0 0 1em 0;
-        padding: 0;
-        
-        list-style: none;
-    }
-    ul.subnav li a,
+ul.subnav {
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.8em;
+    list-style: none;
+}
+
+ul.subnav li {
+    margin: 0 0 1em 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+ul.subnav li a,
     ul.subnav li a:link,
     ul.subnav li a:visited,
     ul.subnav li a:active {
-        text-decoration: none;
-        font-weight: bold;
-        
-        color: black;
-    }
-    ul.subnav li a:hover {
-        text-decoration: underline;
-    }
-    ul.subnav li strong {
-        padding: 0 0 0 12px;
-        
-        background: url("../img/subnav-highlight.gif") left top no-repeat transparent;
-    }
-    ul.subnav li strong a,
+    text-decoration: none;
+    font-weight: bold;
+
+    color: black;
+}
+
+ul.subnav li a:hover {
+    text-decoration: underline;
+}
+
+ul.subnav li strong {
+    padding: 0 0 0 12px;
+
+    background: url( "../img/subnav-highlight.gif" ) left top no-repeat transparent;
+}
+
+ul.subnav li strong a,
     ul.subnav li strong a:link,
     ul.subnav li strong a:visited,
     ul.subnav li strong a:active {
-        color: white;
-        background-color: black;
-    }
+    color: white;
+    background-color: black;
+}
+
 /* END UL.SUBNAV */
 
 /* Left nav */
@@ -159,33 +170,31 @@ div#local li {
 
 /* end of left nav */
 
-
 /* The kanji view */
 
 #kanji {
     height: 100px;
+    color: white;
 }
 
 #kanji #char {
-   float: left;
-   width: 100px;
-   font-size: 400%;
-   padding: 10px 10px 10px 10px;
-   margin: 20px 0px 10px 0px
+    float: left;
+    width: 100px;
+    font-size: 400%;
+    padding: 10px 10px 10px 10px;
+    margin: 20px 0px 10px 0px
 }
 
 #kanji #references {
-   float: left;
-   width: 150px;
-   padding: 10px 10px 10px 10px;
-   /*background-color: #c0c0c0;*/
+    float: left;
+    width: 150px;
+    padding: 10px 10px 10px 10px; /*background-color: #c0c0c0;*/
 }
 
 #kanji #tags {
-   float: left;
-   width: 150px;
-   padding: 10px 10px 10px 10px;
-   /*background-color: #c0c0c0;*/
+    float: left;
+    width: 150px;
+    padding: 10px 10px 10px 10px; /*background-color: #c0c0c0;*/
 }
 
 /* End of the Kanji view */

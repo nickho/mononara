@@ -8,7 +8,6 @@ package com.kanjiportal.portal.service; /**
 
 import com.kanjiportal.portal.kanji.Kanji;
 import com.kanjiportal.portal.kanji.KanjiList;
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
 import org.jboss.wsf.spi.annotation.WebContext;
 
 import javax.ejb.Stateless;
@@ -16,7 +15,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
+
 
 @Stateless
 @WebService

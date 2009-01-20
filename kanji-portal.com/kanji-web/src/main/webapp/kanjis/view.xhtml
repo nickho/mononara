@@ -1,58 +1,60 @@
-<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	    		xmlns:ui="http://java.sun.com/jsf/facelets"
-	  			xmlns:h="http://java.sun.com/jsf/html"
-	  			xmlns:f="http://java.sun.com/jsf/core"
-	  			xmlns:a="http://richfaces.org/a4j"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://richfaces.org/a4j"
                 xmlns:s="http://jboss.com/products/seam/taglib"
-				template="#{theme.template}">
+                template="#{theme.template}">
 
-<!-- content -->
-<ui:define name="content">
+    <!-- content -->
+    <ui:define name="content">
 
-    <fieldset id="kanji">
-        <legend>Kanji(
-        <h:outputLink value="edit.seam">
-           <f:param name="kanjiId" value="#{kanji.id}"/>
-            Edit
-        </h:outputLink>)
-        </legend>
+        <fieldset id="kanji">
+            <legend>Kanji(
+                <h:outputLink value="edit.seam">
+                    <f:param name="kanjiId" value="#{kanji.id}"/>
+                    Edit
+                </h:outputLink>)
+            </legend>
 
-        <div id="char">
-            #{kanji.kanji}
-        </div>
+            <div id="char">
+                #{kanji.kanji}
+            </div>
 
-        <div id="references">
-            <h:outputText value="No References Found" rendered="#{references != null and references.rowCount==0}"/>
-            <ui:repeat value="#{references}" var="ref">
-                #{ref.key.name} : #{ref.value.value}
+            <div id="references">
+                <h:outputText value="No References Found" rendered="#{references != null and references.rowCount==0}"/>
+                <ui:repeat value="#{references}" var="ref">
+                    #{ref.key.name} : #{ref.value.value}
+                    <br/>
+                </ui:repeat>
+            </div>
+
+            <div id="tags">
+                <h:outputText value="No Tags Found" rendered="#{tags != null and tags.rowCount==0}"/>
+                <ui:repeat value="#{tags}" var="tag">
+                    #{tag.name}
+                    <br/>
+                </ui:repeat>
+            </div>
+        </fieldset>
+
+        <fieldset id="description">
+            <legend>Description</legend>
+            #{kanji.description}
+        </fieldset>
+
+        <fieldset id="prononciations">
+            <legend>Prononciations</legend>
+            <h:outputText value="No Spellings Found"
+                          rendered="#{otherSpellings != null and otherSpellings.rowCount==0}"/>
+            <ui:repeat value="#{otherSpellings}" var="spel">
+                #{spel.type.name} : #{spel.kana}
                 <br/>
             </ui:repeat>
-        </div>
+        </fieldset>
 
-       <div id="tags">
-            <h:outputText value="No Tags Found" rendered="#{tags != null and tags.rowCount==0}"/>
-            <ui:repeat value="#{tags}" var="tag">
-                #{tag.name}
-                <br/>
-            </ui:repeat>
-        </div>
-    </fieldset>
-
-    <fieldset id="description">
-        <legend>Description</legend>
-        #{kanji.description}
-    </fieldset>
-
-    <fieldset id="prononciations">
-        <legend>Prononciations</legend>
-        <h:outputText value="No Spellings Found" rendered="#{spellings != null and spellings.rowCount==0}"/>
-            <ui:repeat value="#{spellings}" var="spel">
-                    #{spel.type.name} : #{spel.kana} 
-                <br/>
-            </ui:repeat>
-    </fieldset>
-
-</ui:define>
+    </ui:define>
 
 </ui:composition>
