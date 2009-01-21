@@ -127,6 +127,10 @@
                         <groupId>javax.servlet</groupId>
                         <artifactId>servlet-api</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.seam</groupId>
+                        <artifactId>jboss-seam</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
@@ -142,6 +146,10 @@
                         <groupId>jboss</groupId>
                         <artifactId>javassist</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.seam</groupId>
+                        <artifactId>jboss-seam</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
@@ -152,6 +160,10 @@
                     <exclusion>
                         <groupId>javax.servlet</groupId>
                         <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.seam</groupId>
+                        <artifactId>jboss-seam</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
