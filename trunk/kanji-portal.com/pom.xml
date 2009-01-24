@@ -14,6 +14,7 @@
         <module>kanji-web</module>
         <module>kanji-ear</module>
         <module>kanji-core</module>
+        <module>kanji-test</module>
     </modules>
     <build>
         <pluginManagement>
@@ -25,6 +26,21 @@
                         <source>1.5</source>
                         <target>1.5</target>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>selenium-maven-plugin</artifactId>
+                    <version>1.0-rc-1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.cargo</groupId>
+                    <artifactId>cargo-maven2-plugin</artifactId>
+                    <version>1.0-beta-2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>selenium-maven-plugin</artifactId>
+                    <version>1.0-rc-1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -46,7 +62,7 @@
         <repository>
             <id>openqa-releases</id>
             <name>OpenQA Releases</name>
-            <url>http://archiva.openqa.org/repository/releases/</url>
+            <url>http://nexus.openqa.org/content/repositories/releases/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -54,6 +70,30 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!--repository>
+            <id>openqa-snapshots</id>
+            <name>Openqa Snapshot Repository</name>
+            <url>http://nexus.openqa.org/content/repositories/snapshots</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>codehaus-snapshots</id>
+            <name>Maven Codehaus snapshot repository</name>
+            <url>http://snapshots.repository.codehaus.org/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+        </repository-->
     </repositories>
     <dependencyManagement>
         <dependencies>
