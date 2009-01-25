@@ -63,6 +63,7 @@
                                 <groupId>com.kanjiportal</groupId>
                                 <artifactId>kanji-ear</artifactId>
                                 <type>ear</type>
+                                <classifier>clover</classifier>
                                 <pingURL>http://localhost:6060/kanji-portal</pingURL>
                             </deployable>
                         </deployables>

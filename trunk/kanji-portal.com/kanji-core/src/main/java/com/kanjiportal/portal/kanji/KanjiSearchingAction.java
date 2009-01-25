@@ -22,17 +22,14 @@
  ******************************************************************************/
 package com.kanjiportal.portal.kanji;
 
+import com.kanjiportal.portal.dao.KanjiDao;
 import org.jboss.seam.ScopeType;
-import org.jboss.seam.annotations.Factory;
-import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Scope;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
+import org.jboss.seam.log.Log;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateful
@@ -40,8 +37,11 @@ import java.util.List;
 @Scope(ScopeType.SESSION)
 public class KanjiSearchingAction implements KanjiSearching {
 
-    @PersistenceContext
-    private EntityManager em;
+    @In
+    private KanjiDao kanjiDao;
+
+    @Logger
+    private Log logger;
 
     private String searchString;
     private int pageSize = 10;
@@ -51,7 +51,7 @@ public class KanjiSearchingAction implements KanjiSearching {
     private List<Kanji> kanjis;
 
     public void find() {
-        System.out.println("try : (" + searchString + ")");
+        logger.info("try : (" + searchString + ")");
         page = 0;
         queryKanjis();
     }
@@ -62,10 +62,7 @@ public class KanjiSearchingAction implements KanjiSearching {
     }
 
     private void queryKanjis() {
-        kanjis = em.createQuery("select k from Kanji k where k.kanji like #{patternKanji} or lower(k.meaning) like #{patternKanji} or lower(k.description) like #{patternKanji}")
-                .setMaxResults(pageSize)
-                .setFirstResult(page * pageSize)
-                .getResultList();
+        kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
     }
 
     public boolean isNextPageAvailable() {
@@ -92,6 +89,18 @@ public class KanjiSearchingAction implements KanjiSearching {
 
     public void setSearchString(String searchString) {
         this.searchString = searchString;
+    }
+
+    public void setKanjiDao(KanjiDao kanjiDao) {
+        this.kanjiDao = kanjiDao;
+    }
+
+    public void setLogger(Log logger) {
+        this.logger = logger;
+    }
+
+    public List<Kanji> getKanjis() {
+        return kanjis;
     }
 
     @Remove

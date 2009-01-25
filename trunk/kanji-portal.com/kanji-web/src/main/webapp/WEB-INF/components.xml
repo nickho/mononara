@@ -19,7 +19,8 @@
                  http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.1.xsd">
 
 
-    <core:init jndi-pattern="kanjiPortalEAR/#{ejbName}/local" debug="true"/>
+    <!--core:init jndi-pattern="kanjiPortalEAR/#{ejbName}/local" debug="true"/-->
+    <core:init jndi-pattern="@jndiPattern@" debug="true"/>
 
     <core:manager conversation-timeout="120000"
                   concurrent-request-timeout="500"
@@ -32,7 +33,7 @@
     <transaction:ejb-transaction/>
 
     <security:identity authenticate-method="#{authenticator.authenticate}"/>
-            <!--jaas-config-name="kanji-portal"/-->
+    <!--jaas-config-name="kanji-portal"/-->
 
 
     <theme:theme-selector cookie-enabled="true" theme="contentWithStyle">
@@ -43,6 +44,6 @@
     </theme:theme-selector>
 
     <web:rewrite-filter view-mapping="*.seam"/>
-    
+
 
 </components>

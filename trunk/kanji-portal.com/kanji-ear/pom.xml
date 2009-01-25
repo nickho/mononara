@@ -76,9 +76,9 @@
                     </archive>
                     <jboss>
                         <version>4.2</version>
-                        <loader-repository>
+                        <!--loader-repository>
                             seam.jboss.org:loader=kanjiPortalEAR
-                        </loader-repository>
+                        </loader-repository-->
                         <!--module-order>strict</module-order-->
                     </jboss>
                     <version>5</version>
