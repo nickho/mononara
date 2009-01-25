@@ -22,7 +22,11 @@
  ******************************************************************************/
 package com.kanjiportal.portal.kanji;
 
+import com.kanjiportal.portal.dao.KanjiDao;
+import org.jboss.seam.log.Log;
+
 import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface KanjiSearching {
@@ -42,6 +46,11 @@ public interface KanjiSearching {
 
     public boolean isNextPageAvailable();
 
+    public void setKanjiDao(KanjiDao kanjiDao);
+
+    public List<Kanji> getKanjis();
+
     public void destroy();
 
+    public void setLogger(Log logger);
 }
