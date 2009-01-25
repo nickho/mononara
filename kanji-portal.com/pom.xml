@@ -6,9 +6,9 @@
     <version>1.0.0-SNAPSHOT</version>
     <artifactId>kanjiportal</artifactId>
     <packaging>pom</packaging>
-    <name>Kanji-Portal Main</name>
     <properties>
         <seam>2.1.1.CR2</seam>
+        <jdk.level>1.5</jdk.level>
         <ear.name>kanjiPortalEAR</ear.name>
     </properties>
     <modules>
@@ -17,100 +17,6 @@
         <module>kanji-core</module>
         <module>kanji-test</module>
     </modules>
-    <profiles>
-        <profile>
-            <id>clover</id>
-            <properties>
-                <ear.name>kanji-ear-${project.version}-clover</ear.name>
-            </properties>
-        </profile>
-    </profiles>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <inherited>true</inherited>
-                    <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>selenium-maven-plugin</artifactId>
-                    <version>1.0-rc-1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.cargo</groupId>
-                    <artifactId>cargo-maven2-plugin</artifactId>
-                    <version>1.0-beta-2</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.atlassian.maven.plugins</groupId>
-                    <artifactId>maven-clover2-plugin</artifactId>
-                    <!--version>1.0-rc-1</version-->
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>selenium-maven-plugin</artifactId>
-                    <version>1.0-rc-1</version>
-                </plugin>
-
-
-            </plugins>
-        </pluginManagement>
-    </build>
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-            <id>repository.jboss.com</id>
-            <name>Jboss Repository for Maven</name>
-            <url>http://repository.jboss.com/maven2/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>openqa-releases</id>
-            <name>OpenQA Releases</name>
-            <url>http://nexus.openqa.org/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <!--repository>
-            <id>openqa-snapshots</id>
-            <name>Openqa Snapshot Repository</name>
-            <url>http://nexus.openqa.org/content/repositories/snapshots</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>ignore</checksumPolicy>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>codehaus-snapshots</id>
-            <name>Maven Codehaus snapshot repository</name>
-            <url>http://snapshots.repository.codehaus.org/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>ignore</checksumPolicy>
-            </snapshots>
-        </repository-->
-    </repositories>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -259,6 +165,145 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <source>${jdk.level}</source>
+                        <target>${jdk.level}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>selenium-maven-plugin</artifactId>
+                    <version>1.0-rc-1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.cargo</groupId>
+                    <artifactId>cargo-maven2-plugin</artifactId>
+                    <version>1.0-beta-2</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.atlassian.maven.plugins</groupId>
+                    <artifactId>maven-clover2-plugin</artifactId>
+                    <!--version>1.0-rc-1</version-->
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>selenium-maven-plugin</artifactId>
+                    <version>1.0-rc-1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <targetJdk>${jdk.level}</targetJdk>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <name>Kanji-Portal Main</name>
+    <description>Kanji-portal, the website to support editing and services for Mononara</description>
+    <url>http://www.kanji-portal.com</url>
+    <inceptionYear>2008-2009</inceptionYear>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License</name>
+            <url>http://www.fsf.org/licensing/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>nicolas.radde</id>
+            <name>Nicolas Radde</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/mononara/issues/list</url>
+    </issueManagement>
+    <ciManagement>
+        <system>hudson</system>
+        <url>http://127.0.0.1:7070/</url>
+    </ciManagement>
+    <scm>
+        <connection>scm:svn:http://mononara.googlecode.com/svn/trunk/kanji-portal.com</connection>
+        <developerConnection>scm:svn:https://mononara.googlecode.com/svn/trunk/kanji-portal.com</developerConnection>
+        <tag>HEAD</tag>
+        <url>http://code.google.com/p/mononara/source/browse/#svn/trunk/kanji-portal.com</url>
+    </scm>
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <id>repository.jboss.com</id>
+            <name>Jboss Repository for Maven</name>
+            <url>http://repository.jboss.com/maven2/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>openqa-releases</id>
+            <name>OpenQA Releases</name>
+            <url>http://nexus.openqa.org/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!--repository>
+            <id>openqa-snapshots</id>
+            <name>Openqa Snapshot Repository</name>
+            <url>http://nexus.openqa.org/content/repositories/snapshots</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>codehaus-snapshots</id>
+            <name>Maven Codehaus snapshot repository</name>
+            <url>http://snapshots.repository.codehaus.org/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+        </repository-->
+    </repositories>
     <distributionManagement>
         <repository>
             <id>maven.radde.org</id>
@@ -266,4 +311,14 @@
             <url>scpexe://maven.radde.org/mnt/data/maven-repo</url>
         </repository>
     </distributionManagement>
+    <profiles>
+        <profile>
+            <!-- You need to activate this profile when you run the integration-test with clover -->
+            <id>clover</id>
+            <properties>
+                <ear.name>kanji-ear-${project.version}-clover</ear.name>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
