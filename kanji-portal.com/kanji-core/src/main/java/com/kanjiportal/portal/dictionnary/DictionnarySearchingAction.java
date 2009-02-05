@@ -8,21 +8,18 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
-import org.jboss.seam.annotations.datamodel.DataModel;
+import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Factory;
+import org.jboss.seam.annotations.Logger;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.log.Log;
 
-import javax.persistence.PersistenceContext;
-import javax.persistence.EntityManager;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
-
-import com.kanjiportal.portal.kanji.Kanji;
-
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**

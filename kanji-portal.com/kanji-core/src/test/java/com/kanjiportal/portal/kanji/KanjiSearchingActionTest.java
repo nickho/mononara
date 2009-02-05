@@ -1,6 +1,7 @@
 package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.model.Kanji;
 import org.easymock.EasyMock;
 import org.jboss.seam.log.Log;
 import org.junit.Assert;

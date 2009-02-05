@@ -8,8 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.service;
 
-import com.kanjiportal.portal.kanji.Kanji;
-import com.kanjiportal.portal.kanji.KanjiList;
+import com.kanjiportal.portal.model.service.KanjiList;
 
 import javax.ejb.Local;
 
@@ -25,10 +24,13 @@ import javax.ejb.Local;
 public interface KanjiService {
 
     //@GET
-    public KanjiList getKanjis();
+    //public KanjiList getKanjis();
 
     //@GET
     //@Path("{id}")
-    public Kanji getKanjiById(/*@PathParam("id")*/ long id);
+    //public Kanji getKanjiById(/*@PathParam("id")*/ long id);
 
+    public KanjiList getKanjisByPattern(String pattern);
+
+    public KanjiList getKanjisByPatternWithPaging(String pattern, int pageNumber, int nbItemPerPage);
 }

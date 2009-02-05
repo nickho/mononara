@@ -1,6 +1,7 @@
-package com.kanjiportal.portal.dao;
+package com.kanjiportal.portal.dao.jpa;
 
-import com.kanjiportal.portal.kanji.Kanji;
+import com.kanjiportal.portal.dao.DictionnaryDao;
+import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
 import org.jboss.seam.annotations.AutoCreate;
 import org.jboss.seam.annotations.Name;
 
@@ -12,23 +13,24 @@ import java.util.List;
 /**
  * Created by IntelliJ IDEA.
  * User: Nickho
- * Date: Jan 24, 2009
- * Time: 10:52:33 PM
+ * Date: Feb 5, 2009
+ * Time: 10:08:29 PM
  * To change this template use File | Settings | File Templates.
  */
 @Stateless
 @AutoCreate
-@Name("kanjiDao")
-public class JpaKanjiDao implements KanjiDao {
+@Name("dictionnaryDao")
+public class JpaDictionnaryDao implements DictionnaryDao {
 
     @PersistenceContext
     private EntityManager em;
 
-    public List<Kanji> findByPattern(String pattern, int page, int pageSize) {
-        return em.createQuery("select k from Kanji k where k.kanji like :pattern or lower(k.meaning) like :pattern or lower(k.description) like :pattern")
+    public List<DictionnaryEntry> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
+        List<DictionnaryEntry> des = em.createQuery("select d from DictionnaryEntry d where d.description like :pattern or d.romaji like :pattern or d.kana like :pattern or d.kanji like :pattern")
                 .setParameter("pattern", pattern)
                 .setMaxResults(pageSize)
                 .setFirstResult(page * pageSize)
                 .getResultList();
+        return des;
     }
 }

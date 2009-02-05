@@ -8,9 +8,8 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
-import com.kanjiportal.portal.Tag;
+import com.kanjiportal.portal.model.Tag;
 import org.hibernate.validator.Length;
-import org.jboss.seam.annotations.Name;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;

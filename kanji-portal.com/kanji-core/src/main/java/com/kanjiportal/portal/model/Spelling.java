@@ -6,11 +6,10 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal.kanji;
+package com.kanjiportal.portal.model;
 
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
-import org.jboss.seam.annotations.Name;
 
 import javax.persistence.*;
 import java.util.Set;

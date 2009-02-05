@@ -1,6 +1,6 @@
 package com.kanjiportal.portal.dao;
 
-import com.kanjiportal.portal.kanji.Kanji;
+import com.kanjiportal.portal.model.Kanji;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -17,4 +17,5 @@ public interface KanjiDao {
 
     public List<Kanji> findByPattern(String pattern, int page, int pageSize);
 
+    public Kanji findByKanji(String kanji);
 }

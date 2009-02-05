@@ -21,10 +21,10 @@
             </div>
 
             <div class="section">
-                #{dictionnaryService.kanji} 「#{dictionnaryService.kana.replace(".", "")}」 （#{dictionnaryService.pos}） : #{dictionnaryService.description}. #{dictionnaryService.detail}
+                #{dictionnaryViewing.kanji} 「#{dictionnaryService.kana.replace(".", "")}」 （#{dictionnaryViewing.pos}） : #{dictionnaryViewing.description}. #{dictionnaryViewing.detail}
                 <a:outputPanel rendered="#{dictionnaryService.note} != null">
                     <label>Notes:</label>
-                    #{dictionnaryService.note}
+                    #{dictionnaryViewing.note}
                 </a:outputPanel>
 
 

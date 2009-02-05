@@ -20,24 +20,18 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA         *
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.                   *
  ******************************************************************************/
-package com.kanjiportal.portal.kanji;
+package com.kanjiportal.portal.model;
 
-import com.kanjiportal.portal.Reference;
-import com.kanjiportal.portal.ReferenceType;
-import com.kanjiportal.portal.Tag;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
-import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.log.Log;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.HashSet;
-import java.util.HashMap;
 
 @Entity
 @XmlRootElement
