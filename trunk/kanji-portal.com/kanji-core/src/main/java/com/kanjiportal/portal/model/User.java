@@ -6,7 +6,7 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal;
+package com.kanjiportal.portal.model;
 
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
@@ -14,7 +14,6 @@ import org.hibernate.validator.Pattern;
 import org.hibernate.validator.Range;
 import static org.jboss.seam.ScopeType.SESSION;
 import org.jboss.seam.annotations.Scope;
-import org.jboss.seam.annotations.Name;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

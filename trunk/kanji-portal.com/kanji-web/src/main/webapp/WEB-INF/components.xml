@@ -8,6 +8,7 @@
             xmlns:mail="http://jboss.com/products/seam/mail"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:transaction="http://jboss.com/products/seam/transaction"
+            xmlns:resteasy="http://jboss.com/products/seam/resteasy"
             xmlns:theme="http://jboss.com/products/seam/theme"
             xsi:schemaLocation=
                     "http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.1.xsd
@@ -16,7 +17,8 @@
                  http://jboss.com/products/seam/security http://jboss.com/products/seam/security-2.1.xsd
                  http://jboss.com/products/seam/web http://jboss.com/products/seam/web-2.1.xsd
                  http://jboss.com/products/seam/mail http://jboss.com/products/seam/mail-2.1.xsd
-                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.1.xsd">
+                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.1.xsd
+                 http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd">
 
 
     <!--core:init jndi-pattern="kanjiPortalEAR/#{ejbName}/local" debug="true"/-->
@@ -45,5 +47,17 @@
 
     <web:rewrite-filter view-mapping="*.seam"/>
 
+    <resteasy:application-config resource-path-prefix="/restv1"/>
+
+    <!--resteasy:application-config
+         scan-providers="false"
+         scan-resources="false"
+         use-builtin-providers="true">
+
+         <resteasy:resource-class-names>
+             <value>com.kanjiportal.portal.service.KanjiServiceImpl</value>
+         </resteasy:resource-class-names>
+
+     </resteasy:application-config-->
 
 </components>

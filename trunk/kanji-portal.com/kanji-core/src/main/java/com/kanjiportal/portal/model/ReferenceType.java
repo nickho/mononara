@@ -6,30 +6,28 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal;
+package com.kanjiportal.portal.model;
 
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
-import org.jboss.seam.annotations.Name;
 
-
-import javax.persistence.*;
-import javax.xml.bind.annotation.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
- * Tag
+ * Reference
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement Tag
+ * @todo Implement Reference
  */
 
 @Entity
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.NONE)
-@Table(name = "tag")
-public class Tag implements Serializable {
+@Table(name = "referencetype")
+public class ReferenceType {
+
     private long id;
     private String name;
     private String description;
@@ -42,13 +40,6 @@ public class Tag implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    @XmlElement
-    @XmlID
-    @Transient
-    public String getRef() {
-        return Long.toString(id);
     }
 
     @NotNull
@@ -76,11 +67,11 @@ public class Tag implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Tag tag = (Tag) o;
+        ReferenceType that = (ReferenceType) o;
 
-        if (id != tag.id) return false;
-        if (description != null ? !description.equals(tag.description) : tag.description != null) return false;
-        if (name != null ? !name.equals(tag.name) : tag.name != null) return false;
+        if (id != that.id) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
     }

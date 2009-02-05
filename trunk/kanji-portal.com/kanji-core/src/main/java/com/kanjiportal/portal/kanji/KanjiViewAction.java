@@ -8,10 +8,8 @@
  *****************************************/
 package com.kanjiportal.portal.kanji;
 
-import com.kanjiportal.portal.Reference;
-import com.kanjiportal.portal.ReferenceType;
-import com.kanjiportal.portal.Tag;
 import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.*;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;

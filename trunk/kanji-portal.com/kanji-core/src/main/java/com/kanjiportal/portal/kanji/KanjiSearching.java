@@ -23,6 +23,7 @@
 package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.model.Kanji;
 import org.jboss.seam.log.Log;
 
 import javax.ejb.Local;

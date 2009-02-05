@@ -8,13 +8,11 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
+import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.web.RequestParameter;
-import org.jboss.seam.ScopeType;
 
 import javax.persistence.EntityManager;
-
-import com.kanjiportal.portal.kanji.Kanji;
 
 /**
  * DictionnaryServiceAction
@@ -23,22 +21,22 @@ import com.kanjiportal.portal.kanji.Kanji;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnaryServiceAction
  */
-@Name("dictionnaryService")
+@Name("dictionnaryViewing")
 @Scope(ScopeType.STATELESS)
 @AutoCreate
-public class DictionnaryServiceAction implements DictionnaryService {
+public class DictionnaryViewingAction implements DictionnaryViewing {
 
-      @In
-   private EntityManager entityManager;
+    @In
+    private EntityManager entityManager;
 
-   @RequestParameter
-   private long entryId;
+    @RequestParameter
+    private long entryId;
 
     @Unwrap
     public DictionnaryEntry getDictionnaryEntry() {
-         return (DictionnaryEntry) entityManager.createQuery("select distinct e from DictionnaryEntry e where e.id = :id")
-            .setParameter("id", entryId)
-            .getSingleResult();
+        return (DictionnaryEntry) entityManager.createQuery("select distinct e from DictionnaryEntry e where e.id = :id")
+                .setParameter("id", entryId)
+                .getSingleResult();
     }
 
 }

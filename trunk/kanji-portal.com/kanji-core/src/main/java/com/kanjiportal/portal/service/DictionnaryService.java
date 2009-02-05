@@ -8,8 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.service;
 
-import com.kanjiportal.portal.dictionnary.Dictionnary;
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.service.Dictionnary;
 
 import javax.ejb.Local;
 
@@ -24,11 +23,7 @@ import javax.ejb.Local;
 //@Path("/dictionnary")
 public interface DictionnaryService {
 
-    //@GET
-    public Dictionnary getDictionnaryEntries();
+    public Dictionnary getDictionnaryEntriesByPattern(String pattern);
 
-    //@GET
-    //@Path("{id}")
-    public DictionnaryEntry getDictionnaryEntryById(/*@PathParam("id")*/ long id);
-
+    public Dictionnary getDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize);
 }

@@ -7,7 +7,7 @@
     <artifactId>kanjiportal</artifactId>
     <packaging>pom</packaging>
     <properties>
-        <seam>2.1.1.CR2</seam>
+        <seam>2.1.1.GA</seam>
         <jdk.level>1.5</jdk.level>
         <ear.name>kanjiPortalEAR</ear.name>
     </properties>
@@ -116,6 +116,17 @@
             </dependency>
             <dependency>
                 <groupId>org.jboss.seam</groupId>
+                <artifactId>jboss-seam-resteasy</artifactId>
+                <version>${seam}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.jboss.seam</groupId>
+                        <artifactId>jboss-seam</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-debug</artifactId>
                 <version>${seam}</version>
                 <exclusions>
@@ -130,9 +141,9 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.jboss.resteasy</groupId>
+                <groupId>org.resteasy</groupId>
                 <artifactId>jaxrs-api</artifactId>
-                <version>1.0-RC1</version>
+                <version>1.0-beta-5</version>
                 <exclusions>
                     <exclusion>
                         <groupId>javax.servlet</groupId>
@@ -145,9 +156,9 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.jboss.resteasy</groupId>
+                <groupId>org.resteasy</groupId>
                 <artifactId>resteasy-jaxrs</artifactId>
-                <version>1.0-RC1</version>
+                <version>1.0-beta-5</version>
                 <exclusions>
                     <exclusion>
                         <groupId>javax.servlet</groupId>

@@ -8,15 +8,17 @@
  *****************************************/
 package com.kanjiportal.portal.service;
 
-import com.kanjiportal.portal.dictionnary.Dictionnary;
+import com.kanjiportal.portal.dao.DictionnaryDao;
 import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.service.Dictionnary;
+import org.jboss.seam.annotations.In;
+import org.jboss.seam.annotations.Name;
 import org.jboss.wsf.spi.annotation.WebContext;
 
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * DictionnarySoapService
@@ -27,29 +29,23 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @WebService
-@WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/DictionnaryService")
+@WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/dictionnary")
+@Name("dictionnaryService")
 public class DictionnaryServiceImpl implements DictionnaryService {
 
-    @PersistenceContext
-    private EntityManager em;
+    private static final int ITEM_PER_PAGE = 100;
+
+    @In
+    private DictionnaryDao dictionnaryDao;
 
     @WebMethod
-    public long getDictionnaryEntriesCount() {
-        Long count = (Long) em.createQuery("select count(d) from DictionnaryEntry d").getSingleResult();
-        System.out.println(count);
-        return count.longValue();
+    public Dictionnary getDictionnaryEntriesByPattern(String pattern) {
+        return getDictionnaryEntriesByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
     }
 
     @WebMethod
-    public Dictionnary getDictionnaryEntries() {
-        return new Dictionnary(em.createQuery("select d from DictionnaryEntry d").getResultList());
-    }
-
-    @WebMethod
-    public DictionnaryEntry getDictionnaryEntryById(long id) {
-        DictionnaryEntry de = (DictionnaryEntry) em.createQuery("select d from DictionnaryEntry d where d.id = :id")
-                .setParameter("id", id)
-                .getSingleResult();
-        return de;
+    public Dictionnary getDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
+        List<DictionnaryEntry> list = dictionnaryDao.findDictionnaryEntriesByPatternWithPaging(pattern, page, pageSize);
+        return new Dictionnary(list);
     }
 }

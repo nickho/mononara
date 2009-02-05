@@ -6,8 +6,11 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal.kanji;
+package com.kanjiportal.portal.model.service;
 
+import com.kanjiportal.portal.model.Kanji;
+
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
@@ -26,10 +29,14 @@ public class KanjiList {
     @XmlElement(name = "kanji")
     private List<Kanji> kanjiLinks;
 
+    @XmlAttribute(name = "count")
+    private int nbKanjis;
+
     public KanjiList() {
     }
 
     public KanjiList(final List<Kanji> kanjiLinks) {
         this.kanjiLinks = kanjiLinks;
+        this.nbKanjis = kanjiLinks.size();
     }
 }

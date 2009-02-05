@@ -8,11 +8,10 @@
  *****************************************/
 package com.kanjiportal.portal.kanji;
 
+import com.kanjiportal.portal.model.*;
 import org.jboss.seam.ScopeType;
-import org.jboss.seam.ejb.SeamInterceptor;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
-import org.jboss.seam.annotations.security.Restrict;
 import org.jboss.seam.annotations.web.RequestParameter;
 import org.jboss.seam.core.Events;
 import org.jboss.seam.faces.FacesMessages;
@@ -22,16 +21,10 @@ import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.faces.model.ListDataModel;
-import javax.interceptor.Interceptors;
-import java.util.List;
-import java.util.Set;
-import java.util.Map;
 import java.util.HashMap;
-
-import com.kanjiportal.portal.Tag;
-import com.kanjiportal.portal.ReferenceType;
-import com.kanjiportal.portal.Reference;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * KanjiEditingAction
@@ -63,7 +56,8 @@ public class KanjiEditingAction implements KanjiEditing {
     @Out
     private Kanji kanji;
 
-    @RequestParameter @Out(required = false)
+    @RequestParameter
+    @Out(required = false)
     private String kanjiId;
 
     /* Spelling managenement */
@@ -97,14 +91,14 @@ public class KanjiEditingAction implements KanjiEditing {
     private String referenceValue;
 
     private Map<String, Long> referencesTypesAvalaibles;
-    
+
 
     public void edit() {
         log.info("Begin editing Kanji : #0", kanjiId);
         if (kanjiId != null) {
             this.kanji = (Kanji) entityManager.createQuery("select distinct k from Kanji k where k.id = :id")
-                .setParameter("id", Long.parseLong(kanjiId))
-                .getSingleResult();
+                    .setParameter("id", Long.parseLong(kanjiId))
+                    .getSingleResult();
         }
 
         log.info("Getting tags for Kanji : #0", kanjiId);

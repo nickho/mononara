@@ -18,8 +18,8 @@ import javax.ejb.Local;
  * @todo Implement DictionnaryService
  */
 @Local
-public interface DictionnaryService {
+public interface DictionnaryViewing {
 
     public DictionnaryEntry getDictionnaryEntry();
-    
+
 }
