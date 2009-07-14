@@ -11,10 +11,7 @@ package com.kanjiportal.portal.model;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Spelling
@@ -24,10 +21,11 @@ import javax.persistence.Table;
  * @todo Implement Spelling
  */
 @Entity
-@Table(name = "spellingtype")
-public class SpellingType {
+@Table(name = "tbspltyp")
+public class SpellingType extends Audit {
 
     private long id;
+    private String code;
     private String name;
     private String description;
 
@@ -43,8 +41,20 @@ public class SpellingType {
 
     @NotNull
     @Length(max = 50)
+    @Column(name = "lbnme")
     public String getName() {
         return name;
+    }
+
+    @NotNull
+    @Length(max = 50)
+    @Column(name = "cdcde")
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public void setName(String name) {
@@ -53,6 +63,7 @@ public class SpellingType {
 
     @NotNull
     @Length(max = 255)
+    @Column(name = "lbdsc")
     public String getDescription() {
         return description;
     }

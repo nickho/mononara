@@ -8,7 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.model.service;
 
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.Dictionnary;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,17 +26,23 @@ import java.util.List;
 
 @XmlRootElement(name = "dictionnary")
 @XmlAccessorType(XmlAccessType.NONE)
-public class Dictionnary {
+public class DictionnaryList {
 
-    @SuppressWarnings("unused")
-    @XmlElement(name = "entry")
-    private List<DictionnaryEntry> dictionnary;
+    private List<Dictionnary> dictionnary;
 
-    public Dictionnary() {
+    public DictionnaryList() {
     }
 
-    public Dictionnary(final List<DictionnaryEntry> dictionnary) {
+    public DictionnaryList(final List<Dictionnary> dictionnary) {
         this.dictionnary = dictionnary;
     }
 
+    @XmlElement(name = "entry")
+    public List<Dictionnary> getDictionnary() {
+        return dictionnary;
+    }
+
+    public void setDictionnary(List<Dictionnary> dictionnary) {
+        this.dictionnary = dictionnary;
+    }
 }

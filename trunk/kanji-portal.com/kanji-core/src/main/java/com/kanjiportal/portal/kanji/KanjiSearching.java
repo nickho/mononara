@@ -28,6 +28,7 @@ import org.jboss.seam.log.Log;
 
 import javax.ejb.Local;
 import java.util.List;
+import java.util.Map;
 
 @Local
 public interface KanjiSearching {
@@ -54,4 +55,8 @@ public interface KanjiSearching {
     public void destroy();
 
     public void setLogger(Log logger);
+
+    Map<Long, String> getSearchMeanings();
+
+    void setSearchMeanings(Map<Long, String> searchMeanings);
 }

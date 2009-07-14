@@ -153,14 +153,6 @@
             <version>1.0.2</version>
             <scope>runtime</scope>
         </dependency>
-        <!--dependency>
-           <groupId>org.jboss.resteasy</groupId>
-           <artifactId>jaxrs-api</artifactId>
-        </dependency>
-        <dependency>
-           <groupId>org.jboss.resteasy</groupId>
-           <artifactId>resteasy-jaxrs</artifactId>
-        </dependency-->
     </dependencies>
 </project>
 

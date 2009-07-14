@@ -8,6 +8,9 @@
  *****************************************/
 package com.kanjiportal.portal.kanji;
 
+import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.dao.ReferenceDao;
+import com.kanjiportal.portal.dao.TagDao;
 import com.kanjiportal.portal.model.*;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
@@ -43,6 +46,15 @@ public class KanjiEditingAction implements KanjiEditing {
     private EntityManager entityManager;
 
     @In
+    private TagDao tagDao;
+
+    @In
+    private KanjiDao kanjiDao;
+
+    @In
+    private ReferenceDao referenceDao;
+
+    @In
     private FacesMessages facesMessages;
 
     @In
@@ -62,7 +74,7 @@ public class KanjiEditingAction implements KanjiEditing {
 
     /* Spelling managenement */
     @DataModel
-    private Set<Spelling> spellings;
+    private Set<KanjiSpelling> spellings;
 
     private long spellingTypeId;
 
@@ -76,7 +88,7 @@ public class KanjiEditingAction implements KanjiEditing {
 
     /* Tags management */
     @DataModel
-    private Set<Tag> tags;
+    private Set<KanjiTag> tags;
 
     private long tagId;
 
@@ -84,7 +96,7 @@ public class KanjiEditingAction implements KanjiEditing {
 
     /* References management */
     @DataModel
-    private Map<ReferenceType, Reference> references;
+    private Set<KanjiReference> references;
 
     private long referenceTypeId;
 
@@ -140,23 +152,19 @@ public class KanjiEditingAction implements KanjiEditing {
     }
 
     public void addTag() {
-        Tag tagTemp = (Tag) entityManager.createQuery("select t from Tag t where t.id = :id")
-                .setParameter("id", tagId)
-                .getSingleResult();
-        kanji.addTag(tagTemp);
+        Tag tagTemp = tagDao.findById(tagId);
         log.info("Adding new tag(#0) for : #{kanji.id}", tagTemp.getName());
-        kanji = entityManager.merge(kanji);
+        kanjiDao.addTagToKanji(kanji, tagTemp);
+        //kanji = entityManager.merge(kanji);
     }
 
     public void removeTag(long tagId) {
-        Tag tagTemp = (Tag) entityManager.createQuery("select t from Tag t where t.id = :id")
-                .setParameter("id", tagId)
-                .getSingleResult();
+        Tag tagTemp = tagDao.findById(tagId);
         //log.info("count tags ref before : #0", kanji.getTags().size());
-        kanji.removeTag(tagTemp);
-        //log.info("count tags ref after : #0", kanji.getTags().size());
         log.info("Removing tag : #0 (#1) from #{kanji.id} (#{kanji.kanji})", tagTemp.getId(), tagTemp.getName());
-        kanji = entityManager.merge(kanji);
+        kanjiDao.removeTagFromKanji(kanji, tagTemp);
+        //log.info("count tags ref after : #0", kanji.getTags().size());
+        //kanji = entityManager.merge(kanji);
     }
 
     public void addSpelling() {
@@ -167,42 +175,35 @@ public class KanjiEditingAction implements KanjiEditing {
         spelling.setKana(spellingKana);
         spelling.setRomaji(spellingRomaji);
         entityManager.persist(spelling);
-        kanji.addSpelling(spelling);
+        kanjiDao.addSpellingToKanji(kanji, spelling);
         kanji = entityManager.merge(kanji);
     }
 
     public void removeSpelling(long spellingId) {
         log.info("remove Spelling : #0", spellingId);
         Spelling spelling = entityManager.find(Spelling.class, spellingId);
-        kanji.removeSpelling(spelling);
+        kanjiDao.removeSpellingFromKanji(kanji, spelling);
         kanji = entityManager.merge(kanji);
     }
 
 
     public void addReference() {
         log.info("Add reference (#0, #1) to kanji #{kanji.id}", referenceTypeId, referenceValue);
-        ReferenceType refTypeTemp = entityManager.find(ReferenceType.class, referenceTypeId);
-        Reference ref = kanji.getReference(refTypeTemp);
-        if (ref == null) {
-            ref = new Reference();
-            ref.setValue(referenceValue);
-            entityManager.persist(ref);
+        //ReferenceType refTypeTemp = entityManager.find(ReferenceType.class, referenceTypeId);
+        Reference reference = referenceDao.findReferenceByKanjiAndType(kanji, referenceTypeId);
+        if (reference == null) {
+            reference = referenceDao.addReference(referenceValue);
+            kanjiDao.addReference(kanji, reference, referenceTypeId);
         } else {
-            ref.setValue(referenceValue);
-            ref = entityManager.merge(ref);
+            referenceDao.updateReferenceValue(reference, referenceValue);
         }
-        kanji.addReference(refTypeTemp, ref);
-        kanji = entityManager.merge(kanji);
     }
 
     public void removeReference(long refTypeId) {
         log.info("Remove reference (#0) from kanji #{kanji.id}", refTypeId);
-        ReferenceType refType = entityManager.find(ReferenceType.class, refTypeId);
-        Reference ref = kanji.getReference(refType);
-        kanji.removeReference(refType);
-        kanji = entityManager.merge(kanji);
-        ref = entityManager.merge(ref);
-        entityManager.remove(ref);
+        Reference reference = referenceDao.findReferenceByKanjiAndType(kanji, referenceTypeId);
+        kanjiDao.removeReferenceFromKanji(kanji, reference);
+        referenceDao.removeReference(reference);
     }
 
     public void setTagId(long tagId) {

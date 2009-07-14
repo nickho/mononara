@@ -11,39 +11,35 @@ import java.util.Calendar;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class Knowledge {
+@Table(name = "tbknw")
+public class Knowledge extends Audit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "dtfsttimsuc")
     private Calendar firstTimeSuccess;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "dtlsttimsuc")
     private Calendar lastTimeSuccess;
 
+    @Column(name = "vllsttstsuc")
     private float lastTestSuccess;
 
     @OneToOne
+    @JoinColumn(name = "idkan")
     private Kanji kanji;
 
     @OneToOne
+    @JoinColumn(name = "idtag")
     private Tag tag;
 
     @ManyToOne
+    @JoinColumn(name = "idusr")
     private User user;
-
-    @Embedded
-    private Audit audit;
-
-    public Audit getAudit() {
-        return audit;
-    }
-
-    public void setAudit(Audit audit) {
-        this.audit = audit;
-    }
 
     public long getId() {
         return id;

@@ -14,4 +14,6 @@ import javax.ejb.Local;
 @Local
 public interface TagDao {
     public Tag findByName(String tag);
+
+    public Tag findById(long id);
 }

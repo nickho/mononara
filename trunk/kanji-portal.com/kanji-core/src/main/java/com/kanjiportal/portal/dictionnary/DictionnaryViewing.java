@@ -8,6 +8,8 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
+import com.kanjiportal.portal.model.Dictionnary;
+
 import javax.ejb.Local;
 
 /**
@@ -20,6 +22,6 @@ import javax.ejb.Local;
 @Local
 public interface DictionnaryViewing {
 
-    public DictionnaryEntry getDictionnaryEntry();
+    public Dictionnary getDictionnaryEntry();
 
 }

@@ -10,8 +10,6 @@ package com.kanjiportal.portal.service;
 
 import com.kanjiportal.portal.model.service.KanjiList;
 
-import javax.ejb.Local;
-
 /**
  * KanjiService
  *
@@ -19,18 +17,22 @@ import javax.ejb.Local;
  * @version $Revision: 1.1 $
  * @todo Implement KanjiService
  */
-@Local
-//@Path("/kanjis")
+//@Local
 public interface KanjiService {
 
-    //@GET
-    //public KanjiList getKanjis();
+    KanjiList getKanjisByPattern(String pattern);
 
-    //@GET
-    //@Path("{id}")
-    //public Kanji getKanjiById(/*@PathParam("id")*/ long id);
+    KanjiList getKanjisByPatternWithPaging(String pattern, int pageNumber, int nbItemPerPage);
 
-    public KanjiList getKanjisByPattern(String pattern);
+    KanjiList getKanjisBySinceWithPaging(String since, int page, int itemPerPage) throws InvalidArgumentsException;
 
-    public KanjiList getKanjisByPatternWithPaging(String pattern, int pageNumber, int nbItemPerPage);
+    KanjiList getKanjisBySince(String since) throws InvalidArgumentsException;
+
+    KanjiList getKanjisByTagWithPaging(String tag, int page, int itemPerPage) throws InvalidArgumentsException;
+
+    KanjiList getKanjisByTag(String tag) throws InvalidArgumentsException;
+
+    KanjiList getKanjisByRefWithPaging(String reference, String value, int page, int itemPerPage) throws InvalidArgumentsException;
+
+    KanjiList getKanjisByRef(String reference, String value) throws InvalidArgumentsException;
 }

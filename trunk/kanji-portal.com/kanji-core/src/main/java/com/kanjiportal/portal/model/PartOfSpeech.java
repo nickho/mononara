@@ -6,16 +6,12 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal.dictionnary;
+package com.kanjiportal.portal.model;
 
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
-import org.jboss.seam.annotations.Name;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * PartOfSpeech
@@ -25,15 +21,16 @@ import javax.persistence.Table;
  * @todo Implement PartOfSpeech
  */
 @Entity
-@Table(name = "partofspeech")
-public class PartOfSpeech {
+@Table(name = "tbpos")
+public class PartOfSpeech extends Audit {
 
     private long id;
-    private String name;
+    private String code;
     private String description;
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     public long getId() {
         return id;
     }
@@ -44,16 +41,18 @@ public class PartOfSpeech {
 
     @NotNull
     @Length(max = 50)
-    public String getName() {
-        return name;
+    @Column(name = "cdpos")
+    public String getCode() {
+        return code;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @NotNull
     @Length(max = 255)
+    @Column(name = "lbdec")
     public String getDescription() {
         return description;
     }

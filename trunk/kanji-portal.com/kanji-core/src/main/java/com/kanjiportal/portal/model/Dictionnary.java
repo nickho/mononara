@@ -6,9 +6,8 @@
  *   See terms of license at gnu.org.    *
  *                                       *
  *****************************************/
-package com.kanjiportal.portal.dictionnary;
+package com.kanjiportal.portal.model;
 
-import com.kanjiportal.portal.model.Tag;
 import org.hibernate.validator.Length;
 
 import javax.persistence.*;
@@ -25,8 +24,8 @@ import java.util.List;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
-@Table(name = "dictionnary")
-public class DictionnaryEntry {
+@Table(name = "tbdic")
+public class Dictionnary extends Audit {
 
     private long id;
     private String romaji;
@@ -35,13 +34,14 @@ public class DictionnaryEntry {
     private String pos;
     private String posDetail;
     private String description;
-    private String language;
+    private Language language;
     private String detail;
     private String note;
-    private List<Tag> tags;
+    private List<DictionnaryTag> tags;
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     public long getId() {
         return id;
     }
@@ -59,6 +59,7 @@ public class DictionnaryEntry {
 
     @Length(max = 255)
     @XmlElement
+    @Column(name = "lbrom")
     public String getRomaji() {
         return romaji;
     }
@@ -69,6 +70,7 @@ public class DictionnaryEntry {
 
     @Length(max = 255)
     @XmlElement
+    @Column(name = "lbkan")
     public String getKanji() {
         return kanji;
     }
@@ -79,6 +81,7 @@ public class DictionnaryEntry {
 
     @Length(max = 255)
     @XmlElement
+    @Column(name = "lbkna")
     public String getKana() {
         return kana;
     }
@@ -88,6 +91,7 @@ public class DictionnaryEntry {
     }
 
     @Length(max = 20)
+    @Column(name = "lbpos")
     public String getPos() {
         return pos;
     }
@@ -97,6 +101,7 @@ public class DictionnaryEntry {
     }
 
     @Length(max = 20)
+    @Column(name = "lbposdet")
     public String getPosDetail() {
         return posDetail;
     }
@@ -107,6 +112,7 @@ public class DictionnaryEntry {
 
     @Length(max = 500)
     @XmlElement
+    @Column(name = "lbdsc")
     public String getDescription() {
         return description;
     }
@@ -115,17 +121,19 @@ public class DictionnaryEntry {
         this.description = description;
     }
 
-    @Length(max = 20)
-    public String getLanguage() {
+    @OneToOne
+    @JoinColumn(name = "idlan")
+    public Language getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(Language language) {
         this.language = language;
     }
 
     @Length(max = 500)
     @XmlElement
+    @Column(name = "lbdet")
     public String getDetail() {
         return detail;
     }
@@ -135,6 +143,7 @@ public class DictionnaryEntry {
     }
 
     @Length(max = 500)
+    @Column(name = "lbnot")
     public String getNote() {
         return note;
     }
@@ -143,14 +152,14 @@ public class DictionnaryEntry {
         this.note = note;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "dictionnary")
     @XmlElement
     @XmlIDREF
-    public List<Tag> getTags() {
+    public List<DictionnaryTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<DictionnaryTag> tags) {
         this.tags = tags;
     }
 

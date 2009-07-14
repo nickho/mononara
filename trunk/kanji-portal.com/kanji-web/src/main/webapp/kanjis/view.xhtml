@@ -19,22 +19,31 @@
                 </h:outputLink>)
             </legend>
 
-            <div id="char">
-                #{kanji.kanji}
+            <div id="charbox">
+                <div id="char">
+                    #{kanji.kanji}
+                </div>
+                <div id="meanings">
+                    <h:outputText value="No Meanings Found" rendered="#{meanings != null and meanings.rowCount==0}"/>
+                    <ui:repeat value="#{meanings}" var="link">
+                        <h:outputText value="," rendered="#{meanings.rowIndex != 0}"/>
+                        #{link.meaning.meaning}
+                    </ui:repeat>
+                </div>
             </div>
 
             <div id="references">
                 <h:outputText value="No References Found" rendered="#{references != null and references.rowCount==0}"/>
-                <ui:repeat value="#{references}" var="ref">
-                    #{ref.key.name} : #{ref.value.value}
+                <ui:repeat value="#{references}" var="link">
+                    #{link.reference.referenceType.name} : #{link.reference.value}
                     <br/>
                 </ui:repeat>
             </div>
 
             <div id="tags">
                 <h:outputText value="No Tags Found" rendered="#{tags != null and tags.rowCount==0}"/>
-                <ui:repeat value="#{tags}" var="tag">
-                    #{tag.name}
+                <ui:repeat value="#{tags}" var="link">
+                    #{link.tag.name}
                     <br/>
                 </ui:repeat>
             </div>
@@ -49,8 +58,12 @@
             <legend>Prononciations</legend>
             <h:outputText value="No Spellings Found"
                           rendered="#{otherSpellings != null and otherSpellings.rowCount==0}"/>
-            <ui:repeat value="#{otherSpellings}" var="spel">
-                #{spel.type.name} : #{spel.kana}
+            <ui:repeat value="#{otherSpellings}" var="ospel">
+                #{ospel.type.name} : #{ospel.kana}
+                <br/>
+            </ui:repeat>
+            <ui:repeat value="#{japaneseSpellings}" var="jspel">
+                #{jspel.type.name} : #{jspel.kana}
                 <br/>
             </ui:repeat>
         </fieldset>

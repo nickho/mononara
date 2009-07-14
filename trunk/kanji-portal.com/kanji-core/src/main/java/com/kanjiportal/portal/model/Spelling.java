@@ -22,13 +22,13 @@ import java.util.Set;
  * @todo Implement SpellingValue
  */
 @Entity
-@Table(name = "spelling")
-public class Spelling {
+@Table(name = "tbspl")
+public class Spelling extends Audit {
 
     private long id;
     private String kana;
     private String romaji;
-    private Set<Meaning> meanings;
+    private Set<SpellingMeaning> meanings;
     private SpellingType type;
 
 
@@ -44,6 +44,7 @@ public class Spelling {
 
     @NotNull
     @Length(max = 200)
+    @Column(name = "lbkna")
     public String getKana() {
         return kana;
     }
@@ -54,6 +55,7 @@ public class Spelling {
 
     @NotNull
     @Length(max = 200)
+    @Column(name = "lbrmj")
     public String getRomaji() {
         return romaji;
     }
@@ -62,7 +64,8 @@ public class Spelling {
         this.romaji = romaji;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name = "idspltyp")
     public SpellingType getType() {
         return type;
     }
@@ -71,12 +74,12 @@ public class Spelling {
         this.type = type;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public Set<Meaning> getMeanings() {
+    @OneToMany(mappedBy = "spelling")
+    public Set<SpellingMeaning> getMeanings() {
         return meanings;
     }
 
-    public void setMeanings(Set<Meaning> meanings) {
+    public void setMeanings(Set<SpellingMeaning> meanings) {
         this.meanings = meanings;
     }
 

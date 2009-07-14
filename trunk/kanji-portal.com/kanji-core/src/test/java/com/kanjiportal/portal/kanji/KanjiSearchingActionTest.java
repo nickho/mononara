@@ -2,6 +2,8 @@ package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.Kanji;
+import com.kanjiportal.portal.model.KanjiMeaning;
+import com.kanjiportal.portal.model.Meaning;
 import org.easymock.EasyMock;
 import org.jboss.seam.log.Log;
 import org.junit.Assert;
@@ -73,8 +75,12 @@ public class KanjiSearchingActionTest {
     private List<Kanji> buildKanjiList(int... ids) {
         List<Kanji> kanjis = new ArrayList<Kanji>();
         for (int i = 0; i < ids.length; i++) {
+            KanjiMeaning km = new KanjiMeaning();
+            km.setMeaning(new Meaning());
             Kanji kanji = new Kanji();
             kanji.setId(ids[i]);
+            km.setKanji(kanji);
+            kanji.addMeaning(km);
             kanjis.add(kanji);
         }
         return kanjis;

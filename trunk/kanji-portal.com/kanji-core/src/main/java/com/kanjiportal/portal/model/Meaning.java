@@ -11,10 +11,11 @@ package com.kanjiportal.portal.model;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Meaning
@@ -24,11 +25,14 @@ import javax.persistence.Table;
  * @todo Implement Meaning
  */
 @Entity
-@Table(name = "meaning")
-public class Meaning {
+@Table(name = "tbmng")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.NONE)
+public class Meaning extends Audit {
 
     private long id;
     private String meaning;
+    private Language language;
     private String description;
 
     @Id
@@ -43,6 +47,8 @@ public class Meaning {
 
     @NotNull
     @Length(max = 50)
+    @XmlElement
+    @Column(name = "lbmng")
     public String getMeaning() {
         return meaning;
     }
@@ -52,6 +58,7 @@ public class Meaning {
     }
 
     @Length(max = 255)
+    @Column(name = "lbdsc")
     public String getDescription() {
         return description;
     }
@@ -60,4 +67,13 @@ public class Meaning {
         this.description = description;
     }
 
+    @OneToOne
+    @JoinColumn(name = "idlan")
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
 }
