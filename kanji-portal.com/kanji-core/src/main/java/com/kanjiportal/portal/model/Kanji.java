@@ -27,25 +27,21 @@ import org.hibernate.validator.NotNull;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import java.io.Serializable;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
-@Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
-@Table(name = "kanji")
-public class Kanji implements Serializable {
+@Entity
+@Table(name = "tbkan")
+public class Kanji extends Audit {
     private long id;
     private String kanji;
-    private String meaning;
     private String description;
-    private Set<Tag> tags;
-    private Map<ReferenceType, Reference> references;
-    private Set<Spelling> spellings;
-    private Set<Meaning> meanings;
+    private Set<KanjiTag> tags;
+    private Set<KanjiReference> references;
+    private Set<KanjiSpelling> spellings;
+    private Set<KanjiMeaning> meanings;
 
     @Id
     @GeneratedValue
@@ -67,6 +63,7 @@ public class Kanji implements Serializable {
     @Length(max = 50)
     @NotNull
     @XmlElement
+    @Column(name = "lbkan")
     public String getKanji() {
         return kanji;
     }
@@ -75,18 +72,8 @@ public class Kanji implements Serializable {
         this.kanji = kanji;
     }
 
-    @Length(max = 255)
-    @NotNull
-    @XmlElement
-    public String getMeaning() {
-        return meaning;
-    }
-
-    public void setMeaning(String meaning) {
-        this.meaning = meaning;
-    }
-
     @Length(max = 500)
+    @Column(name = "lbdsc")
     public String getDescription() {
         return description;
     }
@@ -95,93 +82,102 @@ public class Kanji implements Serializable {
         this.description = description;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @XmlElement
-    @XmlIDREF
-    public Set<Tag> getTags() {
+    @OneToMany(mappedBy = "kanji")
+    @XmlElementRef
+    @XmlElementWrapper(name = "tags")
+    public Set<KanjiTag> getTags() {
         return tags;
     }
 
-    public void setTags(Set<Tag> tags) {
+    public void setTags(Set<KanjiTag> tags) {
         this.tags = tags;
     }
 
-    public void addTag(Tag tag) {
+    public void addTag(KanjiTag tag) {
         if (tags == null) {
-            tags = new HashSet();
+            tags = new HashSet<KanjiTag>();
         }
         this.tags.add(tag);
     }
 
-    public void removeTag(Tag tag) {
+    public void removeTag(KanjiTag tag) {
         if (tags != null) {
             boolean ok = this.tags.remove(tag);
         }
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public Map<ReferenceType, Reference> getReferences() {
+    @OneToMany(mappedBy = "kanji")
+    public Set<KanjiReference> getReferences() {
         return references;
     }
 
-    public void setReferences(Map<ReferenceType, Reference> references) {
+    public void setReferences(Set<KanjiReference> references) {
         this.references = references;
     }
 
-    public Reference getReference(ReferenceType type) {
-        if (this.references != null) {
-            return references.get(type);
-        }
-        return null;
-    }
 
-    public void addReference(ReferenceType type, Reference reference) {
+    public void addReference(KanjiReference reference) {
         if (this.references == null) {
-            this.references = new HashMap<ReferenceType, Reference>();
+            this.references = new HashSet<KanjiReference>();
         }
-        this.references.put(type, reference);
+        this.references.add(reference);
     }
 
-    public void removeReference(ReferenceType type) {
+    public void removeReference(KanjiReference reference) {
         if (this.references != null) {
-            this.references.remove(type);
+            this.references.remove(reference);
         }
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public Set<Spelling> getSpellings() {
+    @OneToMany(mappedBy = "kanji")
+    public Set<KanjiSpelling> getSpellings() {
         return spellings;
     }
 
-    public void setSpellings(Set<Spelling> spellings) {
+    public void setSpellings(Set<KanjiSpelling> spellings) {
         this.spellings = spellings;
     }
 
-    public void addSpelling(Spelling spelling) {
+    public void addSpelling(KanjiSpelling spelling) {
         if (spelling == null) {
-            this.spellings = new HashSet();
+            this.spellings = new HashSet<KanjiSpelling>();
         }
         this.spellings.add(spelling);
     }
 
-    public void removeSpelling(Spelling spelling) {
+    public void removeSpelling(KanjiSpelling spelling) {
         if (spellings != null) {
             this.spellings.remove(spelling);
         }
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
-    public Set<Meaning> getMeanings() {
+    @OneToMany(mappedBy = "kanji")
+    @XmlElementRef
+    @XmlElementWrapper(name = "meanings")
+    public Set<KanjiMeaning> getMeanings() {
         return meanings;
     }
 
-    public void setMeanings(Set<Meaning> meanings) {
+    public void setMeanings(Set<KanjiMeaning> meanings) {
         this.meanings = meanings;
+    }
+
+    public void addMeaning(KanjiMeaning meaning) {
+        if (meanings == null) {
+            this.meanings = new HashSet<KanjiMeaning>();
+        }
+        this.meanings.add(meaning);
+    }
+
+    public void removeMeaning(KanjiMeaning meaning) {
+        if (meanings != null) {
+            this.meanings.remove(meaning);
+        }
     }
 
     @Override
     public String toString() {
-        return "Kanji(" + kanji + "," + meaning + "," + description + ")";
+        return "Kanji(" + kanji + "," + description + ")";
     }
 
     @Override
@@ -194,7 +190,6 @@ public class Kanji implements Serializable {
         if (id != kanji1.id) return false;
         if (description != null ? !description.equals(kanji1.description) : kanji1.description != null) return false;
         if (kanji != null ? !kanji.equals(kanji1.kanji) : kanji1.kanji != null) return false;
-        if (meaning != null ? !meaning.equals(kanji1.meaning) : kanji1.meaning != null) return false;
 
         return true;
     }
@@ -203,7 +198,6 @@ public class Kanji implements Serializable {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (kanji != null ? kanji.hashCode() : 0);
-        result = 31 * result + (meaning != null ? meaning.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
     }

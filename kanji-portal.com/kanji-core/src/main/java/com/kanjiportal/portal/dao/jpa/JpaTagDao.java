@@ -29,4 +29,8 @@ public class JpaTagDao implements TagDao {
                 .setParameter("name", tag)
                 .getSingleResult();
     }
+
+    public Tag findById(long id) {
+        return em.find(Tag.class, id);
+    }
 }

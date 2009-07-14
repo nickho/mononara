@@ -2,7 +2,7 @@
 <pages xmlns="http://jboss.com/products/seam/pages"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.1.xsd"
-	   no-conversation-view-id="/home.xhtml"
+       no-conversation-view-id="/home.xhtml"
        login-view-id="/login.xhtml">
 
     <!-- Home -->
@@ -12,10 +12,10 @@
 
     <!-- Kanjis -->
     <page view-id="/kanjis/search.xhtml">
-         <description>Search Kanjis</description>
+        <description>Search Kanjis</description>
     </page>
-    
-	<page view-id="/kanjis/view.xhtml">
+
+    <page view-id="/kanjis/view.xhtml">
         <description>View Kanji: #{kanji.kanji}</description>
         <!--rewrite pattern="/kanji/{kanjiId}"/-->
         <action execute="#{kanjiView.view()}"/>
@@ -27,12 +27,12 @@
     </page>
     <!-- end of Kanjis -->
 
-     <!-- Dictionnary -->
+    <!-- Dictionnary -->
     <page view-id="/dictionnary/search.xhtml">
-         <description>Search Dictionnary</description>
+        <description>Search Dictionnary</description>
     </page>
 
-	<page view-id="/dictionnary/view.xhtml">
+    <page view-id="/dictionnary/view.xhtml">
         <description>View Dictionnary</description>
         <!--rewrite pattern="/kanji/{kanjiId}"/-->
     </page>
@@ -59,6 +59,12 @@
         <redirect view-id="/login.xhtml">
             <message severity="warn">You must be logged in to use this feature</message>
         </redirect>
+    </exception>
+
+    <exception class="com.kanjiportal.portal.service.BadDateFormatingException">
+        <http-error error-code="400">
+            <message>Arguments not valid: #{org.jboss.seam.handledException.message}</message>
+        </http-error>
     </exception>
 
 </pages>

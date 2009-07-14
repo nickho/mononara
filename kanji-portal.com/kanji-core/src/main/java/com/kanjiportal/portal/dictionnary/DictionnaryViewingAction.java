@@ -8,6 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
+import com.kanjiportal.portal.model.Dictionnary;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.web.RequestParameter;
@@ -33,8 +34,8 @@ public class DictionnaryViewingAction implements DictionnaryViewing {
     private long entryId;
 
     @Unwrap
-    public DictionnaryEntry getDictionnaryEntry() {
-        return (DictionnaryEntry) entityManager.createQuery("select distinct e from DictionnaryEntry e where e.id = :id")
+    public Dictionnary getDictionnaryEntry() {
+        return (Dictionnary) entityManager.createQuery("select distinct e from Dictionnary e where e.id = :id")
                 .setParameter("id", entryId)
                 .getSingleResult();
     }

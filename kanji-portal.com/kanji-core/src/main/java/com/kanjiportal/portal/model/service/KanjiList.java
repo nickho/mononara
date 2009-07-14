@@ -25,18 +25,44 @@ import java.util.List;
 @XmlRootElement(name = "kanjis")
 public class KanjiList {
 
-    @SuppressWarnings("unused")
-    @XmlElement(name = "kanji")
-    private List<Kanji> kanjiLinks;
 
-    @XmlAttribute(name = "count")
+    private List<Kanji> kanjiLinks;
     private int nbKanjis;
+    private long totalCount;
 
     public KanjiList() {
     }
 
-    public KanjiList(final List<Kanji> kanjiLinks) {
+    public KanjiList(List<Kanji> kanjiLinks, long totalCount) {
         this.kanjiLinks = kanjiLinks;
         this.nbKanjis = kanjiLinks.size();
+        this.totalCount = totalCount;
+    }
+
+    @XmlElement(name = "kanji")
+    public List<Kanji> getKanjiLinks() {
+        return kanjiLinks;
+    }
+
+    public void setKanjiLinks(List<Kanji> kanjiLinks) {
+        this.kanjiLinks = kanjiLinks;
+    }
+
+    @XmlAttribute(name = "count")
+    public int getNbKanjis() {
+        return nbKanjis;
+    }
+
+    public void setNbKanjis(int nbKanjis) {
+        this.nbKanjis = nbKanjis;
+    }
+
+    @XmlAttribute(name = "total")
+    public long getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(long totalCount) {
+        this.totalCount = totalCount;
     }
 }

@@ -15,10 +15,7 @@ import org.hibernate.validator.Range;
 import static org.jboss.seam.ScopeType.SESSION;
 import org.jboss.seam.annotations.Scope;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * User
@@ -30,8 +27,9 @@ import java.io.Serializable;
 
 @Entity
 @Scope(SESSION)
-@Table(name = "user")
-public class User implements Serializable {
+@Table(name = "tbusr")
+public class User extends Audit {
+    private long id;
     private String username;
     private String password;
     private String firstname;
@@ -47,8 +45,19 @@ public class User implements Serializable {
     public User() {
     }
 
+    @Id
+    @GeneratedValue
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     @NotNull
     @Length(max = 100)
+    @Column(name = "lbfstnme")
     public String getFirstname() {
         return firstname;
     }
@@ -59,6 +68,7 @@ public class User implements Serializable {
 
     @NotNull
     @Length(max = 100)
+    @Column(name = "lblstnme")
     public String getLastname() {
         return lastname;
     }
@@ -70,6 +80,7 @@ public class User implements Serializable {
 
     @NotNull
     @Length(min = 5, max = 15)
+    @Column(name = "lbpwd")
     public String getPassword() {
         return password;
     }
@@ -78,9 +89,9 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    @Id
     @Length(min = 4, max = 15)
     @Pattern(regex = "^\\w*$", message = "not a valid username")
+    @Column(name = "cdusr")
     public String getUsername() {
         return username;
     }
@@ -91,6 +102,7 @@ public class User implements Serializable {
 
     @NotNull
     @Range(min = 1, max = 10)
+    @Column(name = "vllvl")
     public int getLevel() {
         return level;
     }

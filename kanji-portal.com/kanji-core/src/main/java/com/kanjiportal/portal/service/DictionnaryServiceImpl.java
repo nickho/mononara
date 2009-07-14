@@ -9,8 +9,8 @@
 package com.kanjiportal.portal.service;
 
 import com.kanjiportal.portal.dao.DictionnaryDao;
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
-import com.kanjiportal.portal.model.service.Dictionnary;
+import com.kanjiportal.portal.model.Dictionnary;
+import com.kanjiportal.portal.model.service.DictionnaryList;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.wsf.spi.annotation.WebContext;
@@ -39,13 +39,13 @@ public class DictionnaryServiceImpl implements DictionnaryService {
     private DictionnaryDao dictionnaryDao;
 
     @WebMethod
-    public Dictionnary getDictionnaryEntriesByPattern(String pattern) {
+    public DictionnaryList getDictionnaryEntriesByPattern(String pattern) {
         return getDictionnaryEntriesByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
     }
 
     @WebMethod
-    public Dictionnary getDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
-        List<DictionnaryEntry> list = dictionnaryDao.findDictionnaryEntriesByPatternWithPaging(pattern, page, pageSize);
-        return new Dictionnary(list);
+    public DictionnaryList getDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
+        List<Dictionnary> list = dictionnaryDao.findDictionnaryEntriesByPatternWithPaging(pattern, page, pageSize);
+        return new DictionnaryList(list);
     }
 }

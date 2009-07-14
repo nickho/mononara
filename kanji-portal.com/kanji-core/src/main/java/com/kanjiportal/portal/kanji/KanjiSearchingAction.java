@@ -24,16 +24,19 @@ package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.Kanji;
+import com.kanjiportal.portal.model.KanjiMeaning;
+import com.kanjiportal.portal.model.Meaning;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@Stateful
+@Stateless
 @Name("kanjiSearch")
 @Scope(ScopeType.SESSION)
 public class KanjiSearchingAction implements KanjiSearching {
@@ -51,6 +54,9 @@ public class KanjiSearchingAction implements KanjiSearching {
     @DataModel
     private List<Kanji> kanjis;
 
+    @Out(required = false, scope = ScopeType.PAGE)
+    private Map<Long, String> searchMeanings;
+
     public void find() {
         logger.info("try : (" + searchString + ")");
         page = 0;
@@ -64,6 +70,25 @@ public class KanjiSearchingAction implements KanjiSearching {
 
     private void queryKanjis() {
         kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
+        searchMeanings = new HashMap<Long, String>();
+        for (Kanji kanji : kanjis) {
+            StringBuffer meaningsTemp = new StringBuffer();
+            int i = 0;
+            for (KanjiMeaning km : kanji.getMeanings()) {
+                Meaning meaning = km.getMeaning();
+                if (i != 0) {
+                    meaningsTemp.append(", ");
+                }
+                meaningsTemp.append(meaning.getMeaning());
+                i++;
+            }
+            if (meaningsTemp.length() >= 60) {
+                meaningsTemp.setLength(60);
+                searchMeanings.put(kanji.getId(), meaningsTemp.append("...").toString());
+            } else {
+                searchMeanings.put(kanji.getId(), meaningsTemp.toString());
+            }
+        }
     }
 
     public boolean isNextPageAvailable() {
@@ -104,7 +129,15 @@ public class KanjiSearchingAction implements KanjiSearching {
         return kanjis;
     }
 
-    @Remove
+    public Map<Long, String> getSearchMeanings() {
+        return searchMeanings;
+    }
+
+    public void setSearchMeanings(Map<Long, String> searchMeanings) {
+        this.searchMeanings = searchMeanings;
+    }
+
+    //@Remove
     public void destroy() {
     }
 }

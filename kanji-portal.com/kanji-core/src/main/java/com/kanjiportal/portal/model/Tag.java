@@ -13,7 +13,6 @@ import org.hibernate.validator.NotNull;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import java.io.Serializable;
 
 /**
  * Tag
@@ -26,14 +25,16 @@ import java.io.Serializable;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
-@Table(name = "tag")
-public class Tag implements Serializable {
+@Table(name = "tbtag")
+public class Tag extends Audit {
     private long id;
     private String name;
+    private String code;
     private String description;
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     public long getId() {
         return id;
     }
@@ -51,6 +52,7 @@ public class Tag implements Serializable {
 
     @NotNull
     @Length(max = 50)
+    @Column(name = "lbnme")
     public String getName() {
         return name;
     }
@@ -60,7 +62,19 @@ public class Tag implements Serializable {
     }
 
     @NotNull
+    @Length(max = 50)
+    @Column(name = "lbcde")
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @NotNull
     @Length(max = 255)
+    @Column(name = "lbdsc")
     public String getDescription() {
         return description;
     }

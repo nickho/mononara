@@ -8,6 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
+import com.kanjiportal.portal.model.Dictionnary;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Factory;
 import org.jboss.seam.annotations.Logger;
@@ -42,7 +43,7 @@ public class DictionnarySearchingAction implements DictionnarySearching {
     private int page;
 
     @DataModel
-    private List<DictionnaryEntry> entries;
+    private List<Dictionnary> entries;
 
     @Logger
     private Log log;
@@ -60,7 +61,7 @@ public class DictionnarySearchingAction implements DictionnarySearching {
 
     private void queryDictionnary() {
         log.debug("pattern dict : (#{patternDictionnary})");
-        entries = em.createQuery("select de from DictionnaryEntry de where de.kanji like #{patternDictionnary} or de.kana like #{patternDictionnary} or lower(de.description) like #{patternDictionnary}")
+        entries = em.createQuery("select de from Dictionnary de where de.kanji like #{patternDictionnary} or de.kana like #{patternDictionnary} or lower(de.description) like #{patternDictionnary}")
                 .setMaxResults(pageSize)
                 .setFirstResult(page * pageSize)
                 .getResultList();

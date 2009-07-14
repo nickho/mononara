@@ -1,6 +1,6 @@
 package com.kanjiportal.portal.dao;
 
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.Dictionnary;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -14,5 +14,5 @@ import java.util.List;
  */
 @Local
 public interface DictionnaryDao {
-    List<DictionnaryEntry> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize);
+    List<Dictionnary> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize);
 }

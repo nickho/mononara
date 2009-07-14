@@ -1,7 +1,7 @@
 package com.kanjiportal.portal.dao.jpa;
 
 import com.kanjiportal.portal.dao.DictionnaryDao;
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.model.Dictionnary;
 import org.jboss.seam.annotations.AutoCreate;
 import org.jboss.seam.annotations.Name;
 
@@ -25,8 +25,8 @@ public class JpaDictionnaryDao implements DictionnaryDao {
     @PersistenceContext
     private EntityManager em;
 
-    public List<DictionnaryEntry> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
-        List<DictionnaryEntry> des = em.createQuery("select d from DictionnaryEntry d where d.description like :pattern or d.romaji like :pattern or d.kana like :pattern or d.kanji like :pattern")
+    public List<Dictionnary> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize) {
+        List<Dictionnary> des = em.createQuery("select d from Dictionnary d where d.description like :pattern or d.romaji like :pattern or d.kana like :pattern or d.kanji like :pattern")
                 .setParameter("pattern", pattern)
                 .setMaxResults(pageSize)
                 .setFirstResult(page * pageSize)

@@ -8,20 +8,17 @@
  *****************************************/
 package com.kanjiportal.portal.kanji;
 
-import com.kanjiportal.portal.dictionnary.DictionnaryEntry;
+import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.*;
 import org.jboss.seam.ScopeType;
-import org.jboss.seam.annotations.In;
-import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Out;
-import org.jboss.seam.annotations.Scope;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.web.RequestParameter;
+import org.jboss.seam.log.Log;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -36,11 +33,17 @@ import java.util.Set;
 @Stateless
 public class KanjiViewAction implements KanjiView {
 
-    private final static long ON_SPELLING_TYPE_ID = 1;
-    private final static long KUN_SPELLING_TYPE_ID = 2;
+    private final static String ON_SPELLING_TYPE_ID = "on";
+    private final static String KUN_SPELLING_TYPE_ID = "kun";
+
+    @Logger
+    private Log log;
 
     @In
     private EntityManager entityManager;
+
+    @In
+    private KanjiDao kanjiDao;
 
     @RequestParameter
     private long kanjiId;
@@ -49,16 +52,19 @@ public class KanjiViewAction implements KanjiView {
     private Set<Spelling> otherSpellings;
 
     @DataModel
-    private Set<String> japaneeseSpellings;
+    private Set<Spelling> japaneseSpellings;
 
     @DataModel
-    private Map<ReferenceType, Reference> references;
+    private Set<KanjiReference> references;
 
     @DataModel
-    private Set<Tag> tags;
+    private Set<KanjiMeaning> meanings;
 
     @DataModel
-    private Set<DictionnaryEntry> compounds;
+    private Set<KanjiTag> tags;
+
+    @DataModel
+    private Set<Dictionnary> compounds;
 
     @Out
     private Kanji kanji;
@@ -68,38 +74,120 @@ public class KanjiViewAction implements KanjiView {
         kanji = (Kanji) entityManager.createQuery("select k from Kanji k where k.id = :id")
                 .setParameter("id", kanjiId)
                 .getSingleResult();
-        System.out.println("Kanji set to : " + kanji.getId());
+        log.debug("Kanji set to : #0", kanji.getId());
+
+        //Meanings
+        meanings = kanji.getMeanings();
+        log.debug("Nb Meanings : #0", meanings.size());
 
         //References
         references = kanji.getReferences();
-        System.out.println("Nb References : " + references.size());
+        log.debug("Nb References : #0", references.size());
 
         //Spellings
-        //others than japaneese
         otherSpellings = new HashSet<Spelling>();
-        HashSet<String> tempSpellings = new HashSet<String>();
-        Spelling tempSpelling = null;
-        Set<Meaning> tempMeaning = null;
-        for (Spelling spelling : kanji.getSpellings()) {
-            if (spelling.getType().getId() != ON_SPELLING_TYPE_ID || spelling.getType().getId() != KUN_SPELLING_TYPE_ID) {
+        japaneseSpellings = new HashSet<Spelling>();
+        for (KanjiSpelling kanjiSpelling : kanji.getSpellings()) {
+            Spelling spelling = kanjiSpelling.getSpelling();
+            String type = spelling.getType().getCode();
+            if (!ON_SPELLING_TYPE_ID.equals(type) || !KUN_SPELLING_TYPE_ID.equals(type)) {
                 otherSpellings.add(spelling);
             } else {
-                if (tempSpelling != null) {
-
-                }
-                tempSpelling = spelling;
+                japaneseSpellings.add(spelling);
             }
         }
-        //japaneeses (On and Kun)
-        japaneeseSpellings = new HashSet<String>();
-        //Set<Spelling> spellings = (Set<Spelling>) entityManager.createQuery("select s from Kanji k where k.spellings. ").getResultList();
 
         //Tags
         tags = kanji.getTags();
-        System.out.println("Nb Tags : " + tags.size());
-
-
+        log.debug("Nb Tags : #0", tags.size());
     }
 
 
+    public Log getLog() {
+        return log;
+    }
+
+    public void setLog(Log log) {
+        this.log = log;
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public KanjiDao getKanjiDao() {
+        return kanjiDao;
+    }
+
+    public void setKanjiDao(KanjiDao kanjiDao) {
+        this.kanjiDao = kanjiDao;
+    }
+
+    public long getKanjiId() {
+        return kanjiId;
+    }
+
+    public void setKanjiId(long kanjiId) {
+        this.kanjiId = kanjiId;
+    }
+
+    public Set<Spelling> getOtherSpellings() {
+        return otherSpellings;
+    }
+
+    public void setOtherSpellings(Set<Spelling> otherSpellings) {
+        this.otherSpellings = otherSpellings;
+    }
+
+    public Set<Spelling> getJapaneseSpellings() {
+        return japaneseSpellings;
+    }
+
+    public void setJapaneseSpellings(Set<Spelling> japaneseSpellings) {
+        this.japaneseSpellings = japaneseSpellings;
+    }
+
+    public Set<KanjiReference> getReferences() {
+        return references;
+    }
+
+    public void setReferences(Set<KanjiReference> references) {
+        this.references = references;
+    }
+
+    public Set<KanjiMeaning> getMeanings() {
+        return meanings;
+    }
+
+    public void setMeanings(Set<KanjiMeaning> meanings) {
+        this.meanings = meanings;
+    }
+
+    public Set<KanjiTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<KanjiTag> tags) {
+        this.tags = tags;
+    }
+
+    public Set<Dictionnary> getCompounds() {
+        return compounds;
+    }
+
+    public void setCompounds(Set<Dictionnary> compounds) {
+        this.compounds = compounds;
+    }
+
+    public Kanji getKanji() {
+        return kanji;
+    }
+
+    public void setKanji(Kanji kanji) {
+        this.kanji = kanji;
+    }
 }
