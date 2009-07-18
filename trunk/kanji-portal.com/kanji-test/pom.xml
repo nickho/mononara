@@ -20,8 +20,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.2</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -41,7 +39,7 @@
                     <wait>false</wait>
                     <container>
                         <containerId>jboss42x</containerId>
-                        <home>${jbossPath}</home>
+                        <home>${jboss4Path}</home>
                     </container>
                     <configuration>
                         <type>standalone</type>
