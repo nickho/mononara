@@ -26,9 +26,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /* SITE SPECIFIC LAYOUT */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
 
     text-align: center;
 
@@ -37,8 +44,11 @@ body {
 
 div#page {
     width: 780px;
+    height: 100%;
+    min-height: 100%;
 
-    margin: 0 auto;
+    margin: 0 auto -50px;
+
     padding: 0;
 
     text-align: center;
@@ -104,12 +114,17 @@ div#sub {
 div#footer {
     color: white;
     background-color: black;
+    height: 40px;
+    width: inherit;
+    clear: both;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
 }
 
 div#footer p {
     margin: 0;
     padding: 15px;
-
     font-size: 0.8em;
 }
 
@@ -149,7 +164,7 @@ ul.subnav li a:hover {
 ul.subnav li strong {
     padding: 0 0 0 12px;
 
-    background: url( "../img/subnav-highlight.gif" ) left top no-repeat transparent;
+    background: url("../img/subnav-highlight.gif") left top no-repeat transparent;
 }
 
 ul.subnav li strong a,

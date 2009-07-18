@@ -38,8 +38,8 @@
                 <configuration>
                     <wait>false</wait>
                     <container>
-                        <containerId>jboss42x</containerId>
-                        <home>${jboss4Path}</home>
+                        <containerId>jboss5x</containerId>
+                        <home>${jboss5Path}</home>
                     </container>
                     <configuration>
                         <type>standalone</type>

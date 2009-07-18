@@ -23,6 +23,8 @@ public interface KanjiDao {
 
     List<Kanji> findByPattern(String pattern, int page, int pageSize);
 
+    List<Kanji> findByPatternWithLucene(String pattern, int page, int pageSize) throws SearchTooGenericException;
+
     List<Kanji> findByPatternForcingFullFetch(String pattern, int page, int pageSize);
 
     List<Kanji> findBySinceDateForcingFullFetch(Date date, int page, int pageSize);
@@ -44,4 +46,5 @@ public interface KanjiDao {
     void addSpellingToKanji(Kanji kanji, Spelling spelling);
 
     void removeSpellingFromKanji(Kanji kanji, Spelling spelling);
+
 }

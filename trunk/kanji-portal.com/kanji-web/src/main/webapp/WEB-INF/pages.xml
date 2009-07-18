@@ -55,6 +55,12 @@
     </page>
     <!-- end of login pages -->
 
+    <!-- Admin pages -->
+    <page view-id="/admin/lucene.xhtml">
+        <description>Lucene admin page</description>
+    </page>
+    <!-- end of login pages -->
+
     <exception class="org.jboss.seam.security.NotLoggedInException">
         <redirect view-id="/login.xhtml">
             <message severity="warn">You must be logged in to use this feature</message>

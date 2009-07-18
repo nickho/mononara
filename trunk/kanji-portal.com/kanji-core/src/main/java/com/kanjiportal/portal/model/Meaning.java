@@ -8,6 +8,10 @@
  *****************************************/
 package com.kanjiportal.portal.model;
 
+import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
@@ -28,6 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbmng")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
+@Indexed
 public class Meaning extends Audit {
 
     private long id;
@@ -37,6 +42,7 @@ public class Meaning extends Audit {
 
     @Id
     @GeneratedValue
+    @DocumentId
     public long getId() {
         return id;
     }
@@ -49,6 +55,7 @@ public class Meaning extends Audit {
     @Length(max = 50)
     @XmlElement
     @Column(name = "lbmng")
+    @Field(index = Index.TOKENIZED)
     public String getMeaning() {
         return meaning;
     }

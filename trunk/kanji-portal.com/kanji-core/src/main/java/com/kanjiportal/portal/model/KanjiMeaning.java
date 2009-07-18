@@ -1,5 +1,10 @@
 package com.kanjiportal.portal.model;
 
+import org.hibernate.search.annotations.ContainedIn;
+import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -17,18 +22,22 @@ import javax.xml.bind.annotation.*;
 )
 @XmlRootElement(name = "meaning")
 @XmlAccessorType(XmlAccessType.NONE)
+@Indexed
 public class KanjiMeaning extends Audit {
 
     @Id
     @GeneratedValue
+    @DocumentId
     private long id;
 
     @ManyToOne
     @JoinColumn(name = "idkan")
+    @ContainedIn
     private Kanji kanji;
 
     @ManyToOne
     @JoinColumn(name = "idmng")
+    @IndexedEmbedded
     private Meaning meaning;
 
     @XmlValue

@@ -1,6 +1,7 @@
 package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
@@ -34,8 +35,8 @@ public class KanjiSearchingActionTest {
     }
 
     @Test
-    public void testInitialFind() {
-        EasyMock.expect(kanjiDaoMock.findByPattern("%", 0, 10)).andReturn(buildKanjiList(1));
+    public void testInitialFind() throws SearchTooGenericException {
+        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("*", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.find();
@@ -46,8 +47,8 @@ public class KanjiSearchingActionTest {
     }
 
     @Test
-    public void testFindUn() {
-        EasyMock.expect(kanjiDaoMock.findByPattern("%un%", 0, 10)).andReturn(buildKanjiList(1));
+    public void testFindUn() throws SearchTooGenericException {
+        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("un*", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.setSearchString("un");
@@ -59,8 +60,8 @@ public class KanjiSearchingActionTest {
     }
 
     @Test
-    public void testNextPage() {
-        EasyMock.expect(kanjiDaoMock.findByPattern("%", 1, 2)).andReturn(buildKanjiList(3, 4));
+    public void testNextPage() throws SearchTooGenericException {
+        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("*", 1, 2)).andReturn(buildKanjiList(3, 4));
         EasyMock.replay(kanjiDaoMock);
 
         action.setPageSize(2);

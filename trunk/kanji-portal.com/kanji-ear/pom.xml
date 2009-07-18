@@ -11,10 +11,7 @@
     <name>Kanji-Portal EAR</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.seam</groupId>
-            <artifactId>jboss-seam</artifactId>
-        </dependency>
+        <!-- Project dependencies -->
         <dependency>
             <groupId>com.kanjiportal</groupId>
             <artifactId>kanji-core</artifactId>
@@ -24,6 +21,16 @@
             <groupId>com.kanjiportal</groupId>
             <artifactId>kanji-web</artifactId>
             <type>war</type>
+        </dependency>
+
+        <!-- Seam dependencies -->
+        <dependency>
+            <groupId>org.jboss.seam</groupId>
+            <artifactId>jboss-seam</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.richfaces.framework</groupId>
+            <artifactId>richfaces-api</artifactId>
         </dependency>
 
     </dependencies>

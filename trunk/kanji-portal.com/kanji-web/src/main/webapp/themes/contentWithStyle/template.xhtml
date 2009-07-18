@@ -9,77 +9,91 @@
         xmlns:s="http://jboss.com/products/seam/taglib">
 
     <html>
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <title>Kanji Portal: La librairie de kanji</title>
-            <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTools}" rel="stylesheet" type="text/css"/>
-            <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTypo}" rel="stylesheet" type="text/css"/>
-            <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssForms}" rel="stylesheet" type="text/css"/>
-            <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayout}" rel="stylesheet" type="text/css"/>
-            <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayoutBase}" rel="stylesheet" type="text/css"/>
-        </head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Kanji Portal: La librairie de kanji</title>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTools}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTypo}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssForms}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayout}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayoutBase}" rel="stylesheet"
+              type="text/css"/>
+    </head>
 
-        <body id="page-home">
+    <body id="page-home">
 
-        <div id="page">
+    <div id="page">
 
-            <div id="header" class="clearfix">
+        <div id="header" class="clearfix">
 
-                <div id="branding">
-                    <img src="#{facesContext.externalContext.requestContextPath}#{theme.logo}" alt="Content with Style: Web Technique" />
-                </div><!-- end branding -->
+            <div id="branding">
+                <img src="#{facesContext.externalContext.requestContextPath}#{theme.logo}"
+                     alt="Content with Style: Web Technique"/>
+            </div>
+            <!-- end branding -->
 
-                <div id="search">
-                    <h:form id="themes">
-                        <s:label id="username" rendered="#{identity.loggedIn}">
-                            Welcome #{user.username}
-                        </s:label>
-                        <s:label id="anon" rendered="#{!identity.loggedIn}">
-                            Welcome you
-                        </s:label>
-                        <s:link id="home" view="/home.xhtml" value="Home" propagation="none"/>
-                        |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}"/>
-                        <s:link id="loginHeader" view="/login.xhtml" value="Login" rendered="#{!identity.loggedIn}"/>
-                    </h:form>
-                </div><!-- end search -->
+            <div id="search">
+                <h:form id="themes">
+                    <s:label id="username" rendered="#{identity.loggedIn}">
+                        Bienvenue #{user.username}
+                    </s:label>
+                    <s:label id="anon" rendered="#{!identity.loggedIn}">
+                        Bienvenue sur kanji-portal
+                    </s:label>
+                    <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
+                    |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Déconnexion"
+                                   rendered="#{identity.loggedIn}"/>
+                    <s:link id="loginHeader" view="/login.xhtml" value="Connexion" rendered="#{!identity.loggedIn}"/>
+                </h:form>
+            </div>
+            <!-- end search -->
 
-                <hr />
-            </div><!-- end header -->
-
-
-            <div id="content" class="clearfix">
-
-                <div id="main">
-                     <ui:insert name="content"/>
-                </div><!-- end main -->
-
-                <div id="sub">
-
-                    <h2>Sub</h2>
-                    <p>Proin pellentesque ullamcorper ipsum. Sed tincidunt tincidunt mi. Vestibulum magna wisi, vehicula eu, ullamcorper et, egestas in, tortor. Vestibulum interdum, massa in faucibus laoreet, tortor massa congue ligula, et feugiat elit mauris nec enim. Phasellus pellentesque tellus nec nisl. Mauris dignissim iaculis leo. Maecenas id lorem. Aenean tortor eros, dignissim eu, vehicula id, dictum eu, neque. Maecenas nisl. Proin dui lacus, aliquam eget, volutpat vel, aliquam quis, velit. Proin neque. Etiam turpis odio, tincidunt id, accumsan tincidunt, mollis a, nibh. Donec porta.</p>
-
-                </div><!-- end sub -->
+            <hr/>
+        </div>
+        <!-- end header -->
 
 
-                <div id="local">
-                   <ui:decorate template="/menu.xhtml"/>
-                </div><!-- end local -->
+        <div id="content" class="clearfix">
+
+            <div id="main">
+                <ui:insert name="content"/>
+            </div>
+            <!-- end main -->
+
+            <div id="sub">
+
+            </div>
+            <!-- end sub -->
 
 
-                <div id="nav">
-                    <ui:decorate template="/navigation.xhtml"/>
-                </div><!-- end nav -->
+            <div id="local">
+                <ui:decorate template="/menu.xhtml"/>
+            </div>
+            <!-- end local -->
 
-            </div><!-- end content -->
+
+            <div id="nav">
+                <ui:decorate template="/navigation.xhtml"/>
+            </div>
+            <!-- end nav -->
+
+        </div>
+        <!-- end content -->
 
 
-            <div id="footer" class="clearfix">
-                <ui:decorate template="/footer.xhtml"/>
-                <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
-            </div><!-- end footer -->
+        <div id="footer" class="clearfix">
+            <ui:decorate template="/footer.xhtml"/>
+            <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
+        </div>
+        <!-- end footer -->
 
-        </div><!-- end page -->
+    </div>
+    <!-- end page -->
 
-        </body>
+    </body>
     </html>
 </f:view>

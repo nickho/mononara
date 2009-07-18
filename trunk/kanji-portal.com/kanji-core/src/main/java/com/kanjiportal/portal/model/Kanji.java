@@ -22,6 +22,7 @@
  ******************************************************************************/
 package com.kanjiportal.portal.model;
 
+import org.hibernate.search.annotations.*;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
@@ -34,6 +35,7 @@ import java.util.Set;
 @XmlAccessorType(XmlAccessType.NONE)
 @Entity
 @Table(name = "tbkan")
+@Indexed
 public class Kanji extends Audit {
     private long id;
     private String kanji;
@@ -44,6 +46,7 @@ public class Kanji extends Audit {
     private Set<KanjiMeaning> meanings;
 
     @Id
+    @DocumentId
     @GeneratedValue
     public long getId() {
         return id;
@@ -74,6 +77,7 @@ public class Kanji extends Audit {
 
     @Length(max = 500)
     @Column(name = "lbdsc")
+    @Field(index = Index.TOKENIZED)
     public String getDescription() {
         return description;
     }
@@ -154,6 +158,7 @@ public class Kanji extends Audit {
     @OneToMany(mappedBy = "kanji")
     @XmlElementRef
     @XmlElementWrapper(name = "meanings")
+    @IndexedEmbedded
     public Set<KanjiMeaning> getMeanings() {
         return meanings;
     }
