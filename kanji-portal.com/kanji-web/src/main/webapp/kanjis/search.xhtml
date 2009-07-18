@@ -12,32 +12,34 @@
     <ui:define name="content">
 
         <div class="section">
-  
-    <span class="errors">
-       <h:messages globalOnly="true"/>
-    </span>
 
             <fieldset>
                 <legend>Recherche de kanjis</legend>
 
                 <h:form id="searchCriteria">
                     <h:inputText id="searchString" value="#{kanjiSearch.searchString}" style="width: 165px;">
-                        <a:support event="onkeyup" actionListener="#{kanjiSearch.find}" reRender="searchResults"/>
+                        <a:support event="onkeyup" actionListener="#{kanjiSearch.find}"
+                                   reRender="searchResults, messages"/>
                     </h:inputText>
-                    <a:commandButton id="findKanjis" value="Find Kanjis" action="#{kanjiSearch.find}"
-                                     reRender="searchResults"/>
+                    <a:commandButton id="findKanjis" value="Recherche" action="#{kanjiSearch.find}"
+                                     reRender="searchResults, messages"/>
                     <a:status>
                         <f:facet name="start">
                             <h:graphicImage value="#{theme.spinner}"/>
                         </f:facet>
                     </a:status>
+                    <a:outputPanel id="messages">
+                        <h:messages/>
+                    </a:outputPanel>
                     <br/>
-                    <h:outputLabel for="pageSize">Maximum results:</h:outputLabel>
-                    <h:selectOneMenu value="#{kanjiSearch.pageSize}" id="pageSize">
-                        <f:selectItem itemLabel="5" itemValue="5"/>
-                        <f:selectItem itemLabel="10" itemValue="10"/>
-                        <f:selectItem itemLabel="20" itemValue="20"/>
-                    </h:selectOneMenu>
+                    <s:div id="advancedSearch" rendered="false">
+                        <h:outputLabel for="pageSize">Maximum results:</h:outputLabel>
+                        <h:selectOneMenu value="#{kanjiSearch.pageSize}" id="pageSize">
+                            <f:selectItem itemLabel="5" itemValue="5"/>
+                            <f:selectItem itemLabel="10" itemValue="10"/>
+                            <f:selectItem itemLabel="20" itemValue="20"/>
+                        </h:selectOneMenu>
+                    </s:div>
                 </h:form>
             </fieldset>
         </div>
@@ -45,7 +47,7 @@
         <h:form id="kanjis">
             <a:outputPanel id="searchResults">
                 <div class="section">
-                    <h:outputText value="No Kanjis Found" rendered="#{kanjis != null and kanjis.rowCount==0}"/>
+                    <h:outputText value="Pas de kanjis" rendered="#{kanjis != null and kanjis.rowCount==0}"/>
                     <h:dataTable id="kanjis" value="#{kanjis}" var="kan" rendered="#{kanjis.rowCount>0}">
                         <h:column>
                             <f:facet name="header">Kanji</f:facet>
@@ -59,6 +61,7 @@
                             #{searchMeanings.get(kan.id)}
                         </h:column>
                     </h:dataTable>
+                    <br/>
                     <a:commandLink value="Suivants" action="#{kanjiSearch.nextPage}"
                                    rendered="#{kanjiSearch.nextPageAvailable}" reRender="searchResults"/>
                 </div>

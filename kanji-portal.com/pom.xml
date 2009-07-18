@@ -8,13 +8,13 @@
     <packaging>pom</packaging>
     <properties>
         <seam>2.1.1.GA</seam>
-        <jdk.level>1.5</jdk.level>
+        <jdk.level>1.6</jdk.level>
         <ear.name>kanjiPortalEAR</ear.name>
     </properties>
     <modules>
+        <module>kanji-core</module>
         <module>kanji-web</module>
         <module>kanji-ear</module>
-        <module>kanji-core</module>
         <module>kanji-test</module>
     </modules>
     <dependencyManagement>
@@ -37,30 +37,94 @@
                 <version>1.0.0-SNAPSHOT</version>
                 <type>war</type>
             </dependency>
+
+            <!-- J2EE libs -->
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>3.0.0.GA</version>
+                <groupId>javax.ejb</groupId>
+                <artifactId>ejb-api</artifactId>
+                <version>3.0</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>jsr250-api</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-annotations</artifactId>
-                <version>3.3.0.ga</version>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.1</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>3.3.1.ga</version>
+                <groupId>javax.jws</groupId>
+                <artifactId>jsr181-api</artifactId>
+                <version>1.0-MR1</version>
                 <scope>provided</scope>
             </dependency>
+
+            <!-- JBoss specific J2ee -->
             <dependency>
                 <groupId>org.jboss</groupId>
                 <artifactId>jbossws-spi</artifactId>
                 <version>1.0.2.GA</version>
                 <scope>provided</scope>
             </dependency>
+
+            <!-- Hibernate base -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>3.3.2.GA</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-annotations</artifactId>
+                <version>3.4.0.GA</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>3.4.0.GA</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>3.1.0.GA</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>3.3.0.ga</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.5.2</version>
+            </dependency>
+
+            <!-- Seam libs -->
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam</artifactId>
@@ -140,6 +204,45 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
+            <!-- JSF libs -->
+            <dependency>
+                <groupId>javax.faces</groupId>
+                <artifactId>jsf-api</artifactId>
+                <version>1.2_07</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.faces</groupId>
+                <artifactId>jsf-impl</artifactId>
+                <version>1.2_07</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>el-api</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.scannotation</groupId>
+                <artifactId>scannotation</artifactId>
+                <version>1.0.2</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.richfaces.ui</groupId>
+                <artifactId>richfaces-ui</artifactId>
+                <version>3.1.4.SR1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.richfaces.framework</groupId>
+                <artifactId>richfaces-api</artifactId>
+                <version>3.1.4.SR1</version>
+                <!--<scope>provided</scope>-->
+            </dependency>
+
+            <!-- Webservices rest -->
             <dependency>
                 <groupId>org.resteasy</groupId>
                 <artifactId>jaxrs-api</artifactId>
@@ -174,6 +277,55 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
+            <!-- Hibernate search with Lucene -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search</artifactId>
+                <!--version>3.0.1.GA</version-->
+                <version>3.1.1.GA</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>2.4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-analyzers</artifactId>
+                <version>2.4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-highlighter</artifactId>
+                <version>2.4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-snowball</artifactId>
+                <version>2.4.1</version>
+            </dependency>
+
+            <!-- Tests dependencies -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.5</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>2.4</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.6</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -182,6 +334,7 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <inherited>true</inherited>
                     <configuration>

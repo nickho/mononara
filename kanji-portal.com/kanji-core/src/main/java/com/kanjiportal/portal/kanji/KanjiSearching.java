@@ -52,7 +52,7 @@ public interface KanjiSearching {
 
     public List<Kanji> getKanjis();
 
-    public void destroy();
+    public String getSearchStatus();
 
     public void setLogger(Log logger);
 

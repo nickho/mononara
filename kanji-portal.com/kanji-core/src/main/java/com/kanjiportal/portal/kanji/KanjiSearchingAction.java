@@ -23,12 +23,14 @@
 package com.kanjiportal.portal.kanji;
 
 import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
+import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
 import javax.ejb.Stateless;
@@ -54,8 +56,14 @@ public class KanjiSearchingAction implements KanjiSearching {
     @DataModel
     private List<Kanji> kanjis;
 
-    @Out(required = false, scope = ScopeType.PAGE)
+    @Out(required = false)
     private Map<Long, String> searchMeanings;
+
+    @In
+    private FacesMessages facesMessages;
+
+    @Out
+    private String searchStatus = "";
 
     public void find() {
         logger.info("try : (" + searchString + ")");
@@ -69,8 +77,17 @@ public class KanjiSearchingAction implements KanjiSearching {
     }
 
     private void queryKanjis() {
-        kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
+        //kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
+        searchStatus = "";
         searchMeanings = new HashMap<Long, String>();
+
+        try {
+            kanjis = kanjiDao.findByPatternWithLucene(getSearchPattern(), page, pageSize);
+        } catch (SearchTooGenericException e) {
+            logger.info("Too many clauses for search :", getSearchPattern());
+            facesMessages.add("Recherhe trop générique");
+        }
+
         for (Kanji kanji : kanjis) {
             StringBuffer meaningsTemp = new StringBuffer();
             int i = 0;
@@ -105,8 +122,8 @@ public class KanjiSearchingAction implements KanjiSearching {
 
     @Factory(value = "patternKanji", scope = ScopeType.EVENT)
     public String getSearchPattern() {
-        return searchString == null ?
-                "%" : '%' + searchString.toLowerCase().replace('*', '%') + '%';
+        //return searchString == null ? "*" : '*' + searchString + '*';
+        return searchString == null ? "*" : searchString + '*';
     }
 
     public String getSearchString() {
@@ -137,7 +154,11 @@ public class KanjiSearchingAction implements KanjiSearching {
         this.searchMeanings = searchMeanings;
     }
 
-    //@Remove
-    public void destroy() {
+    public String getSearchStatus() {
+        return searchStatus;
+    }
+
+    public void setSearchStatus(String searchStatus) {
+        this.searchStatus = searchStatus;
     }
 }
