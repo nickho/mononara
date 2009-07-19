@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:a="http://richfaces.org/a4j"
+        xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Kanji Portal: La librairie de kanji</title>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTools}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTypo}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssForms}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayout}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssLayoutBase}" rel="stylesheet"
+              type="text/css"/>
+    </head>
+
+    <body id="page-home">
+
+    <div id="page">
+
+        <div id="header" class="clearfix">
+
+            <div id="branding">
+                <img src="#{facesContext.externalContext.requestContextPath}#{theme.logo}"
+                     alt="Content with Style: Web Technique"/>
+            </div>
+            <!-- end branding -->
+
+            <div id="search">
+                <h:form id="themes">
+                    <s:label id="username" rendered="#{identity.loggedIn}">
+                        Bienvenue #{user.username}
+                    </s:label>
+                    <s:label id="anon" rendered="#{!identity.loggedIn}">
+                        Bienvenue sur kanji-portal
+                    </s:label>
+                    <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
+                    |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Déconnexion"
+                                   rendered="#{identity.loggedIn}"/>
+                    <s:link id="loginHeader" view="/login.xhtml" value="Connexion" rendered="#{!identity.loggedIn}"/>
+                </h:form>
+            </div>
+            <!-- end search -->
+
+            <hr/>
+        </div>
+        <!-- end header -->
+
+
+        <div id="content" class="clearfix">
+
+            <div id="main">
+                <ui:insert name="content"/>
+            </div>
+            <!-- end main -->
+
+            <div id="sub">
+
+            </div>
+            <!-- end sub -->
+
+
+            <div id="local">
+                <ui:decorate template="/menu.xhtml"/>
+            </div>
+            <!-- end local -->
+
+
+            <div id="nav">
+                <ui:decorate template="/navigation.xhtml"/>
+            </div>
+            <!-- end nav -->
+
+        </div>
+        <!-- end content -->
+
+
+        <div id="footer" class="clearfix">
+            <ui:decorate template="/footer.xhtml"/>
+            <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
+        </div>
+        <!-- end footer -->
+
+    </div>
+    <!-- end page -->
+
+    </body>
+    </html>
+</f:view>

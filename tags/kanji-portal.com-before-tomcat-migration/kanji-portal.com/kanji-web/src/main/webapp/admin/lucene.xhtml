@@ -1,0 +1,63 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                template="#{theme.template}">
+
+    <!-- content -->
+    <ui:define name="content">
+        <a:outputPanel id="messages">
+            <div class="errors">
+                <h:messages/>
+            </div>
+        </a:outputPanel>
+        <fieldset id="lucene">
+            <legend>Lucene Index</legend>
+            <h:form id="indexKanji">
+                <p>
+                    Reindex all the kanjis
+                    <br/>
+                    <a:commandButton id="reIndexKanji" value="Compute" action="#{luceneManagement.reIndexKanji}"
+                                     reRender="messages" status="sKanji"/>
+                    <a:status id="sKanji" forceId="true">
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </p>
+            </h:form>
+            <h:form id="indexMeaning">
+                <p>
+                    Reindex all the meanings
+                    <br/>
+                    <a:commandButton id="reIndexMeaning" value="Compute" action="#{luceneManagement.reIndexMeaning}"
+                                     reRender="messages" status="sMeaning"/>
+                    <a:status id="sMeaning" forceId="true">
+                        <f:facet name="start">
+                            <h:graphicImage value="{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </p>
+            </h:form>
+            <h:form id="indexKanjiMeaning">
+                <p>
+                    Reindex all the KanjiMeanings
+                    <br/>
+                    <a:commandButton id="reindexKanjiMeaning" value="Compute"
+                                     action="#{luceneManagement.reIndexKanjiMeaning}"
+                                     reRender="messages" status="sKanjiMeaning"/>
+                    <a:status id="sKanjiMeaning" forceId="true">
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </p>
+            </h:form>
+        </fieldset>
+    </ui:define>
+
+</ui:composition>

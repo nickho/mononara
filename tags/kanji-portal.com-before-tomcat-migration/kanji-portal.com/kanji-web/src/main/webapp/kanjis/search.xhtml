@@ -1,0 +1,73 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:a="http://richfaces.org/a4j"
+                template="#{theme.template}">
+
+    <!-- content -->
+    <ui:define name="content">
+
+        <div class="section">
+
+            <fieldset>
+                <legend>Recherche de kanjis</legend>
+
+                <h:form id="searchCriteria">
+                    <h:inputText id="searchString" value="#{kanjiSearch.searchString}" style="width: 165px;">
+                        <a:support event="onkeyup" actionListener="#{kanjiSearch.find}"
+                                   reRender="searchResults, messages"/>
+                    </h:inputText>
+                    <a:commandButton id="findKanjis" value="Recherche" action="#{kanjiSearch.find}"
+                                     reRender="searchResults, messages"/>
+                    <a:status>
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                    <a:outputPanel id="messages">
+                        <h:messages/>
+                    </a:outputPanel>
+                    <br/>
+                    <s:div id="advancedSearch" rendered="false">
+                        <h:outputLabel for="pageSize">Maximum results:</h:outputLabel>
+                        <h:selectOneMenu value="#{kanjiSearch.pageSize}" id="pageSize">
+                            <f:selectItem itemLabel="5" itemValue="5"/>
+                            <f:selectItem itemLabel="10" itemValue="10"/>
+                            <f:selectItem itemLabel="20" itemValue="20"/>
+                        </h:selectOneMenu>
+                    </s:div>
+                </h:form>
+            </fieldset>
+        </div>
+        <br/>
+        <h:form id="kanjis">
+            <a:outputPanel id="searchResults">
+                <div class="section">
+                    <h:outputText value="Pas de kanjis" rendered="#{kanjis != null and kanjis.rowCount==0}"/>
+                    <h:dataTable id="kanjis" value="#{kanjis}" var="kan" rendered="#{kanjis.rowCount>0}">
+                        <h:column>
+                            <f:facet name="header">Kanji</f:facet>
+                            <h:outputLink value="view.seam">
+                                <f:param name="kanjiId" value="#{kan.id}"/>
+                                #{kan.kanji}
+                            </h:outputLink>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Sens</f:facet>
+                            #{searchMeanings.get(kan.id)}
+                        </h:column>
+                    </h:dataTable>
+                    <br/>
+                    <a:commandLink value="Suivants" action="#{kanjiSearch.nextPage}"
+                                   rendered="#{kanjiSearch.nextPageAvailable}" reRender="searchResults"/>
+                </div>
+            </a:outputPanel>
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

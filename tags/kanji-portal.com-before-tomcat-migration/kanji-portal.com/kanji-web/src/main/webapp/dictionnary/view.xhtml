@@ -1,0 +1,36 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                template="#{theme.template}">
+
+    <!-- content -->
+    <ui:define name="content">
+
+
+        <a:outputPanel id="kanjiSection">
+
+            <div class="section">
+                <h:form id="navigation">
+                    <h1>Mot de vocabulaire</h1>
+                </h:form>
+            </div>
+
+            <div class="section">
+                #{dictionnaryViewing.kanji} 「#{dictionnaryViewing.kana.replace(".", "")}」 （#{dictionnaryViewing.pos}） : #{dictionnaryViewing.description}. #{dictionnaryViewing.detail}
+                <a:outputPanel rendered="#{dictionnaryViewing.note} != null">
+                    <label>Notes:</label>
+                    #{dictionnaryViewing.note}
+                </a:outputPanel>
+
+
+            </div>
+        </a:outputPanel>
+
+    </ui:define>
+
+</ui:composition>

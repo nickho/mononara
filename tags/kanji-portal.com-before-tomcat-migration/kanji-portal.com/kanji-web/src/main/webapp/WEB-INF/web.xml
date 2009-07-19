@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>Kanji Portal</display-name>
+
+    <!--
+    <context-param>
+		<param-name>org.ajax4jsf.RESOURCE_URI_PREFIX</param-name>
+		<param-value>rfRes</param-value>
+	</context-param>
+   <context-param>
+      <param-name>org.richfaces.LoadStyleStrategy</param-name>
+      <param-value>NONE</param-value>
+   </context-param>
+   <context-param>
+        <param-name>org.richfaces.LoadScriptStrategy</param-name>
+        <param-value>NONE</param-value>
+   </context-param>
+    <context-param>
+        <param-name>org.ajax4jsf.COMPRESS_SCRIPT</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+      <param-name>org.richfaces.SKIN</param-name>
+      <param-value>#{theme.skin}</param-value>
+    </context-param>
+
+    -->
+
+    <!-- JSF -->
+
+    <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>facelets.DEVELOPMENT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+
+    <!-- Seam -->
+
+    <listener>
+        <listener-class>
+            org.jboss.seam.servlet.SeamListener
+        </listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>Seam Filter</filter-name>
+        <filter-class>org.jboss.seam.servlet.SeamFilter</filter-class>
+    </filter>
+
+
+    <servlet>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <servlet-class>
+            org.jboss.seam.servlet.SeamResourceServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FacesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <filter-mapping>
+        <filter-name>Seam Filter</filter-name>
+        <url-pattern>*.seam</url-pattern>
+    </filter-mapping>
+    <!--
+    <filter-mapping>
+        <filter-name>Seam Filter</filter-name>
+        <servlet-name>FacesServlet</servlet-name>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    -->
+
+
+    <servlet-mapping>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <url-pattern>/resource/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>*.seam</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+</web-app>
