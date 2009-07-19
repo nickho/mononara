@@ -38,6 +38,7 @@
         <finalName>kanjiPortalEAR</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
                 <configuration>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
@@ -82,13 +83,14 @@
                         </manifest>
                     </archive>
                     <jboss>
-                        <version>4.2</version>
-                        <!--loader-repository>
-                            seam.jboss.org:loader=kanjiPortalEAR
-                        </loader-repository-->
-                        <!--module-order>strict</module-order-->
+                        <version>5</version>
+                        <loader-repository>
+                            com.kanji-portal:archive=kanjiPortalEAR
+                        </loader-repository>
+                        <loader-repository-config>
+                            java2ParentDelegation=true
+                        </loader-repository-config>
                     </jboss>
-                    <version>5</version>
                 </configuration>
             </plugin>
         </plugins>
