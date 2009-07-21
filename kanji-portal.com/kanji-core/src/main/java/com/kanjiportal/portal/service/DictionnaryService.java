@@ -10,7 +10,6 @@ package com.kanjiportal.portal.service;
 
 import com.kanjiportal.portal.model.service.DictionnaryList;
 
-import javax.ejb.Local;
 
 /**
  * DictionnaryService
@@ -19,8 +18,6 @@ import javax.ejb.Local;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnaryService
  */
-@Local
-//@Path("/dictionnary")
 public interface DictionnaryService {
 
     public DictionnaryList getDictionnaryEntriesByPattern(String pattern);

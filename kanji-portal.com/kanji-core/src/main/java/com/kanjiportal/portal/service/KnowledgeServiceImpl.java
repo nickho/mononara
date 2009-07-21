@@ -16,7 +16,6 @@ import org.jboss.seam.log.Log;
 import org.jboss.seam.security.Identity;
 import org.jboss.wsf.spi.annotation.WebContext;
 
-import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
@@ -28,7 +27,6 @@ import java.util.List;
  * Time: 10:37:36 PM
  * To change this template use File | Settings | File Templates.
  */
-@Stateless
 @WebService
 @WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/knowledge")
 @Name("knowledgeService")
@@ -69,7 +67,6 @@ public class KnowledgeServiceImpl implements KnowledgeService {
         knowledgeImporting.startImport();
         User user = userDao.findByUsername(Identity.instance().getCredentials().getUsername());
         updated = knowledgeImporting.importKnowledges(list, user);
-        knowledgeImporting.destroy();
         return updated;
     }
 
@@ -87,8 +84,4 @@ public class KnowledgeServiceImpl implements KnowledgeService {
     }
 
 
-    @WebMethod
-    public void logout() {
-        knowledgeImporting.destroy();
-    }
 }

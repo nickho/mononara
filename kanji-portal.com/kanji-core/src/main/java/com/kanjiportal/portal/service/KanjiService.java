@@ -15,9 +15,7 @@ import com.kanjiportal.portal.model.service.KanjiList;
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement KanjiService
  */
-//@Local
 public interface KanjiService {
 
     KanjiList getKanjisByPattern(String pattern);

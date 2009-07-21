@@ -4,7 +4,6 @@ import com.kanjiportal.portal.model.Knowledge;
 import com.kanjiportal.portal.model.Tag;
 import com.kanjiportal.portal.model.User;
 
-import javax.ejb.Local;
 import java.util.List;
 
 /**
@@ -14,7 +13,6 @@ import java.util.List;
  * Time: 10:57:23 PM
  * To change this template use File | Settings | File Templates.
  */
-@Local
 public interface KnowledgeDao {
     public Knowledge findByKanjiAndTagForUser(String kanji, String tag, User user);
 

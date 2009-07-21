@@ -10,7 +10,6 @@ package com.kanjiportal.portal.dictionnary;
 
 import com.kanjiportal.portal.model.Dictionnary;
 
-import javax.ejb.Local;
 
 /**
  * DictionnaryService
@@ -19,7 +18,6 @@ import javax.ejb.Local;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnaryService
  */
-@Local
 public interface DictionnaryViewing {
 
     public Dictionnary getDictionnaryEntry();

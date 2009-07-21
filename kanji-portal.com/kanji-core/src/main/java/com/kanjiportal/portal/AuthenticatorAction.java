@@ -10,15 +10,10 @@ package com.kanjiportal.portal;
 
 import com.kanjiportal.portal.model.User;
 import static org.jboss.seam.ScopeType.SESSION;
-import org.jboss.seam.annotations.AutoCreate;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Out;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -28,11 +23,10 @@ import java.util.List;
  * @version $Revision: 1.1 $
  * @todo Implement AuthenticatorAction
  */
-@Stateless
 @AutoCreate
 @Name("authenticator")
 public class AuthenticatorAction implements Authenticator {
-    @PersistenceContext
+    @In
     private EntityManager em;
 
     @Out(required = false, scope = SESSION)

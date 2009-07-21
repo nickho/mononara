@@ -10,14 +10,10 @@
 
     <artifactId>kanji-core</artifactId>
     <name>Kanji-Portal Core</name>
-    <packaging>ejb</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- J2EE dependencies -->
-        <dependency>
-            <groupId>javax.ejb</groupId>
-            <artifactId>ejb-api</artifactId>
-        </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
@@ -57,7 +53,6 @@
         <dependency>
             <groupId>org.jboss.seam</groupId>
             <artifactId>jboss-seam</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- Hibernate Base -->
@@ -65,24 +60,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
-        <!--dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-        </dependency-->
-        <!--dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-        </dependency-->
-        <!--dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <exclusions>
-              <exclusion>
-                <groupId>javassist</groupId>
-                <artifactId>javassist</artifactId>
-              </exclusion>
-            </exclusions>
-        </dependency-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>

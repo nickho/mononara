@@ -2,7 +2,6 @@ package com.kanjiportal.portal.dao;
 
 import com.kanjiportal.portal.model.Tag;
 
-import javax.ejb.Local;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +10,6 @@ import javax.ejb.Local;
  * Time: 11:21:43 PM
  * To change this template use File | Settings | File Templates.
  */
-@Local
 public interface TagDao {
     public Tag findByName(String tag);
 

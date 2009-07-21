@@ -11,11 +11,11 @@
     <name>Kanji-Portal Integration test</name>
 
     <dependencies>
-        <dependency>
+        <!--dependency>
             <groupId>com.kanjiportal</groupId>
             <artifactId>kanji-ear</artifactId>
             <type>ear</type>
-        </dependency>
+        </dependency-->
 
         <dependency>
             <groupId>junit</groupId>

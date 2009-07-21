@@ -9,12 +9,11 @@
     <properties>
         <seam>2.1.1.GA</seam>
         <jdk.level>1.6</jdk.level>
-        <ear.name>kanjiPortalEAR</ear.name>
+        <lucene.indexes.dir>Z:\Indexes</lucene.indexes.dir>
     </properties>
     <modules>
         <module>kanji-core</module>
         <module>kanji-web</module>
-        <module>kanji-ear</module>
         <module>kanji-test</module>
     </modules>
     <dependencyManagement>
@@ -23,13 +22,6 @@
                 <groupId>com.kanjiportal</groupId>
                 <artifactId>kanji-core</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
-                <type>ejb</type>
-            </dependency>
-            <dependency>
-                <groupId>com.kanjiportal</groupId>
-                <artifactId>kanji-ear</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <type>ear</type>
             </dependency>
             <dependency>
                 <groupId>com.kanjiportal</groupId>
@@ -39,13 +31,6 @@
             </dependency>
 
             <!-- J2EE libs -->
-            <dependency>
-                <groupId>javax.ejb</groupId>
-                <artifactId>ejb-api</artifactId>
-                <version>3.0</version>
-                <scope>provided</scope>
-                <optional>true</optional>
-            </dependency>
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>jsr250-api</artifactId>
@@ -57,7 +42,6 @@
                 <groupId>javax.persistence</groupId>
                 <artifactId>persistence-api</artifactId>
                 <version>1.0</version>
-                <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
@@ -83,13 +67,13 @@
                 <groupId>javax.transaction</groupId>
                 <artifactId>jta</artifactId>
                 <version>1.1</version>
-                <scope>provided</scope>
+                <!--scope>provided</scope-->
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>ejb3-persistence</artifactId>
                 <version>1.0.2.GA</version>
-                <scope>provided</scope>
+                <!--scope>provided</scope-->
             </dependency>
 
 
@@ -106,31 +90,26 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>3.3.2.GA</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-annotations</artifactId>
                 <version>3.4.0.GA</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>3.4.0.GA</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>3.1.0.GA</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-commons-annotations</artifactId>
                 <version>3.3.0.ga</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -149,10 +128,6 @@
                         <artifactId>el-api</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>jboss</groupId>
                         <artifactId>javassist</artifactId>
                     </exclusion>
@@ -162,16 +137,6 @@
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-ui</artifactId>
                 <version>${seam}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.jboss.seam</groupId>
-                        <artifactId>jboss-seam</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jboss.seam</groupId>
@@ -179,16 +144,8 @@
                 <version>${seam}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>jboss</groupId>
                         <artifactId>javassist</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.jboss.seam</groupId>
-                        <artifactId>jboss-seam</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -196,27 +153,11 @@
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-resteasy</artifactId>
                 <version>${seam}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.jboss.seam</groupId>
-                        <artifactId>jboss-seam</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-debug</artifactId>
                 <version>${seam}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.jboss.seam</groupId>
-                        <artifactId>jboss-seam</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <!-- JSF libs -->
@@ -224,13 +165,11 @@
                 <groupId>javax.faces</groupId>
                 <artifactId>jsf-api</artifactId>
                 <version>1.2_07</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.faces</groupId>
                 <artifactId>jsf-impl</artifactId>
                 <version>1.2_07</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.el</groupId>
@@ -263,10 +202,6 @@
                 <version>1.0-beta-5</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>jboss</groupId>
                         <artifactId>javassist</artifactId>
                     </exclusion>
@@ -277,10 +212,6 @@
                 <artifactId>resteasy-jaxrs</artifactId>
                 <version>1.0-beta-5</version>
                 <exclusions>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
                     <exclusion>
                         <groupId>jboss</groupId>
                         <artifactId>javassist</artifactId>
@@ -496,10 +427,22 @@
     </distributionManagement>
     <profiles>
         <profile>
+            <id>dev</id>
+            <properties>
+                <lucene.indexes.dir>Z:\Indexes</lucene.indexes.dir>
+            </properties>
+        </profile>
+        <profile>
             <!-- You need to activate this profile when you run the integration-test with clover -->
-            <id>clover</id>
+            <id>int</id>
             <properties>
                 <ear.name>kanji-ear-${project.version}-clover</ear.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <lucene.indexes.dir>/var/cache/lucene</lucene.indexes.dir>
             </properties>
         </profile>
     </profiles>

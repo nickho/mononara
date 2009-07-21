@@ -11,8 +11,6 @@ import com.kanjiportal.portal.model.service.KnowledgeParam;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
 import java.util.List;
 
 /**
@@ -22,7 +20,6 @@ import java.util.List;
  * Time: 7:20:32 PM
  * To change this template use File | Settings | File Templates.
  */
-@Stateful
 @AutoCreate
 @Name("knowledgeImporting")
 public class KnowledgeImportingAction implements KnowledgeImporting {
@@ -78,9 +75,5 @@ public class KnowledgeImportingAction implements KnowledgeImporting {
         knowledge.setLastTestSuccess(knowledgeParam.getLastTestSuccess());
     }
 
-    @Remove
-    public void destroy() {
-        //nothing
-    }
 
 }

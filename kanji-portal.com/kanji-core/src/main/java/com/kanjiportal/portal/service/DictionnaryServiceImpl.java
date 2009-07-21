@@ -15,7 +15,6 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.wsf.spi.annotation.WebContext;
 
-import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
@@ -27,7 +26,6 @@ import java.util.List;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnarySoapService
  */
-@Stateless
 @WebService
 @WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/dictionnary")
 @Name("dictionnaryService")

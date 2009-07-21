@@ -1,10 +1,4 @@
-package com.kanjiportal.portal.service; /**
- * ${NAME}
- *
- * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
- * @version $Revision: 1.1 $
- * @todo Implement ${NAME}
- */
+package com.kanjiportal.portal.service;
 
 import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.Kanji;
@@ -17,7 +11,6 @@ import org.jboss.wsf.spi.annotation.WebContext;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import javax.jws.WebService;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -28,8 +21,12 @@ import java.util.Date;
 import java.util.List;
 
 
-//@Stateless
-@WebService
+/**
+ * Kanji Service
+ *
+ * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
+ * @version $Revision: 1.1 $
+ */
 @Path("/kanji")
 @WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/kanji")
 @Name("kanjiService")

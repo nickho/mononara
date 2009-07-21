@@ -8,8 +8,6 @@
  *****************************************/
 package com.kanjiportal.portal.dictionnary;
 
-import javax.ejb.Local;
-
 /**
  * DictionnarySearching
  *
@@ -17,7 +15,6 @@ import javax.ejb.Local;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnarySearching
  */
-@Local
 public interface DictionnarySearching {
 
     public int getPageSize();
@@ -35,7 +32,5 @@ public interface DictionnarySearching {
     public void nextPage();
 
     public boolean isNextPageAvailable();
-
-    public void destroy();
 
 }
