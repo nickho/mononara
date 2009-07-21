@@ -26,6 +26,7 @@ import java.util.List;
  */
 @Name("dictionnarySearch")
 @Scope(ScopeType.SESSION)
+@Synchronized(timeout = 10000)
 public class DictionnarySearchingAction implements DictionnarySearching {
 
     @In
