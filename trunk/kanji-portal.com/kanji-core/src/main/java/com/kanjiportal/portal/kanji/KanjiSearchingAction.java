@@ -39,6 +39,7 @@ import java.util.Map;
 
 @Name("kanjiSearch")
 @Scope(ScopeType.SESSION)
+@Synchronized(timeout = 10000)
 public class KanjiSearchingAction implements KanjiSearching {
 
     @In
