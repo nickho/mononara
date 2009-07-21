@@ -5,7 +5,6 @@ import com.kanjiportal.portal.model.Reference;
 import com.kanjiportal.portal.model.Spelling;
 import com.kanjiportal.portal.model.Tag;
 
-import javax.ejb.Local;
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +15,6 @@ import java.util.List;
  * Time: 10:51:35 PM
  * To change this template use File | Settings | File Templates.
  */
-@Local
 public interface KanjiDao {
 
     Kanji findByKanji(String kanji);

@@ -8,7 +8,6 @@
  *****************************************/
 package com.kanjiportal.portal;
 
-import javax.ejb.Local;
 
 /**
  * com.kanjiportal.portal.Authenticator
@@ -17,8 +16,6 @@ import javax.ejb.Local;
  * @version $Revision: 1.1 $
  * @todo Implement com.kanjiportal.portal.Authenticator
  */
-
-@Local
 public interface Authenticator {
     boolean authenticate();
 }

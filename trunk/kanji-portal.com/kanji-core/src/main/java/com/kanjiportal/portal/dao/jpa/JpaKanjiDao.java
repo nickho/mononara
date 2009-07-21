@@ -15,7 +15,6 @@ import org.jboss.seam.annotations.Logger;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.TemporalType;
 import java.util.Date;
@@ -30,7 +29,6 @@ import java.util.Map;
  * Time: 10:52:33 PM
  * To change this template use File | Settings | File Templates.
  */
-@Stateless
 @AutoCreate
 @Name("kanjiDao")
 public class JpaKanjiDao implements KanjiDao {

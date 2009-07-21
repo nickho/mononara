@@ -12,7 +12,6 @@ import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.*;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Local;
 import javax.persistence.EntityManager;
 import java.util.Set;
 
@@ -23,8 +22,6 @@ import java.util.Set;
  * @version $Revision: 1.1 $
  * @todo Implement KanjiView
  */
-
-@Local
 public interface KanjiView {
 
     void view();

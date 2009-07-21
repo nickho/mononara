@@ -26,11 +26,9 @@ import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.model.Kanji;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Local;
 import java.util.List;
 import java.util.Map;
 
-@Local
 public interface KanjiSearching {
     public int getPageSize();
 

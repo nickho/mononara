@@ -16,7 +16,6 @@ import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.web.RequestParameter;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,7 +29,6 @@ import java.util.Set;
  */
 @Name("kanjiView")
 @Scope(ScopeType.SESSION)
-@Stateless
 public class KanjiViewAction implements KanjiView {
 
     private final static String ON_SPELLING_TYPE_ID = "on";

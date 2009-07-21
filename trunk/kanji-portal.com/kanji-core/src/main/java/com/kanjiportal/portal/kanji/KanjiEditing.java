@@ -8,11 +8,7 @@
  *****************************************/
 package com.kanjiportal.portal.kanji;
 
-import org.jboss.seam.annotations.Begin;
-import org.jboss.seam.annotations.End;
 
-import javax.ejb.Local;
-import javax.ejb.Remove;
 import java.util.Map;
 
 /**
@@ -22,7 +18,6 @@ import java.util.Map;
  * @version $Revision: 1.1 $
  */
 
-@Local
 public interface KanjiEditing {
 
     public void edit();
@@ -42,11 +37,7 @@ public interface KanjiEditing {
     public void removeSpelling(long spellingId);
 
 
-
     public void exit();
-
-    public void destroy();
-
 
 
     public void setTagId(long tagId);

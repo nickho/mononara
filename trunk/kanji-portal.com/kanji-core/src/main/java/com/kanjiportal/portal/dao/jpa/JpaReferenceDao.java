@@ -3,11 +3,11 @@ package com.kanjiportal.portal.dao.jpa;
 import com.kanjiportal.portal.dao.ReferenceDao;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.Reference;
+import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Logger;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class JpaReferenceDao implements ReferenceDao {
 
-    @PersistenceContext
-    private EntityManager em;
+    @In
+    private EntityManager entityManager;
 
     @Logger
     private Log log;
@@ -28,12 +28,12 @@ public class JpaReferenceDao implements ReferenceDao {
     public Reference addReference(String referenceValue) {
         Reference reference = new Reference();
         reference.setValue(referenceValue);
-        em.persist(reference);
+        entityManager.persist(reference);
         return reference;
     }
 
     public Reference findReferenceByKanjiAndType(Kanji kanji, long referenceTypeId) {
-        List<Reference> listKanjiReference = em.createQuery("select r from KanjiReference kr join kr.reference as r where kr.kanji.id = :kanjiId and kr.referenceType.id = :typeId")
+        List<Reference> listKanjiReference = entityManager.createQuery("select r from KanjiReference kr join kr.reference as r where kr.kanji.id = :kanjiId and kr.reference.referenceType.id = :typeId")
                 .setParameter("kanjiId", kanji.getId())
                 .setParameter("typeId", referenceTypeId)
                 .getResultList();
@@ -49,10 +49,10 @@ public class JpaReferenceDao implements ReferenceDao {
 
     public void updateReferenceValue(Reference reference, String referenceValue) {
         reference.setValue(referenceValue);
-        em.merge(reference);
+        entityManager.merge(reference);
     }
 
     public void removeReference(Reference reference) {
-        em.remove(reference);
+        entityManager.remove(reference);
     }
 }

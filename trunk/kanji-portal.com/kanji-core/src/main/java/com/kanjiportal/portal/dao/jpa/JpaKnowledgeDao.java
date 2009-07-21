@@ -5,13 +5,12 @@ import com.kanjiportal.portal.model.Knowledge;
 import com.kanjiportal.portal.model.Tag;
 import com.kanjiportal.portal.model.User;
 import org.jboss.seam.annotations.AutoCreate;
+import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Logger;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -21,19 +20,18 @@ import java.util.List;
  * Time: 10:58:39 PM
  * To change this template use File | Settings | File Templates.
  */
-@Stateless
 @AutoCreate
 @Name("knowledgeDao")
 public class JpaKnowledgeDao implements KnowledgeDao {
 
-    @PersistenceContext
-    private EntityManager em;
+    @In
+    private EntityManager entityManager;
 
     @Logger
     private Log logger;
 
     public Knowledge findByKanjiAndTagForUser(String kanji, String tag, User user) {
-        List<Knowledge> list = em.createQuery("select kw from Knowledge kw where kw.kanji.kanji like :kanji and kw.tag.name like :tag and kw.user.id = :username")
+        List<Knowledge> list = entityManager.createQuery("select kw from Knowledge kw where kw.kanji.kanji like :kanji and kw.tag.name like :tag and kw.user.id = :username")
                 .setParameter("kanji", kanji)
                 .setParameter("tag", tag)
                 .setParameter("username", user.getUsername())
@@ -49,7 +47,7 @@ public class JpaKnowledgeDao implements KnowledgeDao {
     }
 
     public List<Knowledge> findByTagForUser(Tag tag, User user, int page, int pageSize) {
-        List<Knowledge> list = em.createQuery("select kw from Knowledge kw where kw.tag.name like :tag and kw.user.id = :username")
+        List<Knowledge> list = entityManager.createQuery("select kw from Knowledge kw where kw.tag.name like :tag and kw.user.id = :username")
                 .setParameter("tag", tag.getName())
                 .setParameter("username", user.getUsername())
                 .setMaxResults(pageSize)
@@ -60,14 +58,14 @@ public class JpaKnowledgeDao implements KnowledgeDao {
 
 
     public Knowledge update(Knowledge knowledge) {
-        return em.merge(knowledge);
+        return entityManager.merge(knowledge);
     }
 
     public void create(Knowledge knowledge) {
-        em.persist(knowledge);
+        entityManager.persist(knowledge);
     }
 
     public void delete(Knowledge knowledge) {
-        em.remove(knowledge);
+        entityManager.remove(knowledge);
     }
 }

@@ -33,12 +33,10 @@ import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Stateless
 @Name("kanjiSearch")
 @Scope(ScopeType.SESSION)
 public class KanjiSearchingAction implements KanjiSearching {

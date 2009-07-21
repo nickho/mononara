@@ -10,17 +10,11 @@ package com.kanjiportal.portal.dictionnary;
 
 import com.kanjiportal.portal.model.Dictionnary;
 import org.jboss.seam.ScopeType;
-import org.jboss.seam.annotations.Factory;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Scope;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -30,13 +24,12 @@ import java.util.List;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnarySearchingAction
  */
-@Stateful
 @Name("dictionnarySearch")
 @Scope(ScopeType.SESSION)
 public class DictionnarySearchingAction implements DictionnarySearching {
 
-    @PersistenceContext
-    private EntityManager em;
+    @In
+    private EntityManager entityManager;
 
     private String searchString;
     private int pageSize = 10;
@@ -61,7 +54,7 @@ public class DictionnarySearchingAction implements DictionnarySearching {
 
     private void queryDictionnary() {
         log.debug("pattern dict : (#{patternDictionnary})");
-        entries = em.createQuery("select de from Dictionnary de where de.kanji like #{patternDictionnary} or de.kana like #{patternDictionnary} or lower(de.description) like #{patternDictionnary}")
+        entries = entityManager.createQuery("select de from Dictionnary de where de.kanji like #{patternDictionnary} or de.kana like #{patternDictionnary} or lower(de.description) like #{patternDictionnary}")
                 .setMaxResults(pageSize)
                 .setFirstResult(page * pageSize)
                 .getResultList();
@@ -91,10 +84,6 @@ public class DictionnarySearchingAction implements DictionnarySearching {
 
     public void setSearchString(String searchString) {
         this.searchString = searchString;
-    }
-
-    @Remove
-    public void destroy() {
     }
 
 }

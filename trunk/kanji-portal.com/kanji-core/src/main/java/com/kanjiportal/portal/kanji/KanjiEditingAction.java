@@ -20,10 +20,7 @@ import org.jboss.seam.core.Events;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,14 +32,14 @@ import java.util.Set;
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
  */
-@Stateful
+
 @Name("kanjiEdit")
 @Scope(ScopeType.SESSION)
 /*@Restrict("#{identity.loggedIn}")*/
 public class KanjiEditingAction implements KanjiEditing {
 
     /* Seam management */
-    @PersistenceContext
+    @In
     private EntityManager entityManager;
 
     @In
@@ -278,7 +275,4 @@ public class KanjiEditingAction implements KanjiEditing {
         log.info("End editing Kanji : #{kanji.id}");
     }
 
-    @Remove
-    public void destroy() {
-    }
 }

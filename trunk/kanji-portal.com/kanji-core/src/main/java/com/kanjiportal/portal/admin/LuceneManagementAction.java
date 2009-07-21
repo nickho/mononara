@@ -12,9 +12,7 @@ import org.jboss.seam.annotations.Scope;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -24,7 +22,6 @@ import java.util.List;
  * Time: 6:57:45 PM
  * To change this template use File | Settings | File Templates.
  */
-@Stateless
 @Name("luceneManagement")
 @Scope(value = ScopeType.SESSION)
 public class LuceneManagementAction implements LuceneManagement {
@@ -35,7 +32,7 @@ public class LuceneManagementAction implements LuceneManagement {
     @Logger
     private Log log;
 
-    @PersistenceContext
+    @In
     private EntityManager entityManager;
 
 
