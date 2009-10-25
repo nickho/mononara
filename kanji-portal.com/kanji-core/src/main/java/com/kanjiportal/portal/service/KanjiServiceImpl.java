@@ -60,7 +60,7 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/pattern/{pattern}/{page}/{item}")
-    @ProduceMime("application/xml")
+    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisByPatternWithPaging(@PathParam("pattern") @WebParam String pattern,
                                                   @PathParam("page") @WebParam int page,
                                                   @PathParam("item") @WebParam int itemPerPage) {
@@ -72,7 +72,7 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/pattern/{pattern}")
-    @ProduceMime("application/xml")
+    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisByPattern(@PathParam("pattern") @WebParam String pattern) {
         KanjiList list = getKanjisByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
         return list;
@@ -81,7 +81,7 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/since/{since}/{page}/{item}")
-    @ProduceMime("application/xml")
+    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisBySinceWithPaging(@PathParam("since") @WebParam String since,
                                                 @PathParam("page") @WebParam int page,
                                                 @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
@@ -103,7 +103,7 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/since/{since}")
-    @ProduceMime("application/xml")
+    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisBySince(@PathParam("since") @WebParam String since) throws InvalidArgumentsException {
         KanjiList list = getKanjisBySinceWithPaging(since, 0, ITEM_PER_PAGE);
         return list;

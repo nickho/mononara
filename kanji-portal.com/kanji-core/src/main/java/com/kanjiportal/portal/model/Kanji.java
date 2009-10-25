@@ -52,13 +52,6 @@ public class Kanji extends Audit {
         this.id = id;
     }
 
-    @XmlID
-    @XmlAttribute
-    @Transient
-    public String getRef() {
-        return Long.toString(id);
-    }
-
     @Length(max = 50)
     @NotNull
     @XmlElement
