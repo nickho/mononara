@@ -57,8 +57,8 @@ public class KanjiTag extends Audit {
     @XmlID
     @XmlAttribute
     @Transient
-    public String getRef() {
-        return Long.toString(tag.getId());
+    public String getCode() {
+        return tag.getCode();
     }
 
     @XmlValue

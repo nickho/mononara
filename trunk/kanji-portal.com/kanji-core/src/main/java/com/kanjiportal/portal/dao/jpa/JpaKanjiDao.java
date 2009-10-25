@@ -103,7 +103,6 @@ public class JpaKanjiDao implements KanjiDao {
                 "select k from Kanji k left join fetch k.tags t left join fetch t.tag")
                 .append(" left join fetch k.meanings")
                 .append(" where k.kanji like :pattern")
-                .append(" or lower(k.meaning) like :pattern")
                 .append(" or lower(k.description) like :pattern").toString())
                 .setParameter("pattern", pattern)
                 .setMaxResults(pageSize)
