@@ -72,12 +72,12 @@ public class KanjiSearchingAction implements KanjiSearching {
     }
 
     private void queryKanjis() {
-        //kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
+        //kanjis = kanjiDao.findByPatternWithoutLucene(getSearchPattern(), page, pageSize);
         searchStatus = "";
         searchMeanings = new HashMap<Long, String>();
 
         try {
-            kanjis = kanjiDao.findByPatternWithLucene(getSearchPattern(), page, pageSize);
+            kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
         } catch (SearchTooGenericException e) {
             logger.info("Too many clauses for search :", getSearchPattern());
             facesMessages.add("Recherhe trop générique");

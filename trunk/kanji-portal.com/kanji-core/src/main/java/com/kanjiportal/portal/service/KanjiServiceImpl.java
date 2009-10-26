@@ -19,6 +19,7 @@
 package com.kanjiportal.portal.service;
 
 import com.kanjiportal.portal.dao.KanjiDao;
+import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.service.KanjiList;
 import org.jboss.seam.annotations.In;
@@ -63,9 +64,9 @@ public class KanjiServiceImpl implements KanjiService {
     @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisByPatternWithPaging(@PathParam("pattern") @WebParam String pattern,
                                                   @PathParam("page") @WebParam int page,
-                                                  @PathParam("item") @WebParam int itemPerPage) {
+                                                  @PathParam("item") @WebParam int itemPerPage) throws SearchTooGenericException {
         String search = pattern == null ? "%" : '%' + pattern.toLowerCase().replace('*', '%') + '%';
-        List<Kanji> kanjis = kanjiDao.findByPatternForcingFullFetch(search, page, itemPerPage);
+        List<Kanji> kanjis = kanjiDao.findByPattern(search, page, itemPerPage);
         return new KanjiList(kanjis, -1);
     }
 
@@ -73,7 +74,7 @@ public class KanjiServiceImpl implements KanjiService {
     @GET
     @Path("/pattern/{pattern}")
     @ProduceMime({"application/xml", "application/json"})
-    public KanjiList getKanjisByPattern(@PathParam("pattern") @WebParam String pattern) {
+    public KanjiList getKanjisByPattern(@PathParam("pattern") @WebParam String pattern) throws SearchTooGenericException {
         KanjiList list = getKanjisByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
         return list;
     }
@@ -85,7 +86,7 @@ public class KanjiServiceImpl implements KanjiService {
     public KanjiList getKanjisBySinceWithPaging(@PathParam("since") @WebParam String since,
                                                 @PathParam("page") @WebParam int page,
                                                 @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
 
         Date date = null;
@@ -94,8 +95,9 @@ public class KanjiServiceImpl implements KanjiService {
         } catch (ParseException e) {
             throw new BadDateFormatingException(e);
         }
-
-        List<Kanji> kanjis = kanjiDao.findBySinceDateForcingFullFetch(date, page, itemPerPage);
+        log.debug("loading kanjis since #0 : #1/#2", since, page, itemPerPage);
+        List<Kanji> kanjis = kanjiDao.findBySinceDate(date, page, itemPerPage);
+        log.debug("loaded kanjis since #0 : #1 kanjis", since, kanjis.size());
 
         return new KanjiList(kanjis, -1);
     }
@@ -117,7 +119,7 @@ public class KanjiServiceImpl implements KanjiService {
                                               @PathParam("page") @WebParam int page,
                                               @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
 
-        List<Kanji> kanjis = kanjiDao.findByTagForcingFullFetch(tag, page, itemPerPage);
+        List<Kanji> kanjis = kanjiDao.findByTag(tag, page, itemPerPage);
 
         return new KanjiList(kanjis, -1);
     }
@@ -140,7 +142,7 @@ public class KanjiServiceImpl implements KanjiService {
                                               @PathParam("page") @WebParam int page,
                                               @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
         long totalCount = kanjiDao.countByRef(reference, value);
-        List<Kanji> kanjis = kanjiDao.findByRefForcingFullFetch(reference, value, page, itemPerPage);
+        List<Kanji> kanjis = kanjiDao.findByRef(reference, value, page, itemPerPage);
         return new KanjiList(kanjis, totalCount);
     }
 

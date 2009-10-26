@@ -57,7 +57,7 @@ public class JpaKanjiDao implements KanjiDao {
     @Logger
     private Log log;
 
-    public List<Kanji> findByPatternWithLucene(String pattern, int page, int pageSize) throws SearchTooGenericException {
+    public List<Kanji> findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
         Map<String, Float> boostPerField = new HashMap<String, Float>();
         boostPerField.put("meanings.meaning.meaning", 2f);
@@ -90,7 +90,7 @@ public class JpaKanjiDao implements KanjiDao {
         return res;
     }
 
-    public List<Kanji> findByPattern(String pattern, int page, int pageSize) {
+    public List<Kanji> findByPatternWithoutLucene(String pattern, int page, int pageSize) {
         return entityManager.createQuery("select k from Kanji k join fetch k.meanings km join fetch km.meaning m where k.kanji like :pattern or lower(m.meaning) like :pattern or lower(k.description) like :pattern")
                 .setParameter("pattern", pattern)
                 .setMaxResults(pageSize)
@@ -98,6 +98,7 @@ public class JpaKanjiDao implements KanjiDao {
                 .getResultList();
     }
 
+    @Deprecated
     public List<Kanji> findByPatternForcingFullFetch(String pattern, int page, int pageSize) {
         return entityManager.createQuery(new StringBuilder().append(
                 "select k from Kanji k left join fetch k.tags t left join fetch t.tag")
@@ -110,6 +111,18 @@ public class JpaKanjiDao implements KanjiDao {
                 .getResultList();
     }
 
+    public List<Kanji> findBySinceDate(Date since, int page, int pageSize) {
+        return entityManager.createQuery(new StringBuilder().append(
+                "select k from Kanji k left join k.tags t")
+                .append(" where k.updateDate >= :since")
+                .append(" or t.updateDate >= :since").toString())
+                .setParameter("since", since, TemporalType.TIMESTAMP)
+                .setMaxResults(pageSize)
+                .setFirstResult(page * pageSize)
+                .getResultList();
+    }
+
+    @Deprecated
     public List<Kanji> findBySinceDateForcingFullFetch(Date since, int page, int pageSize) {
         return entityManager.createQuery(new StringBuilder().append(
                 "select k from Kanji k left join fetch k.tags t left join fetch t.tag")
@@ -122,6 +135,17 @@ public class JpaKanjiDao implements KanjiDao {
                 .getResultList();
     }
 
+    public List<Kanji> findByTag(String tag, int page, int pageSize) {
+        return entityManager.createQuery(new StringBuilder().append(
+                "select k from Kanji k left join k.tags t")
+                .append(" where t.tag.code = :tag").toString())
+                .setParameter("tag", tag)
+                .setMaxResults(pageSize)
+                .setFirstResult(page * pageSize)
+                .getResultList();
+    }
+
+    @Deprecated
     public List<Kanji> findByTagForcingFullFetch(String tag, int page, int pageSize) {
         return entityManager.createQuery(new StringBuilder().append(
                 "select k from Kanji k left join fetch k.tags t left join fetch t.tag")
@@ -133,6 +157,19 @@ public class JpaKanjiDao implements KanjiDao {
                 .getResultList();
     }
 
+    public List<Kanji> findByRef(String reference, String value, int page, int pageSize) {
+        return entityManager.createQuery(new StringBuilder().append(
+                "select k from Kanji k join k.references r")
+                .append(" where r.reference.value = :value")
+                .append(" and r.reference.referenceType.code = :reference").toString())
+                .setParameter("reference", reference)
+                .setParameter("value", value)
+                .setMaxResults(pageSize)
+                .setFirstResult(page * pageSize)
+                .getResultList();
+    }
+
+    @Deprecated
     public List<Kanji> findByRefForcingFullFetch(String reference, String value, int page, int pageSize) {
         return entityManager.createQuery(new StringBuilder().append(
                 "select k from Kanji k join k.references r left join fetch k.tags t left join fetch t.tag")
