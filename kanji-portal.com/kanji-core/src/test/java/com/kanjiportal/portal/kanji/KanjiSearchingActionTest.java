@@ -54,7 +54,7 @@ public class KanjiSearchingActionTest {
 
     @Test
     public void testInitialFind() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("*", 0, 10)).andReturn(buildKanjiList(1));
+        EasyMock.expect(kanjiDaoMock.findByPattern("*", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.find();
@@ -66,7 +66,7 @@ public class KanjiSearchingActionTest {
 
     @Test
     public void testFindUn() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("un*", 0, 10)).andReturn(buildKanjiList(1));
+        EasyMock.expect(kanjiDaoMock.findByPattern("un*", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.setSearchString("un");
@@ -79,7 +79,7 @@ public class KanjiSearchingActionTest {
 
     @Test
     public void testNextPage() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPatternWithLucene("*", 1, 2)).andReturn(buildKanjiList(3, 4));
+        EasyMock.expect(kanjiDaoMock.findByPattern("*", 1, 2)).andReturn(buildKanjiList(3, 4));
         EasyMock.replay(kanjiDaoMock);
 
         action.setPageSize(2);

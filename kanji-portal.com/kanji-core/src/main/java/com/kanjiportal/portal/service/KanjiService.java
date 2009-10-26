@@ -18,6 +18,7 @@
  */
 package com.kanjiportal.portal.service;
 
+import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.service.KanjiList;
 
 /**
@@ -28,9 +29,9 @@ import com.kanjiportal.portal.model.service.KanjiList;
  */
 public interface KanjiService {
 
-    KanjiList getKanjisByPattern(String pattern);
+    KanjiList getKanjisByPattern(String pattern) throws SearchTooGenericException;
 
-    KanjiList getKanjisByPatternWithPaging(String pattern, int pageNumber, int nbItemPerPage);
+    KanjiList getKanjisByPatternWithPaging(String pattern, int pageNumber, int nbItemPerPage) throws SearchTooGenericException;
 
     KanjiList getKanjisBySinceWithPaging(String since, int page, int itemPerPage) throws InvalidArgumentsException;
 

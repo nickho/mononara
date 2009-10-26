@@ -18,6 +18,7 @@
  */
 package com.kanjiportal.portal.model;
 
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.search.annotations.*;
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
@@ -78,6 +79,7 @@ public class Kanji extends Audit {
     @OneToMany(mappedBy = "kanji")
     @XmlElementRef
     @XmlElementWrapper(name = "tags")
+    @BatchSize(size = 50)
     public Set<KanjiTag> getTags() {
         return tags;
     }
@@ -100,6 +102,7 @@ public class Kanji extends Audit {
     }
 
     @OneToMany(mappedBy = "kanji")
+    @BatchSize(size = 50)
     public Set<KanjiReference> getReferences() {
         return references;
     }
@@ -148,6 +151,7 @@ public class Kanji extends Audit {
     @XmlElementRef
     @XmlElementWrapper(name = "meanings")
     @IndexedEmbedded
+    @BatchSize(size = 50)
     public Set<KanjiMeaning> getMeanings() {
         return meanings;
     }
