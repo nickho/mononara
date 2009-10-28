@@ -57,6 +57,10 @@ public class JpaKanjiDao implements KanjiDao {
     @Logger
     private Log log;
 
+    public Kanji findById(long id) {
+        return entityManager.find(Kanji.class, id);
+    }
+
     public List<Kanji> findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
         Map<String, Float> boostPerField = new HashMap<String, Float>();
@@ -84,7 +88,7 @@ public class JpaKanjiDao implements KanjiDao {
                     .setFirstResult(page * pageSize)
                     .getResultList();
         } catch (BooleanQuery.TooManyClauses e) {
-            throw new SearchTooGenericException();
+            throw new SearchTooGenericException(e);
         }
 
         return res;

@@ -16,43 +16,37 @@
  *
  * Copyright (c) 2008-2009 Nicolas Radde <nicolas@radde.org>
  */
-package com.kanjiportal.portal.model.service;
+package com.kanjiportal.portal.dictionary;
 
-import com.kanjiportal.portal.model.Dictionnary;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
+import com.kanjiportal.portal.dao.DictionaryDao;
+import com.kanjiportal.portal.model.Dictionary;
+import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.*;
+import org.jboss.seam.annotations.web.RequestParameter;
 
 /**
- * Dictionnary
+ * DictionnaryServiceAction
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement Dictionnary
+ * @todo Implement DictionnaryServiceAction
  */
+@Name("dictionaryView")
+@Scope(ScopeType.SESSION)
+@Synchronized(timeout = 10000)
+public class DictionaryViewingAction implements DictionaryViewing {
 
-@XmlRootElement(name = "dictionnary")
-@XmlAccessorType(XmlAccessType.NONE)
-public class DictionnaryList {
+    @RequestParameter
+    private long entryId;
 
-    private List<Dictionnary> dictionnary;
+    @In
+    private DictionaryDao dictionaryDao;
 
-    public DictionnaryList() {
+    @Out
+    private Dictionary entry;
+
+    public void view() {
+        entry = dictionaryDao.findById(entryId);
     }
 
-    public DictionnaryList(final List<Dictionnary> dictionnary) {
-        this.dictionnary = dictionnary;
-    }
-
-    @XmlElement(name = "entry")
-    public List<Dictionnary> getDictionnary() {
-        return dictionnary;
-    }
-
-    public void setDictionnary(List<Dictionnary> dictionnary) {
-        this.dictionnary = dictionnary;
-    }
 }

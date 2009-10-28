@@ -16,21 +16,31 @@
  *
  * Copyright (c) 2008-2009 Nicolas Radde <nicolas@radde.org>
  */
-package com.kanjiportal.portal.service;
-
-import com.kanjiportal.portal.model.service.DictionnaryList;
-
+package com.kanjiportal.portal.dictionary;
 
 /**
- * DictionnaryService
+ * DictionnarySearching
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement DictionnaryService
+ * @todo Implement DictionnarySearching
  */
-public interface DictionnaryService {
+public interface DictionarySearching {
 
-    public DictionnaryList getDictionnaryEntriesByPattern(String pattern);
+    public int getPageSize();
 
-    public DictionnaryList getDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize);
+    public void setPageSize(int pageSize);
+
+    public String getSearchString();
+
+    public void setSearchString(String searchString);
+
+    public String getSearchPattern();
+
+    public void find();
+
+    public void nextPage();
+
+    public boolean isNextPageAvailable();
+
 }

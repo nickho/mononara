@@ -37,7 +37,7 @@ import java.util.List;
 @Name("authenticator")
 public class AuthenticatorAction implements Authenticator {
     @In
-    private EntityManager em;
+    private EntityManager entityManager;
 
     @Out(required = false, scope = SESSION)
     private User user;
@@ -47,7 +47,7 @@ public class AuthenticatorAction implements Authenticator {
 
     public boolean authenticate() {
         log.info("authenticate user #{identity.username}");
-        List results = em.createQuery("select u from User u where u.username=#{identity.username} and u.password=#{identity.password}")
+        List results = entityManager.createQuery("select u from User u where u.username=#{identity.username} and u.password=#{identity.password}")
                 .getResultList();
 
         if (results.size() == 0) {

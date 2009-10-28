@@ -16,24 +16,17 @@
  *
  * Copyright (c) 2008-2009 Nicolas Radde <nicolas@radde.org>
  */
-package com.kanjiportal.portal.admin;
-
+package com.kanjiportal.portal.dictionary;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Nickho
- * Date: Jul 15, 2009
- * Time: 6:56:20 PM
- * To change this template use File | Settings | File Templates.
+ * DictionnaryService
+ *
+ * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
+ * @version $Revision: 1.1 $
+ * @todo Implement DictionnaryService
  */
-public interface LuceneManagement {
+public interface DictionaryViewing {
 
-    void reIndexKanji();
-
-    void reIndexMeaning();
-
-    void reIndexKanjiMeaning();
-
-    void reIndexDictionary();
+    void view();
 
 }

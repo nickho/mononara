@@ -18,6 +18,11 @@
  */
 package com.kanjiportal.portal.model;
 
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
 import org.hibernate.validator.Length;
 
 import javax.persistence.*;
@@ -35,7 +40,8 @@ import java.util.List;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
 @Table(name = "tbdic")
-public class Dictionnary extends Audit {
+@Indexed
+public class Dictionary extends Audit {
 
     private long id;
     private String romaji;
@@ -47,10 +53,11 @@ public class Dictionnary extends Audit {
     private Language language;
     private String detail;
     private String note;
-    private List<DictionnaryTag> tags;
+    private List<DictionaryTag> tags;
 
     @Id
     @GeneratedValue
+    @DocumentId
     @Column(name = "id")
     public long getId() {
         return id;
@@ -60,15 +67,9 @@ public class Dictionnary extends Audit {
         this.id = id;
     }
 
-    @XmlAttribute
-    @XmlID
-    @Transient
-    public String getRef() {
-        return Long.toString(id);
-    }
-
     @Length(max = 255)
     @XmlElement
+    @Field(index = Index.TOKENIZED)
     @Column(name = "lbrom")
     public String getRomaji() {
         return romaji;
@@ -80,6 +81,7 @@ public class Dictionnary extends Audit {
 
     @Length(max = 255)
     @XmlElement
+    @Field(index = Index.TOKENIZED)
     @Column(name = "lbkan")
     public String getKanji() {
         return kanji;
@@ -91,6 +93,7 @@ public class Dictionnary extends Audit {
 
     @Length(max = 255)
     @XmlElement
+    @Field(index = Index.TOKENIZED)
     @Column(name = "lbkna")
     public String getKana() {
         return kana;
@@ -122,6 +125,7 @@ public class Dictionnary extends Audit {
 
     @Length(max = 500)
     @XmlElement
+    @Field(index = Index.TOKENIZED)
     @Column(name = "lbdsc")
     public String getDescription() {
         return description;
@@ -143,6 +147,7 @@ public class Dictionnary extends Audit {
 
     @Length(max = 500)
     @XmlElement
+    @Field(index = Index.TOKENIZED)
     @Column(name = "lbdet")
     public String getDetail() {
         return detail;
@@ -154,6 +159,7 @@ public class Dictionnary extends Audit {
 
     @Length(max = 500)
     @Column(name = "lbnot")
+    @Field(index = Index.TOKENIZED)
     public String getNote() {
         return note;
     }
@@ -163,13 +169,14 @@ public class Dictionnary extends Audit {
     }
 
     @OneToMany(mappedBy = "dictionnary")
-    @XmlElement
-    @XmlIDREF
-    public List<DictionnaryTag> getTags() {
+    @XmlElementRef
+    @XmlElementWrapper(name = "tags")
+    @BatchSize(size = 50)
+    public List<DictionaryTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<DictionnaryTag> tags) {
+    public void setTags(List<DictionaryTag> tags) {
         this.tags = tags;
     }
 

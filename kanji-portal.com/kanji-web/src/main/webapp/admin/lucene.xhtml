@@ -77,6 +77,20 @@
                     </a:status>
                 </p>
             </h:form>
+            <h:form id="indexDictionary">
+                <p>
+                    Reindex the dictionary
+                    <br/>
+                    <a:commandButton id="reIndexDictionary" value="Compute"
+                                     action="#{luceneManagement.reIndexDictionary}"
+                                     reRender="messages" status="sDictionary"/>
+                    <a:status id="sDictionary" forceId="true">
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
+                </p>
+            </h:form>
         </fieldset>
     </ui:define>
 
