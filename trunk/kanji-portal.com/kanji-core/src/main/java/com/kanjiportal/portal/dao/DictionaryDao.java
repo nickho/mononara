@@ -18,8 +18,9 @@
  */
 package com.kanjiportal.portal.dao;
 
-import com.kanjiportal.portal.model.Dictionnary;
+import com.kanjiportal.portal.model.Dictionary;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,12 @@ import java.util.List;
  * Time: 10:08:01 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface DictionnaryDao {
-    List<Dictionnary> findDictionnaryEntriesByPatternWithPaging(String pattern, int page, int pageSize);
+public interface DictionaryDao {
+    List<Dictionary> searchDictionaryByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException;
+
+    List<Dictionary> searchDictionnaryByTag(String tag, int page, int pageSize);
+
+    List<Dictionary> searchDictionnaryBySinceDate(Date since, int page, int pageSize);
+
+    Dictionary findById(long id);
 }

@@ -27,4 +27,9 @@ package com.kanjiportal.portal.dao;
  * To change this template use File | Settings | File Templates.
  */
 public class SearchTooGenericException extends Exception {
+
+    public SearchTooGenericException(Throwable t) {
+        super(t);
+    }
+
 }

@@ -33,9 +33,9 @@ import javax.xml.bind.annotation.*;
         name = "tbdictag",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"iddic", "idtag"})}
 )
-@XmlRootElement
+@XmlRootElement(name = "tag")
 @XmlAccessorType(XmlAccessType.NONE)
-public class DictionnaryTag extends Audit {
+public class DictionaryTag extends Audit {
 
     @Id
     @GeneratedValue
@@ -43,20 +43,33 @@ public class DictionnaryTag extends Audit {
 
     @ManyToOne
     @JoinColumn(name = "iddic")
-    private Dictionnary dictionnary;
+    private Dictionary dictionnary;
 
     @ManyToOne
     @JoinColumn(name = "idtag")
     private Tag tag;
 
 
-    public DictionnaryTag() {
+    public DictionaryTag() {
         //Empty for jpa
     }
 
-    public DictionnaryTag(Dictionnary dictionnary, Tag tag) {
+    public DictionaryTag(Dictionary dictionnary, Tag tag) {
         this.dictionnary = dictionnary;
         this.tag = tag;
+    }
+
+    @XmlID
+    @XmlAttribute
+    @Transient
+    public String getCode() {
+        return tag.getCode();
+    }
+
+    @XmlValue
+    @Transient
+    public String getTagName() {
+        return tag.getName();
     }
 
     public long getId() {
@@ -67,19 +80,11 @@ public class DictionnaryTag extends Audit {
         this.id = id;
     }
 
-
-    @XmlElement
-    @XmlID
-    @Transient
-    public String getRef() {
-        return Long.toString(id);
-    }
-
-    public Dictionnary getDictionnary() {
+    public Dictionary getDictionnary() {
         return dictionnary;
     }
 
-    public void setDictionnary(Dictionnary dictionnary) {
+    public void setDictionnary(Dictionary dictionnary) {
         this.dictionnary = dictionnary;
     }
 

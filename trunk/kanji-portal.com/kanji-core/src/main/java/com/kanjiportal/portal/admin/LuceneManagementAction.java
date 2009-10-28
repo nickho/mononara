@@ -18,6 +18,7 @@
  */
 package com.kanjiportal.portal.admin;
 
+import com.kanjiportal.portal.model.Dictionary;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
@@ -100,5 +101,22 @@ public class LuceneManagementAction implements LuceneManagement {
         long afterKanjiMeanings = System.currentTimeMillis();
 
         facesMessages.add("KanjiMeaning Indexing done in #0 ms", afterKanjiMeanings - beforeKanjiMeanings);
+    }
+
+
+    public void reIndexDictionary() {
+        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
+
+        long beforeDictionary = System.currentTimeMillis();
+        List<Dictionary> dictionary = ftem.createQuery("select d from Dictionary d").getResultList();
+        ftem.purgeAll(Dictionary.class);
+        log.debug("Indexing dictionnary ....");
+        for (Dictionary entry : dictionary) {
+            ftem.index(entry);
+        }
+        log.debug("Indexing dictionary done");
+        long afterDictionary = System.currentTimeMillis();
+
+        facesMessages.add("Dictionary Indexing done in #0 ms", afterDictionary - beforeDictionary);
     }
 }

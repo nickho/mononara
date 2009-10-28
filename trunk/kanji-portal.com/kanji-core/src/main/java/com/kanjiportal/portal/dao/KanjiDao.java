@@ -35,6 +35,8 @@ import java.util.List;
  */
 public interface KanjiDao {
 
+    Kanji findById(long id);
+
     Kanji findByKanji(String kanji);
 
     List<Kanji> findByPatternWithoutLucene(String pattern, int page, int pageSize);
@@ -72,6 +74,4 @@ public interface KanjiDao {
     void addSpellingToKanji(Kanji kanji, Spelling spelling);
 
     void removeSpellingFromKanji(Kanji kanji, Spelling spelling);
-
-
 }

@@ -28,32 +28,28 @@
                 xmlns:s="http://jboss.com/products/seam/taglib"
                 template="#{theme.template}">
 
-    <!-- content #{facesContext.externalContext.requestContextPath}#{theme.template} -->
+    <!-- content -->
     <ui:define name="content">
 
-        <div class="section">
-            <h1>2009-10-28</h1>
 
-            <p>J'ai mis à jours la recherche dans le dictionnaire pour utiliser les indexes, ainsi que les
-                services pour le dictionnaire. Cela reste une petite mise à jours.</p>
+        <a:outputPanel id="distionarySection">
 
-            <h1>2009-07-14</h1>
+            <div class="section">
+                <h:form id="navigation">
+                    <h1>Mot de vocabulaire</h1>
+                </h:form>
+            </div>
 
-            <p>Et voila, une nouvelle version est en ligne. La base de donnée est renforcé et le plus gros du
-                travail va maintenant ce tourner vers les prononciations et le vocabulaire. Il reste aussi à tagger
-                les kanjis du jlpt 3,2,et 1.</p>
+            <div class="section">
+                #{entry.kanji} 「#{entry.kana.replace(".", "")}」 （#{entry.pos}） : #{entry.description}. #{entry.detail}
+                <a:outputPanel rendered="#{entry.note} != null">
+                    <label>Notes:</label>
+                    #{entry.note}
+                </a:outputPanel>
 
-            <p>Les améliorations sont : Import des kanjis et des sens (~6000) avec les tags et reférénces.
-                J'en est profité pour faire un peu de néttoyage dans l'interface. Les services rest sont finis aussi
-                avec 3 points d'entrées pour fonctionner avec Mononara</p>
 
-            <h1>2009-01-10</h1>
-            J'ai un peu mis à jour le design et le moteur du site. J'en est profité pour refaire le design^^.
-            Il ne reste plus qu'à continuer avec les Kanji JLPT niv3.
-            <h1>2008-05-13</h1>
-            Le site reviens enfin sous une nouvelle forme. Nouveau serveur et nouvelle interface graphique.
-            Plein de nouveau goodies :D.
-        </div>
+            </div>
+        </a:outputPanel>
 
     </ui:define>
 
