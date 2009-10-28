@@ -75,7 +75,7 @@ public class DictionarySearchingAction implements DictionarySearching {
             entries = dictionaryDao.searchDictionaryByPattern(getSearchPattern(), page, pageSize);
         } catch (SearchTooGenericException e) {
             logger.info("Too many clauses for search :", getSearchPattern());
-            facesMessages.add("Recherhe trop générique");
+            facesMessages.add("Recherhe trop gÃ©nÃ©rique");
         }
     }
 
