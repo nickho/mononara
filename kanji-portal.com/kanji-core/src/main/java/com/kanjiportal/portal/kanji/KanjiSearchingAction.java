@@ -80,7 +80,7 @@ public class KanjiSearchingAction implements KanjiSearching {
             kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
         } catch (SearchTooGenericException e) {
             logger.info("Too many clauses for search :", getSearchPattern());
-            facesMessages.add("Recherhe trop générique");
+            facesMessages.add("Recherhe trop gÃ©nÃ©rique");
         }
 
         for (Kanji kanji : kanjis) {
