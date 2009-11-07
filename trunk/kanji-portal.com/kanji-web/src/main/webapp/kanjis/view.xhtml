@@ -33,10 +33,9 @@
 
         <fieldset id="kanji">
             <legend>Kanji(
-                <h:outputLink value="edit.seam">
-                    <f:param name="kanjiId" value="#{kanji.id}"/>
-                    Edit
-                </h:outputLink>)
+                <h:outputLink value="#{kanji.id}/edit">
+                    edit
+                </h:outputLink>&nbsp;)
             </legend>
 
             <div id="charbox">

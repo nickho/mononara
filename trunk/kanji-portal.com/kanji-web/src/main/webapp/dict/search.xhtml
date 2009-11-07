@@ -66,8 +66,7 @@
                     <h:dataTable id="entries" value="#{entries}" var="dic" rendered="#{entries.rowCount>0}">
                         <h:column>
                             <f:facet name="header">Kanji spelling</f:facet>
-                            <h:outputLink value="view.seam">
-                                <f:param name="entryId" value="#{dic.id}"/>
+                            <h:outputLink value="#{dic.id}">
                                 #{dic.kanji}
                             </h:outputLink>
                         </h:column>
