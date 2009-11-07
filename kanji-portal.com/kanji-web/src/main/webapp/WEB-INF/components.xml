@@ -41,8 +41,7 @@
                  http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd">
 
 
-    <!--core:init jndi-pattern="kanjiPortalEAR/#{ejbName}/local" debug="true"/-->
-    <!--core:init jndi-pattern="@jndiPattern@" debug="true"/-->
+    <web:rewrite-filter view-mapping="*.seam"/>
 
     <core:manager conversation-timeout="120000"
                   concurrent-request-timeout="500"
@@ -68,21 +67,7 @@
         </theme:available-themes>
     </theme:theme-selector>
 
-    <web:rewrite-filter view-mapping="*.seam"/>
 
     <web:character-encoding-filter encoding="UTF-8"/>
-
-    <!--resteasy:application-config resource-path-prefix="/services/rest"/-->
-
-    <!--resteasy:application-config
-         scan-providers="false"
-         scan-resources="false"
-         use-builtin-providers="true">
-
-         <resteasy:resource-class-names>
-             <value>com.kanjiportal.portal.service.KanjiServiceImpl</value>
-         </resteasy:resource-class-names>
-
-     </resteasy:application-config-->
 
 </components>

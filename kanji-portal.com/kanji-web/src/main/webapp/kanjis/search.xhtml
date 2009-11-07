@@ -71,8 +71,7 @@
                     <h:dataTable id="kanjis" value="#{kanjis}" var="kan" rendered="#{kanjis.rowCount>0}">
                         <h:column>
                             <f:facet name="header">Kanji</f:facet>
-                            <h:outputLink value="view.seam">
-                                <f:param name="kanjiId" value="#{kan.id}"/>
+                            <h:outputLink value="#{kan.id}">
                                 #{kan.kanji}
                             </h:outputLink>
                         </h:column>

@@ -46,8 +46,8 @@
                     </s:label>
                     <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
                     |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Déconnexion"
-                                   rendered="#{identity.loggedIn}"/>
-                    <s:link id="loginHeader" view="/login.xhtml" value="Connexion" rendered="#{!identity.loggedIn}"/>
+                                   rendered="#{identity.loggedIn}" propagation="none"/>
+                    <s:link id="loginHeader" propagation="none" view="/login.xhtml" value="Connexion" rendered="#{!identity.loggedIn}"/>
                 </h:form>
             </div>
             <!-- end search -->

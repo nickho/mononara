@@ -27,37 +27,40 @@
 
     <!-- Home -->
     <page view-id="/home.xhtml">
-        <!--rewrite pattern="/home"/-->
+        <rewrite pattern="/home"/>
     </page>
 
     <!-- Kanjis -->
     <page view-id="/kanjis/search.xhtml">
         <description>Search Kanjis</description>
+        <rewrite pattern="/kanji/search"/>
     </page>
 
     <page view-id="/kanjis/view.xhtml">
         <description>View Kanji: #{kanji.kanji}</description>
-        <!--rewrite pattern="/kanji/{kanjiId}"/-->
+        <rewrite pattern="/kanji/{kanjiId}"/>
         <action execute="#{kanjiView.view()}"/>
     </page>
 
-    <page view-id="/kanjis/edit.xhtml" login-required="true"> <!--login-required="true"-->
+    <page view-id="/kanjis/edit.xhtml" login-required="true">
         <description>Edit Kanji</description>
+        <rewrite pattern="/kanji/{kanjiId}/edit"/>
         <action execute="#{kanjiEdit.edit()}"/>
     </page>
-    <!-- end of Kanjis -->
+    <!-- End of Kanjis -->
 
     <!-- Dictionnary -->
-    <page view-id="/dictionary/search.xhtml">
+    <page view-id="/dict/search.xhtml">
         <description>Search Dictionnary</description>
+        <rewrite pattern="/dictionary/search"/>
     </page>
 
-    <page view-id="/dictionary/view.xhtml">
+    <page view-id="/dict/view.xhtml">
         <description>View Dictionnary</description>
+        <rewrite pattern="/dictionary/{entryId}"/>
         <action execute="#{dictionaryView.view()}"/>
-        <!--rewrite pattern="/dictionary/{kanjiId}"/-->
     </page>
-
+    
     <!--
     <page view-id="/dictionary/edit.xhtml" login-required="true">
         <description>Edit Dictionnary</description>
@@ -73,14 +76,24 @@
                 <redirect view-id="/home.xhtml"/>
             </rule>
         </navigation>
+        <rewrite pattern="/login"/>
     </page>
     <!-- end of login pages -->
 
     <!-- Admin pages -->
     <page view-id="/admin/lucene.xhtml">
         <description>Lucene admin page</description>
+        <rewrite pattern="/admin/lucene"/>
     </page>
-    <!-- end of login pages -->
+    <page view-id="/error.xhtml">
+        <description>Generic error page</description>
+        <rewrite pattern="/error"/>
+    </page>
+    <page view-id="/toobusy.xhtml">
+        <description>Error too busy</description>
+        <rewrite pattern="/error/toobusy"/>
+    </page>
+    <!-- end of admin pages -->
 
     <exception class="org.jboss.seam.security.NotLoggedInException">
         <redirect view-id="/login.xhtml">
@@ -98,10 +111,10 @@
             <message>Sorry, I'm too busy to do that right now.</message>
         </redirect>
     </exception>
-    <exception class="java.lang.Exception">
+    <!--exception class="java.lang.Exception">
         <redirect view-id="/error.xhtml">
             <message>#{org.jboss.seam.handledException.message}</message>
         </redirect>
-    </exception>
+    </exception-->
 
 </pages>
