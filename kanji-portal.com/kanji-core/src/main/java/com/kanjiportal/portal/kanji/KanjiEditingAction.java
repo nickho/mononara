@@ -111,7 +111,6 @@ public class KanjiEditingAction implements KanjiEditing {
 
     private Map<String, Long> referencesTypesAvalaibles;
 
-
     public void edit() {
         log.info("Begin editing Kanji : #0", kanjiId);
         if (kanjiId != null) {
