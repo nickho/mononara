@@ -71,9 +71,10 @@
                     <h:dataTable id="kanjis" value="#{kanjis}" var="kan" rendered="#{kanjis.rowCount>0}">
                         <h:column>
                             <f:facet name="header">Kanji</f:facet>
-                            <h:outputLink value="#{kan.id}">
-                                #{kan.kanji}
-                            </h:outputLink>
+                            <s:link view="/kanji/view.seam" propagation="none" value="#{kan.kanji}">
+                                <f:param name="dataModelSelection"/>
+                                <f:param name="kanjiId" value="#{kan.id}"/>
+                            </s:link>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Sens</f:facet>
