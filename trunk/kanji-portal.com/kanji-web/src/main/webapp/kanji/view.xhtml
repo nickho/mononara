@@ -33,9 +33,9 @@
 
         <fieldset id="kanji">
             <legend>Kanji(
-                <h:outputLink value="#{kanji.id}/edit">
-                    edit
-                </h:outputLink>&nbsp;)
+                <s:link view="/kanji/edit.seam" propagation="none" value="edit">
+                    <f:param name="kanjiId" value="#{kanji.id}"/>
+                </s:link>)
             </legend>
 
             <div id="charbox">

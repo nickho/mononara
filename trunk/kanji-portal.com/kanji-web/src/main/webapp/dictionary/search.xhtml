@@ -66,9 +66,10 @@
                     <h:dataTable id="entries" value="#{entries}" var="dic" rendered="#{entries.rowCount>0}">
                         <h:column>
                             <f:facet name="header">Kanji spelling</f:facet>
-                            <h:outputLink value="#{dic.id}">
-                                #{dic.kanji}
-                            </h:outputLink>
+                            <s:link view="/dictionary/view.seam" propagation="none" value="#{dic.kanji}">
+                                <f:param name="dataModelSelection"/>
+                                <f:param name="entryId" value="#{dic.id}"/>
+                            </s:link>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Kana spelling</f:facet>
