@@ -25,24 +25,38 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:a="http://richfaces.org/a4j"
-                xmlns:s="http://jboss.com/products/seam/taglib"
-                template="#{theme.template}">
+                xmlns:s="http://jboss.com/products/seam/taglib">
 
-    <!-- content -->
-    <ui:define name="content">
-        <a:outputPanel id="distionarySection">
-            <fieldset>
-                <legend>Mot de vocabulaire</legend>
-                <div class="section">
-                    #{entry.kanji} 「#{entry.kana.replace(".", "")}」 （#{entry.pos}） : #{entry.description}. #{entry.detail}
-                    <a:outputPanel rendered="#{entry.note} != null">
-                        <label>Notes:</label>
-                        #{entry.note}
-                    </a:outputPanel>
+    <div class="section">
+        <h:form id="navigation">
+            <h1>Login</h1>
+        </h:form>
+    </div>
+
+    <h:form id="login">
+        <a:outputPanel id="loginPanel">
+            <div class="section">
+                <label>Login Name :</label>
+                <h:inputText id="username" value="#{identity.username}"/>
+
+                <div class="errors"><h:message for="username"/></div>
+
+                <label>Password :</label>
+                <h:inputSecret id="password" value="#{identity.password}"/>
+
+
+                <div class="errors"><h:messages globalOnly="true"/></div>
+                <div class="entry">
+                    <a:commandButton id="login" action="#{identity.login}" value="Account Login"
+                                     reRender="loginPanel" status="loginStatus"/>
+                    <a:status id="loginStatus" forceId="true">
+                        <f:facet name="start">
+                            <h:graphicImage value="#{theme.spinner}"/>
+                        </f:facet>
+                    </a:status>
                 </div>
-            </fieldset>
+            </div>
         </a:outputPanel>
 
-    </ui:define>
-
+    </h:form>
 </ui:composition>

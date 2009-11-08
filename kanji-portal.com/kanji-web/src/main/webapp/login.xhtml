@@ -30,40 +30,34 @@
 
     <!-- content -->
     <ui:define name="content">
+        <fieldset id="LoginFieldSet">
+            <legend>Connexion</legend>
+            <h:form id="login">
+                <a:outputPanel id="loginPanel">
+                    <div class="section">
+                        <label>Identifiant :</label>
+                        <h:inputText id="username" value="#{identity.username}"/>
+
+                        <div class="errors"><h:message for="username"/></div>
+
+                        <label>Mot de passe :</label>
+                        <h:inputSecret id="password" value="#{identity.password}"/>
 
 
-        <div class="section">
-            <h:form id="navigation">
-                <h1>Login</h1>
-            </h:form>
-        </div>
-
-        <h:form id="login">
-            <a:outputPanel id="loginPanel">
-                <div class="section">
-                    <label>Login Name :</label>
-                    <h:inputText id="username" value="#{identity.username}"/>
-
-                    <div class="errors"><h:message for="username"/></div>
-
-                    <label>Password :</label>
-                    <h:inputSecret id="password" value="#{identity.password}"/>
-
-
-                    <div class="errors"><h:messages globalOnly="true"/></div>
-                    <div class="entry">
-                        <a:commandButton id="login" action="#{identity.login}" value="Account Login"
-                                         reRender="loginPanel"/>
-                        <a:status>
-                            <f:facet name="start">
-                                <h:graphicImage value="#{theme.spinner}"/>
-                            </f:facet>
-                        </a:status>
+                        <div class="errors"><h:messages globalOnly="true"/></div>
+                        <div class="entry">
+                            <a:commandButton id="login" action="#{identity.login}" value="Account Login"
+                                             reRender="loginPanel"/>
+                            <a:status>
+                                <f:facet name="start">
+                                    <h:graphicImage value="#{theme.spinner}"/>
+                                </f:facet>
+                            </a:status>
+                        </div>
                     </div>
-                </div>
-            </a:outputPanel>
-
-        </h:form>
+                </a:outputPanel>
+            </h:form>
+        </fieldset>
     </ui:define>
 
 </ui:composition>

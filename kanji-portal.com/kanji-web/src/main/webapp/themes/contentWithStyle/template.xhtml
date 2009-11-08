@@ -6,7 +6,8 @@
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:a="http://richfaces.org/a4j"
-        xmlns:s="http://jboss.com/products/seam/taglib">
+        xmlns:s="http://jboss.com/products/seam/taglib"
+        xmlns:r="http://richfaces.org/rich">
 
     <html>
     <head>
@@ -15,6 +16,8 @@
         <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTools}" rel="stylesheet"
               type="text/css"/>
         <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssTypo}" rel="stylesheet"
+              type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssModal}" rel="stylesheet"
               type="text/css"/>
         <link href="#{facesContext.externalContext.requestContextPath}#{theme.cssForms}" rel="stylesheet"
               type="text/css"/>
@@ -47,7 +50,8 @@
                     <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
                     |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Déconnexion"
                                    rendered="#{identity.loggedIn}" propagation="none"/>
-                    <s:link id="loginHeader" propagation="none" view="/login.xhtml" value="Connexion" rendered="#{!identity.loggedIn}"/>
+                    <s:link id="loginHeader" propagation="none" view="/login.xhtml" value="Connexion"
+                            rendered="#{!identity.loggedIn}"/>
                 </h:form>
             </div>
             <!-- end search -->
