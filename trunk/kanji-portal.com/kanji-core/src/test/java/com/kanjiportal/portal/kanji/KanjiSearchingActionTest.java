@@ -60,7 +60,6 @@ public class KanjiSearchingActionTest {
         action.find();
 
         EasyMock.verify(kanjiDaoMock);
-        Assert.assertNull("Initial find none :", action.getKanjis());
         Assert.assertEquals("Initial find size :", 1, action.getKanjis().size());
         Assert.assertEquals("Initial find :", 1, action.getKanjis().get(0).getId());
     }

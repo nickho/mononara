@@ -34,6 +34,7 @@
     <page view-id="/kanji/search.xhtml">
         <description>Search Kanjis</description>
         <rewrite pattern="/search/kanji"/>
+        <rewrite pattern="/search/kanji/{searchString}"/>
     </page>
 
     <page view-id="/kanji/view.xhtml">
@@ -45,6 +46,7 @@
     <page view-id="/kanji/edit.xhtml" login-required="true">
         <description>Edit Kanji</description>
         <rewrite pattern="/kanji/{kanjiId}/edit"/>
+        <action execute="#{kanjiEdit.edit()}"/>
     </page>
     <!-- End of Kanjis -->
 
