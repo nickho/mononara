@@ -21,8 +21,10 @@ package com.kanjiportal.portal.dao.jpa;
 import com.kanjiportal.portal.dao.ReferenceDao;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.Reference;
+import org.jboss.seam.annotations.AutoCreate;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Logger;
+import org.jboss.seam.annotations.Name;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
@@ -35,6 +37,8 @@ import java.util.List;
  * Time: 9:25:58 PM
  * To change this template use File | Settings | File Templates.
  */
+@AutoCreate
+@Name("referenceDao")
 public class JpaReferenceDao implements ReferenceDao {
 
     @In
