@@ -463,7 +463,7 @@
         <repository>
             <id>maven.radde.org</id>
             <name>Radde.org repo</name>
-            <url>scpexe://maven.radde.org/mnt/data/maven-repo</url>
+            <url>scpexe://maven.radde.org/data/m2repo</url>
         </repository>
     </distributionManagement>
     <profiles>
