@@ -33,6 +33,8 @@ import java.util.List;
 public interface DictionaryDao {
     List<Dictionary> searchDictionaryByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException;
 
+    List<Dictionary> searchDictionaryByPattern(String pattern, String language, int page, int pageSize) throws SearchTooGenericException;
+
     List<Dictionary> searchDictionnaryByTag(String tag, int page, int pageSize);
 
     List<Dictionary> searchDictionnaryBySinceDate(Date since, int page, int pageSize);

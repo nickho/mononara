@@ -32,8 +32,8 @@
     <ui:define name="content">
 
         <fieldset id="kanji">
-            <legend>Kanji(
-                <s:link view="/kanji/edit.seam" propagation="none" value="edit">
+            <legend>#{messages['kanji.view.text.kanji']}(
+                <s:link view="/kanji/edit.seam" propagation="none" value="#{messages['kanji.view.slink.edit']}">
                     <f:param name="kanjiId" value="#{kanji.id}"/>
                 </s:link>)
             </legend>
@@ -43,7 +43,8 @@
                     #{kanji.kanji}
                 </div>
                 <div id="meanings">
-                    <h:outputText value="No Meanings Found" rendered="#{meanings != null and meanings.rowCount==0}"/>
+                    <h:outputText value="#{messages['kanji.view.ot.nomeanings']}"
+                                  rendered="#{meanings != null and meanings.rowCount==0}"/>
                     <ui:repeat value="#{meanings}" var="link">
                         <h:outputText value="," rendered="#{meanings.rowIndex != 0}"/>
                         #{link.meaning.meaning}
@@ -52,7 +53,8 @@
             </div>
 
             <div id="references">
-                <h:outputText value="No References Found" rendered="#{references != null and references.rowCount==0}"/>
+                <h:outputText value="#{messages['kanji.view.ot.noreferences']}"
+                              rendered="#{references != null and references.rowCount==0}"/>
                 <ui:repeat value="#{references}" var="link">
                     #{link.reference.referenceType.name} : #{link.reference.value}
                     <br/>
@@ -60,7 +62,8 @@
             </div>
 
             <div id="tags">
-                <h:outputText value="No Tags Found" rendered="#{tags != null and tags.rowCount==0}"/>
+                <h:outputText value="#{messages['kanji.view.ot.notags']}"
+                              rendered="#{tags != null and tags.rowCount==0}"/>
                 <ui:repeat value="#{tags}" var="link">
                     #{link.tag.name}
                     <br/>
@@ -69,13 +72,13 @@
         </fieldset>
 
         <fieldset id="description">
-            <legend>Description</legend>
+            <legend>#{messages['kanji.view.text.description']}</legend>
             #{kanji.description}
         </fieldset>
 
         <fieldset id="prononciations">
-            <legend>Prononciations</legend>
-            <h:outputText value="No Spellings Found"
+            <legend>#{messages['kanji.view.text.spellings']}</legend>
+            <h:outputText value="#{messages['kanji.view.ot.notags']}"
                           rendered="#{otherSpellings != null and otherSpellings.rowCount==0}"/>
             <ui:repeat value="#{otherSpellings}" var="ospel">
                 #{ospel.type.name} : #{ospel.kana}

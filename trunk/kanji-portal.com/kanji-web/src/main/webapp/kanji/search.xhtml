@@ -34,14 +34,15 @@
         <div class="section">
 
             <fieldset>
-                <legend>Recherche de kanjis</legend>
+                <legend>#{messages['kanji.search.text.search']}</legend>
 
                 <h:form id="searchCriteria">
                     <h:inputText id="searchString" value="#{kanjiSearch.searchString}" style="width: 165px;">
                         <a:support event="onkeyup" actionListener="#{kanjiSearch.find}"
                                    reRender="searchResults, messages"/>
                     </h:inputText>
-                    <a:commandButton id="findKanjis" value="Recherche" action="#{kanjiSearch.find}"
+                    <a:commandButton id="findKanjis" value="#{messages['kanji.search.acb.findKanjis']}"
+                                     action="#{kanjiSearch.find}"
                                      reRender="searchResults, messages"/>
                     <a:status>
                         <f:facet name="start">
@@ -53,7 +54,7 @@
                     </a:outputPanel>
                     <br/>
                     <s:div id="advancedSearch" rendered="false">
-                        <h:outputLabel for="pageSize">Maximum results:</h:outputLabel>
+                        <h:outputLabel for="pageSize">#{messages['kanji.search.hol.pageSize']}</h:outputLabel>
                         <h:selectOneMenu value="#{kanjiSearch.pageSize}" id="pageSize">
                             <f:selectItem itemLabel="5" itemValue="5"/>
                             <f:selectItem itemLabel="10" itemValue="10"/>
@@ -67,22 +68,23 @@
         <h:form id="kanjis">
             <a:outputPanel id="searchResults">
                 <div class="section">
-                    <h:outputText value="Pas de kanjis" rendered="#{kanjis != null and kanjis.rowCount==0}"/>
+                    <h:outputText value="#{messages['kanji.search.hot.nokanjis']}"
+                                  rendered="#{kanjis != null and kanjis.rowCount==0}"/>
                     <h:dataTable id="kanjis" value="#{kanjis}" var="kan" rendered="#{kanjis.rowCount>0}">
                         <h:column>
-                            <f:facet name="header">Kanji</f:facet>
+                            <f:facet name="header">#{messages['kanji.search.hdt.kanjis.header.kanji']}</f:facet>
                             <s:link view="/kanji/view.seam" propagation="none" value="#{kan.kanji}">
                                 <f:param name="dataModelSelection"/>
                                 <f:param name="kanjiId" value="#{kan.id}"/>
                             </s:link>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Sens</f:facet>
+                            <f:facet name="header">#{messages['kanji.search.hdt.kanjis.header.meaning']}</f:facet>
                             #{searchMeanings.get(kan.id)}
                         </h:column>
                     </h:dataTable>
                     <br/>
-                    <a:commandLink value="Suivants" action="#{kanjiSearch.nextPage}"
+                    <a:commandLink value="#{messages['kanji.search.acl.nextPage']}" action="#{kanjiSearch.nextPage}"
                                    rendered="#{kanjiSearch.nextPageAvailable}" reRender="searchResults"/>
                 </div>
             </a:outputPanel>

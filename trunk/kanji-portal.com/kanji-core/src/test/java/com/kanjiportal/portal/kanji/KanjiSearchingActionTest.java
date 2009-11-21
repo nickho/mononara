@@ -23,6 +23,7 @@ import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
+import com.kanjiportal.portal.model.service.KanjiList;
 import org.easymock.EasyMock;
 import org.jboss.seam.log.Log;
 import org.junit.Assert;
@@ -50,11 +51,12 @@ public class KanjiSearchingActionTest {
         action = new KanjiSearchingAction();
         action.setKanjiDao(kanjiDaoMock);
         action.setLogger(EasyMock.createMock(Log.class));
+        action.setLanguage("fr");
     }
 
     @Test
     public void testInitialFind() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPattern("*", 0, 10)).andReturn(buildKanjiList(1));
+        EasyMock.expect(kanjiDaoMock.findByPattern("*", "fr", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.find();
@@ -66,7 +68,7 @@ public class KanjiSearchingActionTest {
 
     @Test
     public void testFindUn() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPattern("un*", 0, 10)).andReturn(buildKanjiList(1));
+        EasyMock.expect(kanjiDaoMock.findByPattern("un*", "fr", 0, 10)).andReturn(buildKanjiList(1));
         EasyMock.replay(kanjiDaoMock);
 
         action.setSearchString("un");
@@ -79,7 +81,7 @@ public class KanjiSearchingActionTest {
 
     @Test
     public void testNextPage() throws SearchTooGenericException {
-        EasyMock.expect(kanjiDaoMock.findByPattern("*", 1, 2)).andReturn(buildKanjiList(3, 4));
+        EasyMock.expect(kanjiDaoMock.findByPattern("*", "fr", 1, 2)).andReturn(buildKanjiList(3, 4));
         EasyMock.replay(kanjiDaoMock);
 
         action.setPageSize(2);
@@ -91,7 +93,7 @@ public class KanjiSearchingActionTest {
         Assert.assertEquals("SecondPage :", 4, action.getKanjis().get(1).getId());
     }
 
-    private List<Kanji> buildKanjiList(int... ids) {
+    private KanjiList buildKanjiList(int... ids) {
         List<Kanji> kanjis = new ArrayList<Kanji>();
         for (int i = 0; i < ids.length; i++) {
             KanjiMeaning km = new KanjiMeaning();
@@ -102,7 +104,7 @@ public class KanjiSearchingActionTest {
             kanji.addMeaning(km);
             kanjis.add(kanji);
         }
-        return kanjis;
+        return new KanjiList(kanjis, -1);
     }
 
 }

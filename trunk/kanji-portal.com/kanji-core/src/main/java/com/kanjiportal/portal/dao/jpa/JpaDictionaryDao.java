@@ -21,16 +21,18 @@ package com.kanjiportal.portal.dao.jpa;
 import com.kanjiportal.portal.dao.DictionaryDao;
 import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Dictionary;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.fr.FrenchAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryParser.MultiFieldQueryParser;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.TermQuery;
 import org.hibernate.search.jpa.FullTextEntityManager;
-import org.jboss.seam.annotations.AutoCreate;
-import org.jboss.seam.annotations.In;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.annotations.Name;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
@@ -57,37 +59,50 @@ public class JpaDictionaryDao implements DictionaryDao {
     @Logger
     private Log log;
 
+    private Map<String, Analyzer> analyzers;
+
+    @Create
+    public void init() {
+        analyzers = new HashMap<String, Analyzer>();
+        analyzers.put("fr", new FrenchAnalyzer());
+        analyzers.put("en", new StandardAnalyzer());
+    }
+
+
     public Dictionary findById(long id) {
         return entityManager.find(Dictionary.class, id);
     }
 
-    public List<Dictionary> searchDictionaryByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
+    public List<Dictionary> searchDictionaryByPattern(String pattern, String language, int page, int pageSize) throws SearchTooGenericException {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
-        Map<String, Float> boostPerField = new HashMap<String, Float>();
-        boostPerField.put("romaji", 5f);
-        boostPerField.put("kana", 5f);
-        boostPerField.put("kanji", 5f);
-        boostPerField.put("description", 2f);
-        boostPerField.put("detail", 2f);
-        boostPerField.put("note", 1f);
-        String[] productFields = {"romaji", "kana", "kanji", "description", "detail", "note"};
+        BooleanQuery finalQuery = new BooleanQuery();
+        org.apache.lucene.search.Query languageQuery = null;
+        org.apache.lucene.search.Query luceneQuery = buildLuceneQuery(pattern, language);
 
-        QueryParser parser = new MultiFieldQueryParser(productFields, new FrenchAnalyzer(), boostPerField);
+        List<Dictionary> res = null;
 
-        parser.setAllowLeadingWildcard(true);
-        org.apache.lucene.search.Query luceneQuery = null;
+        languageQuery = new TermQuery(new Term("translations.language.codeIso63901", language));
+        finalQuery.add(luceneQuery, BooleanClause.Occur.MUST);
+        finalQuery.add(languageQuery, BooleanClause.Occur.MUST);
 
         try {
-            luceneQuery = parser.parse(pattern);
-            log.debug("lucene search : #0", luceneQuery.toString());
-        } catch (ParseException e) {
-            log.warn("lucene query error : #0", e.getMessage());
-            return null;
+            res = ftem.createFullTextQuery(finalQuery, Dictionary.class)
+                    .setMaxResults(pageSize)
+                    .setFirstResult(page * pageSize)
+                    .getResultList();
+        } catch (BooleanQuery.TooManyClauses e) {
+            throw new SearchTooGenericException(e);
         }
+
+        return res;
+    }
+
+    public List<Dictionary> searchDictionaryByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
+        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
         List<Dictionary> res = null;
 
         try {
-            res = ftem.createFullTextQuery(luceneQuery, Dictionary.class)
+            res = ftem.createFullTextQuery(buildLuceneQuery(pattern, "default"), Dictionary.class)
                     .setMaxResults(pageSize)
                     .setFirstResult(page * pageSize)
                     .getResultList();
@@ -118,4 +133,34 @@ public class JpaDictionaryDao implements DictionaryDao {
                 .setFirstResult(page * pageSize)
                 .getResultList();
     }
+
+    private org.apache.lucene.search.Query buildLuceneQuery(String pattern, String language) {
+        org.apache.lucene.search.Query luceneQuery = null;
+        Map<String, Float> boostPerField = new HashMap<String, Float>();
+        boostPerField.put("romaji", 5f);
+        boostPerField.put("kana", 5f);
+        boostPerField.put("kanji", 5f);
+        boostPerField.put("translations.description", 3f);
+        boostPerField.put("translations.detail", 2f);
+        boostPerField.put("translations.note", 1f);
+        String[] productFields = {"romaji", "kana", "kanji", "translations.description", "translations.detail", "translations.note"};
+
+        Analyzer analyzer = analyzers.get(language);
+        if (analyzer == null) {
+            analyzer = new StandardAnalyzer();
+        }
+        QueryParser parser = new MultiFieldQueryParser(productFields, analyzer, boostPerField);
+
+        parser.setAllowLeadingWildcard(true);
+
+        try {
+            luceneQuery = parser.parse(pattern);
+            log.debug("lucene search : #0", luceneQuery.toString());
+        } catch (ParseException e) {
+            log.warn("lucene query error : #0", e.getMessage());
+            return null;
+        }
+        return luceneQuery;
+    }
+
 }

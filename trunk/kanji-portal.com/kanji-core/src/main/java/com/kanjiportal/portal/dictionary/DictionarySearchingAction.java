@@ -23,7 +23,6 @@ import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Dictionary;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
-import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
@@ -46,7 +45,8 @@ public class DictionarySearchingAction implements DictionarySearching {
     private int pageSize = 10;
     private int page;
 
-    @DataModel
+    //@DataModel
+    @Out(required = false)
     private List<Dictionary> entries;
 
     @In
@@ -54,6 +54,9 @@ public class DictionarySearchingAction implements DictionarySearching {
 
     @Logger
     private Log logger;
+
+    @In("#{localeSelector.language}")
+    private String language;
 
     @In
     private FacesMessages facesMessages;
@@ -72,11 +75,12 @@ public class DictionarySearchingAction implements DictionarySearching {
     private void queryDictionnary() {
         logger.debug("pattern dict : (#{patternDictionnary})");
         try {
-            entries = dictionaryDao.searchDictionaryByPattern(getSearchPattern(), page, pageSize);
+            entries = dictionaryDao.searchDictionaryByPattern(getSearchPattern(), language, page, pageSize);
         } catch (SearchTooGenericException e) {
             logger.info("Too many clauses for search :", getSearchPattern());
             facesMessages.add("Recherhe trop générique");
         }
+        logger.debug("found #0", entries != null ? entries.size() : 0);
     }
 
     public boolean isNextPageAvailable() {

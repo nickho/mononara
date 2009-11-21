@@ -53,4 +53,6 @@ public interface KanjiSearching {
     Map<Long, String> getSearchMeanings();
 
     void setSearchMeanings(Map<Long, String> searchMeanings);
+
+    void setLanguage(String language);
 }

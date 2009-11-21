@@ -20,9 +20,13 @@ package com.kanjiportal.portal.dictionary;
 
 import com.kanjiportal.portal.dao.DictionaryDao;
 import com.kanjiportal.portal.model.Dictionary;
+import com.kanjiportal.portal.model.DictionaryTag;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
+import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.web.RequestParameter;
+
+import java.util.List;
 
 /**
  * DictionnaryServiceAction
@@ -42,11 +46,15 @@ public class DictionaryViewingAction implements DictionaryViewing {
     @In
     private DictionaryDao dictionaryDao;
 
+    @DataModel
+    private List<DictionaryTag> dictionnaryTags;
+
     @Out
     private Dictionary entry;
 
     public void view() {
         entry = dictionaryDao.findById(entryId);
+        dictionnaryTags = entry.getTags();
     }
 
 }

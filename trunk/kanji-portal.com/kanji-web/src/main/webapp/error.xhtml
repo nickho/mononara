@@ -30,7 +30,7 @@
 
     <!-- content #{facesContext.externalContext.requestContextPath}#{theme.template} -->
     <ui:define name="content">
-        <p>Sorry, the website experienced an unexpected error :</p>
+        <p>#{messages['error.text.unexpected']}</p>
         <h:messages/>
     </ui:define>
 

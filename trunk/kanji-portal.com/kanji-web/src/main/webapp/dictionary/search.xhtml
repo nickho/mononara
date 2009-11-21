@@ -32,13 +32,14 @@
     <ui:define name="content">
         <div class="section">
             <fieldset>
-                <legend>Recherche dans le dictionnaire</legend>
+                <legend>#{messages['dictionary.search.text.search']}</legend>
 
                 <h:form id="searchCriteria">
                     <h:inputText id="searchString" value="#{dictionarySearch.searchString}" style="width: 165px;">
                         <a:support event="onkeyup" actionListener="#{dictionarySearch.find}" reRender="searchResults"/>
                     </h:inputText>
-                    <a:commandButton id="findKanjis" value="Find" action="#{dictionarySearch.find}"
+                    <a:commandButton id="search" value="#{messages['dictionary.search.acb.search']}"
+                                     action="#{dictionarySearch.find}"
                                      reRender="searchResults"/>
                     <a:status>
                         <f:facet name="start">
@@ -49,12 +50,14 @@
                         <h:messages/>
                     </a:outputPanel>
                     <br/>
-                    <h:outputLabel for="pageSize">Maximum results:</h:outputLabel>
-                    <h:selectOneMenu value="#{dictionarySearch.pageSize}" id="pageSize">
-                        <f:selectItem itemLabel="5" itemValue="5"/>
-                        <f:selectItem itemLabel="10" itemValue="10"/>
-                        <f:selectItem itemLabel="20" itemValue="20"/>
-                    </h:selectOneMenu>
+                    <s:div id="advancedSearch" rendered="false">
+                        <h:outputLabel for="pageSize">#{messages['dictionary.search.hol.pageSize']}</h:outputLabel>
+                        <h:selectOneMenu value="#{dictionarySearch.pageSize}" id="pageSize">
+                            <f:selectItem itemLabel="5" itemValue="5"/>
+                            <f:selectItem itemLabel="10" itemValue="10"/>
+                            <f:selectItem itemLabel="20" itemValue="20"/>
+                        </h:selectOneMenu>
+                    </s:div>
                 </h:form>
             </fieldset>
         </div>
@@ -62,25 +65,51 @@
         <h:form id="entries">
             <a:outputPanel id="searchResults">
                 <div class="section">
-                    <h:outputText value="No entries Found" rendered="#{entries != null and entries.rowCount==0}"/>
-                    <h:dataTable id="entries" value="#{entries}" var="dic" rendered="#{entries.rowCount>0}">
-                        <h:column>
-                            <f:facet name="header">Kanji spelling</f:facet>
-                            <s:link view="/dictionary/view.seam" propagation="none" value="#{dic.kanji}">
-                                <f:param name="dataModelSelection"/>
-                                <f:param name="entryId" value="#{dic.id}"/>
-                            </s:link>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Kana spelling</f:facet>
-                            #{dic.kana.replace(".", "")}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Description</f:facet>
-                            #{dic.description}
-                        </h:column>
-                    </h:dataTable>
-                    <a:commandLink value="More results" action="#{dictionarySearch.nextPage}"
+                    <h:outputText value="#{messages['dictionary.search.hot.noentries']}"
+                                  rendered="#{entries != null and entries.size()==0}"/>
+                    <table>
+                        <ui:repeat var="dic" value="#{entries}">
+                            <ui:repeat var="trans" value="#{dic.translations}">
+                                <tr>
+                                    <td>
+                                        <a:outputPanel
+                                                rendered="#{trans.language.codeIso63901 == localeSelector.language}">
+                                            <s:link view="/dictionary/view.seam" propagation="none"
+                                                    value="#{trans.dictionary.kanji}">
+                                                <f:param name="dataModelSelection"/>
+                                                <f:param name="entryId" value="#{trans.dictionary.id}"/>
+                                            </s:link>
+                                            <h:outputText rendered="#{trans.dictionary.kana != null}"
+                                                          value=" 「#{trans.dictionary.kana.replace('.', '')}」"/> : #{trans.description.replace("|", "; ")}. #{trans.detail}
+                                        </a:outputPanel>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                        </ui:repeat>
+                    </table>
+                    <ui:remove>
+                        <!--
+                        <h:dataTable id="entries" value="#{entries}" var="dic" rendered="#{entries.rowCount>0}">
+                            <h:column>
+                                <f:facet name="header">#{messages['dictionary.search.hdt.kanjis.header.kanji']}</f:facet>
+                                <s:link view="/dictionary/view.seam" propagation="none" value="#{dic.kanji}">
+                                    <f:param name="dataModelSelection"/>
+                                    <f:param name="entryId" value="#{dic.id}"/>
+                                </s:link>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">#{messages['dictionary.search.hdt.kanjis.header.kana']}</f:facet>
+                                #{dic.kana.replace(".", "")}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">#{messages['dictionary.search.hdt.kanjis.header.description']}</f:facet>
+                                #{dic.description.replace("|", "; ")}
+                            </h:column>
+                        </h:dataTable>
+                        -->
+                    </ui:remove>
+                    <a:commandLink value="#{messages['dictionary.search.acl.nextPage']}"
+                                   action="#{dictionarySearch.nextPage}"
                                    rendered="#{dictionarySearch.nextPageAvailable}" reRender="searchResults"/>
                 </div>
             </a:outputPanel>

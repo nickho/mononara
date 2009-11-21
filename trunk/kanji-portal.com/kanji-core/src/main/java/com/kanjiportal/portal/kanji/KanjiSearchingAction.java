@@ -23,6 +23,7 @@ import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
+import com.kanjiportal.portal.model.service.KanjiList;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.datamodel.DataModel;
@@ -57,6 +58,9 @@ public class KanjiSearchingAction implements KanjiSearching {
     @In
     private FacesMessages facesMessages;
 
+    @In("#{localeSelector.language}")
+    private String language;
+
     @Out
     private String searchStatus = "";
 
@@ -72,12 +76,13 @@ public class KanjiSearchingAction implements KanjiSearching {
     }
 
     private void queryKanjis() {
-        //kanjis = kanjiDao.findByPatternWithoutLucene(getSearchPattern(), page, pageSize);
         searchStatus = "";
         searchMeanings = new HashMap<Long, String>();
 
         try {
-            kanjis = kanjiDao.findByPattern(getSearchPattern(), page, pageSize);
+            KanjiList kanjiLists = kanjiDao.findByPattern(getSearchPattern(), language, page, pageSize);
+            kanjis = kanjiLists.getKanjiLinks();
+            logger.debug("total number of kanji found : #0", kanjiLists.getTotalCount());
         } catch (SearchTooGenericException e) {
             logger.info("Too many clauses for search :", getSearchPattern());
             facesMessages.add("Recherhe trop générique");
@@ -155,5 +160,9 @@ public class KanjiSearchingAction implements KanjiSearching {
 
     public void setSearchStatus(String searchStatus) {
         this.searchStatus = searchStatus;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

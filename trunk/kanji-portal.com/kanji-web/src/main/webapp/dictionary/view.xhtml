@@ -34,11 +34,27 @@
             <fieldset>
                 <legend>Mot de vocabulaire</legend>
                 <div class="section">
-                    #{entry.kanji} 「#{entry.kana.replace(".", "")}」 （#{entry.pos}） : #{entry.description}. #{entry.detail}
-                    <a:outputPanel rendered="#{entry.note} != null">
-                        <label>Notes:</label>
-                        #{entry.note}
-                    </a:outputPanel>
+                    <ui:repeat var="trans" value="#{entry.translations}">
+                        <a:outputPanel rendered="#{trans.language.codeIso63901 == localeSelector.language}">
+                            #{trans.dictionary.kanji} <h:outputText rendered="#{trans.dictionary.kana != null}"
+                                                                    value=" 「#{trans.dictionary.kana.replace('.', '')}」"/> : #{trans.description.replace("|", "; ")}. #{trans.detail}
+                            <a:outputPanel rendered="#{trans.note} != null">
+                                <label>Notes:</label>
+                                #{trans.note}
+                            </a:outputPanel>
+                        </a:outputPanel>
+                    </ui:repeat>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Tags</legend>
+                <div class="section">
+                    <h:outputText value="No Tags Found"
+                                  rendered="#{dictionnaryTags != null and dictionnaryTags.rowCount==0}"/>
+                    <ui:repeat value="#{dictionnaryTags}" var="link">
+                        #{link.tag.name}
+                        <br/>
+                    </ui:repeat>
                 </div>
             </fieldset>
         </a:outputPanel>

@@ -27,9 +27,12 @@
     <div class="wrapper">
         <h2 class="accessibility">Navigation</h2>
         <ul class="clearfix">
-            <li><s:link view="/home.seam" propagation="none">Infos</s:link></li>
-            <li><s:link view="/kanji/search.seam" propagation="none">Kanji</s:link></li>
-            <li><s:link view="/dictionary/search.seam" propagation="none">Dictionnaire</s:link></li>
+            <li><s:link view="/home.seam" propagation="none"><h:outputText
+                    value="#{messages['navigation.slink.home']}"/></s:link></li>
+            <li><s:link view="/kanji/search.seam" propagation="none"><h:outputText
+                    value="#{messages['navigation.slink.kanji']}"/></s:link></li>
+            <li><s:link view="/dictionary/search.seam" propagation="none"><h:outputText
+                    value="#{messages['navigation.slink.dictionary']}"/></s:link></li>
         </ul>
     </div>
     <hr/>
