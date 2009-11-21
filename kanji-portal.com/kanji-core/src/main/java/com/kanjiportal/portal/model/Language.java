@@ -18,9 +18,16 @@
  */
 package com.kanjiportal.portal.model;
 
+import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
 import org.hibernate.validator.NotNull;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,10 +38,13 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "tblan")
+@XmlAccessorType(XmlAccessType.NONE)
+@Indexed
 public class Language extends Audit {
 
     @Id
     @GeneratedValue
+    @DocumentId
     private long id;
 
     @NotNull
@@ -43,6 +53,8 @@ public class Language extends Audit {
 
     @NotNull
     @Column(name = "cdiso63901")
+    @XmlID
+    @Field(index = Index.TOKENIZED)
     private String codeIso63901;
 
     @NotNull

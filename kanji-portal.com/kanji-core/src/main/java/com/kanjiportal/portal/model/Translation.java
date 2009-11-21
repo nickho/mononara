@@ -20,36 +20,37 @@ package com.kanjiportal.portal.model;
 
 import org.hibernate.search.annotations.*;
 import org.hibernate.validator.Length;
-import org.hibernate.validator.NotNull;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 /**
- * Meaning
+ * DictionnaryEntry
  *
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
- * @todo Implement Meaning
+ * @todo Implement DictionnaryEntry
  */
 @Entity
-@Table(name = "tbmng")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
+@Table(name = "tbdictra")
 @Indexed
-public class Meaning extends Audit {
+public class Translation extends Audit {
 
     private long id;
-    private String meaning;
-    private Language language;
+    private String pos;
+    private String posDetail;
     private String description;
+    private Language language;
+    private String detail;
+    private String note;
+    private Dictionary dictionary;
 
     @Id
     @GeneratedValue
     @DocumentId
+    @Column(name = "id")
     public long getId() {
         return id;
     }
@@ -58,20 +59,29 @@ public class Meaning extends Audit {
         this.id = id;
     }
 
-    @NotNull
-    @Length(max = 50)
-    @XmlElement
-    @Column(name = "lbmng")
+    @Length(max = 20)
+    @Column(name = "lbpos")
+    public String getPos() {
+        return pos;
+    }
+
+    public void setPos(String pos) {
+        this.pos = pos;
+    }
+
+    @Length(max = 20)
+    @Column(name = "lbposdet")
+    public String getPosDetail() {
+        return posDetail;
+    }
+
+    public void setPosDetail(String posDetail) {
+        this.posDetail = posDetail;
+    }
+
+    @Length(max = 500)
+    @XmlValue
     @Field(index = Index.TOKENIZED)
-    public String getMeaning() {
-        return meaning;
-    }
-
-    public void setMeaning(String meaning) {
-        this.meaning = meaning;
-    }
-
-    @Length(max = 255)
     @Column(name = "lbdsc")
     public String getDescription() {
         return description;
@@ -84,11 +94,45 @@ public class Meaning extends Audit {
     @OneToOne
     @JoinColumn(name = "idlan")
     @IndexedEmbedded
+    @XmlAttribute
+    @XmlIDREF
     public Language getLanguage() {
         return language;
     }
 
     public void setLanguage(Language language) {
         this.language = language;
+    }
+
+    @Length(max = 500)
+    @Field(index = Index.TOKENIZED)
+    @Column(name = "lbdet")
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    @Length(max = 500)
+    @Column(name = "lbnot")
+    @Field(index = Index.TOKENIZED)
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "iddic")
+    public Dictionary getDictionary() {
+        return dictionary;
+    }
+
+    public void setDictionary(Dictionary dictionary) {
+        this.dictionary = dictionary;
     }
 }

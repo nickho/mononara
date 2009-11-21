@@ -30,71 +30,76 @@
     <body id="page-home">
 
     <div id="page">
+        <a:outputPanel id="pagePanel">
 
-        <div id="header" class="clearfix">
+            <div id="header" class="clearfix">
 
-            <div id="branding">
-                <img src="#{facesContext.externalContext.requestContextPath}#{theme.logo}"
-                     alt="Content with Style: Web Technique"/>
+                <div id="branding">
+                    <img src="#{facesContext.externalContext.requestContextPath}#{theme.logo}"
+                         alt="Content with Style: Web Technique"/>
+                </div>
+                <!-- end branding -->
+
+                <div id="search">
+                    <h:form id="themes">
+                        <s:label id="username" rendered="#{identity.loggedIn}">
+                            <h:outputText value="#{messages['template.hot.username']}"/>
+                        </s:label>
+                        <s:label id="anon" rendered="#{!identity.loggedIn}">
+                            <h:outputText value="#{messages['template.hot.anon']}"/>
+                        </s:label>
+                        <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
+                        |&nbsp;<s:link id="logout" action="#{identity.logout}"
+                                       value="#{messages['template.slink.Logout']}"
+                                       rendered="#{identity.loggedIn}" propagation="none"/>
+                        <s:link id="login" propagation="none" view="/login.xhtml"
+                                value="#{messages['template.slink.Login']}"
+                                rendered="#{!identity.loggedIn}"/>
+                        <br/>
+                        <h:selectOneMenu value="#{localeSelector.localeString}">
+                            <a:support event="onchange" action="#{localeSelector.select}" reRender="pagePanel"/>
+                            <s:selectItems noSelectionLabel="#{messages['template.ssi.local']}"
+                                           var="#{localeSelector.localeString}" value="#{localeSelector.localeString}"/>
+                            <f:selectItem itemLabel="English" itemValue="en"/>
+                            <f:selectItem itemLabel="Francais" itemValue="fr"/>
+                        </h:selectOneMenu>
+                    </h:form>
+                </div>
+                <!-- end search -->
+
+                <hr/>
             </div>
-            <!-- end branding -->
-
-            <div id="search">
-                <h:form id="themes">
-                    <s:label id="username" rendered="#{identity.loggedIn}">
-                        Bienvenue #{user.username}
-                    </s:label>
-                    <s:label id="anon" rendered="#{!identity.loggedIn}">
-                        Bienvenue sur kanji-portal
-                    </s:label>
-                    <s:link id="home" view="/home.xhtml" value="Infos" propagation="none"/>
-                    |&nbsp;<s:link id="logout" action="#{identity.logout}" value="Déconnexion"
-                                   rendered="#{identity.loggedIn}" propagation="none"/>
-                    <s:link id="loginHeader" propagation="none" view="/login.xhtml" value="Connexion"
-                            rendered="#{!identity.loggedIn}"/>
-                </h:form>
-            </div>
-            <!-- end search -->
-
-            <hr/>
-        </div>
-        <!-- end header -->
+            <!-- end header -->
 
 
-        <div id="content" class="clearfix">
+            <div id="content" class="clearfix">
 
-            <div id="main">
-                <ui:insert name="content"/>
-            </div>
-            <!-- end main -->
+                <div id="main">
+                    <ui:insert name="content"/>
+                </div>
+                <!-- end main -->
 
-            <div id="sub">
+                <div id="local">
+                    <ui:decorate template="/menu.xhtml"/>
+                </div>
+                <!-- end local -->
+
+
+                <div id="nav">
+                    <ui:decorate template="/navigation.xhtml"/>
+                </div>
+                <!-- end nav -->
 
             </div>
-            <!-- end sub -->
+            <!-- end content -->
 
 
-            <div id="local">
-                <ui:decorate template="/menu.xhtml"/>
+            <div id="footer" class="clearfix">
+                <ui:decorate template="/footer.xhtml"/>
+                <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
             </div>
-            <!-- end local -->
-
-
-            <div id="nav">
-                <ui:decorate template="/navigation.xhtml"/>
-            </div>
-            <!-- end nav -->
-
-        </div>
-        <!-- end content -->
-
-
-        <div id="footer" class="clearfix">
-            <ui:decorate template="/footer.xhtml"/>
-            <a:log hotkey="M" rendered="#{!ajaxContext.ajaxRequest}"/>
-        </div>
-        <!-- end footer -->
-
+            <!-- end footer -->
+        </a:outputPanel>
     </div>
     <!-- end page -->
     <!-- start Google analytics token -->

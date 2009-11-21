@@ -22,6 +22,7 @@ import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.Reference;
 import com.kanjiportal.portal.model.Spelling;
 import com.kanjiportal.portal.model.Tag;
+import com.kanjiportal.portal.model.service.KanjiList;
 
 import java.util.Date;
 import java.util.List;
@@ -41,7 +42,9 @@ public interface KanjiDao {
 
     List<Kanji> findByPatternWithoutLucene(String pattern, int page, int pageSize);
 
-    List<Kanji> findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException;
+    KanjiList findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException;
+
+    KanjiList findByPattern(String pattern, String language, int page, int pageSize) throws SearchTooGenericException;
 
     @Deprecated
     List<Kanji> findByPatternForcingFullFetch(String pattern, int page, int pageSize);
@@ -74,4 +77,5 @@ public interface KanjiDao {
     void addSpellingToKanji(Kanji kanji, Spelling spelling);
 
     void removeSpellingFromKanji(Kanji kanji, Spelling spelling);
+
 }

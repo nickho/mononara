@@ -30,6 +30,7 @@
             xmlns:transaction="http://jboss.com/products/seam/transaction"
             xmlns:resteasy="http://jboss.com/products/seam/resteasy"
             xmlns:theme="http://jboss.com/products/seam/theme"
+            xmlns:international="http://jboss.com/products/seam/international"
             xsi:schemaLocation=
                     "http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.1.xsd
                  http://jboss.com/products/seam/persistence http://jboss.com/products/seam/persistence-2.1.xsd
@@ -38,10 +39,13 @@
                  http://jboss.com/products/seam/web http://jboss.com/products/seam/web-2.1.xsd
                  http://jboss.com/products/seam/mail http://jboss.com/products/seam/mail-2.1.xsd
                  http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.1.xsd
-                 http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd">
+                 http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd
+                 http://jboss.com/products/seam/international http://jboss.com/products/seam/international-2.1.xsd">
 
 
     <web:rewrite-filter view-mapping="*.seam"/>
+
+    <international:locale-config default-locale="fr_FR" supported-locales="en fr"/>
 
     <core:manager conversation-timeout="120000"
                   concurrent-request-timeout="500"
@@ -56,7 +60,7 @@
                                              entity-manager-factory="#{kanjiDatabase}"/>
 
 
-    <security:identity authenticate-method="#{authenticator.authenticate}"/>
+    <security:identity authenticate-method="#{authenticator.authenticate}" remember-me="true"/>
     <!--jaas-config-name="kanji-portal"/-->
 
 

@@ -43,7 +43,7 @@ public class DictionaryTag extends Audit {
 
     @ManyToOne
     @JoinColumn(name = "iddic")
-    private Dictionary dictionnary;
+    private Dictionary dictionary;
 
     @ManyToOne
     @JoinColumn(name = "idtag")
@@ -54,8 +54,8 @@ public class DictionaryTag extends Audit {
         //Empty for jpa
     }
 
-    public DictionaryTag(Dictionary dictionnary, Tag tag) {
-        this.dictionnary = dictionnary;
+    public DictionaryTag(Dictionary dictionary, Tag tag) {
+        this.dictionary = dictionary;
         this.tag = tag;
     }
 
@@ -80,12 +80,12 @@ public class DictionaryTag extends Audit {
         this.id = id;
     }
 
-    public Dictionary getDictionnary() {
-        return dictionnary;
+    public Dictionary getDictionary() {
+        return dictionary;
     }
 
-    public void setDictionnary(Dictionary dictionnary) {
-        this.dictionnary = dictionnary;
+    public void setDictionnary(Dictionary dictionary) {
+        this.dictionary = dictionary;
     }
 
     public Tag getTag() {

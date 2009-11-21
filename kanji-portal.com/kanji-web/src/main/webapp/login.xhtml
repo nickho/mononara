@@ -31,22 +31,23 @@
     <!-- content -->
     <ui:define name="content">
         <fieldset id="LoginFieldSet">
-            <legend>Connexion</legend>
+            <legend>#{messages['login.text.connection']}</legend>
             <h:form id="login">
                 <a:outputPanel id="loginPanel">
                     <div class="section">
-                        <label>Identifiant :</label>
+                        <label>#{messages['login.label.username']}</label>
                         <h:inputText id="username" value="#{identity.username}"/>
 
                         <div class="errors"><h:message for="username"/></div>
 
-                        <label>Mot de passe :</label>
+                        <label>#{messages['login.label.password']}</label>
                         <h:inputSecret id="password" value="#{identity.password}"/>
 
 
                         <div class="errors"><h:messages globalOnly="true"/></div>
                         <div class="entry">
-                            <a:commandButton id="login" action="#{identity.login}" value="Account Login"
+                            <a:commandButton id="login" action="#{identity.login}"
+                                             value="#{messages['login.acb.login']}"
                                              reRender="loginPanel"/>
                             <a:status>
                                 <f:facet name="start">

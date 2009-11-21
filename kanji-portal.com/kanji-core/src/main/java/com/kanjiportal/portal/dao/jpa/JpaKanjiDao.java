@@ -21,16 +21,20 @@ package com.kanjiportal.portal.dao.jpa;
 import com.kanjiportal.portal.dao.KanjiDao;
 import com.kanjiportal.portal.dao.SearchTooGenericException;
 import com.kanjiportal.portal.model.*;
+import com.kanjiportal.portal.model.service.KanjiList;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.fr.FrenchAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryParser.MultiFieldQueryParser;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.TermQuery;
 import org.hibernate.search.jpa.FullTextEntityManager;
-import org.jboss.seam.annotations.AutoCreate;
-import org.jboss.seam.annotations.In;
-import org.jboss.seam.annotations.Logger;
-import org.jboss.seam.annotations.Name;
+import org.hibernate.search.jpa.FullTextQuery;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
@@ -54,45 +58,65 @@ public class JpaKanjiDao implements KanjiDao {
     @In
     private EntityManager entityManager;
 
+    private Map<String, Analyzer> analyzers;
+
     @Logger
     private Log log;
+
+    @Create
+    public void init() {
+        analyzers = new HashMap<String, Analyzer>();
+        analyzers.put("fr", new FrenchAnalyzer());
+        analyzers.put("en", new StandardAnalyzer());
+    }
 
     public Kanji findById(long id) {
         return entityManager.find(Kanji.class, id);
     }
 
-    public List<Kanji> findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
+    public KanjiList findByPattern(String pattern, String language, int page, int pageSize) throws SearchTooGenericException {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
-        Map<String, Float> boostPerField = new HashMap<String, Float>();
-        boostPerField.put("meanings.meaning.meaning", 2f);
-        boostPerField.put("description", 1f);
-        String[] productFields = {"description", "meanings.meaning.meaning"};
+        BooleanQuery finalQuery = new BooleanQuery();
+        org.apache.lucene.search.Query languageQuery = null;
+        org.apache.lucene.search.Query luceneQuery = buildLuceneQuery(pattern, language);
 
-        QueryParser parser = new MultiFieldQueryParser(productFields, new FrenchAnalyzer(), boostPerField);
+        KanjiList kanjiList = null;
 
-        parser.setAllowLeadingWildcard(true);
-        org.apache.lucene.search.Query luceneQuery = null;
-
-        try {
-            luceneQuery = parser.parse(pattern);
-            log.debug("lucene search : #0", luceneQuery.toString());
-        } catch (ParseException e) {
-            log.warn("lucene query error : #0", e.getMessage());
-            return null;
-        }
-        List<Kanji> res = null;
+        languageQuery = new TermQuery(new Term("meanings.meaning.language.codeIso63901", language));
+        finalQuery.add(luceneQuery, BooleanClause.Occur.MUST);
+        finalQuery.add(languageQuery, BooleanClause.Occur.MUST);
 
         try {
-            res = ftem.createFullTextQuery(luceneQuery, Kanji.class)
-                    .setMaxResults(pageSize)
+            FullTextQuery ftq = ftem.createFullTextQuery(finalQuery, Kanji.class);
+            List<Kanji> kanjis = ftq.setMaxResults(pageSize)
                     .setFirstResult(page * pageSize)
                     .getResultList();
+            kanjiList = new KanjiList(kanjis, ftq.getResultSize());
+
+        } catch (BooleanQuery.TooManyClauses e) {
+            throw new SearchTooGenericException(e);
+        }
+
+        return kanjiList;
+    }
+
+    public KanjiList findByPattern(String pattern, int page, int pageSize) throws SearchTooGenericException {
+        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
+        KanjiList res = null;
+
+        try {
+            FullTextQuery ftq = ftem.createFullTextQuery(buildLuceneQuery(pattern, "default"), Kanji.class);
+            List<Kanji> kanjis = ftq.setMaxResults(pageSize)
+                    .setFirstResult(page * pageSize)
+                    .getResultList();
+            res = new KanjiList(kanjis, ftq.getResultSize());
         } catch (BooleanQuery.TooManyClauses e) {
             throw new SearchTooGenericException(e);
         }
 
         return res;
     }
+
 
     public List<Kanji> findByPatternWithoutLucene(String pattern, int page, int pageSize) {
         return entityManager.createQuery("select k from Kanji k join fetch k.meanings km join fetch km.meaning m where k.kanji like :pattern or lower(m.meaning) like :pattern or lower(k.description) like :pattern")
@@ -276,4 +300,31 @@ public class JpaKanjiDao implements KanjiDao {
             entityManager.merge(kanji);
         }
     }
+
+
+    private org.apache.lucene.search.Query buildLuceneQuery(String pattern, String language) {
+        org.apache.lucene.search.Query luceneQuery = null;
+        Map<String, Float> boostPerField = new HashMap<String, Float>();
+        boostPerField.put("meanings.meaning.meaning", 2f);
+        boostPerField.put("description", 1f);
+        String[] productFields = {"description", "meanings.meaning.meaning"};
+
+        Analyzer analyzer = analyzers.get(language);
+        if (analyzer == null) {
+            analyzer = new StandardAnalyzer();
+        }
+        QueryParser parser = new MultiFieldQueryParser(productFields, analyzer, boostPerField);
+
+        parser.setAllowLeadingWildcard(true);
+
+        try {
+            luceneQuery = parser.parse(pattern);
+            log.debug("lucene search : #0", luceneQuery.toString());
+        } catch (ParseException e) {
+            log.warn("lucene query error : #0", e.getMessage());
+            return null;
+        }
+        return luceneQuery;
+    }
+
 }

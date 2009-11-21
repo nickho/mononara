@@ -50,6 +50,7 @@ import java.util.List;
 @WebService
 @WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/dictionary")
 @Path("/dictionary")
+@ProduceMime({"application/xml;charset=utf-8", "application/json;charset=utf-8"})
 @Name("dictionaryService")
 public class DictionaryServiceImpl implements DictionaryService {
 
@@ -64,7 +65,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/pattern/{pattern}")
-    @ProduceMime({"application/xml", "application/json"})
     public DictionaryList searchDictionnaryByPattern(@PathParam("pattern") @WebParam String pattern) throws SearchTooGenericException {
         return searchDictionnaryByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
     }
@@ -72,7 +72,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/pattern/{pattern}/{page}/{item}")
-    @ProduceMime({"application/xml", "application/json"})
     public DictionaryList searchDictionnaryByPatternWithPaging(
             @PathParam("pattern") @WebParam String pattern,
             @PathParam("page") @WebParam int page,
@@ -85,7 +84,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/since/{since}/{page}/{item}")
-    @ProduceMime({"application/xml", "application/json"})
     public DictionaryList searchDictionarySinceWithPaging(@PathParam("since") @WebParam String since,
                                                           @PathParam("page") @WebParam int page,
                                                           @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
@@ -108,7 +106,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/since/{since}")
-    @ProduceMime({"application/xml", "application/json"})
     public DictionaryList searchDictionarySince(@PathParam("since") @WebParam String since) throws InvalidArgumentsException {
         DictionaryList list = searchDictionarySinceWithPaging(since, 0, ITEM_PER_PAGE);
         return list;
@@ -117,7 +114,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/tag/{tag}/{page}/{item}")
-    @ProduceMime("application/xml")
     public DictionaryList searchDictionaryByTagWithPaging(@PathParam("tag") @WebParam String tag,
                                                           @PathParam("page") @WebParam int page,
                                                           @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
@@ -130,7 +126,6 @@ public class DictionaryServiceImpl implements DictionaryService {
     @WebMethod
     @GET
     @Path("/tag/{tag}")
-    @ProduceMime("application/xml")
     public DictionaryList searchDictionaryByTag(@PathParam("tag") @WebParam String tag) throws InvalidArgumentsException {
         DictionaryList list = searchDictionaryByTagWithPaging(tag, 0, ITEM_PER_PAGE);
         return list;

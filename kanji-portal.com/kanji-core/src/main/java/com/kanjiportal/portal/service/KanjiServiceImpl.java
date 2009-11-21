@@ -47,6 +47,7 @@ import java.util.List;
  * @version $Revision: 1.1 $
  */
 @Path("/kanji")
+@ProduceMime({"application/xml;charset=utf-8", "application/json;charset=utf-8"})
 @WebContext(contextRoot = "/kanji-portal/services/soap", urlPattern = "/kanji")
 @Name("kanjiService")
 public class KanjiServiceImpl implements KanjiService {
@@ -61,19 +62,16 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/pattern/{pattern}/{page}/{item}")
-    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisByPatternWithPaging(@PathParam("pattern") @WebParam String pattern,
                                                   @PathParam("page") @WebParam int page,
                                                   @PathParam("item") @WebParam int itemPerPage) throws SearchTooGenericException {
-        String search = pattern == null ? "%" : '%' + pattern.toLowerCase().replace('*', '%') + '%';
-        List<Kanji> kanjis = kanjiDao.findByPattern(search, page, itemPerPage);
-        return new KanjiList(kanjis, -1);
+        String search = pattern == null ? "*" : pattern.toLowerCase() + '*';
+        return kanjiDao.findByPattern(search, page, itemPerPage);
     }
 
     @WebMethod
     @GET
     @Path("/pattern/{pattern}")
-    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisByPattern(@PathParam("pattern") @WebParam String pattern) throws SearchTooGenericException {
         KanjiList list = getKanjisByPatternWithPaging(pattern, 0, ITEM_PER_PAGE);
         return list;
@@ -82,7 +80,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/since/{since}/{page}/{item}")
-    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisBySinceWithPaging(@PathParam("since") @WebParam String since,
                                                 @PathParam("page") @WebParam int page,
                                                 @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
@@ -105,7 +102,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/since/{since}")
-    @ProduceMime({"application/xml", "application/json"})
     public KanjiList getKanjisBySince(@PathParam("since") @WebParam String since) throws InvalidArgumentsException {
         KanjiList list = getKanjisBySinceWithPaging(since, 0, ITEM_PER_PAGE);
         return list;
@@ -114,7 +110,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/tag/{tag}/{page}/{item}")
-    @ProduceMime("application/xml")
     public KanjiList getKanjisByTagWithPaging(@PathParam("tag") @WebParam String tag,
                                               @PathParam("page") @WebParam int page,
                                               @PathParam("item") @WebParam int itemPerPage) throws InvalidArgumentsException {
@@ -127,7 +122,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/tag/{tag}")
-    @ProduceMime("application/xml")
     public KanjiList getKanjisByTag(@PathParam("tag") @WebParam String tag) throws InvalidArgumentsException {
         KanjiList list = getKanjisByTagWithPaging(tag, 0, ITEM_PER_PAGE);
         return list;
@@ -136,7 +130,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/reference/{reference}/{value}/{page}/{item}")
-    @ProduceMime("application/xml")
     public KanjiList getKanjisByRefWithPaging(@PathParam("reference") @WebParam String reference,
                                               @PathParam("value") @WebParam String value,
                                               @PathParam("page") @WebParam int page,
@@ -149,7 +142,6 @@ public class KanjiServiceImpl implements KanjiService {
     @WebMethod
     @GET
     @Path("/reference/{reference}/{value}")
-    @ProduceMime("application/xml")
     public KanjiList getKanjisByRef(@PathParam("reference") @WebParam String reference, @PathParam("value") @WebParam String value) throws InvalidArgumentsException {
         KanjiList list = getKanjisByRefWithPaging(reference, value, 0, ITEM_PER_PAGE);
         return list;

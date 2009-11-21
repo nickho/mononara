@@ -25,10 +25,13 @@
                 xmlns:s="http://jboss.com/products/seam/taglib">
 
     <ol class="menu">
-        <li><s:link view="/home.seam" propagation="none">Infos</s:link></li>
-        <li>Kanji au Hazard</li>
-        <li><s:link view="/kanji/search.seam" propagation="none">Rechercher un Kanji</s:link></li>
-        <li><s:link view="/dictionary/search.seam" propagation="none">Rechercher un mot</s:link></li>
+        <li><s:link view="/home.seam" propagation="none"><h:outputText value="#{messages['menu.slink.home']}"/></s:link>
+        </li>
+        <li><h:outputText value="#{messages['menu.text.kanjiRandom']}"/></li>
+        <li><s:link view="/kanji/search.seam" propagation="none"><h:outputText
+                value="#{messages['menu.slink.kanjiSearch']}"/></s:link></li>
+        <li><s:link view="/dictionary/search.seam" propagation="none"><h:outputText
+                value="#{messages['menu.slink.dictionarySearch']}"/></s:link></li>
     </ol>
 
 </ui:composition>
