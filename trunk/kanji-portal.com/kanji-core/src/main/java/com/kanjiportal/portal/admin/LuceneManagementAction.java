@@ -20,8 +20,10 @@ package com.kanjiportal.portal.admin;
 
 import com.kanjiportal.portal.model.Dictionary;
 import com.kanjiportal.portal.model.Kanji;
-import com.kanjiportal.portal.model.KanjiMeaning;
 import com.kanjiportal.portal.model.Meaning;
+import com.kanjiportal.portal.model.Translation;
+import org.hibernate.*;
+import org.hibernate.search.FullTextSession;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.In;
@@ -32,7 +34,6 @@ import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -45,6 +46,8 @@ import java.util.List;
 @Scope(value = ScopeType.SESSION)
 public class LuceneManagementAction implements LuceneManagement {
 
+    private static final int BATCH_SIZE = 100;
+
     @In
     private FacesMessages facesMessages;
 
@@ -54,69 +57,91 @@ public class LuceneManagementAction implements LuceneManagement {
     @In
     private EntityManager entityManager;
 
-
     public void reIndexKanji() {
-        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
-
-        long beforeKanjis = System.currentTimeMillis();
-        List<Kanji> kanjis = ftem.createQuery("select k from Kanji k").getResultList();
-        ftem.purgeAll(Kanji.class);
+        FullTextSession fullTextSession = (FullTextSession) entityManager.getDelegate();
+        fullTextSession.setFlushMode(FlushMode.MANUAL);
+        fullTextSession.setCacheMode(CacheMode.IGNORE);
         log.debug("Indexing kanjis ....");
-        for (Kanji kanji : kanjis) {
-            ftem.index(kanji);
+        long beforeKanjis = System.currentTimeMillis();
+
+        //Scrollable results will avoid loading too many objects in memory
+        ScrollableResults results = fullTextSession.createCriteria(Kanji.class)
+                .setFetchSize(BATCH_SIZE)
+                .setFetchMode("meanings", FetchMode.JOIN)
+                .setFetchMode("meanings.meaning.language", FetchMode.JOIN)
+                .scroll(ScrollMode.FORWARD_ONLY);
+        int index = 0;
+        while (results.next()) {
+            index++;
+            fullTextSession.index(results.get(0)); //index each element
+            if (index % BATCH_SIZE == 0) {
+                entityManager.flush();
+                entityManager.clear();
+                log.debug("flush()");
+            }
         }
+
         log.debug("Indexing kanjis done");
         long afterKanjis = System.currentTimeMillis();
 
         facesMessages.add("Kanji Indexing done in #0 ms", afterKanjis - beforeKanjis);
     }
 
-    public void reIndexMeaning() {
+    public void purgeKanji() {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
-
-        long beforeMeanings = System.currentTimeMillis();
-        List<Meaning> meanings = ftem.createQuery("select m From Meaning m").getResultList();
+        ftem.purgeAll(Kanji.class);
         ftem.purgeAll(Meaning.class);
-        log.debug("Indexing Meaning....");
-        for (Meaning meaning : meanings) {
-            ftem.index(meaning);
-        }
-        log.debug("Indexing Meaning done");
-        long afterMeanings = System.currentTimeMillis();
-
-        facesMessages.add("Meaning Indexing done in #0 ms", afterMeanings - beforeMeanings);
     }
 
-    public void reIndexKanjiMeaning() {
+    public void optimizeKanji() {
         FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
-
-        long beforeKanjiMeanings = System.currentTimeMillis();
-        List<KanjiMeaning> kanjiMeanings = ftem.createQuery("select km From KanjiMeaning km").getResultList();
-        ftem.purgeAll(KanjiMeaning.class);
-        log.debug("Indexing KanjiMeaning....");
-        for (KanjiMeaning kanjiMeaning : kanjiMeanings) {
-            ftem.index(kanjiMeaning);
-        }
-        log.debug("Indexing KanjiMeaning done");
-        long afterKanjiMeanings = System.currentTimeMillis();
-
-        facesMessages.add("KanjiMeaning Indexing done in #0 ms", afterKanjiMeanings - beforeKanjiMeanings);
+        ftem.getSearchFactory().optimize(Kanji.class);
+        ftem.getSearchFactory().optimize(Meaning.class);
     }
 
 
     public void reIndexDictionary() {
-        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
+        FullTextSession fullTextSession = (FullTextSession) entityManager.getDelegate();
+        fullTextSession.setFlushMode(FlushMode.MANUAL);
+        fullTextSession.setCacheMode(CacheMode.IGNORE);
 
         long beforeDictionary = System.currentTimeMillis();
-        List<Dictionary> dictionary = ftem.createQuery("select d from Dictionary d").getResultList();
-        ftem.purgeAll(Dictionary.class);
-        log.debug("Indexing dictionnary ....");
-        for (Dictionary entry : dictionary) {
-            ftem.index(entry);
+
+        //Scrollable results will avoid loading too many objects in memory
+        ScrollableResults results = fullTextSession.createCriteria(Dictionary.class)
+                .setFetchSize(BATCH_SIZE)
+                .setFetchMode("translations", FetchMode.JOIN)
+                .setFetchMode("translations.language", FetchMode.JOIN)
+                .scroll(ScrollMode.FORWARD_ONLY);
+        int index = 0;
+        while (results.next()) {
+            index++;
+            fullTextSession.index(results.get(0)); //index each element
+            if (index % BATCH_SIZE == 0) {
+                entityManager.flush();
+                entityManager.clear();
+                log.debug("flush()");
+            }
         }
+
+
         log.debug("Indexing dictionary done");
         long afterDictionary = System.currentTimeMillis();
 
         facesMessages.add("Dictionary Indexing done in #0 ms", afterDictionary - beforeDictionary);
     }
+
+
+    public void purgeDictionary() {
+        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
+        ftem.purgeAll(Dictionary.class);
+        ftem.purgeAll(Translation.class);
+    }
+
+    public void optimizeDictionary() {
+        FullTextEntityManager ftem = (FullTextEntityManager) entityManager;
+        ftem.getSearchFactory().optimize(Dictionary.class);
+        ftem.getSearchFactory().optimize(Translation.class);
+    }
+
 }
