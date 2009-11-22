@@ -30,10 +30,13 @@ public interface LuceneManagement {
 
     void reIndexKanji();
 
-    void reIndexMeaning();
-
-    void reIndexKanjiMeaning();
-
     void reIndexDictionary();
 
+    void purgeKanji();
+
+    void optimizeKanji();
+
+    void purgeDictionary();
+
+    void optimizeDictionary();
 }

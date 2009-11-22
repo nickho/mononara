@@ -39,56 +39,39 @@
             <legend>Lucene Index</legend>
             <h:form id="indexKanji">
                 <p>
-                    Reindex all the kanjis
-                    <br/>
-                    <a:commandButton id="reIndexKanji" value="Compute" action="#{luceneManagement.reIndexKanji}"
-                                     reRender="messages" status="sKanji"/>
+                    Manage the kanjis indexes
                     <a:status id="sKanji" forceId="true">
                         <f:facet name="start">
                             <h:graphicImage value="#{theme.spinner}"/>
                         </f:facet>
                     </a:status>
-                </p>
-            </h:form>
-            <h:form id="indexMeaning">
-                <p>
-                    Reindex all the meanings
                     <br/>
-                    <a:commandButton id="reIndexMeaning" value="Compute" action="#{luceneManagement.reIndexMeaning}"
-                                     reRender="messages" status="sMeaning"/>
-                    <a:status id="sMeaning" forceId="true">
-                        <f:facet name="start">
-                            <h:graphicImage value="{theme.spinner}"/>
-                        </f:facet>
-                    </a:status>
-                </p>
-            </h:form>
-            <h:form id="indexKanjiMeaning">
-                <p>
-                    Reindex all the KanjiMeanings
-                    <br/>
-                    <a:commandButton id="reindexKanjiMeaning" value="Compute"
-                                     action="#{luceneManagement.reIndexKanjiMeaning}"
-                                     reRender="messages" status="sKanjiMeaning"/>
-                    <a:status id="sKanjiMeaning" forceId="true">
-                        <f:facet name="start">
-                            <h:graphicImage value="#{theme.spinner}"/>
-                        </f:facet>
-                    </a:status>
+                    <a:commandButton id="reIndexKanji" value="(Re)Index All" action="#{luceneManagement.reIndexKanji}"
+                                     reRender="messages" status="sKanji"/>
+                    <a:commandButton id="purgeKanji" value="Purge" action="#{luceneManagement.purgeKanji}"
+                                     reRender="messages" status="sKanji"/>
+                    <a:commandButton id="optimizeKanji" value="Optimize" action="#{luceneManagement.optimizeKanji}"
+                                     reRender="messages" status="sKanji"/>
                 </p>
             </h:form>
             <h:form id="indexDictionary">
                 <p>
-                    Reindex the dictionary
-                    <br/>
-                    <a:commandButton id="reIndexDictionary" value="Compute"
-                                     action="#{luceneManagement.reIndexDictionary}"
-                                     reRender="messages" status="sDictionary"/>
+                    Manage the dictionary indexes
                     <a:status id="sDictionary" forceId="true">
                         <f:facet name="start">
                             <h:graphicImage value="#{theme.spinner}"/>
                         </f:facet>
                     </a:status>
+                    <br/>
+                    <a:commandButton id="reIndexDictionary" value="(Re)Index All"
+                                     action="#{luceneManagement.reIndexDictionary}"
+                                     reRender="messages" status="sDictionary"/>
+                    <a:commandButton id="purgeDictionary" value="Purge"
+                                     action="#{luceneManagement.purgeDictionary}"
+                                     reRender="messages" status="sDictionary"/>
+                    <a:commandButton id="optimizeDictionary" value="Optimize"
+                                     action="#{luceneManagement.optimizeDictionary}"
+                                     reRender="messages" status="sDictionary"/>
                 </p>
             </h:form>
         </fieldset>
