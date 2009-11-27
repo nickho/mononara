@@ -1,30 +1,32 @@
 /*****************************************
- *                                       *
- *  JBoss Portal: The OpenSource Portal  *
- *                                       *
- *   Distributable under LGPL license.   *
- *   See terms of license at gnu.org.    *
- *                                       *
+ *
+ *   Mononara
+ *
+ *   Distributable under LGPL license.
+ *   See terms of license at gnu.org.
+ *
  *****************************************/
 package com.miragedev.mononara.core.business;
 
+import com.miragedev.mononara.core.model.DictionaryEntry;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Vector;
+import java.util.List;
 
 /**
- * @author <a href="mailto:julien@jboss.org">Julien Viet</a>
+ * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
  * @version $Revision: 1.1 $
  */
 public class Exam {
 
     private Log log = LogFactory.getLog(Exam.class);
-    LearningMethod learningMethod;
+    //private LearningMethod learningMethod;
 
-    Vector<ExamContext> data;
-    Vector<Boolean> results;
+    private List<ExamContext> data;
+    private List<Boolean> results;
     int pos;
 
     /**
@@ -32,8 +34,8 @@ public class Exam {
      */
     public Exam() {
         pos = 0;
-        data = new Vector<ExamContext>();
-        results = new Vector<Boolean>();
+        data = new ArrayList<ExamContext>();
+        results = new ArrayList<Boolean>();
     }
 
     /**
@@ -55,6 +57,9 @@ public class Exam {
 
     public void add(ExamContext examContext) {
         data.add(examContext);
+    }
+
+    public void shuffle() {
         Collections.shuffle(data);
     }
 
@@ -73,7 +78,7 @@ public class Exam {
 
     public boolean test(String input) {
         ExamContext cont = data.get(pos);
-        results.add(pos, cont.getDictionnaryEntry().isTheSame(cont.getKnowledgePos(), input));
+        results.add(pos, compareInputWithDictionary(cont.getDictionnaryEntry(), cont.getKnowledgePos(), input));
         return results.get(pos);
     }
 
@@ -84,5 +89,51 @@ public class Exam {
 
     public int getPosition() {
         return pos;
+    }
+
+    /**
+     * Compare the input with the dictionary entry
+     * case 1) Test first the romaji entry if its non null
+     * case 2) Then test the kana entry
+     * case 3) finally ignore the index and test the whole kana spelling
+     *
+     * @param entry
+     * @param index
+     * @param spelling
+     * @return
+     */
+    private boolean compareInputWithDictionary(DictionaryEntry entry, int index, String spelling) {
+        boolean res;
+        String spellingInRomaji = entry.getSpellingInRomaji();
+        String spellingInKana = entry.getSpellingInKana();
+        String spellingInKanji = entry.getSpellingInKanji();
+
+        if (spellingInRomaji != null) {
+            /* If the romaji is present we test against it */
+            String[] spellingRomajiSplited = spellingInRomaji.split("\\.");
+
+            if (index >= spellingRomajiSplited.length) {
+                LogFactory.getLog(DictionaryEntry.class).error("Entry " + spellingInKanji + " isnt legal");
+                return false;
+            }
+            res = spellingRomajiSplited[index].equalsIgnoreCase(spelling);
+        } else {
+            /* If the romaji isnt present we test with the kana spelling */
+            String[] spellingKanaSplited = spellingInKana.split("\\.");
+
+            /* If the kana is splited we test only the selected char */
+            if (spellingKanaSplited.length > 1) {
+                if (index >= spellingKanaSplited.length) {
+                    LogFactory.getLog(DictionaryEntry.class).error("Entry " + spellingInKanji + " isnt legal");
+                    return false;
+                }
+                res = spellingKanaSplited[index].equalsIgnoreCase(spelling);
+            } else {
+                /* If the kana isnt splited (worst case) we test the whole word */
+                res = spellingInKana.equalsIgnoreCase(spelling);
+            }
+
+        }
+        return res;
     }
 }

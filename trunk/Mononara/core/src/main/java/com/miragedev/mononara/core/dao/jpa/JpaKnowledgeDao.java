@@ -1,7 +1,6 @@
 package com.miragedev.mononara.core.dao.jpa;
 
 import com.miragedev.mononara.core.dao.KnowledgeDao;
-import com.miragedev.mononara.core.model.Kanji;
 import com.miragedev.mononara.core.model.Knowledge;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 
@@ -24,12 +23,18 @@ public class JpaKnowledgeDao extends JpaDaoSupport implements KnowledgeDao {
         return getJpaTemplate().find("SELECT kn FROM Knowledge kn WHERE kn.tag.code = ?1", tag);
     }
 
-    public Knowledge findByTagAndKanji(String tag, Kanji kanji) {
-        return (Knowledge) getJpaTemplate().find("SELECT kn FROM Knowledge kn WHERE kn.tag.code = ?1 and kn.kanji.id =?2", tag, kanji.getId()).get(0);
+    public Knowledge findByTagAndKanji(String tag, String kanji) {
+        List<Knowledge> knowledges = getJpaTemplate().find("SELECT kn FROM Knowledge kn WHERE kn.tag.code = ?1 and kn.kanji.character =?2", tag, kanji);
+        if (knowledges.size() > 0) {
+            return knowledges.get(0);
+        } else {
+            return null;
+        }
     }
 
     public void save(Knowledge knowledge) {
         getJpaTemplate().persist(knowledge);
+        getJpaTemplate().flush();
     }
 
     public Knowledge update(Knowledge knowledge) {

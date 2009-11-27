@@ -1,6 +1,5 @@
 package com.miragedev.mononara.core.dao;
 
-import com.miragedev.mononara.core.model.Kanji;
 import com.miragedev.mononara.core.model.Knowledge;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public interface KnowledgeDao {
 
     public List<Knowledge> findByTag(String tag);
 
-    public Knowledge findByTagAndKanji(String tag, Kanji kanji);
+    public Knowledge findByTagAndKanji(String tag, String kanji);
 
     public void save(Knowledge knowledge);
 

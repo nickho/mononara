@@ -10,7 +10,8 @@ package com.miragedev.mononara.core.business;
 
 import com.miragedev.mononara.core.model.Knowledge;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author <a href="mailto:nicolas@radde.org">Nicolas Radde</a>
@@ -19,14 +20,14 @@ import java.util.Vector;
  */
 public class ExamResults {
 
-    Vector<Knowledge> knowledges;
-    Vector<Integer> results;
-    Vector<Integer> maxResults;
+    private List<Knowledge> knowledges;
+    private List<Integer> results;
+    private List<Integer> maxResults;
 
     public ExamResults() {
-        knowledges = new Vector<Knowledge>();
-        results = new Vector<Integer>();
-        maxResults = new Vector<Integer>();
+        knowledges = new ArrayList<Knowledge>();
+        results = new ArrayList<Integer>();
+        maxResults = new ArrayList<Integer>();
     }
 
     /**

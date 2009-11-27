@@ -41,7 +41,7 @@
         <property name="learningMethod" ref="learningMethod"/>
     </bean>
 
-    <bean id="dictionnaryService" class="com.miragedev.mononara.core.service.DictionnaryServiceImpl">
+    <bean id="dictionnaryService" class="com.miragedev.mononara.core.service.DictionaryServiceImpl">
         <property name="dictionnaryEntryDao" ref="dictionnaryEntryDao"/>
     </bean>
 
@@ -79,7 +79,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionnaryEntryDao">
+    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionaryEntryDao">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 

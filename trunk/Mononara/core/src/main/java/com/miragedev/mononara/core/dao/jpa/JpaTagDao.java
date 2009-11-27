@@ -33,4 +33,12 @@ public class JpaTagDao extends JpaDaoSupport implements TagDao {
     public void delete(Tag tag) {
         getJpaTemplate().remove(tag);
     }
+
+    public void refresh(Tag tag) {
+        getJpaTemplate().refresh(tag);
+    }
+
+    public boolean exist(Tag tag) {
+        return getJpaTemplate().contains(tag);
+    }
 }

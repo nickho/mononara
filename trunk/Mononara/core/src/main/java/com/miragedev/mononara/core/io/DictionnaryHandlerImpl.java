@@ -9,9 +9,9 @@
 package com.miragedev.mononara.core.io;
 
 
-import com.miragedev.mononara.core.dao.DictionnaryEntryDao;
+import com.miragedev.mononara.core.dao.DictionaryEntryDao;
 import com.miragedev.mononara.core.dao.TagDao;
-import com.miragedev.mononara.core.model.DictionnaryEntry;
+import com.miragedev.mononara.core.model.DictionaryEntry;
 import com.miragedev.mononara.core.model.Tag;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -40,13 +40,13 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
     private boolean isNew;
     private int numberOfEntry;
     private int entryNumber;
-    private List<DictionnaryEntryAddedListener> listeners;
-    private DictionnaryEntryDao dictionnaryEntryDao;
+    private List<DictionaryEntryAddedListener> listeners;
+    private DictionaryEntryDao dictionaryEntryDao;
     private TagDao tagDao;
 
 
-    public void setDictionnaryEntryDao(DictionnaryEntryDao dictionnaryEntryDao) {
-        this.dictionnaryEntryDao = dictionnaryEntryDao;
+    public void setDictionnaryEntryDao(DictionaryEntryDao dictionaryEntryDao) {
+        this.dictionaryEntryDao = dictionaryEntryDao;
     }
 
     public void setTagDao(TagDao tagDao) {
@@ -54,7 +54,7 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
     }
 
     public DictionnaryHandlerImpl() {
-        listeners = new Vector<DictionnaryEntryAddedListener>();
+        listeners = new Vector<DictionaryEntryAddedListener>();
         numberOfEntry = -1;
         entryNumber = 0;
     }
@@ -68,15 +68,15 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
             }
         } else if (qName.equalsIgnoreCase("entry")) {
             parentId = Integer.parseInt(attributes.getValue("id"));
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             if (dictionnaryEntry != null) {
-                dictionnaryEntryDao.delete(dictionnaryEntry);
+                dictionaryEntryDao.delete(dictionnaryEntry);
             }
             //isNew = false;
             //if (dictionnaryEntry == null) {
-            dictionnaryEntry = new DictionnaryEntry();
+            dictionnaryEntry = new DictionaryEntry();
             dictionnaryEntry.setId(parentId);
-            dictionnaryEntryDao.save(dictionnaryEntry);
+            dictionaryEntryDao.save(dictionnaryEntry);
             isNew = true;
             //}
 
@@ -115,10 +115,10 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
 
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("entry")) {
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             entryNumber++;
-            for (DictionnaryEntryAddedListener listener : listeners) {
-                listener.entryAdded(new DictionnaryEntryAddedEvent(dictionnaryEntry, numberOfEntry, entryNumber));
+            for (DictionaryEntryAddedListener listener : listeners) {
+                listener.entryAdded(new DictionaryEntryAddedEvent(dictionnaryEntry, numberOfEntry, entryNumber));
             }
         }
     }
@@ -128,29 +128,29 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
         if (inKanji) {
             inKanji = false;
             //log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") importing from dictionnary " + parentId);
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             dictionnaryEntry.setSpellingInKanji(String.valueOf(ch, start, length));
-            dictionnaryEntryDao.update(dictionnaryEntry);
+            dictionaryEntryDao.update(dictionnaryEntry);
             //log.info("kanji spelling (" + String.valueOf(ch, start, length) + ") imported from dictionnary " + parentId);
         } else if (inKana) {
             inKana = false;
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             dictionnaryEntry.setSpellingInKana(String.valueOf(ch, start, length));
-            dictionnaryEntryDao.update(dictionnaryEntry);
+            dictionaryEntryDao.update(dictionnaryEntry);
         } else if (inRomaji) {
             inRomaji = false;
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             dictionnaryEntry.setSpellingInRomaji(String.valueOf(ch, start, length));
-            dictionnaryEntryDao.update(dictionnaryEntry);
+            dictionaryEntryDao.update(dictionnaryEntry);
         } else if (inDescription) {
             inDescription = false;
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             dictionnaryEntry.setDescription(String.valueOf(ch, start, length));
-            dictionnaryEntryDao.update(dictionnaryEntry);
+            dictionaryEntryDao.update(dictionnaryEntry);
         } else if (inTag) {
             inTag = false;
             Tag tag = tagDao.findByCode(String.valueOf(ch, start, length));
-            DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(parentId);
+            DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(parentId);
             if (tag == null) {
                 log.info("tag (" + String.valueOf(ch, start, length) + ") importing from dictionnary " + parentId);
                 tag = new Tag();
@@ -162,7 +162,7 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
                 List<Tag> tagsDictionnaryEntry = dictionnaryEntry.getTags();
                 if (tagsDictionnaryEntry == null || !tagsDictionnaryEntry.contains(tag)) {
                     dictionnaryEntry.addTag(tag);
-                    dictionnaryEntryDao.update(dictionnaryEntry);
+                    dictionaryEntryDao.update(dictionnaryEntry);
                 }
             }
         }
@@ -173,7 +173,7 @@ public class DictionnaryHandlerImpl extends DictionnaryHandler {
      *
      * @param listener
      */
-    public void addDictionnaryEntryAddedListener(DictionnaryEntryAddedListener listener) {
+    public void addDictionnaryEntryAddedListener(DictionaryEntryAddedListener listener) {
         listeners.add(listener);
     }
 

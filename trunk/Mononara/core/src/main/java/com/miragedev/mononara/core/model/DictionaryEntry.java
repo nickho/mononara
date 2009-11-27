@@ -1,11 +1,6 @@
 package com.miragedev.mononara.core.model;
 
-import org.apache.commons.logging.LogFactory;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Vector;
 
@@ -17,10 +12,11 @@ import java.util.Vector;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class DictionnaryEntry {
+public class DictionaryEntry {
 
     @Id
-    private long id = -1;
+    @GeneratedValue
+    private long id;
 
     private String spellingInKanji;
 
@@ -100,19 +96,33 @@ public class DictionnaryEntry {
         return spellingInKanji.length();
     }
 
-    public boolean isTheSame(int index, String spelling) {
-        boolean res;
-        String[] spellingRomajiSplited = spellingInRomaji.split("\\.");
-        String[] spellingKanaSplited = spellingInKana.split("\\.");
-        if (spellingKanaSplited.length != spellingRomajiSplited.length) {
-            LogFactory.getLog(DictionnaryEntry.class).error("Number of Kana and Romaji must be equal for entry " + spellingInKanji);
-        }
-        if (index >= spellingRomajiSplited.length || index >= spellingKanaSplited.length) {
-            LogFactory.getLog(DictionnaryEntry.class).error("Entry " + spellingInKanji + " isnt legal");
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DictionaryEntry that = (DictionaryEntry) o;
+
+        if (id != that.id) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (spellingInKana != null ? !spellingInKana.equals(that.spellingInKana) : that.spellingInKana != null)
             return false;
-        }
-        res = spellingInRomaji.split("\\.")[index].equalsIgnoreCase(spelling);
-        res = res || spellingInKana.split("\\.")[index].equalsIgnoreCase(spelling);
-        return res;
+        if (!spellingInKanji.equals(that.spellingInKanji)) return false;
+        if (spellingInRomaji != null ? !spellingInRomaji.equals(that.spellingInRomaji) : that.spellingInRomaji != null)
+            return false;
+        if (tags != null ? !tags.equals(that.tags) : that.tags != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + spellingInKanji.hashCode();
+        result = 31 * result + (spellingInKana != null ? spellingInKana.hashCode() : 0);
+        result = 31 * result + (spellingInRomaji != null ? spellingInRomaji.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (tags != null ? tags.hashCode() : 0);
+        return result;
     }
 }

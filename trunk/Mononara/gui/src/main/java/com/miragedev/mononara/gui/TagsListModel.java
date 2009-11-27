@@ -1,6 +1,6 @@
 package com.miragedev.mononara.gui;
 
-import com.miragedev.mononara.core.service.KanjiService;
+import com.miragedev.mononara.core.service.TagService;
 
 import javax.swing.*;
 
@@ -13,17 +13,17 @@ import javax.swing.*;
  */
 public class TagsListModel extends DefaultComboBoxModel {
 
-    private KanjiService kanjiService;
+    private TagService tagService;
 
-    public TagsListModel(KanjiService kanjiService) {
-        this.kanjiService = kanjiService;
+    public TagsListModel(TagService tagService) {
+        this.tagService = tagService;
     }
 
     public int getSize() {
-        return kanjiService.findAllTags().size();
+        return tagService.findAllTags().size();
     }
 
     public String getElementAt(int index) {
-        return kanjiService.findAllTags().get(index).getCode();
+        return tagService.findAllTags().get(index).getCode();
     }
 }

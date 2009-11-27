@@ -15,6 +15,6 @@ package com.miragedev.mononara.core.io;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnaryEntryAddedListener
  */
-public interface DictionnaryEntryAddedListener {
-    public void entryAdded(DictionnaryEntryAddedEvent event);
+public interface DictionaryEntryAddedListener {
+    public void entryAdded(DictionaryEntryAddedEvent event);
 }

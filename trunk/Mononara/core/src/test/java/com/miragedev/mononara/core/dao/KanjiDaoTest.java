@@ -54,11 +54,11 @@ public class KanjiDaoTest extends AbstractJpaTests {
 
     public void testNewKanji() {
         Kanji kanji = new Kanji();
-        kanji.setId(69);
-        kanji.setCharacter("char");
+        kanji.setCharacter("newchar");
         kanjiDao.save(kanji);
-        Kanji result = kanjiDao.findById(69);
+        List<Kanji> result = kanjiDao.findByCharacter("newchar");
         assertNotNull(result);
+        assertEquals(1, result.size());
     }
 
     /*

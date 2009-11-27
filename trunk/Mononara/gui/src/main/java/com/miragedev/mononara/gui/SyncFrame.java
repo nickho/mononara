@@ -1,16 +1,11 @@
 package com.miragedev.mononara.gui;
 
-import com.miragedev.mononara.core.io.DictionnaryEntryAddedEvent;
-import com.miragedev.mononara.core.io.DictionnaryEntryAddedListener;
-import com.miragedev.mononara.core.io.KanjiAddedEvent;
-import com.miragedev.mononara.core.io.KanjiAddedListener;
 import com.miragedev.mononara.core.service.MononaraService;
 import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.net.URI;
 import java.util.ResourceBundle;
 
 public class SyncFrame extends JDialog {
@@ -21,9 +16,10 @@ public class SyncFrame extends JDialog {
     private JLabel labelTitle;
     private JLabel labelStatus;
 
-    public SyncFrame(final MononaraService service, final URI kanjiURI, final URI dictionnaryURI) {
-        service.getHandlerDictionnary().addDictionnaryEntryAddedListener(new DictionnaryEntryAddedListener() {
-            public void entryAdded(final DictionnaryEntryAddedEvent event) {
+    public SyncFrame(final MononaraService service) {
+        /*
+        service.getHandlerDictionnary().addDictionnaryEntryAddedListener(new DictionaryEntryAddedListener() {
+            public void entryAdded(final DictionaryEntryAddedEvent event) {
                 labelTitle.setText("Loading Dictionnary");
                 progressBarSync.setMinimum(0);
                 progressBarSync.setMaximum(event.getNumberOfEntry());
@@ -47,6 +43,7 @@ public class SyncFrame extends JDialog {
                 repaint();
             }
         });
+        */
 
         setContentPane(contentPane);
         setModal(true);
@@ -56,18 +53,25 @@ public class SyncFrame extends JDialog {
         addWindowFocusListener(new WindowAdapter() {
             public void windowGainedFocus(WindowEvent e) {
                 LogFactory.getFactory().getInstance(SyncFrame.class).info("Window state changed : " + e.getNewState());
-                SwingWorker worker = new SwingWorker<Integer, Void>() {
-                    public Integer doInBackground() {
-                        service.onlineSync(kanjiURI, dictionnaryURI);
-                        return null;
-                    }
+                try {
+                    service.onlineSync();
+                    /*SwingWorker worker = new SwingWorker<Integer, Void>() {
+                        public Integer doInBackground() {
 
-                    public void done() {
-                        onCancel();
-                    }
+                            return null;
+                        }
 
-                };
-                worker.execute();
+                        public void done() {
+                            onCancel();
+                        }
+
+                    };
+                    worker.execute();
+                    */
+                } finally {
+                    onCancel();
+                    LogFactory.getFactory().getInstance(SyncFrame.class).info("killing window : ");
+                }
             }
         });
 

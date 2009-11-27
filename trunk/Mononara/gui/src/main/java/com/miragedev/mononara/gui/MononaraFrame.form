@@ -40,10 +40,20 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="jlpt_4"/>
-                    <item value="jlpt_3"/>
-                    <item value="jlpt_2"/>
-                    <item value="jlpt_1"/>
+                    <item value="jlpt4"/>
+                    <item value="jlpt3"/>
+                    <item value="jlpt2"/>
+                    <item value="jlpt1"/>
+                    <item value="grade1"/>
+                    <item value="grade2"/>
+                    <item value="grade3"/>
+                    <item value="grade4"/>
+                    <item value="grade5"/>
+                    <item value="grade6"/>
+                    <item value="grade7"/>
+                    <item value="grade8"/>
+                    <item value="grade9"/>
+                    <item value="grade10"/>
                   </model>
                 </properties>
               </component>

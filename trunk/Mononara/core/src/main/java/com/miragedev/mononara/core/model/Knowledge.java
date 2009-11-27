@@ -79,4 +79,46 @@ public class Knowledge {
     public void setTag(Tag tag) {
         this.tag = tag;
     }
+
+    @Override
+    public String toString() {
+        return "Knowledge{" +
+                "id=" + id +
+                ", firstTimeSuccess=" + firstTimeSuccess +
+                ", lastTimeSuccess=" + lastTimeSuccess +
+                ", lastTestSuccess=" + lastTestSuccess +
+                ", kanji=" + kanji +
+                ", tag=" + tag +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Knowledge knowledge = (Knowledge) o;
+
+        if (id != knowledge.id) return false;
+        if (Float.compare(knowledge.lastTestSuccess, lastTestSuccess) != 0) return false;
+        if (firstTimeSuccess != null ? !firstTimeSuccess.equals(knowledge.firstTimeSuccess) : knowledge.firstTimeSuccess != null)
+            return false;
+        if (!kanji.equals(knowledge.kanji)) return false;
+        if (lastTimeSuccess != null ? !lastTimeSuccess.equals(knowledge.lastTimeSuccess) : knowledge.lastTimeSuccess != null)
+            return false;
+        if (!tag.equals(knowledge.tag)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (firstTimeSuccess != null ? firstTimeSuccess.hashCode() : 0);
+        result = 31 * result + (lastTimeSuccess != null ? lastTimeSuccess.hashCode() : 0);
+        result = 31 * result + (lastTestSuccess != +0.0f ? Float.floatToIntBits(lastTestSuccess) : 0);
+        result = 31 * result + kanji.hashCode();
+        result = 31 * result + tag.hashCode();
+        return result;
+    }
 }

@@ -15,8 +15,8 @@ public class ContentChangeEvent {
         ADD, REMOVE
     }
 
-    Knowledge knowledge;
-    Type type;
+    private Knowledge knowledge;
+    private Type type;
 
     public ContentChangeEvent(Knowledge knowledge, Type type) {
         this.knowledge = knowledge;

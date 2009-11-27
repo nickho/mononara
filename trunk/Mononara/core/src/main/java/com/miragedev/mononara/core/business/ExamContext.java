@@ -8,7 +8,7 @@
  *****************************************/
 package com.miragedev.mononara.core.business;
 
-import com.miragedev.mononara.core.model.DictionnaryEntry;
+import com.miragedev.mononara.core.model.DictionaryEntry;
 import com.miragedev.mononara.core.model.Knowledge;
 
 
@@ -19,18 +19,18 @@ import com.miragedev.mononara.core.model.Knowledge;
  */
 public class ExamContext {
 
-    DictionnaryEntry dictionnaryEntry;
-    Knowledge knowledge;
-    int knowledgePos;
-    boolean hintNeeded;
+    private DictionaryEntry dictionnaryEntry;
+    private Knowledge knowledge;
+    private int knowledgePos;
+    private boolean hintNeeded;
 
-    public ExamContext(Knowledge knowledge, DictionnaryEntry dictionnaryEntry, int knowledgePos) {
+    public ExamContext(Knowledge knowledge, DictionaryEntry dictionnaryEntry, int knowledgePos) {
         this.knowledge = knowledge;
         this.dictionnaryEntry = dictionnaryEntry;
         this.knowledgePos = knowledgePos;
     }
 
-    public DictionnaryEntry getDictionnaryEntry() {
+    public DictionaryEntry getDictionnaryEntry() {
         return dictionnaryEntry;
     }
 

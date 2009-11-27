@@ -15,7 +15,6 @@ import com.miragedev.mononara.core.dao.TagDao;
 import com.miragedev.mononara.core.model.Kanji;
 import com.miragedev.mononara.core.model.Knowledge;
 import com.miragedev.mononara.core.model.Tag;
-import com.miragedev.mononara.core.model.DictionnaryEntry;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.xml.sax.Attributes;
@@ -114,7 +113,7 @@ public class KanjiHandlerImpl extends KanjiHandler {
             List<Tag> tagsAfter = new ArrayList<Tag>();
             for (Tag tag : tags) {
                 if (!currentTagList.contains(tag.getCode())) {
-                    knowledgeDao.delete(knowledgeDao.findByTagAndKanji(tag.getCode(), kanji));
+                    knowledgeDao.delete(knowledgeDao.findByTagAndKanji(tag.getCode(), kanji.getCharacter()));
                     log.info("Deleted tag and Knowledge for (tag : " + tag.getCode() + ", kanji : " + kanji.getId() + ")");
                 } else {
                     tagsAfter.add(tag);

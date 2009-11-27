@@ -3,10 +3,6 @@ package com.miragedev.mononara.core.service;
 import com.miragedev.mononara.core.business.Basket;
 import com.miragedev.mononara.core.business.Exam;
 import com.miragedev.mononara.core.business.ExamResults;
-import com.miragedev.mononara.core.io.DictionnaryHandler;
-import com.miragedev.mononara.core.io.KanjiHandler;
-
-import java.net.URI;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,10 +14,7 @@ import java.net.URI;
 public interface MononaraService {
     void saveExamResults(ExamResults results);
 
-    boolean onlineSync(URI uriKanji, URI uriDictionnary);
-
-    DictionnaryHandler getHandlerDictionnary();
-    KanjiHandler getHandlerKanji();
+    boolean onlineSync();
 
     Exam startExam(Basket basket);
 }
