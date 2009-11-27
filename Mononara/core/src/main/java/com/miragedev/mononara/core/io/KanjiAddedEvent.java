@@ -8,7 +8,6 @@
  *****************************************/
 package com.miragedev.mononara.core.io;
 
-import com.miragedev.mononara.core.model.DictionnaryEntry;
 import com.miragedev.mononara.core.model.Kanji;
 
 /**

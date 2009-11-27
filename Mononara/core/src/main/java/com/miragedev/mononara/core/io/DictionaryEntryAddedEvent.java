@@ -8,7 +8,7 @@
  *****************************************/
 package com.miragedev.mononara.core.io;
 
-import com.miragedev.mononara.core.model.DictionnaryEntry;
+import com.miragedev.mononara.core.model.DictionaryEntry;
 
 /**
  * DictionnaryEntryAddedEvent
@@ -17,19 +17,19 @@ import com.miragedev.mononara.core.model.DictionnaryEntry;
  * @version $Revision: 1.1 $
  * @todo Implement DictionnaryEntryAddedEvent
  */
-public class DictionnaryEntryAddedEvent {
+public class DictionaryEntryAddedEvent {
 
-    private DictionnaryEntry entry;
+    private DictionaryEntry entry;
     private int numberOfEntry;
     private int entryNumber;
 
-    public DictionnaryEntryAddedEvent(DictionnaryEntry entry, int numberOfEntry, int entryNumber) {
+    public DictionaryEntryAddedEvent(DictionaryEntry entry, int numberOfEntry, int entryNumber) {
         this.entry = entry;
         this.numberOfEntry = numberOfEntry;
         this.entryNumber = entryNumber;
     }
 
-    public DictionnaryEntry getEntry() {
+    public DictionaryEntry getEntry() {
         return entry;
     }
 

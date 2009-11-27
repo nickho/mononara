@@ -2,6 +2,7 @@ package com.miragedev.mononara.core.dao;
 
 import com.miragedev.mononara.core.model.Kanji;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,14 +13,17 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface KanjiDao {
-    public Kanji findById(long id);
+    Kanji findById(long id);
 
-    public List<Kanji> findByCharacter(String kanji);
+    List<Kanji> findByCharacter(String kanji);
 
-    public void save(Kanji kanji);
+    void save(Kanji kanji);
 
-    public Kanji update(Kanji kanji);
+    Kanji update(Kanji kanji);
 
-    public void delete(Kanji kanji);
+    void delete(Kanji kanji);
 
+    Date findLastUpdate();
+
+    void flush();
 }

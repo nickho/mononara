@@ -1,8 +1,11 @@
 package com.miragedev.mononara.core.service;
 
+import com.miragedev.mononara.core.model.Kanji;
 import com.miragedev.mononara.core.model.Knowledge;
 import com.miragedev.mononara.core.model.Tag;
+import com.miragedev.mononara.core.service.resources.KanjiListKP;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,7 +16,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface KanjiService {
-    public List<Knowledge> findKnowledgesByTag(String tag);
+    List<Knowledge> findKnowledgesByTag(String tag);
 
-    public List<Tag> findAllTags();
+    Date findLastUpdate();
+
+    Kanji updateOrAdd(Kanji kanji, List<Tag> localTags);
+
+    void importKanjisAndTags(KanjiListKP listKP);
 }

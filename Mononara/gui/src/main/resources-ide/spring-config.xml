@@ -12,6 +12,7 @@
 
     <bean id="mononaraFrame" class="com.miragedev.mononara.gui.MononaraFrame">
         <property name="kanjiService" ref="kanjiService"/>
+        <property name="tagService" ref="tagService"/>
         <property name="dictionnaryService" ref="dictionnaryService"/>
         <property name="mononaraService" ref="mononaraService"/>
         <property name="mononaraMenuFactory" ref="mononaraMenuFactory"/>
@@ -19,32 +20,48 @@
     </bean>
 
     <bean id="mononaraMenuFactory" class="com.miragedev.mononara.gui.MononaraMenuFactory">
-        <!--<property name="kanjiUri" value="http://kanji.radde.org/services/kanji.php"/>-->
-        <property name="kanjiUri" value="file:///E:/Dev/Mononara/gui/target/classes/kanji.xml"/>
-        <!--<property name="dictionnaryUri" value="http://kanji.radde.org/services/dictionnary.php"/> -->
-        <property name="dictionnaryUri" value="file:///E:/Dev/Mononara/gui/target/classes/dictionnary.xml"/>
         <property name="mononaraService" ref="mononaraService"/>
         <property name="mononaraFrame" ref="mononaraFrame"/>
     </bean>
 
     <!-- The services -->
 
-    <bean id="kanjiService" class="com.miragedev.mononara.core.service.KanjiServiceImpl">
-        <property name="knowledgeDao" ref="knowledgeDao"/>
+    <bean id="tagService" class="com.miragedev.mononara.core.service.TagServiceImpl">
         <property name="tagDao" ref="tagDao"/>
     </bean>
 
-    <bean id="mononaraService" class="com.miragedev.mononara.core.service.MononaraServiceImpl">
-        <property name="handlerKanji" ref="kanjiHandler"/>
-        <property name="handlerDictionnary" ref="dictionnaryHandler"/>
-        <property name="dictionnaryService" ref="dictionnaryService"/>
+    <bean id="kanjiService" class="com.miragedev.mononara.core.service.KanjiServiceImpl">
         <property name="knowledgeDao" ref="knowledgeDao"/>
-        <property name="learningMethod" ref="learningMethod"/>
+        <property name="kanjiDao" ref="kanjiDao"/>
+        <property name="tagService" ref="tagService"/>
     </bean>
 
-    <bean id="dictionnaryService" class="com.miragedev.mononara.core.service.DictionnaryServiceImpl">
-        <property name="dictionnaryEntryDao" ref="dictionnaryEntryDao"/>
+    <bean id="mononaraService" class="com.miragedev.mononara.core.service.MononaraServiceImpl">
+        <property name="dictionnaryService" ref="dictionnaryService"/>
+        <property name="kanjiService" ref="kanjiService"/>
+        <property name="tagService" ref="tagService"/>
+        <property name="knowledgeDao" ref="knowledgeDao"/>
+        <property name="learningMethod" ref="learningMethod"/>
+        <!--property name="kanjiPortalResource" ref="kanjiPortalResource"/-->
     </bean>
+
+    <bean id="dictionnaryService" class="com.miragedev.mononara.core.service.DictionaryServiceImpl">
+        <property name="dictionnaryEntryDao" ref="dictionnaryEntryDao"/>
+        <property name="tagService" ref="tagService"/>
+    </bean>
+
+    <!-- Web Service-->
+    <bean id="kanjiPortalResource" class="org.jboss.resteasy.client.ProxyFactory"
+          factory-method="create">
+        <constructor-arg>
+            <value>com.miragedev.mononara.core.service.proxy.KanjiPortalResource</value>
+        </constructor-arg>
+        <!--constructor-arg><value>http://www.kanji-portal.com/</value></constructor-arg-->
+        <constructor-arg>
+            <value>http://localhost:8080/kanji-portal/</value>
+        </constructor-arg>
+    </bean>
+
 
     <!-- Business classes -->
 
@@ -80,7 +97,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionnaryEntryDao">
+    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionaryEntryDao">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
@@ -109,7 +126,6 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

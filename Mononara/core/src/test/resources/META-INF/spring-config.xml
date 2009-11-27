@@ -6,6 +6,49 @@
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
 
+    <!-- The services -->
+
+    <bean id="tagService" class="com.miragedev.mononara.core.service.TagServiceImpl">
+        <property name="tagDao" ref="tagDao"/>
+    </bean>
+
+    <bean id="kanjiService" class="com.miragedev.mononara.core.service.KanjiServiceImpl">
+        <property name="knowledgeDao" ref="knowledgeDao"/>
+        <property name="kanjiDao" ref="kanjiDao"/>
+        <property name="tagService" ref="tagService"/>
+    </bean>
+
+    <bean id="mononaraService" class="com.miragedev.mononara.core.service.MononaraServiceImpl">
+        <property name="dictionnaryService" ref="dictionnaryService"/>
+        <property name="tagService" ref="tagService"/>
+        <property name="kanjiService" ref="kanjiService"/>
+        <property name="knowledgeDao" ref="knowledgeDao"/>
+        <property name="learningMethod" ref="learningMethod"/>
+
+        <!--property name="kanjiPortalResource" ref="kanjiPortalResource"/-->
+    </bean>
+
+    <bean id="dictionnaryService" class="com.miragedev.mononara.core.service.DictionaryServiceImpl">
+        <property name="dictionnaryEntryDao" ref="dictionnaryEntryDao"/>
+        <property name="tagService" ref="tagService"/>
+    </bean>
+
+    <!-- Web Service-->
+    <!--bean id="kanjiPortalResource" class="org.jboss.resteasy.client.ProxyFactory"
+          factory-method="create">
+        <constructor-arg><value>KanjiListKP.class</value></constructor-arg>
+        <constructor-arg><value>http://www.kanji-portal.com/</value></constructor-arg>
+    </bean-->
+
+    <!-- Business classes -->
+
+    <bean id="learningMethod" class="com.miragedev.mononara.core.business.CardLearningMethod">
+        <!--<property name="forgetTimeOffset" value="21600000"/>-->
+        <property name="forgetTimeOffset" value="10000"/>
+    </bean>
+
+    <!-- The DAOs -->
+
     <bean id="kanjiDao" class="com.miragedev.mononara.core.dao.jpa.JpaKanjiDao">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
@@ -14,7 +57,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionnaryEntryDao">
+    <bean id="dictionnaryEntryDao" class="com.miragedev.mononara.core.dao.jpa.JpaDictionaryEntryDao">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
@@ -22,6 +65,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
+    <!-- The persistence plumbing -->
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>

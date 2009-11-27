@@ -21,4 +21,8 @@ public interface TagDao {
     public Tag update(Tag tag);
 
     public void delete(Tag tag);
+
+    public void refresh(Tag tag);
+
+    public boolean exist(Tag tag);
 }

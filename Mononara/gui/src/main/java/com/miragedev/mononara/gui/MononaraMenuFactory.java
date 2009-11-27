@@ -7,8 +7,6 @@ import org.apache.commons.logging.LogFactory;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ResourceBundle;
 
 /**
@@ -23,18 +21,8 @@ public class MononaraMenuFactory {
     private Log log = LogFactory.getLog(MononaraMenuFactory.class);
     private ResourceBundle res = ResourceBundle.getBundle("InterfaceResources");
 
-    String kanjiUri;
-    String dictionnaryUri;
     MononaraService mononaraService;
     MononaraFrame mononaraFrame;
-
-    public void setKanjiUri(String kanjiUri) {
-        this.kanjiUri = kanjiUri;
-    }
-
-    public void setDictionnaryUri(String dictionnaryUri) {
-        this.dictionnaryUri = dictionnaryUri;
-    }
 
     public void setMononaraService(MononaraService mononaraService) {
         this.mononaraService = mononaraService;
@@ -61,20 +49,9 @@ public class MononaraMenuFactory {
 
         menuItemSync.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
-                try {
-                    final URI kanjiURI = new URI(kanjiUri);
-                    final URI dicURI = new URI(dictionnaryUri);
-                    final SyncFrame syncFrame = new SyncFrame(mononaraService, kanjiURI, dicURI);
-
-                    syncFrame.pack();
-                    syncFrame.setVisible(true);
-
-                } catch (URISyntaxException e1) {
-                    log.error("Uri non valide", e1);
-                    e1.printStackTrace();
-                }
-
+                final SyncFrame syncFrame = new SyncFrame(mononaraService);
+                syncFrame.pack();
+                syncFrame.setVisible(true);
             }
         });
 

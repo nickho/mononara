@@ -19,6 +19,6 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public abstract class DictionnaryHandler extends DefaultHandler {
 
-    public abstract void addDictionnaryEntryAddedListener(DictionnaryEntryAddedListener listener);
+    public abstract void addDictionnaryEntryAddedListener(DictionaryEntryAddedListener listener);
 
 }

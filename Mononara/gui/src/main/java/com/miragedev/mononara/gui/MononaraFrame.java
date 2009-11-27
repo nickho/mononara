@@ -5,9 +5,10 @@ import com.miragedev.mononara.core.business.Exam;
 import com.miragedev.mononara.core.business.ExamContext;
 import com.miragedev.mononara.core.business.LearningMethod;
 import com.miragedev.mononara.core.model.Knowledge;
-import com.miragedev.mononara.core.service.DictionnaryService;
+import com.miragedev.mononara.core.service.DictionaryService;
 import com.miragedev.mononara.core.service.KanjiService;
 import com.miragedev.mononara.core.service.MononaraService;
+import com.miragedev.mononara.core.service.TagService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.PropertyConfigurator;
@@ -57,7 +58,8 @@ public class MononaraFrame {
     private LearningMethod learningMethod;
 
     private KanjiService kanjiService;
-    private DictionnaryService dictionnaryService;
+    private TagService tagService;
+    private DictionaryService dictionaryService;
     private MononaraService mononaraService;
 
     private MononaraMenuFactory mononaraMenuFactory;
@@ -69,6 +71,10 @@ public class MononaraFrame {
 
     public void setLearningMethod(LearningMethod learningMethod) {
         this.learningMethod = learningMethod;
+    }
+
+    public void setTagService(TagService tagService) {
+        this.tagService = tagService;
     }
 
     public void setKanjiService(KanjiService kanjiService) {
@@ -83,8 +89,8 @@ public class MononaraFrame {
         this.mononaraMenuFactory = mononaraMenuFactory;
     }
 
-    public void setDictionnaryService(DictionnaryService dictionnaryService) {
-        this.dictionnaryService = dictionnaryService;
+    public void setDictionnaryService(DictionaryService dictionaryService) {
+        this.dictionaryService = dictionaryService;
     }
 
     public void startMononara() {
@@ -97,7 +103,7 @@ public class MononaraFrame {
         frame.setJMenuBar(mononaraMenuFactory.createMenuBar());
 
         //The DictionnaryList
-        DictionnaryTableModel tableModel = new DictionnaryTableModel(dictionnaryService);
+        DictionnaryTableModel tableModel = new DictionnaryTableModel(dictionaryService);
         tableDictionnary.setModel(tableModel);
         TableRowSorter<DictionnaryTableModel> sorter = new TableRowSorter<DictionnaryTableModel>(tableModel);
         RowFilter<DictionnaryTableModel, Object> rf;
@@ -110,7 +116,7 @@ public class MononaraFrame {
         }
         sorter.setRowFilter(rf);
         tableDictionnary.setRowSorter(sorter);
-        comboBoxTagsDictionnary.setModel(new TagsListModel(kanjiService));
+        comboBoxTagsDictionnary.setModel(new TagsListModel(tagService));
         comboBoxTagsDictionnary.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JComboBox combo = (JComboBox) e.getSource();
@@ -211,7 +217,7 @@ public class MononaraFrame {
             //log.debug("delta : " + delta + ", racine delta : " + Math.sqrt(delta));
             int buttonSize = (int) (-sizePanel.width + Math.sqrt(delta)) / (2 * listKnowledge.size());
             toggleButton.setPreferredSize(new Dimension(buttonSize - 6, buttonSize - 6));
-            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), (buttonSize - 6) / 2));
+            toggleButton.setFont(new Font(toggleButton.getFont().getName(), toggleButton.getFont().getStyle(), (buttonSize - 10) / 2));
             //toggleButton.setMargin(new Insets(1, 1, 1, 1));
             //log.debug("size : " + buttonSize);
             int fadingLvl = (int) learningMethod.computeFadingLvl(knowledge);
@@ -277,6 +283,11 @@ public class MononaraFrame {
             userSpellingTestTextField.setText("");
             ExamContext examContext = test.getContextTest();
             int pos = examContext.getKnowledgePos();
+            if (examContext.getDictionnaryEntry().getSpellingInRomaji() == null) {
+                userSpellingTestTextField.getInputContext().selectInputMethod(Locale.JAPANESE);
+            } else {
+                userSpellingTestTextField.getInputContext().selectInputMethod(Locale.getDefault());
+            }
             StringBuffer contextText = new StringBuffer();
             contextText.append("<html><p align=center>");
             contextText.append("<font size=26>");
@@ -308,7 +319,12 @@ public class MononaraFrame {
 
             int knowledgePos = test.getContextTest().getKnowledgePos();
             String spellings = test.getContextTest().getDictionnaryEntry().getSpellingInKana();
-            String spelling = spellings.split("\\.")[knowledgePos];
+            String spelling;
+            if (spellings.split("\\.").length == 1) {
+                spelling = spellings.split("\\.")[0];
+            } else {
+                spelling = spellings.split("\\.")[knowledgePos];
+            }
             String description = test.getContextTest().getDictionnaryEntry().getDescription();
             userSpellingTestTextField.setText(spelling);
             StringBuffer comment = new StringBuffer();
@@ -351,7 +367,9 @@ public class MononaraFrame {
         Locale.setDefault(Locale.FRENCH);
         Properties logProperties = new Properties();
         try {
-            logProperties.load(new FileInputStream(args[1]));
+            if (args.length > 1) {
+                logProperties.load(new FileInputStream(args[1]));
+            }
         } catch (IOException e) {
             //No log, .... No log
         }

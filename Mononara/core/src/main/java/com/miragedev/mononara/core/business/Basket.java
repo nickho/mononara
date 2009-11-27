@@ -10,8 +10,8 @@ package com.miragedev.mononara.core.business;
 
 import com.miragedev.mononara.core.model.Knowledge;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * A Basket contain the knowledge the user select for the test.
@@ -21,13 +21,13 @@ import java.util.Vector;
  */
 public class Basket {
 
-    private Vector<Knowledge> content;
+    private List<Knowledge> content;
     private List<ContentChangeListener> listeners;
     private int maxSize;
 
     public Basket(int size) {
-        content = new Vector<Knowledge>();
-        listeners = new Vector<ContentChangeListener>();
+        content = new ArrayList<Knowledge>();
+        listeners = new ArrayList<ContentChangeListener>();
         maxSize = size;
     }
 

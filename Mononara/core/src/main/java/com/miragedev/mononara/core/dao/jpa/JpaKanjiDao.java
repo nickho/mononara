@@ -4,6 +4,7 @@ import com.miragedev.mononara.core.dao.KanjiDao;
 import com.miragedev.mononara.core.model.Kanji;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JpaKanjiDao extends JpaDaoSupport implements KanjiDao {
+
     public Kanji findById(long id) {
         return getJpaTemplate().find(Kanji.class, id);
     }
@@ -33,4 +35,19 @@ public class JpaKanjiDao extends JpaDaoSupport implements KanjiDao {
     public void delete(Kanji kanji) {
         getJpaTemplate().remove(kanji);
     }
+
+    public void flush() {
+        getJpaTemplate().flush();
+    }
+
+    public Date findLastUpdate() {
+        List<Kanji> kanjis = getJpaTemplate().find("select k from Kanji k order by k.update");
+        if (kanjis.size() > 0) {
+            Kanji kanji = kanjis.get(0);
+            return kanji.getUpdate();
+        } else {
+            return null;
+        }
+    }
+
 }

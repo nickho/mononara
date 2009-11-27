@@ -1,7 +1,6 @@
 package com.miragedev.mononara.core.dao;
 
-import com.miragedev.mononara.core.model.Kanji;
-import com.miragedev.mononara.core.model.DictionnaryEntry;
+import com.miragedev.mononara.core.model.DictionaryEntry;
 import org.springframework.test.jpa.AbstractJpaTests;
 
 import java.util.List;
@@ -14,11 +13,11 @@ import java.util.List;
  * Time: 10:31:05 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DictionnaryEntryDaoTest extends AbstractJpaTests {
-    private DictionnaryEntryDao dictionnaryEntryDao;
+public class DictionaryEntryDaoTest extends AbstractJpaTests {
+    private DictionaryEntryDao dictionaryEntryDao;
 
-    public void setKanjiDao(DictionnaryEntryDao dictionnaryEntryDao) {
-        this.dictionnaryEntryDao = dictionnaryEntryDao;
+    public void setKanjiDao(DictionaryEntryDao dictionaryEntryDao) {
+        this.dictionaryEntryDao = dictionaryEntryDao;
     }
 
     protected String[] getConfigLocations() {
@@ -26,23 +25,23 @@ public class DictionnaryEntryDaoTest extends AbstractJpaTests {
     }
 
     protected void onSetUpInTransaction() throws Exception {
-        jdbcTemplate.execute("insert into dictionnaryentry (id, spellinginkanji, spellinginkana, spellinginromaji, description) values (1, '???', '??.?.??', 'ei.ga.kan', 'blah')");
+        jdbcTemplate.execute("insert into dictionaryentry (id, spellinginkanji, spellinginkana, spellinginromaji, description) values (1, '???', '??.?.??', 'ei.ga.kan', 'blah')");
         //jdbcTemplate.execute("insert into address (id, street_number, street_name) values (3, 123, 'Dover Street')");
     }
 
     public void testFindByIdWhereKanjiExists() {
-        DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(1);
+        DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(1);
         assertNotNull(dictionnaryEntry);
         assertEquals("???", dictionnaryEntry.getSpellingInKanji());
     }
 
     public void testFindByIdWhereKanjiDoesNotExist() {
-        DictionnaryEntry dictionnaryEntry = dictionnaryEntryDao.findById(999999);
+        DictionaryEntry dictionnaryEntry = dictionaryEntryDao.findById(999999);
         assertNull(dictionnaryEntry);
     }
 
     public void testFindBySpelling1Exists() {
-        List<DictionnaryEntry> dictionnaryEntries = dictionnaryEntryDao.findBySpelling("?");
+        List<DictionaryEntry> dictionnaryEntries = dictionaryEntryDao.findBySpelling("?");
         assertNotNull(dictionnaryEntries);
         assertEquals(1, dictionnaryEntries.size());
         assertEquals("???", dictionnaryEntries.get(0).getSpellingInKanji());

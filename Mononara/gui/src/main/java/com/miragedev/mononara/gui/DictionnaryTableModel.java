@@ -1,8 +1,8 @@
 package com.miragedev.mononara.gui;
 
-import com.miragedev.mononara.core.model.DictionnaryEntry;
+import com.miragedev.mononara.core.model.DictionaryEntry;
 import com.miragedev.mononara.core.model.Tag;
-import com.miragedev.mononara.core.service.DictionnaryService;
+import com.miragedev.mononara.core.service.DictionaryService;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
@@ -18,10 +18,10 @@ public class DictionnaryTableModel extends AbstractTableModel {
 
     private String[] columnNames = {"Kanji", "Kana", "Romaji", "Description", "tags"};
 
-    private DictionnaryService dictionnaryService;
+    private DictionaryService dictionaryService;
 
-    public DictionnaryTableModel(DictionnaryService dictionnaryService) {
-        this.dictionnaryService = dictionnaryService;
+    public DictionnaryTableModel(DictionaryService dictionaryService) {
+        this.dictionaryService = dictionaryService;
     }
 
     public int getColumnCount() {
@@ -29,7 +29,7 @@ public class DictionnaryTableModel extends AbstractTableModel {
     }
 
     public int getRowCount() {
-        return dictionnaryService.getDictionnarySize();
+        return dictionaryService.getDictionnarySize();
     }
 
     public String getColumnName(int col) {
@@ -37,7 +37,7 @@ public class DictionnaryTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int col) {
-        DictionnaryEntry entry = dictionnaryService.getEntryByNumber(row);
+        DictionaryEntry entry = dictionaryService.getEntryByNumber(row);
         if (entry != null) {
             switch (col) {
                 case 0:
