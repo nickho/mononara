@@ -18,13 +18,12 @@
  */
 package com.kanjiportal.portal;
 
-import com.kanjiportal.portal.model.User;
+import com.kanjiportal.portal.model.security.User;
 import static org.jboss.seam.ScopeType.SESSION;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 /**
  * AuthenticatorAction
@@ -46,7 +45,7 @@ public class AuthenticatorAction implements Authenticator {
     private Log log;
 
     public boolean authenticate() {
-        log.info("authenticate user #{identity.username}");
+        /*log.info("authenticate user #{identity.username}");
         List results = entityManager.createQuery("select u from User u where u.username=#{identity.username} and u.password=#{identity.password}")
                 .getResultList();
 
@@ -58,5 +57,7 @@ public class AuthenticatorAction implements Authenticator {
             log.info("user #{identity.username} logged in");
             return true;
         }
+        */
+        return true;
     }
 }

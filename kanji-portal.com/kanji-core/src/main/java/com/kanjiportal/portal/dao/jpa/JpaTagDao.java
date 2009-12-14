@@ -40,9 +40,9 @@ public class JpaTagDao implements TagDao {
     @In
     private EntityManager entityManager;
 
-    public Tag findByName(String tag) {
-        return (Tag) entityManager.createQuery("select t from Tag t where t.name = :name")
-                .setParameter("name", tag)
+    public Tag findByCode(String tag) {
+        return (Tag) entityManager.createQuery("select t from Tag t where t.code = :code")
+                .setParameter("code", tag)
                 .getSingleResult();
     }
 

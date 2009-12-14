@@ -25,13 +25,22 @@
                 xmlns:s="http://jboss.com/products/seam/taglib">
 
     <ol class="menu">
-        <li><s:link view="/home.seam" propagation="none"><h:outputText value="#{messages['menu.slink.home']}"/></s:link>
+        <li><s:link view="/home.xhtml" propagation="none"><h:outputText
+                value="#{messages['menu.slink.home']}"/></s:link>
         </li>
         <li><h:outputText value="#{messages['menu.text.kanjiRandom']}"/></li>
-        <li><s:link view="/kanji/search.seam" propagation="none"><h:outputText
+        <li><s:link view="/kanji/search.xhtml" propagation="none"><h:outputText
                 value="#{messages['menu.slink.kanjiSearch']}"/></s:link></li>
-        <li><s:link view="/dictionary/search.seam" propagation="none"><h:outputText
+        <li><s:link view="/dictionary/search.xhtml" propagation="none"><h:outputText
                 value="#{messages['menu.slink.dictionarySearch']}"/></s:link></li>
+        <li><h:outputText value="#{messages['menu.slink.admin']}" rendered="#{s:hasRole('admin')}"/>
+            <ol>
+                <li><s:link view="/admin/lucene.xhtml" propagation="none"><h:outputText
+                        value="#{messages['menu.slink.adminLucene']}" rendered="#{s:hasRole('admin')}"/></s:link></li>
+                <li><s:link view="/admin/users.xhtml" propagation="none"><h:outputText
+                        value="#{messages['menu.slink.adminUsers']}" rendered="#{s:hasRole('admin')}"/></s:link></li>
+            </ol>
+        </li>
     </ol>
 
 </ui:composition>

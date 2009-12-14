@@ -21,7 +21,6 @@ package com.kanjiportal.portal.dao.jpa;
 import com.kanjiportal.portal.dao.KnowledgeDao;
 import com.kanjiportal.portal.model.Knowledge;
 import com.kanjiportal.portal.model.Tag;
-import com.kanjiportal.portal.model.User;
 import org.jboss.seam.annotations.AutoCreate;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Logger;
@@ -48,11 +47,11 @@ public class JpaKnowledgeDao implements KnowledgeDao {
     @Logger
     private Log logger;
 
-    public Knowledge findByKanjiAndTagForUser(String kanji, String tag, User user) {
+    public Knowledge findByKanjiAndTagForUser(String kanji, String tag, String username) {
         List<Knowledge> list = entityManager.createQuery("select kw from Knowledge kw where kw.kanji.kanji like :kanji and kw.tag.name like :tag and kw.user.id = :username")
                 .setParameter("kanji", kanji)
                 .setParameter("tag", tag)
-                .setParameter("username", user.getUsername())
+                .setParameter("username", username)
                 .getResultList();
         if (list.size() == 0) {
             return null;
@@ -64,10 +63,10 @@ public class JpaKnowledgeDao implements KnowledgeDao {
         }
     }
 
-    public List<Knowledge> findByTagForUser(Tag tag, User user, int page, int pageSize) {
+    public List<Knowledge> findByTagForUser(Tag tag, String username, int page, int pageSize) {
         List<Knowledge> list = entityManager.createQuery("select kw from Knowledge kw where kw.tag.name like :tag and kw.user.id = :username")
                 .setParameter("tag", tag.getName())
-                .setParameter("username", user.getUsername())
+                .setParameter("username", username)
                 .setMaxResults(pageSize)
                 .setFirstResult(page * pageSize)
                 .getResultList();

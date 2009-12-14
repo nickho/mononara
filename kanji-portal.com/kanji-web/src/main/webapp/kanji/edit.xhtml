@@ -91,7 +91,7 @@
                     <h:inputText size="10" id="spellingRomaji" value="#{kanjiEdit.spellingRomaji}"/>
                     <h:inputText size="10" id="spellingMeanings" value="#{kanjiEdit.spellingMeanings}"/>
 
-                    <a:commandButton id="addSpelling" value="Add Spelling" action="#{kanjiEdit.addSpelling()}"
+                    <a:commandButton id="addSpelling" value="Add Spelling" action="#{kanjiEdit.addSpelling}"
                                      reRender="kanjiSpellings" status="statusAddSpelling"/>
                     <a:status id="statusAddSpelling" forceId="true">
                         <f:facet name="startAdd">

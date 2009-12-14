@@ -55,9 +55,8 @@ public class Knowledge extends Audit {
     @JoinColumn(name = "idtag")
     private Tag tag;
 
-    @ManyToOne
-    @JoinColumn(name = "idusr")
-    private User user;
+    @Column(name = "cdusr")
+    private String username;
 
     public long getId() {
         return id;
@@ -107,11 +106,11 @@ public class Knowledge extends Audit {
         this.tag = tag;
     }
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

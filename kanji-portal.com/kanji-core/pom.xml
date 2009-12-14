@@ -48,10 +48,6 @@
             <groupId>org.resteasy</groupId>
             <artifactId>jaxrs-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-        </dependency>
 
         <!-- Seam dependencies -->
         <dependency>
@@ -62,7 +58,19 @@
         <!-- Hibernate Base -->
         <dependency>
             <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -89,6 +97,12 @@
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-snowball</artifactId>
+        </dependency>
+
+        <!-- Caching and co -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
         </dependency>
 
         <!-- Tests deps -->
@@ -132,18 +146,20 @@
                     <components>
                         <component>
                             <name>hbm2ddl</name>
-                            <implementation>jpaconfiguration</implementation>
                         </component>
                         <component>
                             <name>hbm2doc</name>
-                            <implementation>jpaconfiguration</implementation>
                         </component>
                     </components>
                     <componentProperties>
-                        <persistenceunit>kanjiDatabase</persistenceunit>
+                        <implementation>jpaconfiguration</implementation>
+                        <!--persistenceunit>kanjiDatabase</persistenceunit-->
+                        <packageName>com.kanjiportal.portal.model</packageName>
                         <propertyfile>src/main/resources/hibernate-console.properties</propertyfile>
                         <outputfilename>schema.ddl</outputfilename>
                         <dot.executable>${graphizExecPath}</dot.executable>
+                        <scan-classes>true</scan-classes>
+                        <jdk5>true</jdk5>
                         <drop>false</drop>
                         <create>true</create>
                         <export>false</export>
@@ -157,6 +173,32 @@
                         <version>5.1.6</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>com.sun.tools.jxc.maven2</groupId>
+                <artifactId>maven-jaxb-schemagen-plugin</artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <schemas>
+                        <schema>
+                            <!-- ../../src/main/resources/ -->
+                            <file>${artifactId}-${version}-xsd.xsd</file>
+                            <namespace>http://www.kanji-postal.com/rest/api/${artifactId}-${version}</namespace>
+                        </schema>
+                    </schemas>
+                    <verbose>true</verbose>
+                    <includes>
+                        <include>**/com/kanjiportal/portal/model/**/*.java</include>
+                    </includes>
+                </configuration>
+                <!--executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions-->
             </plugin>
         </plugins>
     </build>

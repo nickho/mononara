@@ -19,7 +19,7 @@
 package com.kanjiportal.portal.model;
 
 import org.hibernate.validator.Length;
-import org.jboss.seam.Component;
+import org.jboss.seam.security.Identity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
@@ -67,9 +67,8 @@ public class Audit {
         }
         creationDate.setTimeInMillis(System.currentTimeMillis());
         creationSource = "kanji-portal.com";
-        User userLogged = (User) Component.getInstance("user");
-        if (userLogged != null) {
-            creationUser = userLogged.getUsername();
+        if (Identity.instance().isLoggedIn()) {
+            creationUser = Identity.instance().getCredentials().getUsername();
         } else {
             creationUser = "web-anon";
         }
@@ -83,9 +82,8 @@ public class Audit {
             updateDate = Calendar.getInstance();
         }
         updateSource = "kanji-portal.com";
-        User userLogged = (User) Component.getInstance("user");
-        if (userLogged != null) {
-            updateUser = userLogged.getUsername();
+        if (Identity.instance().isLoggedIn()) {
+            updateUser = Identity.instance().getCredentials().getUsername();
         } else {
             updateUser = "web-anon";
         }

@@ -24,7 +24,6 @@ import com.kanjiportal.portal.dao.TagDao;
 import com.kanjiportal.portal.model.Kanji;
 import com.kanjiportal.portal.model.Knowledge;
 import com.kanjiportal.portal.model.Tag;
-import com.kanjiportal.portal.model.User;
 import com.kanjiportal.portal.model.service.KnowledgeParam;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.log.Log;
@@ -59,10 +58,10 @@ public class KnowledgeImportingAction implements KnowledgeImporting {
         logger.info("start import");
     }
 
-    public int importKnowledges(List<KnowledgeParam> list, User user) {
+    public int importKnowledges(List<KnowledgeParam> list, String username) {
         int updated = 0;
         for (KnowledgeParam knowledgeParam : list) {
-            Knowledge knowledge = knowledgeDao.findByKanjiAndTagForUser(knowledgeParam.getKanji(), knowledgeParam.getTag(), user);
+            Knowledge knowledge = knowledgeDao.findByKanjiAndTagForUser(knowledgeParam.getKanji(), knowledgeParam.getTag(), username);
             if (knowledge != null) {
                 copy(knowledgeParam, knowledge);
                 knowledgeDao.update(knowledge);
@@ -72,7 +71,7 @@ public class KnowledgeImportingAction implements KnowledgeImporting {
                 Tag tag = tagDao.findByName(knowledgeParam.getTag());
                 knowledge.setKanji(kanji);
                 knowledge.setTag(tag);
-                knowledge.setUser(user);
+                knowledge.setUsername(username);
                 copy(knowledgeParam, knowledge);
                 knowledgeDao.create(knowledge);
             }
