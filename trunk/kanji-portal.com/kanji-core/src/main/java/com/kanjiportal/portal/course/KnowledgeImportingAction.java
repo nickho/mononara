@@ -68,7 +68,7 @@ public class KnowledgeImportingAction implements KnowledgeImporting {
             } else {
                 knowledge = new Knowledge();
                 Kanji kanji = kanjiDao.findByKanji(knowledgeParam.getKanji());
-                Tag tag = tagDao.findByName(knowledgeParam.getTag());
+                Tag tag = tagDao.findByCode(knowledgeParam.getTag());
                 knowledge.setKanji(kanji);
                 knowledge.setTag(tag);
                 knowledge.setUsername(username);
