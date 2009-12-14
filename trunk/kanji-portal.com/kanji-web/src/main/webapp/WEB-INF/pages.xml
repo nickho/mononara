@@ -86,6 +86,11 @@
         <description>Lucene admin page</description>
         <rewrite pattern="/admin/lucene"/>
     </page>
+    <page view-id="/admin/users.xhtml">
+        <description>Users admin page</description>
+        <rewrite pattern="/admin/users"/>
+        <action execute="#{userManagement.load}"/>
+    </page>
     <page view-id="/error.xhtml">
         <description>Generic error page</description>
         <rewrite pattern="/error"/>

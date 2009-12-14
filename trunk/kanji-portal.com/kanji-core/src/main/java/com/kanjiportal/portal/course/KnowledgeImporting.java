@@ -18,7 +18,6 @@
  */
 package com.kanjiportal.portal.course;
 
-import com.kanjiportal.portal.model.User;
 import com.kanjiportal.portal.model.service.KnowledgeParam;
 
 import java.util.List;
@@ -31,8 +30,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface KnowledgeImporting {
-    public int importKnowledges(List<KnowledgeParam> list, User user);
-
+    public int importKnowledges(List<KnowledgeParam> list, String username);
 
     public void startImport();
 }

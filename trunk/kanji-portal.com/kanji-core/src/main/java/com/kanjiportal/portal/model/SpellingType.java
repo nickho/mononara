@@ -18,10 +18,12 @@
  */
 package com.kanjiportal.portal.model;
 
+
 import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
 import javax.persistence.*;
+
 
 /**
  * Spelling

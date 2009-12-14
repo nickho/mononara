@@ -29,7 +29,7 @@ import com.kanjiportal.portal.model.Tag;
  * To change this template use File | Settings | File Templates.
  */
 public interface TagDao {
-    public Tag findByName(String tag);
+    public Tag findByCode(String tag);
 
     public Tag findById(long id);
 }

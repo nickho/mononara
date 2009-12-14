@@ -7,7 +7,8 @@
     <artifactId>kanjiportal</artifactId>
     <packaging>pom</packaging>
     <properties>
-        <seam>2.1.1.GA</seam>
+        <seam.version>2.1.1.GA</seam.version>
+        <drools.version>4.0.7</drools.version>
         <jdk.level>1.6</jdk.level>
         <lucene.indexes.dir>Z:\Indexes</lucene.indexes.dir>
     </properties>
@@ -90,26 +91,61 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>3.3.2.GA</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-annotations</artifactId>
                 <version>3.4.0.GA</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>3.4.0.GA</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>3.1.0.GA</version>
+                <!--version>4.0.0.Beta3</version-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-commons-annotations</artifactId>
                 <version>3.3.0.ga</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hibernate</groupId>
+                        <artifactId>hibernate</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -121,7 +157,7 @@
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam</artifactId>
-                <version>${seam}</version>
+                <version>${seam.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>javax.el</groupId>
@@ -136,12 +172,12 @@
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-ui</artifactId>
-                <version>${seam}</version>
+                <version>${seam.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-ioc</artifactId>
-                <version>${seam}</version>
+                <version>${seam.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>jboss</groupId>
@@ -152,12 +188,12 @@
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-resteasy</artifactId>
-                <version>${seam}</version>
+                <version>${seam.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.seam</groupId>
                 <artifactId>jboss-seam-debug</artifactId>
-                <version>${seam}</version>
+                <version>${seam.version}</version>
             </dependency>
 
             <!-- JSF libs -->
@@ -249,6 +285,30 @@
                 <groupId>org.apache.lucene</groupId>
                 <artifactId>lucene-snowball</artifactId>
                 <version>2.4.1</version>
+            </dependency>
+
+            <!-- Drools and rules -->
+            <!--dependency>
+              <groupId>org.drools</groupId>
+              <artifactId>drools-api</artifactId>
+              <version>${drools.version}</version>
+            </dependency-->
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-core</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+
+            <!-- Caching and co -->
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-core</artifactId>
+                <version>4.0.0.BETA2</version>
             </dependency>
 
             <!-- Tests dependencies -->

@@ -20,7 +20,6 @@ package com.kanjiportal.portal.dao;
 
 import com.kanjiportal.portal.model.Knowledge;
 import com.kanjiportal.portal.model.Tag;
-import com.kanjiportal.portal.model.User;
 
 import java.util.List;
 
@@ -32,9 +31,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface KnowledgeDao {
-    public Knowledge findByKanjiAndTagForUser(String kanji, String tag, User user);
+    public Knowledge findByKanjiAndTagForUser(String kanji, String tag, String username);
 
-    public List<Knowledge> findByTagForUser(Tag tag, User user, int page, int pageSize);
+    public List<Knowledge> findByTagForUser(Tag tag, String username, int page, int pageSize);
 
     public Knowledge update(Knowledge knowledge);
 

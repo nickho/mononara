@@ -60,8 +60,19 @@
                                              entity-manager-factory="#{kanjiDatabase}"/>
 
 
-    <security:identity authenticate-method="#{authenticator.authenticate}" remember-me="true"/>
-    <!--jaas-config-name="kanji-portal"/-->
+    <!--security:identity authenticate-method="#{authenticator.authenticate}" remember-me="true"/-->
+    <security:identity remember-me="true"/>
+    <security:identity-manager identity-store="#{jpaIdentityStore}"/>
+    <security:jpa-identity-store
+            user-class="com.kanjiportal.portal.model.security.User"
+            role-class="com.kanjiportal.portal.model.security.Role"/>
+    <security:rule-based-permission-resolver security-rules="#{securityRules}"/>
+
+    <drools:rule-base name="securityRules">
+        <drools:rule-files>
+            <value>/WEB-INF/security.drl</value>
+        </drools:rule-files>
+    </drools:rule-base>
 
 
     <theme:theme-selector cookie-enabled="true" theme="contentWithStyle">
